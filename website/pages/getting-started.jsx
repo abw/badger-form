@@ -1,8 +1,8 @@
 import React      from 'react'
 import CodeBlock  from '../site/CodeBlock.jsx'
-import Example    from '../site/Example.jsx'
-import Hello      from '../examples/Hello.jsx'
-import HelloCode  from '../examples/Hello.jsx?raw'
+// import Example    from '../site/Example.jsx'
+// import Hello      from '../examples/Hello.jsx'
+// import HelloCode  from '../examples/Hello.jsx?raw'
 
 const GettingStarted = () =>
   <div>
@@ -28,12 +28,13 @@ $ pnpm add @abw/badger-forms
     <CodeBlock>
       {`import { Hello } from '@abw/badger-forms'`}
     </CodeBlock>
-
+    {/*
     <Example Element={Hello} code={HelloCode}>
       <p>
         This is a code example.
       </p>
     </Example>
+    */}
   </div>
 
 export default GettingStarted

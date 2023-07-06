@@ -4,6 +4,7 @@ specifiers:
   '@abw/badger-css': ^0.0.6
   '@abw/badger-timestamp': ^1.0.4
   '@abw/badger-utils': ^1.0.21
+  '@abw/react-context': ^2.0.3
   '@abw/react-night-and-day': ^0.0.5
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^14.0.0
@@ -26,6 +27,7 @@ specifiers:
   vitest: ^0.31.0
 
 dependencies:
+  '@abw/react-context': 2.0.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.45.1_react@18.2.0
@@ -72,6 +74,13 @@ packages:
   /@abw/badger-utils/1.0.21:
     resolution: {integrity: sha512-MsfT1UdDeHyTLVdtx/i02YEj/8N1PRQjuw/k5WBSJ08177nGbvrTNgjgtok6QJeJVTiWCyucOQQeqDnG0fHsZQ==}
     dev: true
+
+  /@abw/react-context/2.0.3:
+    resolution: {integrity: sha512-9kjqEB09vdWh8ZjcIgf8Ci43WrkDIrhRBCm0juDxDfe/5QjPUhrK7A3zjaTkw+qHYvF6+c/kpndLrCjowyLaJA==}
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@abw/react-night-and-day/0.0.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-CiBOTtno1CMNZZ0njY8v19RYq2NyaGbXNTeu9kTeOushQdpzPaUNm04qqFKsYoB5Ag+P+dtaYvTcw2HAR84Euw==}

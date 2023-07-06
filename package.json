@@ -1,0 +1,64 @@
+{
+  "name": "@abw/badger-forms",
+  "version": "0.0.1",
+  "description": "A description for badger-forms",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/badger-forms.umd.cjs",
+  "module": "./dist/badger-forms.js",
+  "exports": {
+    ".": {
+      "import": "./dist/badger-forms.js",
+      "require": "./dist/badger-forms.umd.cjs"
+    }
+  },
+  "author": "Andy Wardley",
+  "license": "ISC",
+  "keywords": [
+    "react"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.docs.js",
+    "test": "vitest --ui --coverage",
+    "build": "vite build",
+    "build:docs": "vite build --config vite.docs.js",
+    "preview": "vite preview --config vite.docs.js",
+    "lint": "eslint 'src/**/*.{js,jsx}' 'lib/**/*.{js,jsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abw/badger-forms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abw/badger-forms/issues"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1"
+  },
+  "devDependencies": {
+    "@abw/badger-css": "^0.0.6",
+    "@abw/badger-timestamp": "^1.0.4",
+    "@abw/badger-utils": "^1.0.21",
+    "@abw/react-night-and-day": "^0.0.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-c8": "^0.31.0",
+    "@vitest/ui": "^0.31.0",
+    "eslint": "^8.37.0",
+    "eslint-plugin-react": "^7.32.2",
+    "jsdom": "^21.1.1",
+    "react-router-dom": "^6.10.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.60.0",
+    "vite": "^4.2.0",
+    "vite-plugin-svgr": "^3.2.0",
+    "vitest": "^0.31.0"
+  }
+}

@@ -1,41 +1,40 @@
-import React, { useId } from 'react'
-import { useForm } from './Form/Context.jsx'
-import { inputAttrs } from './Utils.js'
-import errorMessage from './Field/errorMessage.js'
+import React from 'react'
+import { Provider }  from './Field/Context.jsx'
+import Layout from './Field/Layout.jsx'
+import { isArray, isFunction } from '@abw/badger-utils'
 
-const Field = ({name, ...props}) => {
-  const { register, fields, formState: { errors } } = useForm()
-  const field = {
-    ...(fields[name] || { }),
-    ...props
-  }
-  const { id=useId(), label, help } = field
-  const regs = register(name, field)
-  const attrs = inputAttrs(field)
-
-  console.log(`field:`, field)
-  console.log(`regs: `, regs)
-  console.log(`attrs: `, attrs)
-
-  const error   = errors[name]
-  const errmsg  = errorMessage(error, field)
-  const message = errmsg ?? help
-  console.log(`message: ${message}`)
-
-
-  console.log(`error:`, error)
+const Field = ({
+  children,
+  ...props
+}) => {
+  const childArray = children
+    ? isArray(children)
+      ? children
+      : [children]
+    : null
 
   return (
-    <div className={`field ${Boolean(error) && 'invalid'}`}>
-      { label &&
-        <label htmlFor={id}>{label}</label>
+    <Provider {...props}>
+      { childArray
+        ? childArray.map(
+          (child, n) =>
+            <React.Fragment key={n}>
+              { isFunction(child)
+                ? child(props)
+                : child
+              }
+            </React.Fragment>
+        )
+        : <Layout/>
       }
-      <input {...regs} {...attrs}/>
-      { Boolean(message)
-        && <div className="help">{message}</div>
-      }
-    </div>
+    </Provider>
   )
 }
-
 export default Field
+
+/*
+            ? <Consumer key={n}>
+                CHILD FUNCTION
+                {child}
+              </Consumer>
+*/

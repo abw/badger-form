@@ -1,19 +1,20 @@
 import React from 'react'
+import Label from './Label.jsx'
+import Input from './Input.jsx'
+import Message from './Message.jsx'
 import { Consumer } from './Context.jsx'
+import { classes } from '../Utils.js'
 
 const Layout = ({
-  id, label, message,
-  inputAttrs,
+  label,
+  message,
+  invalid,
   fieldClass
 }) =>
-  <div className={fieldClass}>
-    { label &&
-      <label htmlFor={id}>{label}</label>
-    }
-    <input {...inputAttrs}/>
-    { Boolean(message)
-      && <div className="help">{message}</div>
-    }
+  <div className={classes('field', fieldClass, { invalid })}>
+    { Boolean(label) && <Label/> }
+    <Input/>
+    { Boolean(message) && <Message/> }
   </div>
 
 export default Consumer(Layout)

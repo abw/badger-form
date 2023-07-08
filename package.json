@@ -1,17 +1,17 @@
 {
-  "name": "@abw/badger-forms",
+  "name": "@abw/badger-form",
   "version": "0.0.1",
-  "description": "A description for badger-forms",
+  "description": "A description for badger-form",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/badger-forms.umd.cjs",
-  "module": "./dist/badger-forms.js",
+  "main": "./dist/badger-form.umd.cjs",
+  "module": "./dist/badger-form.js",
   "exports": {
     ".": {
-      "import": "./dist/badger-forms.js",
-      "require": "./dist/badger-forms.umd.cjs"
+      "import": "./dist/badger-form.js",
+      "require": "./dist/badger-form.umd.cjs"
     }
   },
   "author": "Andy Wardley",
@@ -29,10 +29,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abw/badger-forms.git"
+    "url": "git+https://github.com/abw/badger-form.git"
   },
   "bugs": {
-    "url": "https://github.com/abw/badger-forms/issues"
+    "url": "https://github.com/abw/badger-form/issues"
   },
   "dependencies": {
     "@abw/react-context": "^2.0.3",

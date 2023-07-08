@@ -10,9 +10,10 @@ const Radio = ({
   inputAttrs,
   inputClass,
   optionClass,
+  optionsClass,
   // required,
 }) =>
-  <div className={classes(inputClass)}>
+  <div className={classes(optionsClass)}>
     { options.map(
       option => {
         option = valueOption(option)
@@ -25,6 +26,7 @@ const Radio = ({
             <input
               type="radio"
               className={inputClass}
+              value={option.value}
               {...inputAttrs}
             />
             {option.text}

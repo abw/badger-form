@@ -2,7 +2,7 @@ import React from 'react'
 import Children from './Children.jsx'
 import { Consumer } from './Context.jsx'
 
-const Form = ({
+const Layout = ({
   onSubmit,
   children,
   className='',
@@ -14,4 +14,4 @@ const Form = ({
     </Children>
   </form>
 
-export default Consumer(Form)
+export default Consumer(Layout)

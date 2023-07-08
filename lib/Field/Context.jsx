@@ -11,7 +11,7 @@ const FieldContext = ({
   fieldClass,
   ...props
 }) => {
-  const { register, fields, formState: { errors } } = useForm()
+  const { register, fields={}, formState: { errors } } = useForm()
   const field = {
     ...(fields[name] || { }),
     ...props
@@ -30,7 +30,7 @@ const FieldContext = ({
   // console.log(`attrs: `, attrs)
 
   return render({
-    id, message, invalid,
+    name, id, message, invalid,
     fieldClass,
     inputAttrs: {
       id, className,

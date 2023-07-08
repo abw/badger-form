@@ -77,7 +77,7 @@ const Test = () => {
       <Field name="terms" wide border/>
       <Field name="wibble">
         {/* { stuff => console.log(`field stuff: `, stuff) } */}
-        { field => <div>SOME STUFF for {field.name}</div> }
+        { field => <div>SOME STUFF for {field.name}{console.log(`field: `, field)}</div> }
       </Field>
       { form => <>FORM: {form.className}</> }
       <UseForm>

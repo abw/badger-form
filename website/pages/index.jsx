@@ -4,7 +4,7 @@ import { imgUrl } from '../site/Utils.jsx'
 
 const Home = () =>
   <div className="">
-    <h1>@abw/badger-forms</h1>
+    <h1>@abw/badger-form</h1>
     <div>
       <ul className="large menu">
         <li>

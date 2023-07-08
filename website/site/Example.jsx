@@ -1,33 +1,52 @@
 import React from 'react'
 import CodeBlock from './CodeBlock.jsx'
 
-export const Example = ({Element, code, children='', className=''}) => {
-  const core = code
-    .replace(/^[^]*?{?\/\*\s*START\s*\*\/}?\n/, '')  // remove everything up to {/* START */}
-    .replace(/[\n\s]*{?\/\*\s*END\s*\*\/}?[^]*/, '') // and everything from {/* END */} onwards
-    .replaceAll(/^\/\/\s*PRETEND:\s*/mg, '')         // and the // PRETEND: prefix
-
-  return <div className={`example ${className}`}>
-    { children
-      ? <div className="explanation">
+export const Example = ({
+  Component,
+  code,
+  html,
+  children,
+  className='',
+  caption,
+  fixed,
+  expand,
+  language
+}) => {
+  return (
+    <div className={`example grid-2 gap-8 stack-desktop ${className}`}>
+      {/* <div style={{ XmaxWidth: '45vw' }}> */}
+      <div className="source">
+        <CodeBlock
+          caption={caption}
+          code={code||html}
+          expand={expand}
+          fixed={fixed}
+          language={html ? 'html' : language}
+        />
+      </div>
+      {/* </div> */}
+      { Boolean(children) &&
+        <div className="interim">
           {children}
         </div>
-      : null
-    }
-    <div className="mar-t-4 code">
-      <h4>Code</h4>
-      <CodeBlock>{core}</CodeBlock>
-    </div>
-    { Element
-      ? <>
-          <div className="mar-t-4 output">
-            <h4>Output</h4>
-            <Element/>
+      }
+      { Component
+        ? <div className="output">
+            <h4 className="caption">Output</h4>
+            <Component/>
           </div>
-        </>
-      : null
-    }
-  </div>
+        : null
+      }
+      { html
+        ? <div className="output">
+            <h4 className="caption">Output</h4>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+        : null
+      }
+    </div>
+  )
 }
+
 
 export default Example

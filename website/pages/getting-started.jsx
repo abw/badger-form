@@ -8,25 +8,25 @@ const GettingStarted = () =>
   <div>
     <h1>Getting Started</h1>
     <p>
-      Add the <code className="code">@abw/badger-forms</code> module to
+      Add the <code className="code">@abw/badger-form</code> module to
       your project using your favourite package manager.
     </p>
     <CodeBlock language="bash">
       {`## using npm
-$ npm add @abw/badger-forms
+$ npm add @abw/badger-form
 
 ## using yarn
-$ yarn add @abw/badger-forms
+$ yarn add @abw/badger-form
 
 ## using pnpm
-$ pnpm add @abw/badger-forms
+$ pnpm add @abw/badger-form
 `}
     </CodeBlock>
     <p>
       You can then import the modules and start using them.
     </p>
     <CodeBlock>
-      {`import { Hello } from '@abw/badger-forms'`}
+      {`import { Hello } from '@abw/badger-form'`}
     </CodeBlock>
     {/*
     <Example Element={Hello} code={HelloCode}>

@@ -2,7 +2,7 @@ import React from 'react'
 import Hello from '../../lib/Hello.jsx'
 
 {/* START */}
-// PRETEND: import Hello from '@abw/badger-forms'
+// PRETEND: import Hello from '@abw/badger-form'
 
 const HelloExample = () =>
   <>

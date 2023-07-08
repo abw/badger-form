@@ -1,28 +1,28 @@
-# badger-forms
+# badger-form
 
-This is the README for badger-forms.  It was created using
+This is the README for badger-form.  It was created using
 [badger-scaffold-js](https://github.com/abw/badger-scaffold-js).
 
 ## Getting Started
 
-Add the `@abw/badger-forms` module to your project using your favourite
+Add the `@abw/badger-form` module to your project using your favourite
 package manager.
 
 ```bash
 ## using npm
-$ npm add @abw/badger-forms
+$ npm add @abw/badger-form
 
 ## using yarn
-$ yarn add @abw/badger-forms
+$ yarn add @abw/badger-form
 
 ## using pnpm
-$ pnpm add @abw/badger-forms
+$ pnpm add @abw/badger-form
 ```
 
 You can then import the modules and start using them.
 
 ```jsx
-import { Hello } from '@abw/badger-forms'
+import { Hello } from '@abw/badger-form'
 ```
 
 ## Notes for Maintainers
@@ -30,8 +30,8 @@ import { Hello } from '@abw/badger-forms'
 Check out the repository.
 
 ```bash
-$ git clone https://github.com/abw/badger-forms.git
-$ cd badger-forms
+$ git clone https://github.com/abw/badger-form.git
+$ cd badger-form
 ```
 
 Install the dependencies.

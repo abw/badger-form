@@ -21,8 +21,8 @@ export default defineConfig({
     sourcemap: false,
     lib: {
       entry: 'lib/index.jsx',
-      name: '@abw/badger-forms',
-      fileName: 'badger-forms',
+      name: '@abw/badger-form',
+      fileName: 'badger-form',
     },
     rollupOptions: {
       external: [

@@ -10,15 +10,15 @@ $theme-transition:  0.5s;
   --link-text:            var(--brand-50);
   --link-hover:           var(--brand-30);
   // header
-  --header-back:          var(--brand-80);
-  --header-text:          var(--grey40-40);
-  --header-link:          var(--grey40-40);
-  --header-hover:         var(--brand-10);
-  --header-border:        var(--brand-70);
+  --header-back:          var(--brand-30);
+  --header-text:          var(--grey40-80);
+  --header-link:          var(--brand-90);
+  --header-hover:         var(--brand-100);
+  --header-border:        var(--brand-20);
   // footer
-  --footer-back:          var(--grey40-75);
-  --footer-text:          var(--grey40-40);
-  --footer-border:        var(--grey40-65);
+  --footer-back:          var(--brand-20);
+  --footer-text:          var(--grey20-60);
+  --footer-border:        var(--grey40-60);
   // app
   --side-back:
   --app-back:             var(--grey-70);

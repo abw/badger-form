@@ -3,7 +3,7 @@ import { isFunction } from '@abw/badger-utils'
 import { Context } from './Context.jsx'
 import { toArray } from '../Utils.js'
 
-const Children = ({ children }) =>
+export const FormChildren = ({ children }) =>
   toArray(children).map(
     (child, n) => isFunction(child)
       ? <Context.Consumer key={n}>
@@ -12,4 +12,4 @@ const Children = ({ children }) =>
       : child
   )
 
-export default Children
+export default FormChildren

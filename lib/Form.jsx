@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider }  from './Form/Context.jsx'
 import Layout from './Form/Layout.jsx'
 
-const Form = ({
+export const Form = ({
   children,
   ...props
 }) => {

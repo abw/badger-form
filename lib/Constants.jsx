@@ -8,7 +8,8 @@ export const INPUT_ATTRS = [
   'value', 'checked', 'disabled', 'placeholder',
   'autoComplete',
   // 'onFocus', 'onBlur',
-  'size',
-  // 'min', 'max', 'minLength', 'maxLength',
+  'size', 'type', 'rows',
+  'min', 'max', 'step',
+  'minLength', 'maxLength',
   // 'step', 'pattern', 'list'
 ]

@@ -21,7 +21,7 @@ const Header = () => {
           <span className="small mar-l-2">v{version}</span>
         </div>
         <div>
-          <a href="https://github.com/abw/badger-forms">
+          <a href="https://github.com/abw/badger-form">
             <Github className="night-and-day--icon mar-r-2"/>
           </a>
           <Toggle/>

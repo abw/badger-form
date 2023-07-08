@@ -28,6 +28,7 @@ const Radio = ({
               className={inputClass}
               value={option.value}
               {...inputAttrs}
+              id={`${inputAttrs.id}-${option.value}`}
             />
             {option.text}
           </label>

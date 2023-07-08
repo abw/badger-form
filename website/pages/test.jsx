@@ -20,7 +20,6 @@ const Test = () => {
         }
         { errors.name && errors.name.type === 'required' && <div>This is required</div>}
         { errors.name && errors.name.type === 'maxLength' && <div>Max length exceeded</div> }
-        {console.log(`errors: `, errors)}
       </div>
       <div className={`field ${errors.animal ? 'invalid' : ''}`}>
         <label htmlFor="animal">Animal</label>

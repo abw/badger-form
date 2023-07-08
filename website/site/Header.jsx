@@ -17,7 +17,7 @@ const Header = () => {
             className="toggle-sidebar action"
             onClick={() => setVariant(variant === SIDEBAR ? NO_SIDEBAR : SIDEBAR)}
           />
-          <Link to="/" className="home mar-l-2" text="Badger-CSS"/>
+          <Link to="/" className="home mar-l-2" text="Badger Form"/>
           <span className="small mar-l-2">v{version}</span>
         </div>
         <div>

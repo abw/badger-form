@@ -17,7 +17,7 @@ const Select = ({
     required={required || Boolean(placeholder)}
   >
     { Boolean(placeholder) &&
-        <option value="" hidden disabled selected>{placeholder}</option>
+        <option hidden disabled>{placeholder}</option>
     }
     { options.map(
       option => {

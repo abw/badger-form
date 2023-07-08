@@ -63,7 +63,7 @@ const Test = () => {
       fields={fields}
       values={values}
       onSubmit={submit => console.log('SUBMIT: ', submit)}
-      className="border bdc-80 bgc-95 pad-6 bdr-2"
+      className="border bdc-80 bgc-95 bgd-10 bdd-30 pad-6 bdr-2"
       style={{ width: '40rem' }}
     >
       <h3>Demo Form</h3>
@@ -77,13 +77,12 @@ const Test = () => {
       <Field name="terms" wide border/>
       <Field name="wibble">
         {/* { stuff => console.log(`field stuff: `, stuff) } */}
-        { field => <div>SOME STUFF for {field.name}{console.log(`field: `, field)}</div> }
+        { field => <div>SOME STUFF for {field.name}</div> }
       </Field>
-      { form => <>FORM: {form.className}</> }
-      <UseForm>
-        { form => <button type="button" onClick={() => form.reset(form.values)}>RESET{console.log(`form:`, form)}</button> }
-      </UseForm>
       <div className="flex space start">
+        <UseForm>
+          { form => <button type="button" onClick={() => form.reset(form.values)}>Reset</button> }
+        </UseForm>
         <button type="reset">Reset</button>
         <button type="submit" className="blue">Submit</button>
       </div>

@@ -11,68 +11,8 @@ html {
   font-family: $font-sans;
 }
 
-.pic-side {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 3rem;
-  margin-bottom: 2rem;
-  img {
-    margin-top: 1rem;
-  }
-  & > div.blurb {
-    padding-right: 2rem;
-  }
-}
-.badger {
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
-  width: 100%;
-  padding-top: 2rem;
-  text-align: center;
-  img {
-    width: 80px;
-  }
-  .caption {
-    padding: 0.5rem 0 0 0;
-    // color: $brand-light;
-    font-size: 0.8rem;
-  }
-}
-code.XXXcode {
-  // background-color: hsl($brand-hue, 30%, 95%);
-  // border: 1px solid hsl($brand-hue, 40%, 90%);
-  // color: hsl($brand-hue, 90%, 30%);
-  padding: 0 3px;
-  border-radius: 2px;
-}
 img.logo {
   width: 200px;
-}
-div.XXexample {
-  h4 {
-    font-size: 0.8rem;
-    margin: 0;
-    text-align: right;
-    color: white;
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-  }
-  .explanation {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  .code {
-    position: relative;
-  }
-  .output {
-    position: relative;
-    background-color: var(--brand-20);
-    color: var(--brand-80);
-    padding: 1rem 2rem;
-    font-size: 1.2em;
-  }
 }
 a.read-on {
   display: block;
@@ -80,10 +20,7 @@ a.read-on {
   font-size: 1.5rem;
   margin-top: 2rem;
 }
-a.github {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 2rem;
-  height: 2rem;
+
+#{$dark-theme} {
+  color-scheme: dark;
 }

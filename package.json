@@ -1,7 +1,7 @@
 {
   "name": "@abw/badger-form",
   "version": "0.0.1",
-  "description": "A description for badger-form",
+  "description": "React form library built on react-hook-form and badger-css",
   "type": "module",
   "files": [
     "dist"
@@ -12,7 +12,8 @@
     ".": {
       "import": "./dist/badger-form.js",
       "require": "./dist/badger-form.umd.cjs"
-    }
+    },
+    "./styles/*": "./dist/styles/*"
   },
   "author": "Andy Wardley",
   "license": "ISC",
@@ -22,8 +23,10 @@
   "scripts": {
     "dev": "vite --config vite.docs.js",
     "test": "vitest --ui --coverage",
-    "build": "vite build",
+    "build:css": "bin/build-css.sh",
     "build:docs": "vite build --config vite.docs.js",
+    "build:lib": "vite build",
+    "build": "$npm_execpath build:css && $npm_execpath build:lib && $npm_execpath build:docs",
     "preview": "vite preview --config vite.docs.js",
     "lint": "eslint 'src/**/*.{js,jsx}' 'lib/**/*.{js,jsx}'"
   },
@@ -35,7 +38,9 @@
     "url": "https://github.com/abw/badger-form/issues"
   },
   "dependencies": {
-    "@abw/react-context": "^2.0.3",
+    "@abw/react-context": "^2.0.3"
+  },
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1"
@@ -57,6 +62,7 @@
     "jsdom": "^21.1.1",
     "react-router-dom": "^6.10.0",
     "react-syntax-highlighter": "^15.5.0",
+    "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.60.0",
     "vite": "^4.2.0",
     "vite-plugin-svgr": "^3.2.0",

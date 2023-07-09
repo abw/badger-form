@@ -6,10 +6,12 @@ import WatchPrepareCode from '../../examples/field/WatchPrepare.jsx'
 import WatchPrepareSrc  from '../../examples/field/WatchPrepare.jsx?raw'
 import Pager from '../../site/Pager/index.jsx'
 import { Field } from '../../site/Menus.jsx'
+import { PrepareValueLink } from '../../site/Links.jsx'
 
 const WatchField = () =>
   <div className="prose">
-    <h1>watchField</h1>
+    <h1>Field</h1>
+    <h2 className="font-mono">watchField</h2>
     <p>
       The <code>watchField</code> property can be used to watch the value
       of another field and copy it.
@@ -22,7 +24,7 @@ const WatchField = () =>
     />
 
     <p>
-      It can be used in conjunction with <code>prepareField</code> to create
+      It can be used in conjunction with <PrepareValueLink/> to create
       a modified copy of another field.
     </p>
     <Example

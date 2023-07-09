@@ -1,9 +1,9 @@
-import { Consumer } from './Context.jsx'
+import React from 'react'
+import Children from './Children.jsx'
 
-const UseForm = ({
-  children,
-  ...props
-}) =>
-  children(props)
+export const UseForm = ({ children }) =>
+  <Children>
+    {children}
+  </Children>
 
-export default Consumer(UseForm)
+export default UseForm

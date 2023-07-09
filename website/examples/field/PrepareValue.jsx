@@ -10,12 +10,14 @@ const PrepareValue = () =>
       name="shout"
       label="Shout"
       prepareValue={value => value.toUpperCase()}
+      wide
     />
     <Field
       type="textarea"
       name="shout-more"
       label="Shout more"
       prepareValue={value => value.toUpperCase()}
+      wide
     />
     <Submit/>
   </Form>

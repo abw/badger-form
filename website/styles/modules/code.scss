@@ -11,6 +11,10 @@ $codeblock-back-dark-to:     rgba($codeblock-back-dark, 0.9);
   --code-back:            var(--grey20-95);
   --code-text:            var(--grey20-40);
   --code-border:          var(--grey20-80);
+  --code-line:            var(--grey40-50);
+  --code-hover-text:      var(--grey40-10);
+  --code-hover-back:      var(--grey40-80);
+  --code-hover-border:    var(--code-line);
     // codeblock
   --codeblock-back:       var(--grey-100);
   --codeblock-text:       var(--grey-50);
@@ -33,6 +37,10 @@ $codeblock-back-dark-to:     rgba($codeblock-back-dark, 0.9);
   --code-back:            var(--grey20-25);
   --code-text:            var(--grey40-90);
   --code-border:          var(--grey20-20);
+  --code-line:            var(--grey40-50);
+  --code-hover-text:      var(--grey40-90);
+  --code-hover-back:      var(--grey40-30);
+  --code-hover-border:    var(--code-line);
   // codeblock
   --codeblock-back:       var(--grey-5);
   --codeblock-text:       var(--grey40-80);
@@ -59,6 +67,18 @@ code:not(.codeblock code):not(.toc code) {
   border: 1px solid var(--code-border);
   padding: 0 4px;
   border-radius: 4px;
+}
+
+a {
+  code:not(.codeblock code):not(.toc code) {
+    transition: all 0.5s;
+    border-bottom-color: var(--code-line);
+  }
+  &:hover code:not(.codeblock code):not(.toc code) {
+    color: var(--code-hover-text);
+    background-color: var(--code-hover-back);
+    border-color: var(--code-hover-border);
+  }
 }
 
 div.example {

@@ -1,28 +1,34 @@
 import React from 'react'
 import Example       from '../../site/Example.jsx'
-import TextCode from '../../examples/tutorial/Text.jsx'
-import TextSrc  from '../../examples/tutorial/Text.jsx?raw'
-import TextAltCode from '../../examples/tutorial/TextAlt.jsx'
-import TextAltSrc  from '../../examples/tutorial/TextAlt.jsx?raw'
-import TextareaCode from '../../examples/tutorial/Textarea.jsx'
-import TextareaSrc  from '../../examples/tutorial/Textarea.jsx?raw'
-import SelectCode from '../../examples/tutorial/Select.jsx'
-import SelectSrc  from '../../examples/tutorial/Select.jsx?raw'
-import RadioCode from '../../examples/tutorial/Radio.jsx'
-import RadioSrc  from '../../examples/tutorial/Radio.jsx?raw'
-import CheckboxCode from '../../examples/tutorial/Checkbox.jsx'
-import CheckboxSrc  from '../../examples/tutorial/Checkbox.jsx?raw'
-import Pager from '../../site/Pager/index.jsx'
-import { Tutorial } from '../../site/Menus.jsx'
+import TextCode      from '../../examples/input/Text.jsx'
+import TextSrc       from '../../examples/input/Text.jsx?raw'
+import TextAltCode   from '../../examples/input/TextAlt.jsx'
+import TextAltSrc    from '../../examples/input/TextAlt.jsx?raw'
+import TextareaCode  from '../../examples/input/Textarea.jsx'
+import TextareaSrc   from '../../examples/input/Textarea.jsx?raw'
+import SelectCode    from '../../examples/input/Select.jsx'
+import SelectSrc     from '../../examples/input/Select.jsx?raw'
+import RadioCode     from '../../examples/input/Radio.jsx'
+import RadioSrc      from '../../examples/input/Radio.jsx?raw'
+import CheckboxCode  from '../../examples/input/Checkbox.jsx'
+import CheckboxSrc   from '../../examples/input/Checkbox.jsx?raw'
+import Pager         from '../../site/Pager/index.jsx'
+import { Tutorial }  from '../../site/Menus.jsx'
 
-const FieldTypes = () =>
+const FieldType = () =>
   <div className="prose">
-    <h1>Field Types</h1>
+    <h1>Field</h1>
+    <h2 className="font-mono">type</h2>
     <p>
-      All the basic HTML form field input types are supported.
+      The <code>type</code> property is used to define the field input type.
+      The default value is <code>text</code>.  It can also be set to
+      <code>textarea</code>, <code>select</code>, <code>checkbox</code>,{' '}
+      <code>radio</code>, or one of the other HTML input types based on the
+      standard input: <code>number</code>, <code>date</code>, <code>email</code>,
+      etc.
     </p>
 
-    <h2>Text</h2>
+    <h3 className="section font-mono">text</h3>
     <p>
       The <code>text</code> input type is the default.  You don&apos;t need
       to set the <code>type</code> attribute to <code>text</code> but it
@@ -52,7 +58,7 @@ const FieldTypes = () =>
       expand
     />
 
-    <h2>Textarea</h2>
+    <h3 className="section font-mono">textarea</h3>
     <p>
       Set the <code>type</code> to <code>textarea</code> for a text area
       input.  The <code>rows</code> attribute can be provided to set the
@@ -65,7 +71,7 @@ const FieldTypes = () =>
       expand
     />
 
-    <h2>Select</h2>
+    <h3 className="section font-mono">select</h3>
     <p>
       Set the <code>type</code> to <code>select</code> for a select input.
       The <code>options</code> should be used to provide the options for
@@ -80,7 +86,7 @@ const FieldTypes = () =>
       expand
     />
 
-    <h2>Radio Buttons</h2>
+    <h3 className="section font-mono">radio</h3>
     <p>
       Set the <code>type</code> to <code>radio</code> for radio button inputs.
       The <code>options</code> should be used to provide the values for
@@ -106,7 +112,7 @@ const FieldTypes = () =>
       expand
     />
 
-    <h2>Checkbox</h2>
+    <h3 className="section font-mono">checkbox</h3>
     <p>
       Set the <code>type</code> to <code>checkbox</code> for a checkbox input.
       The <code>text</code> attribute should be used to provide the additional
@@ -128,4 +134,4 @@ const FieldTypes = () =>
     <Pager menu={Tutorial}/>
   </div>
 
-export default FieldTypes
+export default FieldType

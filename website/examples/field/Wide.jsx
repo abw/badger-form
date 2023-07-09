@@ -5,7 +5,10 @@ import React from 'react'
 // PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
 const WideFields = () =>
-  <Form style={{ width: '20rem' }}>
+  <Form
+    className="pad-4 border bdr-4 bgc-90 bdc-70 bgd-5 bdd-30 wd-20"
+  >
+    <h3>Form With Wide Fields</h3>
     <Field
       name="a" label="Text"
       wide
@@ -31,7 +34,7 @@ const WideFields = () =>
       wide border
     />
     <div className="text-right">
-      <Submit/>
+      <Submit className="brand"/>
     </div>
   </Form>
 

@@ -3,21 +3,38 @@ import React from 'react'
 export const Main = [
   { to: '/', text: 'Home' },
   { to: '/getting-started', text: 'Getting Started' },
-  { to: '/test', text: 'Test #1' },
-  { to: '/test2', text: 'Test #2' },
-  { to: '/test3', text: 'Test #3' },
+  // { to: '/test', text: 'Test #1' },
+  // { to: '/test2', text: 'Test #2' },
+  // { to: '/test3', text: 'Test #3' },
 ]
 
 export const Tutorial = [
   { to: '/tutorial/basic-form',       text: 'A Basic Form' },
-  { to: '/tutorial/form-properties',  text: 'Form Properties' },
-  { to: '/tutorial/field-properties', text: 'Field Properties' },
-  { to: '/tutorial/field-types',      text: 'Field Types' },
-  { to: '/tutorial/field-validation', text: 'Field Validation' },
-  { to: '/tutorial/wide-fields',      text: 'Wide Fields' },
+  // { to: '/tutorial/form-properties',  text: 'Form Properties' },
+  // { to: '/tutorial/field-properties', text: 'Field Properties' },
+  // { to: '/tutorial/field-types',      text: 'Field Types' },
+  // { to: '/tutorial/field-validation', text: 'Field Validation' },
 ]
 
 export const Field = [
-  { to: '/field/prepare-value',       text: <code>prepareValue</code> },
-  { to: '/field/watch-field',         text: <code>watchField</code> },
+  { to: '/field',                text: <code>Field</code>, exact: true },
+  { to: '/field/name',           text: <code>name</code> },
+  { to: '/field/type',           text: <code>type</code> },
+  { to: '/field/label',          text: <code>label</code> },
+  { to: '/field/help',           text: <code>help</code> },
+  { to: '/field/prepare-value',  text: <code>prepareValue</code> },
+  { to: '/field/watch-field',    text: <code>watchField</code> },
+  { to: '/field/wide',           text: <code>wide</code> },
+]
+export const Form = [
+  { to: '/form',          text: <code>Form</code>, exact: true },
+  { to: '/form/onsubmit', text: <code>onSubmit</code> },
+  { to: '/form/fields',   text: <code>fields</code> },
+  { to: '/form/values',   text: <code>values</code> },
+]
+
+export const Control = [
+  { to: '/control/reset',  text: <code>Reset</code> },
+  { to: '/control/submit', text: <code>Submit</code> },
+  { to: '/control/reset-submit', text: <code>ResetSubmit</code> },
 ]

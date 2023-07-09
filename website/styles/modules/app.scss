@@ -34,12 +34,19 @@
       flex-basis: 100%;
     }
   }
-  .section {
+  .Xsection {
+    --text-color: var(--brand-30);
+    --line-color: var(--grey20-70);
+    --background-color: var(--grey20-95);
     font-size: 1rem;
     font-weight: bold;
     line-height: 1.2;
-    margin: 0 0 0.5em;
     text-align: left;
+    margin: 2rem 0 1rem -1.5rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-left: 0.25rem solid var(--line-color);
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -88,3 +95,10 @@
   }
 }
 
+#{$dark-theme} {
+  #app .section {
+    --text-color: var(--grey20-80);
+    --line-color: var(--grey40-40);
+    --background-color: var(--grey-30);
+  }
+}

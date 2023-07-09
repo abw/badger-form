@@ -8,7 +8,7 @@ const Layout = ({
   className='',
   style
 }) =>
-  <form onSubmit={onSubmit} className={className} style={style}>
+  <form onSubmit={onSubmit} className={className} style={style} noValidate>
     <Children>
       {children}
     </Children>

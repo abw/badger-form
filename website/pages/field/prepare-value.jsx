@@ -7,7 +7,8 @@ import { Field } from '../../site/Menus.jsx'
 
 const PrepareValue = () =>
   <div>
-    <h1>prepareValue</h1>
+    <h1>Field</h1>
+    <h2 className="font-mono">prepareValue</h2>
     <p>
       The <code>prepareValue</code> property can be used to transform an
       input value.  In this example we convert the inputs to upper case.

@@ -8,11 +8,13 @@ const WatchField = () =>
   <Form>
     <Field
       name="name" label="Your name"
+      wide
     />
     <Field
       name="copycat"
       label="Your name is..."
       watchField="name"
+      wide
     />
     <Submit/>
   </Form>

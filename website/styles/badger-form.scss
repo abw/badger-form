@@ -21,6 +21,27 @@ a.read-on {
   margin-top: 2rem;
 }
 
+.badger-form {
+  --badger: var(--brand-30);
+  --form: var(--brand-60);
+  .black {
+    fill: black;
+  }
+  .white {
+    fill: white;
+  }
+  .badger {
+    fill: var(--badger);
+  }
+  .form {
+    fill: var(--form);
+  }
+}
+
 #{$dark-theme} {
   color-scheme: dark;
+  .badger-form {
+    --badger: var(--brand-60);
+    --form: var(--brand-70);
+  }
 }

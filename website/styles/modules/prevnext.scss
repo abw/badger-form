@@ -14,13 +14,13 @@
   padding: 0.5rem 1rem;
   transition: all 0.5s;
   box-shadow: var(--shadow-2);
-  &.prev {
+  &.XXprev {
     padding-left: 2rem;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     text-align: right;
   }
-  &.next {
+  &.XXnext {
     text-align: right;
     padding-right: 2rem;
     border-top-right-radius: 2rem;
@@ -45,5 +45,15 @@
       // color: hsl($hover-hue, 70%, 40%);
       color: var(--heading-hover);
     }
+  }
+}
+#{$dark-theme} {
+  .prev-next-link {
+    --color: var(--grey40-40);
+    --border-color: var(--grey40-25);
+    --heading-color: var(--grey40-70);
+    --background-color: var(--grey20-20);
+    --border-hover: var(--brand-30);
+    --background-hover: var(--grey40-10);
   }
 }

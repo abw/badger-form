@@ -1,9 +1,8 @@
-import React from 'react'
-import Example       from '../../site/Example.jsx'
-import WideCode from '../../examples/tutorial/Wide.jsx'
-import WideSrc  from '../../examples/tutorial/Wide.jsx?raw'
-import Pager from '../../site/Pager/index.jsx'
-import { Tutorial } from '../../site/Menus.jsx'
+import React      from 'react'
+import Example    from '../../site/Example.jsx'
+import WideCode   from '../../examples/field/Wide.jsx'
+import WideSrc    from '../../examples/field/Wide.jsx?raw'
+import FieldPager from '../../site/Pager/FieldPager.jsx'
 
 const WideFields = () =>
   <div className="prose">
@@ -19,7 +18,7 @@ const WideFields = () =>
       expand
     />
 
-    <Pager menu={Tutorial}/>
+    <FieldPager/>
   </div>
 
 export default WideFields

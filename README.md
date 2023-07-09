@@ -1,7 +1,10 @@
 # badger-form
 
-This is the README for badger-form.  It was created using
-[badger-scaffold-js](https://github.com/abw/badger-scaffold-js).
+This is a React form library built on
+[react-hook-form](https://www.react-hook-form.com/) and
+[badger-css](https://abw.github.io/badger-css/).
+
+It is a work in progress.  Use at your own risk.
 
 ## Getting Started
 
@@ -22,7 +25,7 @@ $ pnpm add @abw/badger-form
 You can then import the modules and start using them.
 
 ```jsx
-import { Hello } from '@abw/badger-form'
+import { Form, Field, Submit } from '@abw/badger-form'
 ```
 
 ## Notes for Maintainers
@@ -76,30 +79,6 @@ Check source code for formatting errors.
 $ pnpm lint
 ```
 
+## Author
 
-## Project Structure
-
-The main project code is in the `lib` directory.  The `index.jsx` is the
-main entry point.
-
-Running `pnpm build` creates a production build in the `dist`
-directory.
-
-The `src` directory contains the web site for development, testing and
-documentation.  The `index.html` is the main entry point.
-
-Running `pnpm dev` runs a development web server for the site.
-
-Running `pnpm build:docs` builds the site and saves the bundled
-output in the `docs` directory.  Any additional resources in the `public`
-directory will be included in there.
-
-The `styles` directory contains SASS stylesheets used by the web site.
-The `main.scss` file is the main stylesheet which is imported into
-`src/main.jsx`.
-
-The `test` directory contains test scripts which will be run by
-`pnpm test`.  The `test/setup.js` file is a special setup file.
-Any files in `test/lib` are assumed to be components used by tests and
-are not test scripts in their own right.  They are ignored by the test
-runner.
+Andy Wardley

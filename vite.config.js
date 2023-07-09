@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import define from  './vite.defs.js'
+import copy from 'rollup-plugin-copy'
 
 export default defineConfig({
   plugins: [react()],
@@ -20,7 +21,7 @@ export default defineConfig({
     minify: true,
     sourcemap: false,
     lib: {
-      entry: 'lib/index.jsx',
+      entry: 'lib/index.js',
       name: '@abw/badger-form',
       fileName: 'badger-form',
     },
@@ -37,6 +38,17 @@ export default defineConfig({
           'react/jsx-runtime': 'react/jsx-runtime'
         },
       },
+      plugins: [
+        copy({
+          targets: [
+            {
+              src: 'styles/*',
+              dest: 'dist/styles',
+            },
+          ],
+          hook: 'writeBundle'
+        })
+      ]
     },
   },
 })

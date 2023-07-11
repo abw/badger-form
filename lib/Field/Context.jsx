@@ -3,6 +3,7 @@ import { useForm } from '../Form/Context.jsx'
 import { inputAttrs } from '../Utils.js'
 import { Generator } from '@abw/react-context'
 import errorMessage from './errorMessage.js'
+// import validateValue from './Validation.jsx'
 
 const FieldContext = ({
   name,
@@ -10,30 +11,44 @@ const FieldContext = ({
   className,
   fieldClass,
   prepareValue,
+  validateOnChange,
   watchField,
   ...props
 }) => {
-  const { register, setValue, watch, fields={}, formState: { errors } } = useForm()
+  const {
+    register, setValue, setError, clearErrors, watch, fields={},
+    formState: { errors }
+  } = useForm()
   const field = {
     ...(fields[name] || { }),
     ...props
   }
   const { id=useId(), help } = field
-  const regs    = register(name, field)
   const error   = errors[name]
   const errmsg  = errorMessage(error, field)
   const message = errmsg ?? help
   const invalid = Boolean(error)
-  let setter    = null
+  const regs    = register(name, field)
+  let setter    = value => setValue(name, value)
 
+  /*
+  if (validateOnChange) {
+    setter = value => validateValue(
+      name, value, validateOnChange,
+      { setValue, setError, clearErrors }
+    )
+    regs.onChange = e => setter(e.target.value)
+  }
+  */
   if (prepareValue) {
-    setter = value => setValue(name, prepareValue(value))
+    const oldSetter = setter
+    setter = value => oldSetter(prepareValue(value))
     regs.onChange = e => setter(e.target.value)
   }
   if (watchField) {
     const watchValue = watch(watchField, '')
     // console.log(`watched value: ${watchField} => ${watchValue}`)
-    setter ||= value => setValue(name, value)
+    // setter ||= value => setValue(name, value)
     useEffect(
       () => setter(watchValue),
       [watchValue]

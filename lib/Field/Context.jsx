@@ -1,8 +1,10 @@
-import { useEffect, useId } from 'react'
+import { useEffect, useState, useId } from 'react'
 import { useForm } from '../Form/Context.jsx'
 import { inputAttrs } from '../Utils.js'
 import { Generator } from '@abw/react-context'
 import errorMessage from './errorMessage.js'
+import { CLEAN } from '../Constants.jsx'
+import { fieldValidator } from './Validation.jsx'
 // import validateValue from './Validation.jsx'
 
 const FieldContext = ({
@@ -19,11 +21,12 @@ const FieldContext = ({
     register, setValue, setError, clearErrors, watch, fields={},
     formState: { errors }
   } = useForm()
+  // const [status, setStatus] = useState(CLEAN)
   const field = {
     ...(fields[name] || { }),
     ...props
   }
-  const { id=useId(), help } = field
+  const { id=useId(), help, validate } = field
   const error   = errors[name]
   const errmsg  = errorMessage(error, field)
   const message = errmsg ?? help
@@ -31,7 +34,14 @@ const FieldContext = ({
   const regs    = register(name, field)
   let setter    = value => setValue(name, value)
 
+
   /*
+  const vfn = validate
+    ? fieldValidator(
+      name, validate,
+      { setValue, setError, clearErrors, setStatus }
+    )
+    : null
   if (validateOnChange) {
     setter = value => validateValue(
       name, value, validateOnChange,

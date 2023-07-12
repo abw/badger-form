@@ -1,9 +1,34 @@
 import { doNothing, isBoolean, isObject, isString } from '@abw/badger-utils'
+import { INVALID, VALID, VALIDATE } from '../Constants.jsx'
+import errorMessage from './errorMessage.js'
 
 const DEBUG = false
 const debug = DEBUG
   ? (...args) => console.log(...args)
   : doNothing
+
+export const fieldValidator = (
+  name, validate,
+  { setValue, setError, clearErrors, setStatus }
+) => {
+  const vfn = validator(validate)
+  return (input, options={}) => {
+    const { valid, value, message, type=VALIDATE } = vfn(input, options)
+    // const result = vfn(input, options)
+    setValue(name, value)
+    if (valid) {
+      setStatus(VALID)
+      clearErrors(name)
+    }
+    else {
+      setStatus(INVALID)
+      setError(
+        name,
+        { type, message: errorMessage({ type, message }) }
+      )
+    }
+  }
+}
 
 export const validator = (fn, config={}) =>
   (input, options={}) => new Promise(

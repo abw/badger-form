@@ -1,50 +1,59 @@
-// returns true - value unchanged
-//   validate = value => value.match(/foo/)
-// returns modified value
-//   validate = value => yup.string().trim().validate(value)
-// throws error - value unchanged
+import { doNothing, isBoolean, isObject, isString } from '@abw/badger-utils'
 
-import { isBoolean, isObject, isString } from '@abw/badger-utils'
-const debug = (...args) => console.log(...args)
+const DEBUG = false
+const debug = DEBUG
+  ? (...args) => console.log(...args)
+  : doNothing
 
-export const validationPromise = (fn, options={}) => input =>
-  new Promise(
+export const validator = (fn, config={}) =>
+  (input, options={}) => new Promise(
     (pass, fail) => {
-      let result
       try {
-        const response = fn(input, { ...options, pass, fail })
-        debug(`validate function returned:`, response)
-        if (isBoolean(response)) {
-          result = { valid: response, value: input }
+        pass(
+          fn(input, { ...config, ...options, pass, fail })
+        )
+      }
+      catch (error) {
+        debug('function threw error:', error)
+        if (isString(error)) {
+          debug(`- threw string:`, error)
+          fail({ valid: false, value: input, message: error })
         }
-        else if (isObject(response)) {
-          result = { valid: true, value: input, ...response }
+        else if (isObject(error)) {
+          debug(`- threw object:`, error)
+          fail({ valid: false, value: input, ...error })
         }
         else {
-          result = { valid: true, value: response }
+          debug(`- threw something else:`, error)
+          fail(error)
         }
-        debug(`validate function result:`, result)
       }
-      catch (err) {
-        debug(`validate function threw error:`, err)
-        if (isString(err)) {
-          debug(`threw string:`, err)
-          result = { valid: false, value: input, message: err }
+    })
+    .then(
+      result => {
+        debug('✔︎ PASS:', result)
+        if (isBoolean(result)) {
+          return { valid: result, value: input }
         }
-        else if (isObject(err)) {
-          debug(`threw object:`, err)
-          result = { valid: false, value: input, ...err }
+        else if (isObject(result)) {
+          return { valid: true, value: input, ...result }
         }
         else {
-          debug(`threw something else:`, err)
-          result = { valid: false, value: input }
+          return { valid: true, value: result ?? input }
         }
       }
-      return result.valid
-        ? pass(result)
-        : fail(result)
-    }
-  )
-
-
-export default validationPromise
+    )
+    .catch(
+      result => {
+        debug('✗ FAIL:', result)
+        if (isBoolean(result)) {
+          return { valid: result, value: input }
+        }
+        else if (isObject(result)) {
+          return { valid: false, value: input, ...result }
+        }
+        else {
+          return { valid: false, value: result ?? input }
+        }
+      }
+    )

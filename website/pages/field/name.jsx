@@ -2,8 +2,7 @@ import React from 'react'
 import Example       from '../../site/Example.jsx'
 import FieldNameCode from '../../examples/tutorial/FieldName.jsx'
 import FieldNameSrc  from '../../examples/tutorial/FieldName.jsx?raw'
-import Pager from '../../site/Pager/index.jsx'
-import { Tutorial } from '../../site/Menus.jsx'
+import FieldPager    from '../../site/Pager/FieldPager.jsx'
 
 const FieldName = () =>
   <div className="prose">
@@ -37,7 +36,7 @@ const FieldName = () =>
       expand
     />
 
-    <Pager menu={Tutorial}/>
+    <FieldPager/>
   </div>
 
 export default FieldName

@@ -12,8 +12,7 @@ import RadioCode     from '../../examples/input/Radio.jsx'
 import RadioSrc      from '../../examples/input/Radio.jsx?raw'
 import CheckboxCode  from '../../examples/input/Checkbox.jsx'
 import CheckboxSrc   from '../../examples/input/Checkbox.jsx?raw'
-import Pager         from '../../site/Pager/index.jsx'
-import { Tutorial }  from '../../site/Menus.jsx'
+import FieldPager    from '../../site/Pager/FieldPager.jsx'
 
 const FieldType = () =>
   <div className="prose">
@@ -131,7 +130,7 @@ const FieldType = () =>
       expand
     />
 
-    <Pager menu={Tutorial}/>
+    <FieldPager/>
   </div>
 
 export default FieldType

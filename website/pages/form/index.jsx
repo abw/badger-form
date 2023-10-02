@@ -48,9 +48,9 @@ const FormIndex = () =>
     />
 
     <p>
-      If a function isn&apos;t an immediate of the <code>Form</code> component
-      then you can use the <Link to="/useform" text="UseForm"/> component to get
-      access to the form context.  This can be nested at any depth below
+      If a function isn&apos;t an immediate child of the <code>Form</code>{' '}
+      component then you can use the <Link to="/useform" text="UseForm"/> component
+      to get access to the form context.  This can be nested at any depth below
       the <code>Form</code> component.
     </p>
     <Example

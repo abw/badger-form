@@ -12,15 +12,15 @@
   --red-45: hsl(0, 74%, 42%);
   --red-50: hsl(0, 74%, 48%);
   --red-55: hsl(0, 74%, 55%);
-  --red-60: hsl(0, 75%, 62%);
-  --red-65: hsl(0, 75%, 68%);
-  --red-70: hsl(0, 74%, 74%);
-  --red-75: hsl(0, 74%, 80%);
-  --red-80: hsl(0, 74%, 84%);
-  --red-85: hsl(0, 73%, 88%);
-  --red-90: hsl(0, 73%, 92%);
-  --red-95: hsl(0, 72%, 95%);
-  --red-100: hsl(0, 71%, 98%);
+  --red-60: hsl(0, 73%, 62%);
+  --red-65: hsl(0, 72%, 68%);
+  --red-70: hsl(0, 71%, 74%);
+  --red-75: hsl(0, 69%, 80%);
+  --red-80: hsl(0, 66%, 84%);
+  --red-85: hsl(0, 62%, 88%);
+  --red-90: hsl(0, 56%, 92%);
+  --red-95: hsl(0, 48%, 95%);
+  --red-100: hsl(0, 33%, 98%);
   --brown-0: hsl(18, 52%, 5%);
   --brown-5: hsl(17, 53%, 8%);
   --brown-10: hsl(17, 54%, 11%);
@@ -28,83 +28,83 @@
   --brown-20: hsl(15, 55%, 17%);
   --brown-25: hsl(15, 56%, 20%);
   --brown-30: hsl(15, 56%, 24%);
-  --brown-35: hsl(14, 56%, 28%);
+  --brown-35: hsl(14, 57%, 28%);
   --brown-40: hsl(14, 57%, 32%);
   --brown-45: hsl(14, 57%, 37%);
   --brown-50: hsl(14, 57%, 42%);
-  --brown-55: hsl(14, 58%, 47%);
-  --brown-60: hsl(14, 58%, 53%);
-  --brown-65: hsl(13, 58%, 60%);
-  --brown-70: hsl(13, 58%, 67%);
-  --brown-75: hsl(13, 58%, 75%);
-  --brown-80: hsl(14, 58%, 81%);
-  --brown-85: hsl(14, 58%, 87%);
-  --brown-90: hsl(14, 58%, 92%);
-  --brown-95: hsl(14, 57%, 95%);
-  --brown-100: hsl(14, 57%, 98%);
+  --brown-55: hsl(14, 56%, 47%);
+  --brown-60: hsl(14, 56%, 53%);
+  --brown-65: hsl(13, 55%, 60%);
+  --brown-70: hsl(13, 53%, 67%);
+  --brown-75: hsl(13, 51%, 75%);
+  --brown-80: hsl(14, 49%, 81%);
+  --brown-85: hsl(14, 45%, 87%);
+  --brown-90: hsl(14, 41%, 92%);
+  --brown-95: hsl(14, 34%, 95%);
+  --brown-100: hsl(14, 23%, 98%);
   --orange-0: hsl(25, 93%, 5%);
   --orange-5: hsl(25, 94%, 8%);
   --orange-10: hsl(26, 94%, 11%);
   --orange-15: hsl(26, 95%, 14%);
-  --orange-20: hsl(26, 96%, 18%);
-  --orange-25: hsl(26, 96%, 21%);
+  --orange-20: hsl(26, 95%, 18%);
+  --orange-25: hsl(26, 95%, 21%);
   --orange-30: hsl(26, 96%, 25%);
-  --orange-35: hsl(26, 97%, 30%);
-  --orange-40: hsl(26, 97%, 35%);
-  --orange-45: hsl(26, 97%, 40%);
-  --orange-50: hsl(26, 97%, 46%);
-  --orange-55: hsl(26, 96%, 52%);
-  --orange-60: hsl(26, 96%, 59%);
-  --orange-65: hsl(26, 95%, 65%);
-  --orange-70: hsl(25, 94%, 72%);
-  --orange-75: hsl(25, 93%, 78%);
-  --orange-80: hsl(24, 92%, 83%);
-  --orange-85: hsl(24, 91%, 88%);
-  --orange-90: hsl(23, 90%, 91%);
-  --orange-95: hsl(22, 88%, 95%);
-  --orange-100: hsl(20, 87%, 97%);
+  --orange-35: hsl(26, 96%, 30%);
+  --orange-40: hsl(26, 96%, 35%);
+  --orange-45: hsl(26, 96%, 40%);
+  --orange-50: hsl(26, 95%, 46%);
+  --orange-55: hsl(26, 95%, 52%);
+  --orange-60: hsl(26, 94%, 59%);
+  --orange-65: hsl(26, 92%, 65%);
+  --orange-70: hsl(25, 90%, 72%);
+  --orange-75: hsl(25, 87%, 78%);
+  --orange-80: hsl(24, 84%, 83%);
+  --orange-85: hsl(24, 78%, 88%);
+  --orange-90: hsl(23, 71%, 91%);
+  --orange-95: hsl(22, 58%, 95%);
+  --orange-100: hsl(20, 26%, 97%);
   --yellow-0: hsl(52, 90%, 5%);
   --yellow-5: hsl(51, 91%, 8%);
   --yellow-10: hsl(49, 92%, 10%);
-  --yellow-15: hsl(48, 93%, 13%);
-  --yellow-20: hsl(47, 94%, 17%);
-  --yellow-25: hsl(46, 95%, 20%);
-  --yellow-30: hsl(45, 96%, 24%);
-  --yellow-35: hsl(44, 96%, 28%);
-  --yellow-40: hsl(43, 97%, 33%);
-  --yellow-45: hsl(42, 97%, 38%);
-  --yellow-50: hsl(41, 97%, 43%);
-  --yellow-55: hsl(41, 96%, 48%);
-  --yellow-60: hsl(40, 95%, 54%);
-  --yellow-65: hsl(39, 94%, 60%);
-  --yellow-70: hsl(39, 93%, 66%);
-  --yellow-75: hsl(38, 92%, 72%);
-  --yellow-80: hsl(38, 90%, 77%);
-  --yellow-85: hsl(38, 88%, 82%);
-  --yellow-90: hsl(37, 86%, 87%);
-  --yellow-95: hsl(37, 84%, 92%);
-  --yellow-100: hsl(37, 82%, 96%);
+  --yellow-15: hsl(48, 92%, 13%);
+  --yellow-20: hsl(47, 93%, 17%);
+  --yellow-25: hsl(46, 93%, 20%);
+  --yellow-30: hsl(45, 94%, 24%);
+  --yellow-35: hsl(44, 94%, 28%);
+  --yellow-40: hsl(43, 95%, 33%);
+  --yellow-45: hsl(42, 95%, 38%);
+  --yellow-50: hsl(41, 94%, 43%);
+  --yellow-55: hsl(41, 94%, 48%);
+  --yellow-60: hsl(40, 93%, 54%);
+  --yellow-65: hsl(39, 91%, 60%);
+  --yellow-70: hsl(39, 89%, 66%);
+  --yellow-75: hsl(38, 86%, 72%);
+  --yellow-80: hsl(38, 82%, 77%);
+  --yellow-85: hsl(38, 77%, 82%);
+  --yellow-90: hsl(37, 68%, 87%);
+  --yellow-95: hsl(37, 53%, 92%);
+  --yellow-100: hsl(37, 21%, 96%);
   --olive-0: hsl(64, 66%, 4%);
   --olive-5: hsl(64, 68%, 6%);
   --olive-10: hsl(65, 70%, 9%);
-  --olive-15: hsl(65, 72%, 12%);
-  --olive-20: hsl(66, 73%, 15%);
-  --olive-25: hsl(66, 74%, 18%);
+  --olive-15: hsl(65, 71%, 12%);
+  --olive-20: hsl(66, 72%, 15%);
+  --olive-25: hsl(66, 73%, 18%);
   --olive-30: hsl(67, 74%, 21%);
   --olive-35: hsl(67, 74%, 25%);
-  --olive-40: hsl(67, 73%, 29%);
-  --olive-45: hsl(68, 70%, 33%);
-  --olive-50: hsl(68, 66%, 37%);
-  --olive-55: hsl(69, 60%, 43%);
-  --olive-60: hsl(69, 55%, 48%);
-  --olive-65: hsl(70, 52%, 54%);
-  --olive-70: hsl(70, 50%, 61%);
-  --olive-75: hsl(71, 49%, 68%);
-  --olive-80: hsl(71, 48%, 75%);
-  --olive-85: hsl(71, 49%, 82%);
-  --olive-90: hsl(72, 49%, 87%);
-  --olive-95: hsl(72, 51%, 93%);
-  --olive-100: hsl(72, 52%, 97%);
+  --olive-40: hsl(67, 74%, 29%);
+  --olive-45: hsl(68, 73%, 33%);
+  --olive-50: hsl(68, 72%, 37%);
+  --olive-55: hsl(69, 70%, 43%);
+  --olive-60: hsl(69, 68%, 48%);
+  --olive-65: hsl(70, 65%, 54%);
+  --olive-70: hsl(70, 60%, 61%);
+  --olive-75: hsl(71, 55%, 68%);
+  --olive-80: hsl(71, 49%, 75%);
+  --olive-85: hsl(71, 41%, 82%);
+  --olive-90: hsl(72, 33%, 87%);
+  --olive-95: hsl(72, 24%, 93%);
+  --olive-100: hsl(72, 16%, 97%);
   --green-0: hsl(117, 45%, 5%);
   --green-5: hsl(117, 48%, 8%);
   --green-10: hsl(117, 50%, 11%);
@@ -116,37 +116,37 @@
   --green-40: hsl(117, 55%, 33%);
   --green-45: hsl(117, 54%, 38%);
   --green-50: hsl(117, 54%, 43%);
-  --green-55: hsl(117, 53%, 48%);
-  --green-60: hsl(117, 52%, 54%);
-  --green-65: hsl(117, 51%, 60%);
-  --green-70: hsl(117, 50%, 66%);
-  --green-75: hsl(117, 48%, 73%);
-  --green-80: hsl(117, 47%, 79%);
-  --green-85: hsl(117, 46%, 85%);
-  --green-90: hsl(116, 45%, 90%);
-  --green-95: hsl(116, 44%, 94%);
-  --green-100: hsl(116, 43%, 98%);
+  --green-55: hsl(117, 52%, 48%);
+  --green-60: hsl(117, 51%, 54%);
+  --green-65: hsl(117, 49%, 60%);
+  --green-70: hsl(117, 47%, 66%);
+  --green-75: hsl(117, 44%, 73%);
+  --green-80: hsl(117, 40%, 79%);
+  --green-85: hsl(117, 36%, 85%);
+  --green-90: hsl(116, 31%, 90%);
+  --green-95: hsl(116, 24%, 94%);
+  --green-100: hsl(116, 16%, 98%);
   --teal-0: hsl(165, 52%, 5%);
   --teal-5: hsl(165, 56%, 7%);
   --teal-10: hsl(165, 59%, 10%);
   --teal-15: hsl(165, 61%, 13%);
   --teal-20: hsl(165, 62%, 15%);
   --teal-25: hsl(165, 63%, 18%);
-  --teal-30: hsl(165, 63%, 21%);
+  --teal-30: hsl(165, 64%, 21%);
   --teal-35: hsl(165, 63%, 25%);
-  --teal-40: hsl(165, 62%, 29%);
-  --teal-45: hsl(165, 60%, 33%);
-  --teal-50: hsl(165, 59%, 37%);
+  --teal-40: hsl(165, 63%, 29%);
+  --teal-45: hsl(165, 62%, 33%);
+  --teal-50: hsl(165, 60%, 37%);
   --teal-55: hsl(165, 58%, 42%);
-  --teal-60: hsl(165, 57%, 47%);
-  --teal-65: hsl(165, 56%, 53%);
-  --teal-70: hsl(165, 55%, 60%);
-  --teal-75: hsl(165, 54%, 67%);
-  --teal-80: hsl(165, 54%, 75%);
-  --teal-85: hsl(165, 55%, 81%);
-  --teal-90: hsl(165, 55%, 88%);
-  --teal-95: hsl(165, 57%, 93%);
-  --teal-100: hsl(165, 58%, 98%);
+  --teal-60: hsl(165, 56%, 47%);
+  --teal-65: hsl(165, 53%, 53%);
+  --teal-70: hsl(165, 50%, 60%);
+  --teal-75: hsl(165, 46%, 67%);
+  --teal-80: hsl(165, 41%, 75%);
+  --teal-85: hsl(165, 36%, 81%);
+  --teal-90: hsl(165, 30%, 88%);
+  --teal-95: hsl(165, 23%, 93%);
+  --teal-100: hsl(165, 13%, 98%);
   --blue-0: hsl(202, 72%, 5%);
   --blue-5: hsl(202, 74%, 8%);
   --blue-10: hsl(203, 75%, 11%);
@@ -157,164 +157,122 @@
   --blue-35: hsl(205, 81%, 31%);
   --blue-40: hsl(205, 82%, 35%);
   --blue-45: hsl(205, 83%, 41%);
-  --blue-50: hsl(206, 84%, 46%);
-  --blue-55: hsl(206, 84%, 52%);
-  --blue-60: hsl(207, 85%, 58%);
-  --blue-65: hsl(207, 85%, 65%);
-  --blue-70: hsl(207, 85%, 71%);
-  --blue-75: hsl(207, 85%, 77%);
-  --blue-80: hsl(208, 84%, 82%);
-  --blue-85: hsl(208, 84%, 87%);
-  --blue-90: hsl(208, 83%, 91%);
-  --blue-95: hsl(208, 82%, 95%);
-  --blue-100: hsl(208, 81%, 98%);
+  --blue-50: hsl(206, 83%, 46%);
+  --blue-55: hsl(206, 82%, 52%);
+  --blue-60: hsl(207, 82%, 58%);
+  --blue-65: hsl(207, 80%, 65%);
+  --blue-70: hsl(207, 79%, 71%);
+  --blue-75: hsl(207, 76%, 77%);
+  --blue-80: hsl(208, 72%, 82%);
+  --blue-85: hsl(208, 66%, 87%);
+  --blue-90: hsl(208, 59%, 91%);
+  --blue-95: hsl(208, 46%, 95%);
+  --blue-100: hsl(208, 22%, 98%);
   --indigo-0: hsl(238, 50%, 7%);
-  --indigo-5: hsl(238, 52%, 11%);
-  --indigo-10: hsl(237, 54%, 16%);
-  --indigo-15: hsl(237, 56%, 21%);
-  --indigo-20: hsl(237, 58%, 27%);
-  --indigo-25: hsl(237, 61%, 32%);
-  --indigo-30: hsl(236, 64%, 38%);
-  --indigo-35: hsl(236, 67%, 44%);
-  --indigo-40: hsl(236, 71%, 50%);
-  --indigo-45: hsl(236, 75%, 56%);
-  --indigo-50: hsl(236, 78%, 62%);
-  --indigo-55: hsl(236, 81%, 67%);
-  --indigo-60: hsl(236, 82%, 72%);
-  --indigo-65: hsl(237, 82%, 77%);
-  --indigo-70: hsl(237, 82%, 81%);
-  --indigo-75: hsl(237, 81%, 85%);
-  --indigo-80: hsl(237, 79%, 89%);
-  --indigo-85: hsl(237, 77%, 92%);
-  --indigo-90: hsl(237, 75%, 94%);
-  --indigo-95: hsl(237, 72%, 97%);
-  --indigo-100: hsl(237, 70%, 99%);
+  --indigo-5: hsl(238, 53%, 11%);
+  --indigo-10: hsl(237, 56%, 16%);
+  --indigo-15: hsl(237, 58%, 21%);
+  --indigo-20: hsl(237, 61%, 27%);
+  --indigo-25: hsl(237, 64%, 32%);
+  --indigo-30: hsl(236, 67%, 38%);
+  --indigo-35: hsl(236, 69%, 44%);
+  --indigo-40: hsl(236, 72%, 50%);
+  --indigo-45: hsl(236, 74%, 56%);
+  --indigo-50: hsl(236, 75%, 62%);
+  --indigo-55: hsl(236, 76%, 67%);
+  --indigo-60: hsl(236, 76%, 72%);
+  --indigo-65: hsl(237, 75%, 77%);
+  --indigo-70: hsl(237, 72%, 81%);
+  --indigo-75: hsl(237, 68%, 85%);
+  --indigo-80: hsl(237, 63%, 89%);
+  --indigo-85: hsl(237, 55%, 92%);
+  --indigo-90: hsl(237, 45%, 94%);
+  --indigo-95: hsl(237, 33%, 97%);
+  --indigo-100: hsl(237, 20%, 99%);
   --violet-0: hsl(247, 53%, 8%);
-  --violet-5: hsl(249, 53%, 12%);
-  --violet-10: hsl(250, 54%, 16%);
-  --violet-15: hsl(252, 55%, 21%);
-  --violet-20: hsl(253, 56%, 26%);
-  --violet-25: hsl(254, 57%, 31%);
-  --violet-30: hsl(255, 59%, 36%);
-  --violet-35: hsl(256, 62%, 42%);
-  --violet-40: hsl(257, 66%, 48%);
-  --violet-45: hsl(258, 71%, 53%);
-  --violet-50: hsl(259, 76%, 59%);
-  --violet-55: hsl(260, 79%, 65%);
-  --violet-60: hsl(260, 81%, 71%);
-  --violet-65: hsl(261, 82%, 76%);
-  --violet-70: hsl(261, 82%, 80%);
-  --violet-75: hsl(262, 82%, 85%);
-  --violet-80: hsl(262, 81%, 88%);
-  --violet-85: hsl(263, 80%, 92%);
-  --violet-90: hsl(263, 79%, 94%);
-  --violet-95: hsl(263, 78%, 97%);
-  --violet-100: hsl(263, 77%, 99%);
+  --violet-5: hsl(249, 55%, 12%);
+  --violet-10: hsl(250, 56%, 16%);
+  --violet-15: hsl(252, 58%, 21%);
+  --violet-20: hsl(253, 60%, 26%);
+  --violet-25: hsl(254, 62%, 31%);
+  --violet-30: hsl(255, 65%, 36%);
+  --violet-35: hsl(256, 67%, 42%);
+  --violet-40: hsl(257, 69%, 48%);
+  --violet-45: hsl(258, 72%, 53%);
+  --violet-50: hsl(259, 73%, 59%);
+  --violet-55: hsl(260, 75%, 65%);
+  --violet-60: hsl(260, 75%, 71%);
+  --violet-65: hsl(261, 73%, 76%);
+  --violet-70: hsl(261, 70%, 80%);
+  --violet-75: hsl(262, 64%, 85%);
+  --violet-80: hsl(262, 58%, 88%);
+  --violet-85: hsl(263, 51%, 92%);
+  --violet-90: hsl(263, 43%, 94%);
+  --violet-95: hsl(263, 35%, 97%);
+  --violet-100: hsl(263, 27%, 99%);
   --purple-0: hsl(274, 47%, 6%);
   --purple-5: hsl(275, 50%, 8%);
   --purple-10: hsl(276, 53%, 11%);
   --purple-15: hsl(278, 56%, 14%);
   --purple-20: hsl(279, 59%, 18%);
   --purple-25: hsl(280, 62%, 22%);
-  --purple-30: hsl(281, 64%, 26%);
+  --purple-30: hsl(281, 65%, 26%);
   --purple-35: hsl(282, 67%, 31%);
   --purple-40: hsl(282, 69%, 37%);
   --purple-45: hsl(283, 71%, 43%);
-  --purple-50: hsl(284, 73%, 49%);
-  --purple-55: hsl(285, 74%, 55%);
-  --purple-60: hsl(285, 75%, 62%);
-  --purple-65: hsl(286, 77%, 68%);
-  --purple-70: hsl(286, 77%, 75%);
-  --purple-75: hsl(287, 78%, 80%);
-  --purple-80: hsl(287, 79%, 85%);
-  --purple-85: hsl(288, 79%, 90%);
-  --purple-90: hsl(288, 80%, 94%);
-  --purple-95: hsl(288, 80%, 97%);
-  --purple-100: hsl(288, 80%, 99%);
+  --purple-50: hsl(284, 72%, 49%);
+  --purple-55: hsl(285, 73%, 55%);
+  --purple-60: hsl(285, 73%, 62%);
+  --purple-65: hsl(286, 72%, 68%);
+  --purple-70: hsl(286, 70%, 75%);
+  --purple-75: hsl(287, 67%, 80%);
+  --purple-80: hsl(287, 61%, 85%);
+  --purple-85: hsl(288, 54%, 90%);
+  --purple-90: hsl(288, 46%, 94%);
+  --purple-95: hsl(288, 35%, 97%);
+  --purple-100: hsl(288, 22%, 99%);
   --pink-0: hsl(312, 64%, 5%);
   --pink-5: hsl(312, 66%, 7%);
   --pink-10: hsl(313, 69%, 10%);
   --pink-15: hsl(313, 71%, 13%);
-  --pink-20: hsl(313, 73%, 16%);
+  --pink-20: hsl(313, 72%, 16%);
   --pink-25: hsl(313, 74%, 19%);
-  --pink-30: hsl(313, 76%, 23%);
-  --pink-35: hsl(313, 77%, 27%);
+  --pink-30: hsl(313, 75%, 23%);
+  --pink-35: hsl(313, 76%, 27%);
   --pink-40: hsl(313, 77%, 32%);
-  --pink-45: hsl(313, 78%, 37%);
-  --pink-50: hsl(313, 77%, 42%);
-  --pink-55: hsl(313, 77%, 48%);
-  --pink-60: hsl(313, 76%, 55%);
-  --pink-65: hsl(313, 76%, 63%);
-  --pink-70: hsl(314, 75%, 70%);
-  --pink-75: hsl(314, 74%, 77%);
-  --pink-80: hsl(314, 73%, 83%);
-  --pink-85: hsl(314, 72%, 88%);
-  --pink-90: hsl(315, 71%, 92%);
-  --pink-95: hsl(315, 70%, 96%);
-  --pink-100: hsl(316, 69%, 99%);
+  --pink-45: hsl(313, 77%, 37%);
+  --pink-50: hsl(313, 76%, 42%);
+  --pink-55: hsl(313, 76%, 48%);
+  --pink-60: hsl(313, 74%, 55%);
+  --pink-65: hsl(313, 72%, 63%);
+  --pink-70: hsl(314, 70%, 70%);
+  --pink-75: hsl(314, 66%, 77%);
+  --pink-80: hsl(314, 61%, 83%);
+  --pink-85: hsl(314, 55%, 88%);
+  --pink-90: hsl(315, 47%, 92%);
+  --pink-95: hsl(315, 37%, 96%);
+  --pink-100: hsl(316, 21%, 99%);
   --maroon-0: hsl(339, 57%, 6%);
   --maroon-5: hsl(339, 62%, 8%);
   --maroon-10: hsl(339, 66%, 11%);
-  --maroon-15: hsl(339, 70%, 13%);
-  --maroon-20: hsl(339, 74%, 17%);
+  --maroon-15: hsl(339, 69%, 13%);
+  --maroon-20: hsl(339, 73%, 17%);
   --maroon-25: hsl(339, 76%, 20%);
   --maroon-30: hsl(339, 79%, 24%);
   --maroon-35: hsl(339, 81%, 29%);
-  --maroon-40: hsl(339, 82%, 33%);
-  --maroon-45: hsl(339, 83%, 39%);
+  --maroon-40: hsl(339, 83%, 33%);
+  --maroon-45: hsl(339, 84%, 39%);
   --maroon-50: hsl(339, 84%, 45%);
   --maroon-55: hsl(339, 84%, 51%);
   --maroon-60: hsl(339, 84%, 57%);
-  --maroon-65: hsl(339, 83%, 64%);
-  --maroon-70: hsl(339, 82%, 71%);
-  --maroon-75: hsl(339, 81%, 77%);
-  --maroon-80: hsl(339, 79%, 83%);
-  --maroon-85: hsl(339, 78%, 88%);
-  --maroon-90: hsl(339, 76%, 92%);
-  --maroon-95: hsl(339, 73%, 96%);
-  --maroon-100: hsl(339, 71%, 99%);
-  --grey40-0: hsl(259, 40%, 5%);
-  --grey40-5: hsl(259, 40%, 10%);
-  --grey40-10: hsl(259, 40%, 14%);
-  --grey40-15: hsl(259, 40%, 19%);
-  --grey40-20: hsl(259, 40%, 23%);
-  --grey40-25: hsl(259, 40%, 28%);
-  --grey40-30: hsl(259, 40%, 33%);
-  --grey40-35: hsl(259, 40%, 37%);
-  --grey40-40: hsl(259, 40%, 42%);
-  --grey40-45: hsl(259, 40%, 47%);
-  --grey40-50: hsl(259, 40%, 52%);
-  --grey40-55: hsl(259, 40%, 56%);
-  --grey40-60: hsl(259, 40%, 61%);
-  --grey40-65: hsl(259, 40%, 66%);
-  --grey40-70: hsl(259, 40%, 71%);
-  --grey40-75: hsl(259, 40%, 75%);
-  --grey40-80: hsl(259, 40%, 80%);
-  --grey40-85: hsl(259, 40%, 85%);
-  --grey40-90: hsl(259, 40%, 89%);
-  --grey40-95: hsl(259, 40%, 94%);
-  --grey40-100: hsl(259, 40%, 98%);
-  --grey20-0: hsl(259, 20%, 5%);
-  --grey20-5: hsl(259, 20%, 10%);
-  --grey20-10: hsl(259, 20%, 14%);
-  --grey20-15: hsl(259, 20%, 19%);
-  --grey20-20: hsl(259, 20%, 23%);
-  --grey20-25: hsl(259, 20%, 28%);
-  --grey20-30: hsl(259, 20%, 33%);
-  --grey20-35: hsl(259, 20%, 37%);
-  --grey20-40: hsl(259, 20%, 42%);
-  --grey20-45: hsl(259, 20%, 47%);
-  --grey20-50: hsl(259, 20%, 52%);
-  --grey20-55: hsl(259, 20%, 56%);
-  --grey20-60: hsl(259, 20%, 61%);
-  --grey20-65: hsl(259, 20%, 66%);
-  --grey20-70: hsl(259, 20%, 71%);
-  --grey20-75: hsl(259, 20%, 75%);
-  --grey20-80: hsl(259, 20%, 80%);
-  --grey20-85: hsl(259, 20%, 85%);
-  --grey20-90: hsl(259, 20%, 89%);
-  --grey20-95: hsl(259, 20%, 94%);
-  --grey20-100: hsl(259, 20%, 98%);
+  --maroon-65: hsl(339, 82%, 64%);
+  --maroon-70: hsl(339, 80%, 71%);
+  --maroon-75: hsl(339, 76%, 77%);
+  --maroon-80: hsl(339, 71%, 83%);
+  --maroon-85: hsl(339, 64%, 88%);
+  --maroon-90: hsl(339, 55%, 92%);
+  --maroon-95: hsl(339, 41%, 96%);
+  --maroon-100: hsl(339, 21%, 99%);
   --grey-0: hsl(259, 5%, 5%);
   --grey-5: hsl(259, 5%, 10%);
   --grey-10: hsl(259, 5%, 14%);
@@ -336,6 +294,48 @@
   --grey-90: hsl(259, 5%, 89%);
   --grey-95: hsl(259, 5%, 94%);
   --grey-100: hsl(259, 5%, 98%);
+  --grey20-0: hsl(259, 20%, 5%);
+  --grey20-5: hsl(259, 20%, 10%);
+  --grey20-10: hsl(259, 20%, 14%);
+  --grey20-15: hsl(259, 20%, 19%);
+  --grey20-20: hsl(259, 20%, 23%);
+  --grey20-25: hsl(259, 20%, 28%);
+  --grey20-30: hsl(259, 20%, 33%);
+  --grey20-35: hsl(259, 20%, 37%);
+  --grey20-40: hsl(259, 20%, 42%);
+  --grey20-45: hsl(259, 20%, 47%);
+  --grey20-50: hsl(259, 20%, 52%);
+  --grey20-55: hsl(259, 20%, 56%);
+  --grey20-60: hsl(259, 20%, 61%);
+  --grey20-65: hsl(259, 20%, 66%);
+  --grey20-70: hsl(259, 20%, 71%);
+  --grey20-75: hsl(259, 20%, 75%);
+  --grey20-80: hsl(259, 20%, 80%);
+  --grey20-85: hsl(259, 20%, 85%);
+  --grey20-90: hsl(259, 20%, 89%);
+  --grey20-95: hsl(259, 20%, 94%);
+  --grey20-100: hsl(259, 20%, 98%);
+  --grey40-0: hsl(259, 40%, 5%);
+  --grey40-5: hsl(259, 40%, 10%);
+  --grey40-10: hsl(259, 40%, 14%);
+  --grey40-15: hsl(259, 40%, 19%);
+  --grey40-20: hsl(259, 40%, 23%);
+  --grey40-25: hsl(259, 40%, 28%);
+  --grey40-30: hsl(259, 40%, 33%);
+  --grey40-35: hsl(259, 40%, 37%);
+  --grey40-40: hsl(259, 40%, 42%);
+  --grey40-45: hsl(259, 40%, 47%);
+  --grey40-50: hsl(259, 40%, 52%);
+  --grey40-55: hsl(259, 40%, 56%);
+  --grey40-60: hsl(259, 40%, 61%);
+  --grey40-65: hsl(259, 40%, 66%);
+  --grey40-70: hsl(259, 40%, 71%);
+  --grey40-75: hsl(259, 40%, 75%);
+  --grey40-80: hsl(259, 40%, 80%);
+  --grey40-85: hsl(259, 40%, 85%);
+  --grey40-90: hsl(259, 40%, 89%);
+  --grey40-95: hsl(259, 40%, 94%);
+  --grey40-100: hsl(259, 40%, 98%);
   --brand-0: var(--violet-0);
   --brand-5: var(--violet-5);
   --brand-10: var(--violet-10);
@@ -692,28 +692,28 @@
   --color-100: var(--maroon-100);
 }
 
-.grey40 {
-  --color-0: var(--grey40-0);
-  --color-5: var(--grey40-5);
-  --color-10: var(--grey40-10);
-  --color-15: var(--grey40-15);
-  --color-20: var(--grey40-20);
-  --color-25: var(--grey40-25);
-  --color-30: var(--grey40-30);
-  --color-35: var(--grey40-35);
-  --color-40: var(--grey40-40);
-  --color-45: var(--grey40-45);
-  --color-50: var(--grey40-50);
-  --color-55: var(--grey40-55);
-  --color-60: var(--grey40-60);
-  --color-65: var(--grey40-65);
-  --color-70: var(--grey40-70);
-  --color-75: var(--grey40-75);
-  --color-80: var(--grey40-80);
-  --color-85: var(--grey40-85);
-  --color-90: var(--grey40-90);
-  --color-95: var(--grey40-95);
-  --color-100: var(--grey40-100);
+.grey {
+  --color-0: var(--grey-0);
+  --color-5: var(--grey-5);
+  --color-10: var(--grey-10);
+  --color-15: var(--grey-15);
+  --color-20: var(--grey-20);
+  --color-25: var(--grey-25);
+  --color-30: var(--grey-30);
+  --color-35: var(--grey-35);
+  --color-40: var(--grey-40);
+  --color-45: var(--grey-45);
+  --color-50: var(--grey-50);
+  --color-55: var(--grey-55);
+  --color-60: var(--grey-60);
+  --color-65: var(--grey-65);
+  --color-70: var(--grey-70);
+  --color-75: var(--grey-75);
+  --color-80: var(--grey-80);
+  --color-85: var(--grey-85);
+  --color-90: var(--grey-90);
+  --color-95: var(--grey-95);
+  --color-100: var(--grey-100);
 }
 
 .grey20 {
@@ -740,28 +740,28 @@
   --color-100: var(--grey20-100);
 }
 
-.grey {
-  --color-0: var(--grey-0);
-  --color-5: var(--grey-5);
-  --color-10: var(--grey-10);
-  --color-15: var(--grey-15);
-  --color-20: var(--grey-20);
-  --color-25: var(--grey-25);
-  --color-30: var(--grey-30);
-  --color-35: var(--grey-35);
-  --color-40: var(--grey-40);
-  --color-45: var(--grey-45);
-  --color-50: var(--grey-50);
-  --color-55: var(--grey-55);
-  --color-60: var(--grey-60);
-  --color-65: var(--grey-65);
-  --color-70: var(--grey-70);
-  --color-75: var(--grey-75);
-  --color-80: var(--grey-80);
-  --color-85: var(--grey-85);
-  --color-90: var(--grey-90);
-  --color-95: var(--grey-95);
-  --color-100: var(--grey-100);
+.grey40 {
+  --color-0: var(--grey40-0);
+  --color-5: var(--grey40-5);
+  --color-10: var(--grey40-10);
+  --color-15: var(--grey40-15);
+  --color-20: var(--grey40-20);
+  --color-25: var(--grey40-25);
+  --color-30: var(--grey40-30);
+  --color-35: var(--grey40-35);
+  --color-40: var(--grey40-40);
+  --color-45: var(--grey40-45);
+  --color-50: var(--grey40-50);
+  --color-55: var(--grey40-55);
+  --color-60: var(--grey40-60);
+  --color-65: var(--grey40-65);
+  --color-70: var(--grey40-70);
+  --color-75: var(--grey40-75);
+  --color-80: var(--grey40-80);
+  --color-85: var(--grey40-85);
+  --color-90: var(--grey40-90);
+  --color-95: var(--grey40-95);
+  --color-100: var(--grey40-100);
 }
 
 .brand {
@@ -812,7 +812,7 @@
   --color-100: var(--blue-100);
 }
 
-.success, .valid, .valid :focus, .field.valid :focus:not(button):not(.button), .field.valid:has(:focus) {
+.success, .field.valid, .field.valid :focus:not(button):not(.button), .field.valid:has(:focus) {
   --color-0: var(--green-0);
   --color-5: var(--green-5);
   --color-10: var(--green-10);
@@ -834,6 +834,30 @@
   --color-90: var(--green-90);
   --color-95: var(--green-95);
   --color-100: var(--green-100);
+}
+
+.error, .field.invalid, .field.invalid :focus:not(button):not(.button), .field.invalid:has(:focus) {
+  --color-0: var(--red-0);
+  --color-5: var(--red-5);
+  --color-10: var(--red-10);
+  --color-15: var(--red-15);
+  --color-20: var(--red-20);
+  --color-25: var(--red-25);
+  --color-30: var(--red-30);
+  --color-35: var(--red-35);
+  --color-40: var(--red-40);
+  --color-45: var(--red-45);
+  --color-50: var(--red-50);
+  --color-55: var(--red-55);
+  --color-60: var(--red-60);
+  --color-65: var(--red-65);
+  --color-70: var(--red-70);
+  --color-75: var(--red-75);
+  --color-80: var(--red-80);
+  --color-85: var(--red-85);
+  --color-90: var(--red-90);
+  --color-95: var(--red-95);
+  --color-100: var(--red-100);
 }
 
 .warning {
@@ -858,30 +882,6 @@
   --color-90: var(--orange-90);
   --color-95: var(--orange-95);
   --color-100: var(--orange-100);
-}
-
-.error, .invalid, .invalid :focus, .field.invalid :focus:not(button):not(.button), .field.invalid:has(:focus) {
-  --color-0: var(--red-0);
-  --color-5: var(--red-5);
-  --color-10: var(--red-10);
-  --color-15: var(--red-15);
-  --color-20: var(--red-20);
-  --color-25: var(--red-25);
-  --color-30: var(--red-30);
-  --color-35: var(--red-35);
-  --color-40: var(--red-40);
-  --color-45: var(--red-45);
-  --color-50: var(--red-50);
-  --color-55: var(--red-55);
-  --color-60: var(--red-60);
-  --color-65: var(--red-65);
-  --color-70: var(--red-70);
-  --color-75: var(--red-75);
-  --color-80: var(--red-80);
-  --color-85: var(--red-85);
-  --color-90: var(--red-90);
-  --color-95: var(--red-95);
-  --color-100: var(--red-100);
 }
 
 :where(html) {
@@ -3931,6 +3931,7 @@ input:not([type=checkbox]):not([type=radio]), textarea, select, label:is(.checkb
   --focus-ring-outline: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   --focus-ring-inline: 0 0 0 var(--focus-ring-gap) var(--focus-gap-color);
   --focus-ring: var(--focus-ring-inline), var(--focus-ring-outline);
+  --focus-outline: var(--focus-ring-width) solid var(--focus-ring-color);
   --inner-height: calc((1em * var(--line-height)) + (var(--padding-v) * 2));
   --outer-height: calc(var(--inner-height) + (var(--border-width) * 2));
 }
@@ -3956,7 +3957,7 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
 }
 
 .field {
-  --label-color: var(--color-25);
+  --label-color: var(--color-20);
   --help-color: var(--color-40);
   --required-color: var(--orange-40);
   --required-background: var(--orange-95);
@@ -3965,10 +3966,10 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --optional-background: var(--blue-95);
   --optional-border: var(--blue-85);
   --border-width: 1px;
-  --label-size: 0.75em;
-  --label-margin: 0.25em;
+  --label-size: 0.875em;
+  --label-margin: 0.5em;
   --help-size: 0.75em;
-  --help-margin: 0.25em;
+  --help-margin: 0.5em;
   --tag-size: 0.8em;
   --margin-bottom: 1rem;
   --fix-color: var(--color-40);
@@ -3991,7 +3992,8 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --hover-border-color: var(--color-45);
 }
 .surface-1 .field, .surface-2 .field, .surface-3 .field {
-  --label-color: var(--color-30);
+  --label-color: var(--color-20);
+  --help-color: var(--color-30);
   --required-background: var(--orange-90);
   --required-border: var(--orange-80);
   --optional-background: var(--blue-90);
@@ -4032,8 +4034,8 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --hover-background-color: var(--color-5);
 }
 .dark-theme .field {
-  --label-color: var(--color-40);
-  --help-color: var(--color-35);
+  --label-color: var(--color-60);
+  --help-color: var(--color-50);
   --required-color: var(--orange-60);
   --required-background: var(--orange-10);
   --required-border: var(--orange-15);
@@ -4056,7 +4058,8 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --hover-border-color: var(--color-50);
 }
 .dark-theme .surface-3 .field, .dark-theme .surface-4 .field, .dark-theme .surface-5 .field {
-  --label-color: var(--color-50);
+  --label-color: var(--color-60);
+  --help-color: var(--color-50);
   --required-color: var(--orange-65);
   --required-background: var(--orange-20);
   --required-border: var(--orange-25);
@@ -4084,6 +4087,7 @@ input:not([type=checkbox]):not([type=radio]), textarea, select, label:is(.checkb
   --focus-ring-outline: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   --focus-ring-inline: 0 0 0 var(--focus-ring-gap) var(--focus-gap-color);
   --focus-ring: var(--focus-ring-inline), var(--focus-ring-outline);
+  --focus-outline: var(--focus-ring-width) solid var(--focus-ring-color);
   --inner-height: calc((1em * var(--line-height)) + (var(--padding-v) * 2));
   --outer-height: calc(var(--inner-height) + (var(--border-width) * 2));
 }
@@ -4109,7 +4113,7 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
 }
 
 .field {
-  --label-color: var(--color-25);
+  --label-color: var(--color-20);
   --help-color: var(--color-40);
   --required-color: var(--orange-40);
   --required-background: var(--orange-95);
@@ -4118,10 +4122,10 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --optional-background: var(--blue-95);
   --optional-border: var(--blue-85);
   --border-width: 1px;
-  --label-size: 0.75em;
-  --label-margin: 0.25em;
+  --label-size: 0.875em;
+  --label-margin: 0.5em;
   --help-size: 0.75em;
-  --help-margin: 0.25em;
+  --help-margin: 0.5em;
   --tag-size: 0.8em;
   --margin-bottom: 1rem;
   --fix-color: var(--color-40);
@@ -4144,7 +4148,8 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --hover-border-color: var(--color-45);
 }
 .surface-1 .field, .surface-2 .field, .surface-3 .field {
-  --label-color: var(--color-30);
+  --label-color: var(--color-20);
+  --help-color: var(--color-30);
   --required-background: var(--orange-90);
   --required-border: var(--orange-80);
   --optional-background: var(--blue-90);
@@ -4185,8 +4190,8 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --hover-background-color: var(--color-5);
 }
 .dark-theme .field {
-  --label-color: var(--color-40);
-  --help-color: var(--color-35);
+  --label-color: var(--color-60);
+  --help-color: var(--color-50);
   --required-color: var(--orange-60);
   --required-background: var(--orange-10);
   --required-border: var(--orange-15);
@@ -4209,7 +4214,8 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) {
   --hover-border-color: var(--color-50);
 }
 .dark-theme .surface-3 .field, .dark-theme .surface-4 .field, .dark-theme .surface-5 .field {
-  --label-color: var(--color-50);
+  --label-color: var(--color-60);
+  --help-color: var(--color-50);
   --required-color: var(--orange-65);
   --required-background: var(--orange-20);
   --required-border: var(--orange-25);
@@ -4501,7 +4507,6 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).basel
   color: var(--label-color);
   font-size: var(--label-size);
   line-height: 1.5;
-  padding-left: calc(var(--padding-h) + var(--border-width));
 }
 .field label:not(.checkbox, .radio)::after {
   display: none;
@@ -4520,7 +4525,6 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).basel
   font-size: var(--help-size);
   color: var(--help-color);
   line-height: 1.5;
-  padding-left: calc(var(--padding-h) + var(--border-width));
 }
 .field.required label:not(:has(input[type=checkbox]), :has(input[type=radio]))::after {
   display: inline-block;
@@ -4574,14 +4578,17 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).basel
 .field .input:has(.suffix) input:not([type=checkbox]):not([type=radio]).focus, .field .input:has(.suffix) input:not([type=checkbox]):not([type=radio]):focus, .field .input:has(.suffix) input:not([type=checkbox]):not([type=radio]):has(:focus), .field .input:has(.suffix) textarea.focus, .field .input:has(.suffix) textarea:focus, .field .input:has(.suffix) textarea:has(:focus), .field .input:has(.suffix) select.focus, .field .input:has(.suffix) select:focus, .field .input:has(.suffix) select:has(:focus), .field .input:has(.suffix) label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).border.focus, .field .input:has(.suffix) label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).border:focus, .field .input:has(.suffix) label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).border:has(:focus) {
   box-shadow: none;
 }
-.field .input.focus, .field .input:has(:focus), .field .input:has(.focus) {
+.field .input:hover, .field .input:hover .prefix, .field .input:hover .suffix {
+  --border-color: var(--hover-border-color);
+}
+.field .input.focus, .field .input:focus-within {
   box-shadow: var(--focus-ring);
 }
-.field .input.focus .prefix, .field .input.focus .suffix, .field .input:has(:focus) .prefix, .field .input:has(:focus) .suffix, .field .input:has(.focus) .prefix, .field .input:has(.focus) .suffix {
+.field .input.focus .prefix, .field .input.focus .suffix, .field .input:focus-within .prefix, .field .input:focus-within .suffix {
   border-color: var(--focus-border-color);
 }
-.field .input:hover {
-  --border-color: var(--hover-border-color);
+.field .input.focus input:not([type=checkbox]):not([type=radio]), .field .input.focus textarea, .field .input.focus select, .field .input.focus label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).border, .field .input:focus-within input:not([type=checkbox]):not([type=radio]), .field .input:focus-within textarea, .field .input:focus-within select, .field .input:focus-within label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])).border {
+  border-color: var(--focus-border-color);
 }
 
 :is(fieldset) {
@@ -4644,6 +4651,8 @@ fieldset:has(:focus) {
   --background-color: var(--color-90);
   --border-color: var(--color-70);
   --headline-back: var(--color-50);
+  --link-color: var(--color-50);
+  --link-hover: var(--color-30);
   margin-bottom: 1rem;
   padding: var(--padding-v) var(--padding-h);
   color: var(--color);
@@ -4658,6 +4667,14 @@ fieldset:has(:focus) {
 }
 .alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6, .alert .heading {
   color: var(--head-color);
+}
+.alert a {
+  transition: color 0.2s;
+  color: var(--link-color);
+  text-decoration: underline dotted;
+}
+.alert a:hover {
+  color: var(--hover-color);
 }
 .alert:has(.headline) {
   --border-color: var(--headline-back);
@@ -4676,16 +4693,136 @@ fieldset:has(:focus) {
 }
 
 .dark-theme .alert {
-  --color: var(--color-65);
-  --head-color: var(--color-75);
+  --color: var(--color-70);
+  --head-color: var(--color-85);
   --background-color: var(--color-15);
   --headline-color: var(--color-100);
   --headline-back: var(--color-40);
   --border-color: var(--color-30);
+  --link-hover: var(--color-70);
 }
 .dark-theme .alert.stripe {
   --border-color: var(--color-50);
   --background-color: black;
+}
+
+details {
+  --icon-svg: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpolyline points='6 9 12 15 18 9' style='fill:none;stroke:rgba%280%2C0%2C0%2C0.5%29%0A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round'%3e%3c/polyline%3e%3c/svg%3e");
+  --icon-align: left;
+  --icon-margin: 0.25rem;
+  --icon-position: 0em;
+  --icon-padding: 1.5em;
+  --icon-rotate: -90deg;
+  --icon-transition: 0.25s;
+  --body-padding: 0;
+  --head-margin: 0.25em;
+  --head-shade-back: var(--color-90);
+  --head-shade-text: var(--color-20);
+  --hover-shade-back: var(--color-85);
+  --hover-shade-text: var(--color-10);
+  --body-shade-back: var(--color-95);
+  --body-shade-text: var(--color-30);
+  --shade-transition: 0.25s;
+  overflow: auto;
+}
+details summary {
+  position: relative;
+  display: flex;
+  padding: 0.25em 0;
+  cursor: pointer;
+  list-style: none;
+}
+details summary > * {
+  display: inline;
+}
+details summary::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0.25em var(--icon-margin) 0 var(--icon-position);
+  line-height: inherit;
+  background-image: var(--icon-svg);
+  background-position: var(--icon-align) 0 center;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  transform: rotate(var(--icon-rotate));
+  transition: transform var(--icon-transition) ease-in-out;
+  content: "";
+}
+details > *:not(summary) {
+  padding: 0 var(--body-padding);
+}
+details > *:last-child {
+  margin-block-end: var(--body-padding);
+}
+details[open] {
+  --icon-rotate: 0deg;
+}
+details[open] summary {
+  margin-bottom: var(--head-margin);
+}
+details.lined {
+  --head-margin: 0.5em;
+}
+details.border, details.shaded {
+  --icon-position: 0.5em;
+  --icon-padding: 2em;
+  --body-padding: 1em;
+  --head-margin: 0.5em;
+}
+details.border.shaded, details.border.lined, details.shaded.shaded, details.shaded.lined {
+  --head-margin: 1em;
+}
+details.lined[open] summary {
+  border-bottom: var(--line-width) var(--line-style) var(--line-color);
+}
+details.shaded {
+  background-color: var(--body-shade-back);
+  color: var(--body-shade-text);
+}
+details.shaded summary {
+  transition: background-color var(--shade-transition);
+  background-color: var(--head-shade-back);
+  color: var(--head-shade-text);
+}
+details.shaded summary:hover {
+  color: var(--hover-shade-text);
+  background-color: var(--hover-shade-back);
+}
+details.icon-right {
+  --icon-align: left;
+}
+details[class*=bdr-] summary {
+  border-top-left-radius: var(--radius-top-left);
+  border-top-right-radius: var(--radius-top-right);
+}
+details[class*=bdr-]:not([open]) summary {
+  border-bottom-left-radius: var(--radius-bottom-left);
+  border-bottom-right-radius: var(--radius-bottom-right);
+}
+
+:where(details.lined) {
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: var(--color-75);
+  --border-radius: 0;
+  --line-width: var(--border-width);
+  --line-style: var(--border-style);
+  --line-color: var(--border-color);
+}
+
+:where(.dark-theme details.lined) {
+  --border-color: var(--color-25);
+}
+
+.dark-theme details {
+  --icon-svg: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpolyline points='6 9 12 15 18 9' style='fill:none;stroke:rgba%28255%2C255%2C255%2C0.5%29%0A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round'%3e%3c/polyline%3e%3c/svg%3e");
+  --head-shade-back: var(--color-20);
+  --head-shade-text: var(--color-90);
+  --hover-shade-back: var(--color-25);
+  --hover-shade-text: var(--color-100);
+  --body-shade-back: var(--color-10);
+  --body-shade-text: var(--color-70);
 }
 
 svg .fill-fg {

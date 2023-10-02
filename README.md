@@ -28,6 +28,12 @@ You can then import the modules and start using them.
 import { Form, Field, Submit } from '@abw/badger-form'
 ```
 
+## Documentation
+
+Documentation and examples can be found at https://abw.github.io/badger-form/
+
+Please be warned that this is a work in progress.
+
 ## Notes for Maintainers
 
 Check out the repository.

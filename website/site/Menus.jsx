@@ -40,3 +40,10 @@ export const Control = [
   { to: '/control/submit', text: <code>Submit</code> },
   { to: '/control/reset-submit', text: <code>ResetSubmit</code> },
 ]
+
+export const Fields = [
+  { to: '/fields/fields',  text: <code>Fields</code> },
+  { to: '/fields/names',   text: <code>names</code> },
+  { to: '/fields/grid',    text: <code>grid</code> },
+  { to: '/fields/gap',     text: <code>gap</code> },
+]

@@ -4,12 +4,14 @@ import { Form, Field, ResetSubmit } from '../../../lib/index.js'
 import React from 'react'
 // PRETEND: import { Form, Field, ResetSubmit } from '@abw/badger-form'
 
-const ResetSubmitForm = () =>
+const ResetSubmitClass = () =>
   <Form className="wd-20">
-    <h2>Reset and Submit</h2>
+    <h2>Reset and Submit Class</h2>
     <Field name="name" label="Name" wide/>
     <Field name="email" label="Email" wide/>
-    <ResetSubmit/>
+    <ResetSubmit
+      className="flex space pad-2 bgc-90 bdr-2"
+    />
   </Form>
 
-export default ResetSubmitForm
+export default ResetSubmitClass

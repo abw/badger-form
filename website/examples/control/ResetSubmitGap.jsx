@@ -4,12 +4,12 @@ import { Form, Field, ResetSubmit } from '../../../lib/index.js'
 import React from 'react'
 // PRETEND: import { Form, Field, ResetSubmit } from '@abw/badger-form'
 
-const ResetSubmitForm = () =>
+const ResetSubmitGap = () =>
   <Form className="wd-20">
-    <h2>Reset and Submit</h2>
+    <h2>Reset and Submit With Gap</h2>
     <Field name="name" label="Name" wide/>
     <Field name="email" label="Email" wide/>
-    <ResetSubmit/>
+    <ResetSubmit gap={8}/>
   </Form>
 
-export default ResetSubmitForm
+export default ResetSubmitGap

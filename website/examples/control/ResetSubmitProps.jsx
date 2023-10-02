@@ -10,7 +10,7 @@ const ResetSubmitForm = () =>
     <Field name="name" label="Name" wide/>
     <Field name="email" label="Email" wide/>
     <ResetSubmit
-      className="flex space"
+      space={true}
       reset={{ className: 'outline', text: 'Undo' }}
       submit={{ className: 'blue', text: 'Save' }}
     />

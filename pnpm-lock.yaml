@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@abw/badger-css': ^0.0.7
+  '@abw/badger-css': ^0.0.10
   '@abw/badger-timestamp': ^1.0.4
   '@abw/badger-utils': ^1.0.21
   '@abw/react-context': ^2.0.3
@@ -34,7 +34,7 @@ dependencies:
   react-hook-form: 7.45.1_react@18.2.0
 
 devDependencies:
-  '@abw/badger-css': 0.0.7
+  '@abw/badger-css': 0.0.10
   '@abw/badger-timestamp': 1.0.4
   '@abw/badger-utils': 1.0.21
   '@abw/react-night-and-day': 0.0.5_biqbaboplfbrettd7655fr4n2y
@@ -63,8 +63,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@abw/badger-css/0.0.7:
-    resolution: {integrity: sha512-wOatwiwyioNcDgs4RxX0xIS6rIknd1wP/BfCU/Z3nCrBIdCain9lI7iBx17lW5XI+diLvTRRKmx8Hr6xfai8qA==}
+  /@abw/badger-css/0.0.10:
+    resolution: {integrity: sha512-j/YP8TGXMwsfGtSNLr8jLUi/YMfT+Qo6hyuKVnMb9eHFnavf5uwlsTkkem14Eh3pcbra0jOwyrXF+Hk+cVnvOA==}
     dev: true
 
   /@abw/badger-timestamp/1.0.4:
@@ -1387,7 +1387,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /ci-info/3.8.0:
@@ -2033,8 +2033,8 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents/2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -3281,7 +3281,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /rrweb-cssom/0.6.0:
@@ -3737,7 +3737,7 @@ packages:
       rollup: 3.26.2
       sass: 1.63.6
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /vite/4.4.0_sass@1.63.6:
@@ -3773,7 +3773,7 @@ packages:
       rollup: 3.26.2
       sass: 1.63.6
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /vitest/0.31.4_ho4lwmvrfeyulsypuwjl5vgnoy:

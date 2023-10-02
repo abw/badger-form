@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-form",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React form library built on react-hook-form and badger-css",
   "type": "module",
   "files": [
@@ -64,7 +64,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.60.0",
-    "vite": "^4.2.0",
+    "vite": "^4.4.9",
     "vite-plugin-svgr": "^3.2.0",
     "vitest": "^0.31.0"
   }

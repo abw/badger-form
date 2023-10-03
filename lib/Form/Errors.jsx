@@ -1,13 +1,13 @@
 import React from 'react'
-import { Consumer } from './Context.jsx'
+import { useForm } from './Context.jsx'
 
 const Errors = ({
-  formState: { errors },
   title=false,
   headline=false,
   showFieldErrors=false,
   className='error alert border'
 }) => {
+  const { formState: { errors } } = useForm()
   const { root={}, ...fieldErrors } = errors
   const nRoot  = Object.keys(root).length
   const nField = Object.keys(fieldErrors).length
@@ -43,4 +43,4 @@ const Errors = ({
   )
 }
 
-export default Consumer(Errors)
+export default Errors

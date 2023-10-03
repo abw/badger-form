@@ -29,10 +29,11 @@ export const Field = [
   { to: '/field/wide',           text: <code>wide</code> },
 ]
 export const Form = [
-  { to: '/form',          text: <code>Form</code>, exact: true },
-  { to: '/form/onsubmit', text: <code>onSubmit</code> },
-  { to: '/form/fields',   text: <code>fields</code> },
-  { to: '/form/values',   text: <code>values</code> },
+  { to: '/form',           text: <code>Form</code>, exact: true },
+  { to: '/form/fields',    text: <code>fields</code> },
+  { to: '/form/values',    text: <code>values</code> },
+  { to: '/form/onsubmit',  text: <code>onSubmit</code> },
+  { to: '/form/onsuccess', text: <code>onSuccess</code> },
 ]
 
 export const Control = [

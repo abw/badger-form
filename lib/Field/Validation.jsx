@@ -11,32 +11,48 @@ export const fieldValidator = (
   name, validate,
   { setValue, setError, clearErrors, setStatus }
 ) => {
+  debug(`building new validator`)
   const vfn = validator(validate)
-  return (input, options={}) => {
-    const { valid, value, message, type=VALIDATE } = vfn(input, options)
-    // const result = vfn(input, options)
+  return async (input, options={}) => {
+    debug('validator input: ', input)
+    const { valid, value, message, type=VALIDATE } = await vfn(input, options)
+    debug(`fieldValidator valid: ${valid}`)
+    debug(`fieldValidator value: ${value}`)
+    debug(`fieldValidator message: ${message}`)
+    debug(`fieldValidator type: ${type}`)
     setValue(name, value)
     if (valid) {
+      debug(`${name} field is valid`)
       setStatus(VALID)
       clearErrors(name)
+      return true
     }
     else {
+      debug(`${name} field is invalid: ${message}`)
       setStatus(INVALID)
+      const msgData = errorMessage({ type, message })
       setError(
         name,
-        { type, message: errorMessage({ type, message }) }
+        { type, message: msgData }
       )
+      return msgData
     }
   }
 }
 
 export const validator = (fn, config={}) =>
   (input, options={}) => new Promise(
-    (pass, fail) => {
+    // eslint-disable-next-line no-async-promise-executor
+    async (pass, fail) => {
       try {
-        pass(
-          fn(input, { ...config, ...options, pass, fail })
-        )
+        const result = await fn(input, { ...config, ...options, pass, fail })
+        debug(`validator result: ${result}`)
+        if (isBoolean(result) && ! result) {
+          fail(result)
+        }
+        else {
+          pass(result)
+        }
       }
       catch (error) {
         debug('function threw error:', error)

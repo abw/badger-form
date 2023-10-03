@@ -1,10 +1,11 @@
-import { useEffect, useId } from 'react'
+import { useState, useEffect, useId } from 'react'
 import { useForm } from '../Form/Context.jsx'
 import { inputAttrs } from '../Utils.js'
 import { Generator } from '@abw/react-context'
 import errorMessage from './errorMessage.js'
-// import { CLEAN } from '../Constants.jsx'
-// import { fieldValidator } from './Validation.jsx'
+import { CLEAN } from '../Constants.jsx'
+import { fieldValidator } from './Validation.jsx'
+import { useCallback } from 'react'
 // import validateValue from './Validation.jsx'
 
 const FieldContext = ({
@@ -13,7 +14,7 @@ const FieldContext = ({
   className,
   fieldClass,
   prepareValue,
-  validateOnChange,
+  // validateOnChange,
   watchField,
   ...props
 }) => {
@@ -21,14 +22,26 @@ const FieldContext = ({
     register, setValue, setError, clearErrors, watch, fields={},
     formState: { errors }
   } = useForm()
-  // const [status, setStatus] = useState(CLEAN)
+  const [status, setStatus] = useState(CLEAN)
   const field = {
     ...(fields[name] || { }),
     ...props
   }
   const { id=useId(), help, validate } = field
+  if (validate) {
+    const validator = useCallback(
+      fieldValidator(
+        name, validate,
+        { setValue, setError, clearErrors, setStatus }
+      ),
+      [validate]
+    )
+    field.validate = validator
+  }
   const error   = errors[name]
   const errmsg  = errorMessage(error, field)
+  // console.log(`error: `, error)
+  // console.log(`errmsg: `, errmsg)
   const message = errmsg ?? help
   const invalid = Boolean(error)
   const regs    = register(name, field)
@@ -72,7 +85,7 @@ const FieldContext = ({
   // console.log(`attrs: `, attrs)
 
   return render({
-    name, id, message, invalid,
+    name, id, message, invalid, status,
     fieldClass,
     inputAttrs: {
       id, className,

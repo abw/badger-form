@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-form",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React form library built on react-hook-form and badger-css",
   "type": "module",
   "files": [

@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@abw/badger-css': ^0.0.10
+  '@abw/badger-css': ^0.0.11
   '@abw/badger-timestamp': ^1.0.4
   '@abw/badger-utils': ^1.0.21
   '@abw/react-context': ^2.0.3
@@ -34,7 +34,7 @@ dependencies:
   react-hook-form: 7.45.1_react@18.2.0
 
 devDependencies:
-  '@abw/badger-css': 0.0.10
+  '@abw/badger-css': 0.0.11
   '@abw/badger-timestamp': 1.0.4
   '@abw/badger-utils': 1.0.21
   '@abw/react-night-and-day': 0.0.5_biqbaboplfbrettd7655fr4n2y
@@ -63,8 +63,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@abw/badger-css/0.0.10:
-    resolution: {integrity: sha512-j/YP8TGXMwsfGtSNLr8jLUi/YMfT+Qo6hyuKVnMb9eHFnavf5uwlsTkkem14Eh3pcbra0jOwyrXF+Hk+cVnvOA==}
+  /@abw/badger-css/0.0.11:
+    resolution: {integrity: sha512-hZWEIAlb2GjK9UR7Wp1Wib0pnBfMr72FO6hj3ICbxBKRifksAV0lJ3KM4YqlmtcjHGIYi62Zgad8CXxjh6S1/Q==}
     dev: true
 
   /@abw/badger-timestamp/1.0.4:

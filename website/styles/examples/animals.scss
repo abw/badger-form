@@ -1,0 +1,12 @@
+.animals {
+  img {
+    width: 100%;
+    border: 1px solid black;
+    &:hover {
+      outline: 4px solid var(--blue-50);
+    }
+    &.selected {
+      outline: 4px solid var(--green-50);
+    }
+  }
+}

@@ -9,7 +9,7 @@ const ResetSubmitSpace = () =>
     <h2>Reset and Submit With Space</h2>
     <Field name="name" label="Name" wide/>
     <Field name="email" label="Email" wide/>
-    <ResetSubmit space={true}/>
+    <ResetSubmit space/>
   </Form>
 
 export default ResetSubmitSpace

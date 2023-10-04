@@ -17,16 +17,17 @@ export const Tutorial = [
 ]
 
 export const Field = [
-  { to: '/field',                text: <code>Field</code>, exact: true },
-  { to: '/field/name',           text: <code>name</code> },
-  { to: '/field/type',           text: <code>type</code> },
-  { to: '/field/label',          text: <code>label</code> },
-  { to: '/field/help',           text: <code>help</code> },
-  { to: '/field/validate',       text: <code>validate</code> },
-  { to: '/field/validate-on-change',       text: <code>validateOnChange</code> },
-  { to: '/field/prepare-value',  text: <code>prepareValue</code> },
-  { to: '/field/watch-field',    text: <code>watchField</code> },
-  { to: '/field/wide',           text: <code>wide</code> },
+  { to: '/field',                     text: <code>Field</code>, exact: true },
+  { to: '/field/name',                text: <code>name</code> },
+  { to: '/field/type',                text: <code>type</code> },
+  { to: '/field/label',               text: <code>label</code> },
+  { to: '/field/help',                text: <code>help</code> },
+  { to: '/field/validate',            text: <code>validate</code> },
+  { to: '/field/validate-on-change',  text: <code>validateOnChange</code> },
+  { to: '/field/prepare-value',       text: <code>prepareValue</code> },
+  { to: '/field/watch-field',         text: <code>watchField</code> },
+  { to: '/field/wide',                text: <code>wide</code> },
+  { to: '/field/input',               text: <code>Input</code> },
 ]
 export const Form = [
   { to: '/form',           text: <code>Form</code>, exact: true },

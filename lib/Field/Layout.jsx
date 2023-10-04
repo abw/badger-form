@@ -1,6 +1,6 @@
 import React from 'react'
 import Label from './Label.jsx'
-import Input from './Input.jsx'
+import DefaultInput from './Input.jsx'
 import Message from './Message.jsx'
 import { Consumer } from './Context.jsx'
 import { classes } from '../Utils.js'
@@ -9,7 +9,8 @@ const Layout = ({
   label,
   message,
   invalid,
-  fieldClass
+  fieldClass,
+  Input=DefaultInput
 }) =>
   <div className={classes('field', fieldClass, { invalid })}>
     { Boolean(label) && <Label/> }

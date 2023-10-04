@@ -19,7 +19,7 @@ const fields = {
 const FormWithFields = () =>
   <Form fields={fields}>
     <h2>Fields in a Grid</h2>
-    <Fields names="one two three" grid={true} wide/>
+    <Fields names="one two three" grid wide/>
     <Submit/>
   </Form>
 

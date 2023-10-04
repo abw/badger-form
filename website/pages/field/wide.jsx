@@ -6,7 +6,8 @@ import FieldPager from '../../site/Pager/FieldPager.jsx'
 
 const WideFields = () =>
   <div className="prose">
-    <h1>WideFields</h1>
+    <h1>Field</h1>
+    <h2 className="font-mono">wide</h2>
     <p>
       The <code>wide</code> property can be added to a <code>Field</code> to
       have it expand to the full width of the container.

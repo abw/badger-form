@@ -39,9 +39,7 @@ const FieldContext = ({
     field.validate = validator
   }
   const error   = errors[name]
-  const errmsg  = errorMessage(error, field)
-  // console.log(`error: `, error)
-  // console.log(`errmsg: `, errmsg)
+  const errmsg  = error && errorMessage(error, field)
   const message = errmsg ?? help
   const invalid = Boolean(error)
   const regs    = register(name, field)
@@ -93,6 +91,8 @@ const FieldContext = ({
       ...regs,
       ...inputAttrs(field)
     },
+    setValue: setter,
+    value: watch(name),
     ...field,
   })
 }

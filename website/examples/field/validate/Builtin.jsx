@@ -5,7 +5,7 @@ import React from 'react'
 // PRETEND: import { Form, Field, ResetSubmit } from '@abw/badger-form'
 
 const BuiltinValidation = () =>
-  <Form className="wd-16">
+  <Form className="width-16rem">
     <Field
       name="username"
       label="Username"

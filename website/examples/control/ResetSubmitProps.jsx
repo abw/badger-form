@@ -5,9 +5,9 @@ import React from 'react'
 // PRETEND: import { Form, Field, ResetSubmit } from '@abw/badger-form'
 
 const ResetSubmitForm = () =>
-  <Form className="wd-20">
+  <Form className="width-20rem">
     <h2>Reset and Submit Properties</h2>
-    <Field name="name" label="Name" wide/>
+    <Field name="name"  label="Name"  wide/>
     <Field name="email" label="Email" wide/>
     <ResetSubmit
       space={true}

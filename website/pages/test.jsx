@@ -7,7 +7,7 @@ const Test = () => {
   const onSubmit = data => console.log(data)
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="wd-20">
+    <form onSubmit={handleSubmit(onSubmit)} className="width-20rem">
       <div className={`field ${errors.name ? 'invalid' : ''}`}>
         <label htmlFor="name">Name</label>
         <input

@@ -21,7 +21,7 @@ const fields = {
 }
 
 const FormWithFields = () =>
-  <Form fields={fields} className="wd-20">
+  <Form fields={fields} className="width-20rem">
     <h2>Form With Fields</h2>
     <Fields names={['name', 'email', 'terms']} wide/>
     <Submit/>

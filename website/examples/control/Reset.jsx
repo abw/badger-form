@@ -6,14 +6,16 @@ import React from 'react'
 
 const values = {
   name:  'Bobby Badger',
-  email: 'bobby@badgerpower.com'
+  email: 'bobby@badgerpower.com',
+  comment: ''
 }
 
 const FormWithReset = () =>
-  <Form values={values}>
+  <Form values={values} className="width-16rem">
     <h2>Form With Reset</h2>
-    <Field name="name" label="Name"/>
-    <Field name="email" label="Email"/>
+    <Field name="name"    label="Name"    wide/>
+    <Field name="email"   label="Email"   wide/>
+    <Field name="comment" label="Comment" wide/>
     <Reset/>
   </Form>
 

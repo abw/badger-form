@@ -14,6 +14,9 @@ const Reset = () =>
     <p>
       Renders a form reset button.  If any <ValuesLink/> are defined
       for the <FormLink/> then the form will be reset to those values.
+      Note that a limitation in React Hook Form means that if you
+      provide any <code>values</code> to the form then it <b>MUST</b>{' '}
+      contain default values for all fields.
     </p>
     <Example
       Component={ResetCode}

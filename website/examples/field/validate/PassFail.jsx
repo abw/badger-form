@@ -11,7 +11,7 @@ const notA = (value, { pass, fail }) => {
 }
 
 const ValidatePassFail = () =>
-  <Form className="wd-16">
+  <Form className="width-16rem">
     <Field
       name="username"
       label="Username"

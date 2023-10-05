@@ -6,7 +6,7 @@ import React from 'react'
 
 const WideFields = () =>
   <Form
-    className="pad-4 border bdr-4 bgc-90 bdc-70 bgd-5 bdd-30 wd-20"
+    className="pad-4 border bdr-4 bgc-90 bdc-70 bgd-5 bdd-30 width-20rem"
   >
     <h3>Form With Wide Fields</h3>
     <Field

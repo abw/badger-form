@@ -12,7 +12,7 @@ const notA = value => {
 }
 
 const ValidateThrow = () =>
-  <Form className="wd-16">
+  <Form className="width-16rem">
     <Field
       name="username"
       label="Username"

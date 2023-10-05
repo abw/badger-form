@@ -10,10 +10,10 @@ const values = {
 }
 
 const ResetProperties = () =>
-  <Form values={values}>
+  <Form values={values} className="width-16rem">
     <h2>Reset Properties</h2>
-    <Field name="name" label="Name"/>
-    <Field name="email" label="Email"/>
+    <Field name="name"  label="Name"  wide/>
+    <Field name="email" label="Email" wide/>
     <Reset className="outline" text="Undo"/>
   </Form>
 

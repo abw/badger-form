@@ -21,7 +21,7 @@ const FieldsPage = () =>
       <code>className</code>, described below) will be added to each of the
       fields.  In this example the <code>wide</code> property is added to
       each field to make it extend to the full width of the form (20 rem
-      as set by the <code>wd-20</code> CSS class on the form).
+      as set by the <code>width-20rem</code> CSS class on the form).
     </p>
     <Example
       Component={Fields}

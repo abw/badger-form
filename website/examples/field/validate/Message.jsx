@@ -10,7 +10,7 @@ const notA = value =>
     : true
 
 const ValidateMessage = () =>
-  <Form className="wd-16">
+  <Form className="width-16rem">
     <Field
       name="username"
       label="Username"

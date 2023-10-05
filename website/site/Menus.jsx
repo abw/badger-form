@@ -35,6 +35,7 @@ export const Form = [
   { to: '/form/values',    text: <code>values</code> },
   { to: '/form/onsubmit',  text: <code>onSubmit</code> },
   { to: '/form/onsuccess', text: <code>onSuccess</code> },
+  { to: '/form/debug',     text: <code>Debug</code> },
 ]
 
 export const Control = [

@@ -24,7 +24,7 @@ const MyInput = () => {
             <img
               key={animal}
               className={value === animal ? 'selected' : ''}
-              src={`/images/animals/${animal}.jpg`}
+              src={`/badger-form/images/animals/${animal}.jpg`}
               onClick={() => setValue(animal)}
             />
         )}

@@ -4,12 +4,12 @@ import SubmitCode      from '../../examples/control/Submit.jsx'
 import SubmitSrc       from '../../examples/control/Submit.jsx?raw'
 import SubmitPropsCode from '../../examples/control/SubmitProps.jsx'
 import SubmitPropsSrc  from '../../examples/control/SubmitProps.jsx?raw'
-import ControlPager    from '../../site/Pager/ControlPager.jsx'
+import ControlsPager   from '../../site/Pager/ControlsPager.jsx'
 import { FormLink, OnSubmitLink } from '../../site/Links.jsx'
 
 const Submit = () =>
   <div className="prose">
-    <h1>Control</h1>
+    <h1>Controls</h1>
     <h2 className="font-mono">Submit</h2>
     <p>
       Renders a form submit button.  When clicked the button will submit
@@ -33,7 +33,7 @@ const Submit = () =>
       expand
     />
 
-    <ControlPager/>
+    <ControlsPager/>
   </div>
 
 export default Submit

@@ -10,12 +10,12 @@ import ResetSubmitClassCode from '../../examples/control/ResetSubmitClass.jsx'
 import ResetSubmitClassSrc  from '../../examples/control/ResetSubmitClass.jsx?raw'
 import ResetSubmitPropsCode from '../../examples/control/ResetSubmitProps.jsx'
 import ResetSubmitPropsSrc  from '../../examples/control/ResetSubmitProps.jsx?raw'
-import ControlPager         from '../../site/Pager/ControlPager.jsx'
+import ControlsPager        from '../../site/Pager/ControlsPager.jsx'
 import { ResetLink, SubmitLink } from '../../site/Links.jsx'
 
 const ResetSubmit = () =>
   <div className="prose">
-    <h1>Control</h1>
+    <h1>Controls</h1>
     <h2 className="font-mono">ResetSubmit</h2>
     <p>
       Renders a <ResetLink/> button and a <SubmitLink/> button.
@@ -88,7 +88,7 @@ const ResetSubmit = () =>
       expand
     />
 
-    <ControlPager/>
+    <ControlsPager/>
   </div>
 
 export default ResetSubmit

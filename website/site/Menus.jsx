@@ -38,14 +38,15 @@ export const Form = [
   { to: '/form/debug',     text: <code>Debug</code> },
 ]
 
-export const Control = [
-  { to: '/control/reset',  text: <code>Reset</code> },
-  { to: '/control/submit', text: <code>Submit</code> },
-  { to: '/control/reset-submit', text: <code>ResetSubmit</code> },
+export const Controls = [
+  { to: '/controls',               text: <code>Controls</code>, exact: true },
+  { to: '/controls/reset',         text: <code>Reset</code> },
+  { to: '/controls/submit',        text: <code>Submit</code> },
+  { to: '/controls/reset-submit',  text: <code>ResetSubmit</code> },
 ]
 
 export const Fields = [
-  { to: '/fields/fields',  text: <code>Fields</code> },
+  { to: '/fields',        text: <code>Fields</code> },
   { to: '/fields/names',   text: <code>names</code> },
   { to: '/fields/grid',    text: <code>grid</code> },
   { to: '/fields/gap',     text: <code>gap</code> },

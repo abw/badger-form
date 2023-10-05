@@ -1,6 +1,6 @@
 import React from 'react'
 import Menu from './Menu.jsx'
-import { Control, Field, Fields, Form, Main, Tutorial } from './Menus.jsx'
+import { Controls, Field, Fields, Form, Main, Tutorial } from './Menus.jsx'
 
 const Sidebar = () =>
   <div>
@@ -9,7 +9,7 @@ const Sidebar = () =>
     <Menu title="Form" items={Form}/>
     <Menu title="Field" items={Field}/>
     <Menu title="Fields" items={Fields}/>
-    <Menu title="Control" items={Control}/>
+    <Menu title="Controls" items={Controls}/>
   </div>
 
 

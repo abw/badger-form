@@ -19,22 +19,44 @@ const Validate = () =>
   <div className="prose">
     <h1>Field</h1>
     <div className="alert warning border">
-      <h3>NOTE</h3>
       <Split>
-        <p className="wide">
-          The default validation supported by React Hook Form is very limited.
-          A validation function should only return <code>true</code>,{' '}
-          <code>false</code> or an error message.  This seems rather limiting
-          to me.  For example, it prevents you from using Yup, Joi or any other
-          validation library that throws errors (RHF does support it, but you
-          have to use an adaptor).
-        </p>
-        <p className="wide">
-          I&apos;ve written some wrapper code which
-          allows you to return <code>true</code>, <code>false</code>, throw
-          an error, or return a resolved or rejected promise.  I just
-          haven&apos;t got around to writing all the documentation yet.
-        </p>
+        <div>
+          <h3>Some Documentation/Examples are TODO</h3>
+          <p className="wide">
+            The default validation supported by React Hook Form is very limited.
+            A validation function should only return <code>true</code>,{' '}
+            <code>false</code> or an error message.  This seems rather limiting
+            to me.  For example, it prevents you from using Yup, Joi or any other
+            validation library that throws errors (RHF does support it, but you
+            have to use an adaptor).
+          </p>
+          <p className="wide">
+            I&apos;ve written some wrapper code which removes these limitations.
+            A <code>validate</code> function can continue to return{' '}
+            <code>true</code> or <code>false</code>, but can also throw
+            an error, return a resolved or rejected promise, or use the
+            <code>pass</code> and <code>fail</code> functions passed to it
+            (I might rename/alias these to <code>resolve</code> and <code>reject</code>).
+          </p>
+        </div>
+        <div>
+          <h3>Functionality lacking documentation:</h3>
+          <ul className="pad-l-4">
+            <li>
+              A validation function can return the modified value.  For example,
+              you might have the validation function trim the input and return
+              the modified value.
+            </li>
+            <li>
+              A validation function can return an object with <code>value</code> (containing
+            a modified value) and <code>message</code> (for the error or success message).
+            </li>
+            <li>
+              Similarly a Promise can be resolved or rejected with an object
+              containing <code>value</code> and/or <code>message</code>.
+            </li>
+          </ul>
+        </div>
       </Split>
     </div>
 
@@ -145,23 +167,6 @@ const Validate = () =>
       caption="Validate Pass/Fail"
       expand
     />
-
-    <div className="alert warning border">
-      <h3>TODO - things that work (or soon will) that haven&apos;t been documented yet</h3>
-      <p className="wide">
-        A validation function can return the modified value.  For example,
-        you might have the validation function trim the input and return
-        the modified value.
-      </p>
-      <p className="wide">
-        A validation function can return an object with <code>value</code> (containing
-        a modified value) and <code>message</code> (for the error or success message).
-      </p>
-      <p className="wide">
-        Similarly a Promise can be resolved or rejected with an object
-        containing <code>value</code> and/or <code>message</code>.
-      </p>
-    </div>
 
     <FieldPager/>
   </div>

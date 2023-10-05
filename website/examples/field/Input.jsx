@@ -46,7 +46,6 @@ const isBadger = (value, { fail }) =>
 const FieldInput = () =>
   <Form>
     <h3>Field With Custom Input</h3>
-    <Field name="blurb"/>
     <Field
       name="animal"
       label="Pick an animal"

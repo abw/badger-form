@@ -52,7 +52,9 @@ export const Debug = ({
 const DebugTable = ({title, rows, children}) =>
   <table className="blue celled wide small mar-h-1 pad-none mar-b-4">
     <thead>
-      <th colSpan={2} className="bgc-70 bgd-30">{title}</th>
+      <tr>
+        <th colSpan={2} className="bgc-70 bgd-30">{title}</th>
+      </tr>
     </thead>
     <tbody>
       { children || rows.map(

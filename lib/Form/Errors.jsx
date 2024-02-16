@@ -1,6 +1,6 @@
 import React from 'react'
 import FormError from './Error.jsx'
-import { useForm } from './Context.jsx'
+import { useForm } from './Context.js'
 import { maybeFunction } from '@abw/badger-utils'
 
 const Errors = ({

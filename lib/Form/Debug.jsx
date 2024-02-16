@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm } from './Context.jsx'
+import { useForm } from './Context.js'
 import { hasValue, isObject } from '@abw/badger-utils'
 
 export const Debug = ({

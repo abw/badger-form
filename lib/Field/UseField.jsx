@@ -1,9 +1,9 @@
 import React from 'react'
 import { Children } from './Context.js'
 
-export const UseForm = ({ children }) =>
+export const UseField = ({ children }) =>
   <Children>
     {children}
   </Children>
 
-export default UseForm
+export default UseField

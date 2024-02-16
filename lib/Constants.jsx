@@ -1,6 +1,9 @@
+export const BLANK        = ''
+export const BLUR         = 'blur'
 export const CHANGED      = 'changed'
 export const CHECKBOX     = 'checkbox'
 export const CLEAN        = 'clean'
+export const CONTROLS     = 'controls'
 export const CUSTOM       = 'custom'
 export const DIRTY        = 'dirty'
 export const DISABLED     = 'disabled'
@@ -24,5 +27,8 @@ export const INPUT_ATTRS  = [
   'id', 'name', 'type', 'value', 'checked', 'disabled', 'placeholder',
   'autoComplete', 'onFocus', 'onBlur', 'size', 'rows', 'min', 'max', 'step',
   'minLength', 'maxLength', 'pattern', 'list'
+]
+export const FORM_ATTRS = [
+  'id', 'name', 'action', 'method', 'encType'
 ]
 

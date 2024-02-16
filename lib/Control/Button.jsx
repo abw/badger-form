@@ -1,10 +1,11 @@
 import React from 'react'
+// import { Themed } from '../Theme.jsx'
 
-export const Button = ({
+const Button = ({
   onClick,
   children,
+  text='Button',
   type='button',
-  text,
   ...props
 }) =>
   <button
@@ -16,3 +17,5 @@ export const Button = ({
   </button>
 
 export default Button
+// export default Themed(Button, 'Form.Button')
+

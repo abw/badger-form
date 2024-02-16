@@ -1,20 +1,27 @@
 import React from 'react'
 import DefaultButton from './Button.jsx'
+import { useForm } from '../Form/Context.js'
+// import { Themed } from '../Theme.jsx'
 
-export const Submit = ({
+const Submit = ({
   type='submit',
   text='Submit',
   className='submit',
-  onClick,
   Button=DefaultButton,
   ...props
-}) =>
-  <Button
-    type={type}
-    text={text}
-    className={className}
-    onClick={onClick}
-    {...props}
-  />
+}) => {
+  const { submit, status } = useForm()
+  return (
+    <Button
+      type={type}
+      text={text}
+      className={className}
+      onClick={submit}
+      disabled={status.submitting}
+      {...props}
+    />
+  )
+}
 
 export default Submit
+// export default Themed(Submit, 'Form.Submit')

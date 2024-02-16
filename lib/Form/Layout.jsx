@@ -1,17 +1,13 @@
 import React from 'react'
-import Children from './Children.jsx'
-import { useForm } from './Context.js'
+import { Children, useForm } from './Context.js'
 import { formAttrs } from '../Utils.js'
 
 const Layout = ({
   children,
 }) => {
   const form = useForm()
-  const {
-    submit,
-    className
-  } = form
   const attrs = formAttrs(form)
+  const { submit, className } = form
 
   return (
     <form className={className} {...attrs} onSubmit={submit} noValidate>

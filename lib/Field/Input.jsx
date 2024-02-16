@@ -1,44 +1,31 @@
 import React from 'react'
-import InputTypes from '../Input/index.jsx'
-// import DefaultPrefix from './Prefix.jsx'
-// import DefaultSuffix from './Suffix.jsx'
-import { Consumer } from './Context.jsx'
-// import { selectClass } from '../Utils.js'
-// import { hasValue } from '@abw/badger-utils'
-import { RADIO, TEXT } from '../Constants.jsx'
-import { joinClasses, setKeys } from '../Utils.js'
+import Inputs from './Inputs.jsx'
+import InputTypes from '../Input/index.js'
+import { useField } from './Context.js'
 import { hasValue } from '@abw/badger-utils'
+import { RADIO, TEXT } from '../Constants.jsx'
+// import { Themed } from '../Theme.jsx'
 
 const Input = ({
-  type=TEXT,
-  wide,
-  inputClass,
-  prefix,
-  suffix,
+  field=useField()
 }) => {
+  const {
+    prefix,
+    suffix,
+    type=TEXT,
+  } = field
   const Type = InputTypes[type] || InputTypes.default
-  const classes = joinClasses([
-    'input',
-    inputClass,
-    ...setKeys({ wide })
-  ])
+
   if (type == RADIO) {
-    return <Type/>
+    return <Type field={field}/>
+  }
+  if (hasValue(prefix) || hasValue(suffix)) {
+    return <Inputs/>
   }
   return (
-    <div className={classes}>
-      { hasValue(prefix) && <div className="prefix">{prefix}</div> }
-      <Type/>
-      { hasValue(suffix) && <div className="suffix">{suffix}</div> }
-    </div>
+    <Type field={field}/>
   )
 }
 
-export default Consumer(Input)
-
-/*
-    // <div className="input">
-     { hasValue(prefix) && <Prefix field={field}/> }
-     { hasValue(suffix) && <Suffix field={field}/> }
-    // </div>
-*/
+export default Input
+// export default Themed(Input, 'Form.Field.Input')

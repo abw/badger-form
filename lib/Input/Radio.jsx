@@ -1,40 +1,69 @@
 import React from 'react'
-import { Consumer } from '../Field/Context.jsx'
-import { classes, valueOption } from '../Utils.js'
+import Handlers from './Handlers.js'
+import { useField } from '../Field/Context.js'
+import { inputAttrs, classes, valueOption } from '../Utils.js'
+// import { Themed } from '../Theme.jsx'
 
 const Radio = ({
-  // id,
-  wide,
-  border,
-  options,
-  inputAttrs,
-  inputClass,
-  optionClass,
-  optionsClass,
-  // required,
-}) =>
-  <div className={classes(optionsClass)}>
-    { options.map(
-      option => {
-        option = valueOption(option)
-        return (
-          <label
-            key={option.value}
-            className={classes('radio', optionClass, option.className, { wide, border })}
-            disabled={option.disabled}
-          >
-            <input
-              type="radio"
-              className={inputClass}
-              value={option.value}
-              {...inputAttrs}
-              id={`${inputAttrs.id}-${option.value}`}
-            />
-            {option.text}
-          </label>
-        )
-      }
-    )}
-  </div>
+  field=useField()
+}) => {
+  const {
+    inline,
+    border,
+    options=[],
+    inputClass,
+    optionClass,
+    optionsClass='options',
+    type='radio',
+    handler=Handlers[type]||Handlers.default
+  } = field
+  const attrs = inputAttrs(field)
 
-export default Consumer(Radio)
+  return (
+    <div className={classes(optionsClass)}>
+      { options.map(
+        (option, i) => {
+          option = valueOption(option)
+          const id = `${field.id}-${option.value}`
+          const checked = field.value == option.value
+          // when we focus the field we want to focus the currently selected
+          // option (if there is one) or the first option otherwise
+          const focus = field.value ? checked : i == 0
+          const ref = focus ? field.inputRef : null
+          const labelClass = classes(
+            'radio',
+            optionClass,
+            option.className,
+            { inline, border }
+          )
+          return (
+            <label
+              key={option.value}
+              className={labelClass}
+              disabled={option.disabled}
+              htmlFor={id}
+            >
+              <input
+                type={type}
+                className={inputClass}
+                // ref={field.inputRef}
+                ref={ref}
+                aria-disabled={field.disabled}
+                tabIndex={field.disabled ? -1 : field.tabIndex}
+                onChange={handler(field)}
+                {...attrs}
+                id={id}
+                checked={checked}
+                value={option.value}
+              />
+              {option.text}
+            </label>
+          )
+        }
+      )}
+    </div>
+  )
+}
+
+export default Radio
+// export default Themed(Radio, 'Form.Input.Radio')

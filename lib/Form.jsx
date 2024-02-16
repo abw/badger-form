@@ -1,6 +1,6 @@
 import React from 'react'
 import FormLayout from './Form/Layout.jsx'
-import { Provider }  from './Form/Context.jsx'
+import { Provider }  from './Form/Context.js'
 
 export const Form = ({
   children,

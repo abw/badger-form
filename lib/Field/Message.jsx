@@ -1,9 +1,16 @@
 import React from 'react'
-import { Consumer } from './Context.jsx'
+import { useField } from './Context.js'
+import { selectClass } from '../Utils.js'
+// import { Themed } from '../Theme.jsx'
 
-const Message = ({ message, invalid }) =>
-  <div className="help" role={invalid ? 'alert' : 'note'}>
-    {message}
-  </div>
+const Message = ({ field=useField() }) => {
+  const { help, message, classes } = field
+  const text = message ?? help
+  const className = selectClass(classes, 'help')
+  return text
+    ? <div className={className}>{text}</div>
+    : null
+}
 
-export default Consumer(Message)
+export default Message
+// export default Themed(Message, 'Form.Field.Message')

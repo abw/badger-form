@@ -1,21 +1,41 @@
 import React from 'react'
-import Label from './Label.jsx'
+import DefaultLabel from './Label.jsx'
 import DefaultInput from './Input.jsx'
-import Message from './Message.jsx'
-import { Consumer } from './Context.jsx'
-import { classes } from '../Utils.js'
+import DefaultMessage from './Message.jsx'
+import Hidden from '../Input/Hidden.jsx'
+import { useField } from './Context.js'
+import { fieldClass } from '../Utils.js'
+// import { Themed } from '../Theme.jsx'
 
 const Layout = ({
-  label,
-  message,
-  invalid,
-  fieldClass,
-  Input=DefaultInput
-}) =>
-  <div className={classes('field', fieldClass, { invalid })}>
-    { Boolean(label) && <Label/> }
-    <Input/>
-    { Boolean(message) && <Message/> }
-  </div>
+  field=useField(),
+  children
+}) => {
+  const {
+    type,
+    Label=DefaultLabel,
+    Message=DefaultMessage,
+    Input=DefaultInput,
+  } = field
+  const classes = fieldClass(field)
 
-export default Consumer(Layout)
+  // special case for hidden fields which don't need any wrappers
+  if (type === 'hidden') {
+    return <Hidden field={field}/>
+  }
+
+  return (
+    <div className={classes}>
+      { children ||
+        <>
+          <Label field={field}/>
+          <Input field={field}/>
+          <Message field={field}/>
+        </>
+      }
+    </div>
+  )
+}
+
+export default Layout
+// export default Themed(Layout, 'Form.Field.Layout')

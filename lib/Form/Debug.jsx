@@ -2,73 +2,73 @@ import React from 'react'
 import { useForm } from './Context.jsx'
 import { hasValue, isObject } from '@abw/badger-utils'
 
-const FORM_STATE_FLAGS = [
-  'isLoading', 'isDirty',
-  'isValidating', 'isValid',
-  'isSubmitting', 'isSubmitted', 'isSubmitSuccessful',
-  'submitCount'
-]
-
 export const Debug = ({
-  className='info alert border shadow-2 mar-t-4 pad-b-2'
+  values=true,
+  status=false,
+  all=false,
+  className='info alert border shadow-2 mar-t-4 pad-b-2',
+  ...props
 }) => {
-  const { formState, watch } = useForm()
-  const values = watch()
-
+  const form = useForm()
   return (
     <div className={className}>
       <h3 className="mar-t-none">Form Debugging</h3>
-      <DebugTable
-        title="values"
-        rows={Object.entries(values)}
-      />
-      <DebugTable
-        title="formState"
-      >
-        { FORM_STATE_FLAGS.map(
-          name => <DebugRow key={name} name={name} value={formState[name]}/>
-        )}
-        <DebugRow
-          name="defaultValues"
-          value={formState.defaultValues}
+      { values &&
+        <DebugTable
+          title="values"
+          rows={Object.entries(form.values)}
+          {...props}
         />
-        <DebugRow
-          name="touchedFields"
-          value={Object.keys(formState.touchedFields).join(', ')}
+      }
+      { (status || all) && form.status &&
+        <DebugTable
+          title="Status"
+          rows={Object.entries(form.status)}
+          {...props}
         />
-        <DebugRow
-          name="dirtyFields"
-          value={Object.keys(formState.dirtyFields).join(', ')}
-        />
-        <DebugRow
-          name="errors"
-          value={formState.errors}
-        />
-      </DebugTable>
+      }
     </div>
   )
 }
 
-const DebugTable = ({title, rows, children}) =>
-  <table className="blue celled wide small mar-h-1 pad-none mar-b-4">
+const DebugTable = ({
+  title,
+  rows,
+  children,
+  tableClass='celled wide small mar-h-1 pad-none mar-b-4',
+  titleClass='bgc-70 bgd-30',
+  ...props
+}) =>
+  <table className={tableClass}>
     <thead>
       <tr>
-        <th colSpan={2} className="bgc-70 bgd-30">{title}</th>
+        <th colSpan={2} className={titleClass}>{title}</th>
       </tr>
     </thead>
     <tbody>
       { children || rows.map(
-        ([name, value]) => <DebugRow key={name} name={name} value={value}/>
+        ([name, value]) =>
+          <DebugRow
+            key={name}
+            name={name}
+            value={value}
+            {...props}
+          />
       )}
     </tbody>
   </table>
 
-const DebugRow = ({name, value}) =>
+const DebugRow = ({
+  name,
+  value,
+  keyClass='bgc-80 bgd-20 fgc-30 fgd-70 text-right split-3',
+  valueClass='font-mono bgc-95 bgd-5',
+}) =>
   <tr valign="top">
-    <td className="bgc-80 bgd-20 fgc-30 fgd-70 text-right split-3">
+    <td className={keyClass}>
       {name}
     </td>
-    <td className="font-mono bgc-95 bgd-5">
+    <td className={valueClass}>
       <DebugValue value={value}/>
     </td>
   </tr>
@@ -81,6 +81,5 @@ const DebugValue = ({value}) => {
     ? value.toString()
     : ''
 }
-
 
 export default Debug

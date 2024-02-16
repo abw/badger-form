@@ -1,22 +1,28 @@
-export const CHECKBOX    = 'checkbox'
-export const CLEAN       = 'clean'
-export const CUSTOM      = 'custom'
-export const DIRTY       = 'dirty'
-export const INVALID     = 'invalid'
-export const RADIO       = 'radio'
-export const SELECT      = 'select'
-export const SUBMITTING  = 'submitting'
-export const TEXT        = 'text'
-export const TEXTAREA    = 'textarea'
-export const VALID       = 'valid'
-export const VALIDATE    = 'validate'
-export const INPUT_ATTRS = [
-  // 'id', 'name',
-  'value', 'checked', 'disabled', 'placeholder',
-  'autoComplete',
-  // 'onFocus', 'onBlur',
-  'size', 'type', 'rows',
-  'min', 'max', 'step',
-  'minLength', 'maxLength',
-  // 'step', 'pattern', 'list'
+export const CHANGED      = 'changed'
+export const CHECKBOX     = 'checkbox'
+export const CLEAN        = 'clean'
+export const CUSTOM       = 'custom'
+export const DIRTY        = 'dirty'
+export const DISABLED     = 'disabled'
+export const FOCUS        = 'focus'
+export const FULFILLED    = 'fulfilled'
+export const INVALID      = 'invalid'
+export const OPTIONAL     = 'Optional'
+export const RADIO        = 'radio'
+export const REQUIRED     = 'Required'
+export const REQUIRED_MSG = 'A value is required'
+export const RESET        = 'reset'
+export const SELECT       = 'select'
+export const SUBMITTED    = 'submitted'
+export const SUBMITTING   = 'submitting'
+export const TEXT         = 'text'
+export const TEXTAREA     = 'textarea'
+export const VALID        = 'valid'
+export const VALIDATE     = 'validate'
+export const VALIDATING   = 'validating'
+export const INPUT_ATTRS  = [
+  'id', 'name', 'type', 'value', 'checked', 'disabled', 'placeholder',
+  'autoComplete', 'onFocus', 'onBlur', 'size', 'rows', 'min', 'max', 'step',
+  'minLength', 'maxLength', 'pattern', 'list'
 ]
+

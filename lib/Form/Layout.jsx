@@ -1,17 +1,25 @@
 import React from 'react'
 import Children from './Children.jsx'
-import { Consumer } from './Context.jsx'
+import { useForm } from './Context.js'
+import { formAttrs } from '../Utils.js'
 
 const Layout = ({
-  onSubmit,
   children,
-  className='',
-  style
-}) =>
-  <form onSubmit={onSubmit} className={className} style={style} noValidate>
-    <Children>
-      {children}
-    </Children>
-  </form>
+}) => {
+  const form = useForm()
+  const {
+    submit,
+    className
+  } = form
+  const attrs = formAttrs(form)
 
-export default Consumer(Layout)
+  return (
+    <form className={className} {...attrs} onSubmit={submit} noValidate>
+      <Children>
+        {children}
+      </Children>
+    </form>
+  )
+}
+
+export default Layout

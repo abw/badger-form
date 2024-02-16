@@ -1,15 +1,9 @@
 import React from 'react'
-import { isFunction } from '@abw/badger-utils'
-import { Context } from './Context.jsx'
-import { toArray } from '../Utils.js'
+import { Children } from './Context.jsx'
 
 export const FormChildren = ({ children }) =>
-  toArray(children).map(
-    (child, n) => isFunction(child)
-      ? <Context.Consumer key={n}>
-          {child}
-        </Context.Consumer>
-      : child
-  )
+  <Children>
+    {children}
+  </Children>
 
 export default FormChildren

@@ -1,6 +1,7 @@
-import React      from 'react'
-import { ReactComponent as Badger } from '../svg/badger-form.svg'
+import React from 'react'
 import Link from '../ui/Link.jsx'
+import Badger from '../svg/badger-form.svg?react'
+import OSS from '../svg/oss.svg?react'
 
 const Index = () =>
   <div className="max-width-40rem block-center pad-t-8">
@@ -8,10 +9,9 @@ const Index = () =>
     <h1 className="intro mar-t-8">
       Simple but powerful React forms
     </h1>
-    <p>
-      Badger Form is a module for building forms in React.  It combines the
-      state management of <a href="https://www.react-hook-form.com/">React
-      Hook Form</a> with styles provided by{' '}
+    <p className="large">
+      Badger Form is a yet another module for building forms in React.  It
+      implements state management for forms with styles provided by{' '}
       <a href="https://abw.github.io/badger-css/">Badger CSS</a>.
     </p>
     <p>
@@ -20,20 +20,43 @@ const Index = () =>
       them with your own field input components, or manually implement the
       layout for individual fields any way you like.
     </p>
+    <h2> I know what you&apos;re thinking... </h2>
+    <ul>
+      <li>What does the World need with another React form library?</li>
+      <li>What makes this different, better, and/or worse than all the other form libraries?  </li>
+      <li>Will this guy do my homework for me?</li>
+      <li>Why do we exist?  </li>
+      <li>What is the meaning of life? </li>
+      <li>Where did I leave my car keys? </li>
+      <li>And what is it with all the badgers?</li>
+    </ul>
     <p>
-      It also improves upon some of the functionality in React Hook Form
-      that I consider to be lacking.  In particular, the field validation
-      functionality has been extended so that you can use validation
-      libraries like Yup, Joi, etc., without the need for an adapter.
+      <b>None</b> of these questions will be answered, at least not directly.
+      You can read the copious documentation provided here if you want to
+      find out more.  Or don&apos;t.  It makes no difference to me.  Seriously,
+      I&apos;m not looking to convince you that this is any better or worse
+      than any other form library.  I&apos;m not interested in attracting new
+      users or changing the world.  Been there, done that, burned out.
     </p>
-    <div className="error alert border bdw-2 shadow-2">
-      <h2>WARNING</h2>
+
+    <div className="error alert border bdw-2 shadow-2 mar-v-16">
+      <div className="headline">WARNING - Work in Progress</div>
+      <p className="bold large">
+        Do not use this library unless you like living dangerously!
+      </p>
       <p>
-        This is a work in progress.  It is only partially documented,
-        is woefully under-tested, and it&apos;s liable to change without
-        any notice.
+        It&apos;s in the process of being re-written and it&apos;s special.
+        Look... see... still got the uh... the ol&apos; tagger on it... see...
+        never even played it... Don&apos;t touch it!  Don&apos;t touch it!
+        No one... no one... no!  Don&apos;t touch it. Don&apos;t point, even.
+        No.  It can&apos;t be played... never... I mean...
+      </p>
+      <p className="mar-b-0 bold fgc-30 fgd-80">
+        Don&apos;t even
+        look at it.  You&apos;ve seen enough of that one.
       </p>
     </div>
+
     <h2 className="mar-t-8 mar-b-none">Read the Fine Documentation</h2>
     <ul className="large menu mar-t-none">
       <li>
@@ -55,6 +78,27 @@ const Index = () =>
         <Link to="/controls" text="Form Controls"/> - to reset and submit a form
       </li>
     </ul>
+
+    <div className="text-center">
+      <OSS className="width-12rem"/>
+    </div>
+    <h2>This is Opinionated and Selfish Software...</h2>
+    <p>
+      I wrote this library to help me do my job and make the process of
+      working with forms less painful than I found it using other modules.
+      It is <i>opinionated</i> because it does things the way I like them
+      to be done, and it&apos;s <i>selfish</i> because I have no intention
+      of adding things that I don&apos;t need or want.
+    </p>
+    <h2>...because it&apos;s Open Source Software</h2>
+    <p>
+      It&apos;s Open Source Software and you can use it if you want to
+      for <b>free</b>. You have full access to the source code which you can
+      adapt if you need to.  If it proves useful in helping you get your job
+      done then that&apos;s great.  But please don&apos;t expect me to
+      commit <i>my</i> time to helping <i>you</i> get your job done.
+    </p>
+
   </div>
 
 export default Index

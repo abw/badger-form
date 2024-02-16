@@ -1,13 +1,13 @@
-import React from 'react'
-import Example       from '../../site/Example.jsx'
-import BasicFormCode from '../../examples/tutorial/BasicForm.jsx'
-import BasicFormSrc  from '../../examples/tutorial/BasicForm.jsx?raw'
-import Split from '../../site/Split.jsx'
-import Pager from '../../site/Pager/index.jsx'
-import { Tutorial } from '../../site/Menus.jsx'
+import React          from 'react'
+import Example        from '@/site/Example.jsx'
+import BasicFormCode  from './_examples/BasicForm.jsx'
+import BasicFormSrc   from './_examples/BasicForm.jsx?raw'
+import Split          from '@/site/Split.jsx'
+import Pager          from '@/site/Pager/index.jsx'
+import { Tutorial }   from '@/site/Menus.jsx'
 
 const BasicForm = () =>
-  <div className="Xprose">
+  <div className="prose">
     <h1>A Basic Form</h1>
     <Split align="end">
       <div>

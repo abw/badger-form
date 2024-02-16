@@ -1,0 +1,74 @@
+$header-height:     42px;
+$sidebar-width:     320px;
+$sidebar-padding:   1rem;
+$theme-transition:  0.5s;
+
+:where(html) {
+  --body-text:            var(--grey-20);
+  --bold-text:            var(--brand-20);
+  --head-text:            var(--grey-20);
+  --link-text:            var(--brand-50);
+  --link-hover:           var(--brand-30);
+  // header
+  --header-back:          var(--brand-30);
+  --header-text:          var(--grey40-80);
+  --header-link:          var(--brand-90);
+  --header-hover:         var(--brand-100);
+  --header-border:        var(--brand-20);
+  // footer
+  --footer-back:          var(--brand-20);
+  --footer-text:          var(--grey20-60);
+  --footer-border:        var(--grey40-20);
+  // app
+  // --side-back:
+  --app-back:             var(--grey-70);
+  --main-back:            var(--grey-90);
+  --side-back:            var(--grey-80);
+  --side-border:          var(--grey-60);
+  // --side-border:          var(--grey-70);
+  --side-shadow:        rgba(0, 0, 0, 0.04);
+  --top-shadow:         rgba(0, 0, 0, 0.08);
+  // menu
+  --menu-head:            var(--grey20-20);
+  --menu-text:            var(--grey-20);
+  --menu-back:            var(--grey-85);
+  --menu-hover-text:      var(--brand-10);
+  --menu-hover-back:      var(--grey-90);
+  --menu-active-text:     var(--brand-0);
+  --menu-active-back:     var(--grey20-95);
+}
+#{$dark-theme} {
+  // body
+  --body-text:          var(--grey-60);
+  --bold-text:          var(--grey-70);
+  --head-text:          var(--grey-80);
+  --link-text:          var(--brand-60);
+  --link-hover:         var(--brand-80);
+  // header
+  --header-back:        var(--brand-25);
+  --header-text:        var(--brand-80);
+  --header-link:        var(--brand-85);
+  --header-hover:       var(--brand-100);
+  --header-border:      var(--brand-10);
+
+  // footer
+  --footer-back:        var(--grey40-15);
+  --footer-text:        var(--grey20-50);
+  --footer-border:      black;
+  // app
+  --app-back:           var(--grey-0);
+  --main-back:          var(--grey-20);
+  --side-back:          var(--grey-10);
+  --side-border:        var(--grey-30);
+  // --side-border:        var(--grey-20);
+  --side-shadow:      rgba(0, 0, 0, 0.2);
+  --top-shadow:       rgba(0, 0, 0, 0.15);
+  // menu
+  --menu-head:          var(--grey20-80);
+  --menu-text:          var(--grey-80);
+  --menu-back:          var(--grey-15);
+  --menu-hover-text:    var(--grey-90);
+  --menu-hover-back:    var(--grey-20);
+  --menu-active-text:   var(--brand-100);
+  --menu-active-back:   var(--grey20-30);
+}

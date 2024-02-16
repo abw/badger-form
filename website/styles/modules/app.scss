@@ -51,26 +51,36 @@
 }
 
 #app > aside {
-  .menu {
+  details.menu {
     border: 0;
     margin-bottom: 1rem;
-    h4 {
-      margin-bottom: 0.25rem;
+    summary {
+      // margin-bottom: 0.25rem;
+      margin-bottom: 0;
       color: var(--menu-head);
+    }
+    ul {
+      margin: 0;
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
     }
     a {
       display: block;
       font-size: $size-small;
       line-height: 1.25;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.25em;
       padding: 0.25rem 0.5rem;
       color: var(--menu-text);
-      transition: background-color 0.5s;
+      background-color: var(--menu-back);
+      transition: all 0.5s;
       text-decoration: none;
       border-radius: 4px;
       cursor: pointer;
       &:hover {
-        transition: background-color 0.2s;
+        transition: all 0.2s;
         color: var(--menu-hover-text);
         background-color: var(--menu-hover-back);
       }
@@ -90,6 +100,38 @@
       margin-bottom: 0;
       a {
         line-height: 1.5;
+      }
+    }
+    .toc {
+      font-size: 0.8em;
+      margin-left: 0.5rem;
+      padding-left: 0rem;
+      margin-bottom: 0.25rem;
+      margin-top: 0.25rem;
+      li:not(.heading) {
+        padding-left: 0.5rem;
+        border-radius: 4px;
+        color: var(--menu-item-text);
+        background-color: var(--submenu-back);
+        line-height: 1.5;
+        margin-bottom: 0.25rem;
+        &:hover {
+          transition: all 0.2s;
+          color: var(--menu-hover-text);
+          background-color: var(--menu-hover-back);
+          cursor: pointer;
+        }
+        &:active {
+          color: var(--menu-active-text);
+          background-color: var(--menu-active-back);
+        }
+      }
+      li.heading {
+        h4 {
+          font-size: $size-smaller;
+          margin: 0 0 0.25rem 0;
+          cursor: pointer;
+        }
       }
     }
   }

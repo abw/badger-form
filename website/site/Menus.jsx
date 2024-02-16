@@ -1,12 +1,16 @@
 import React from 'react'
 
-export const Main = [
-  { to: '/', text: 'Home' },
-  { to: '/getting-started', text: 'Getting Started' },
+export const GettingStarted = {
+  title:  'Getting Started',
+  path: '/getting-started',
+  items: [
+    { to: '/getting-started/installation', text: 'Installation' },
+    { to: '/getting-started/styling', text: 'Styling with CSS' },
+  ]
   // { to: '/test', text: 'Test #1' },
   // { to: '/test2', text: 'Test #2' },
   // { to: '/test3', text: 'Test #3' },
-]
+}
 
 export const Tutorial = [
   { to: '/tutorial/basic-form',       text: 'A Basic Form' },

@@ -38,7 +38,8 @@
     "url": "https://github.com/abw/badger-form/issues"
   },
   "dependencies": {
-    "@abw/react-context": "^2.0.3"
+    "@abw/react-context": "^2.0.4",
+    "@vitest/coverage-v8": "^1.2.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -46,26 +47,26 @@
     "react-hook-form": "^7.45.1"
   },
   "devDependencies": {
-    "@abw/badger-css": "^0.0.12",
+    "@abw/badger-css": "^0.2.20",
     "@abw/badger-timestamp": "^1.0.4",
-    "@abw/badger-utils": "^1.0.21",
+    "@abw/badger-utils": "^1.0.23",
     "@abw/react-night-and-day": "^0.0.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "@vitest/coverage-c8": "^0.31.0",
-    "@vitest/ui": "^0.31.0",
-    "eslint": "^8.37.0",
-    "eslint-plugin-react": "^7.32.2",
-    "jsdom": "^21.1.1",
-    "react-router-dom": "^6.10.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/ui": "^1.2.2",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "jsdom": "^21.1.2",
+    "react-router-dom": "^6.22.0",
     "react-syntax-highlighter": "^15.5.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "sass": "^1.60.0",
-    "vite": "^4.4.9",
-    "vite-plugin-svgr": "^3.2.0",
-    "vitest": "^0.31.0"
+    "rollup-plugin-copy": "^3.5.0",
+    "sass": "^1.71.0",
+    "vite": "^5.1.3",
+    "vite-jsconfig-paths": "^2.0.1",
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^1.2.2"
   }
 }

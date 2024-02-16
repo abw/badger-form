@@ -2,7 +2,7 @@ import React  from 'react'
 import Link   from './Link.jsx'
 import Icon  from '../ui/Icon.jsx'
 import { Toggle, useTheme } from '@abw/react-night-and-day'
-import { ReactComponent as Github } from '../svg/github.svg'
+import Github from '../svg/github.svg?react'
 import { SIDEBAR, NO_SIDEBAR } from './Constants.jsx'
 import { version } from './Utils.jsx'
 

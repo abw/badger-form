@@ -1,10 +1,14 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import define from  './vite.defs.js'
-import copy from 'rollup-plugin-copy'
+import react            from '@vitejs/plugin-react'
+import jsconfigPaths    from 'vite-jsconfig-paths'
+import copy             from 'rollup-plugin-copy'
+import define           from  './vite.defs.js'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    jsconfigPaths()
+  ],
   define,
   test: {
     environment: 'jsdom',
@@ -13,7 +17,7 @@ export default defineConfig({
     include: ['test/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     exclude: ['test/setup.js', 'test/lib'],
     coverage: {
-      provider: 'c8',
+      provider: 'v8',
       reporter: ['html']
     }
   },

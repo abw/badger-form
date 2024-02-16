@@ -18,7 +18,9 @@ export const CodeBlock = ({
   caption,
   expand=false,
   fixed=expand,
-  className=''
+  className='',
+  undent=false
+
 }) => {
   // const { isDark } = useTheme()
   const [copied, setCopied] = useState(false)
@@ -52,21 +54,36 @@ export const CodeBlock = ({
           // backgroundColor: isDark ? '#14191B' : '#292C2D'
         }}
       >
-        {prepareCode(code)}
+        {prepareCode(code, { undent })}
       </SyntaxHighlighter>
     </div>
   )
 }
 
-export const prepareCode = code =>
-  code
-    .replace(/^[^]*?{?\/\*\s*START\s*\*\/}?\n/, '')  // remove everything up to {/* START */}
-    .replace(/[\n\s]*{?\/\*\s*END\s*\*\/}?[^]*/, '') // and everything from {/* END */} onwards
-    .replaceAll(/\/\/\s*PRETEND:\s/g, '')            // and the // PRETEND: prefix
-    .replaceAll(/\/\*\s*REAL\s*\*\/.*?\/\*\s*UNREAL\s*\*\//g, '')
-    .replaceAll(/{\/\*\s*(UN?)PRETEND\s*\*\/}/g, '')
+export const prepareCode = (code, options={}) => {
+  // This is some hackery to allow us to display source code fragments.
+  // We want the components to be valid JSX and executable so we can display
+  // the output of running them.  But we also want to present a cleaner view
+  // in the source code.  For example, we have to change the import path,
+  // from e.g. '../../src/index.js' to '@abw/badger-react-ui'
+  code = code
+    // remove everything up to {/* START */}
+    .replace(/^[^]*?{?\/\*\s*START\s*\*\/}?\n/, '')
+    // and everything from {/* END */} onwards
+    .replace(/[\n\s]*{?\/\*\s*END\s*\*\/}?[^]*/, '')
+    // and the // PRETEND: prefix
+    .replaceAll(/\/\/\s*PRETEND:\s/g, '')
+    // also cleanup {/* PRETEND: some stuff */}
+    .replaceAll(/{?\/\*\s*PRETEND:\s(.*?)\s+\*\/}?/g, '$1')
+    // .replaceAll(/\/\*\s*REAL\s*\*\/.*?\/\*\s*UNREAL\s*\*\//g, '')
+    // .replaceAll(/{\/\*\s*(UN?)PRETEND\s*\*\/}/g, '')
     .replace(/\n+$/, '')
     // .replaceAll(/*REAL:\s*\n.*?\n/g, '')       // and any line after // REAL:
-
+  if (options.undent) {
+    const match = new RegExp('^' + ' '.repeat(options.undent), 'gm')
+    code = code.replaceAll(match, '')
+  }
+  return code
+}
 
 export default CodeBlock

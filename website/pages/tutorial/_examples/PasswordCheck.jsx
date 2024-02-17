@@ -2,7 +2,7 @@ import { Form, Fields, Errors, Submit } from '@/lib/index.js'
 
 {/* START */}
 import React from 'react'
-// PRETEND: import { Form, Fields, Errors, Submit } from '@abw/react-formula'
+// PRETEND: import { Form, Fields, Errors, Submit } from '@abw/badger-form'
 import * as yup  from 'yup'
 
 const validateForm = values => new Promise(

@@ -3,7 +3,7 @@ import { Form, Field, Submit } from '@/lib/index.js'
 {/* START */}
 import React from 'react'
 import * as yup  from 'yup'
-// PRETEND: import { Form, Field, Submit } from '@abw/react-formula'
+// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
 const fields = {
   email: {

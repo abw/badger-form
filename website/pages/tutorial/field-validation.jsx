@@ -76,42 +76,46 @@ const FieldValidation = () =>
       expand
     />
 
-    <h2>Validation Properties</h2>
-
-    <dl>
-      <dt><code>validateOnBlur</code></dt>
-      <dd>
+    <Split>
+      <div>
+        <h2>Validation Properties</h2>
+        <dl>
+          <dt><FieldValidateOnBlurLink/></dt>
+          <dd>
+            <p>
+              By default, field validation happens when the form is submitted.
+              You can add the <FieldValidateOnBlurLink/> property to either the{' '}
+              <FormLink/> or individual <FieldLink/> components if you want the
+              validation to happen when a field is blurred.
+            </p>
+          </dd>
+          <dt><FieldValidateOnChangeLink/></dt>
+          <dd>
+            <p>
+              You can add the <FieldValidateOnChangeLink/> property to either the{' '}
+              <FormLink/> or individual <FieldLink/> components if you want validation
+              to happen any time the field value changes, i.e. as the user types.
+            </p>
+          </dd>
+          <dt><FieldMinValidateLengthLink/></dt>
+          <dd>
+            <p>
+              The <FieldMinValidateLengthLink/> can be set if you only want validation to
+              start after the user has entered a particular number of characters. The
+              default values is <code>1</code>.
+            </p>
+          </dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Where Next?</h2>
         <p>
-          By default, field validation happens when the form is submitted.
-          You can add the <FieldValidateOnBlurLink/> property to either the{' '}
-          <FormLink/> or individual <FieldLink/> components if you want the
-          validation to happen when a field is blurred.
+          If you need to perform some kind of validation where you have access
+          to all of the submitted values then you can do that at the form level
+          We&apos;ll look at that next.
         </p>
-      </dd>
-      <dt><code>validateOnChange</code></dt>
-      <dd>
-        <p>
-          You can add the <FieldValidateOnChangeLink/> property to either the{' '}
-          <FormLink/> or individual <FieldLink/> components if you want validation
-          to happen any time the field value changes, i.e. as the user types.
-        </p>
-      </dd>
-      <dt><code>minValidateLength</code></dt>
-      <dd>
-        <p>
-          The <FieldMinValidateLengthLink/> can be set if you only want validation to
-          start after the user has entered a particular number of characters. The
-          default values is <code>1</code>.
-        </p>
-      </dd>
-    </dl>
-
-    <h2>Where Next?</h2>
-    <p>
-      If you need to perform some kind of validation where you have access
-      to all of the submitted values then you can do that at the form level
-      We&apos;ll look at that next.
-    </p>
+      </div>
+    </Split>
     <TutorialPager uri="field-validation"/>
   </div>
 

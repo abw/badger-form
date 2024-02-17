@@ -18,7 +18,19 @@ export default defineConfig({
     exclude: ['test/setup.js', 'test/lib'],
     coverage: {
       provider: 'v8',
-      reporter: ['html']
+      reporter: ['html'],
+      exclude: [
+        'coverage/**',
+        'dist/**',
+        'docs/**',
+        'tmp/**',
+        '*-OLD/**',
+        'website/**',
+        '**/[.]**',
+        'test?(s)/**',
+        '**/{rollup,vite,vitest,build}.{config,defs,docs}.*',
+        '**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
+      ]
     }
   },
   build: {

@@ -4,35 +4,33 @@ import BasicFormCode  from './_examples/BasicForm.jsx'
 import BasicFormSrc   from './_examples/BasicForm.jsx?raw'
 import Split          from '@/site/Split.jsx'
 import Pager          from '@/site/Pager/index.jsx'
+import Suggest        from '@/site/Suggest.jsx'
 import { Tutorial }   from '@/site/Menus.jsx'
 
 const BasicForm = () =>
   <div className="prose">
     <h1>A Basic Form</h1>
-    <Split align="end">
+    <p className="intro wide">
+      One of the underlying principles of this library is that it should
+      be just as easy, if not easier, to create a form using{' '}
+      Badger Form as it should be using vanilla HTML.
+    </p>
+    <h2>Login Form</h2>
+    <Split align="start">
       <div>
-        <blockquote className="intro">
-          Make simple things simple and hard things possible.
-          <div className="attrib">
-            Larry Wall
-          </div>
-        </blockquote>
-        <p className="intro">
-          One of the underlying principles of this library is that it should
-          be just as easy, if not easier, to create a form using{' '}
-          <code>badger-form</code> as it should be using vanilla HTML.
-        </p>
         <p>
           So without further ado, let&apos;s look at the one form that most
-          websites will require: a user login form.
+          websites will require: a user login form.  In this simple example
+          there are fields for the user to enter their email address and
+          password.
         </p>
       </div>
       <div>
-        <div className="info alert border">
+        <Suggest>
           Try entering some values in the form below and click on the
           &quot;Login&quot; button. Also see what happens if you don&apos;t
           enter a value for either field.
-        </div>
+        </Suggest>
       </div>
     </Split>
     <Example

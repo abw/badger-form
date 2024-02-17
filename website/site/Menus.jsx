@@ -17,6 +17,9 @@ export const Tutorial = {
   path: '/tutorial',
   items: [
     { to: '/tutorial/basic-form',       text: 'A Basic Form' },
+    { to: '/tutorial/field-validation', text: 'Field Validation' },
+    { to: '/tutorial/form-validation', text: 'Form Validation' },
+
   // { to: '/tutorial/form-properties',  text: 'Form Properties' },
   // { to: '/tutorial/field-properties', text: 'Field Properties' },
   // { to: '/tutorial/field-types',      text: 'Field Types' },

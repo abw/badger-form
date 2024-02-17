@@ -1,15 +1,22 @@
 import React from 'react'
 import Layout from './Layout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
+import { capitalise } from '@abw/badger-utils'
+import { idSafe } from './Utils.jsx'
 
 // Read all the pages/* files and create React Router routes for them.
 const matchLayout = /\/_layout$/
 const matchIgnore = /\/_(examples|snippets)\//
-const routes = buildRoutes(
-  import.meta.glob('../pages/**/[a-z_]*.jsx', { eager: true })
+export const routes = buildRoutes(
+  import.meta.glob('../pages/**/[a-z_]*.[jt](s|sx)', { eager: true })
 )
+export const links = buildLinks(routes)
+console.log(`links:`, links)
+
 
 function buildRoutes(pages) {
+  // console.log(`pages:`, pages);
+
   const routes = Object
     .entries(pages)
     .map(buildRoute)
@@ -81,14 +88,81 @@ function buildRoutes(pages) {
 }
 
 function buildRoute([route, module]) {
-  const path = route
+  const stub = route
     .replace(/^[./]*pages/, '')
-    .replace(/\.jsx$/, '')
+    .replace(/\.[jt]sx?$/, '')
+  const path = stub
     .replace(/index$/, '')
     .replace(/\[(\w+)\]/, ':$1')
   const Component = module.default
+  const metadata = module.metadata || { }
+  metadata.source = route
+  metadata.stub = stub
   // console.log(`${route} => ${path}`)
-  return { path, Component }
+  return { path, Component, metadata }
+}
+
+function buildLinks(routes) {
+  const paths = routes.reduce(
+    (links, route) => {
+      links[route.path] = buildLink(route)
+      return links
+    },
+    { }
+  )
+  const tree = { }
+  Object
+    .entries(paths)
+    .forEach(
+      ([, node]) => {
+        if (node.base.length) {
+          treeLeaf(
+            tree,
+            node.base
+          )
+          //parent.children.push(node)
+        }
+      }
+    )
+  console.log(`tree:`, tree)
+
+  return paths
+}
+
+function treeLeaf(tree, leaf, create=() => ({ })) {
+  const path = leaf.split(/\//)
+  let node = tree
+  path.forEach(
+    part => node = node[part] ||= create(leaf)
+  )
+  return node
+}
+
+function buildLink({ path, metadata }) {
+  const parts = path.replace(/^\/+/, '').replace(/\/+$/, '').split(/\/+/)
+  const page  = parts.pop()
+
+  metadata.page = page
+  metadata.path = path
+  metadata.base = parts.join('/')
+
+  if (page) {
+    // const last = parts.pop()
+    console.log(`parts of ${path}: `, parts)
+    metadata.title ||= page.split(/-/).map(capitalise).join(' ')
+    metadata.id ||= idSafe(page)
+    metadata.index = Boolean(metadata.stub.match(/\/index$/))
+    metadata.rank ??= metadata.index ? 1 : 99
+  }
+  else {
+    metadata.title ||= 'Index'
+    metadata.id ||= 'root'
+    metadata.rank ??= 1
+    metadata.index = true
+  }
+  metadata.menu ||= metadata.title
+
+  return metadata
 }
 
 const Router = createBrowserRouter(

@@ -23,6 +23,7 @@ export const FormOnResetLink            = ToCode('/form/events/onReset', 'onRese
 export const FormResetLink              = ToCode('/form/functions/reset', 'reset')
 
 export const FieldLink                  = ToCode('/field', 'Field')
+// field properties
 export const FieldNameLink              = ToCode('/field/properties/name', 'name')
 export const FieldTypeLink              = ToCode('/field/properties/type', 'type')
 export const FieldLabelLink             = ToCode('/field/properties/label', 'label')
@@ -31,20 +32,34 @@ export const FieldHelpLink              = ToCode('/field/properties/help', 'help
 export const FieldPrefixLink            = ToCode('/field/properties/prefix', 'prefix')
 export const FieldSuffixLink            = ToCode('/field/properties/suffix', 'suffix')
 export const FieldChildrenLink          = ToCode('/field/properties/children', 'suffix')
+// field validation
 export const FieldRequiredLink          = ToCode('/field/validation/required', 'required')
 export const FieldShowRequiredLink      = ToCode('/field/validation/showRequired', 'showRequired')
 export const FieldRequiredLabelLink     = ToCode('/field/validation/requiredLabel', 'requiredLabel')
 export const FieldRequiredMessageLink   = ToCode('/field/validation/requiredMessage', 'requiredMessage')
 export const FieldShowOptionalLink      = ToCode('/field/validation/showOptional', 'showOptional')
+export const FieldOptionalLabelLink     = ToCode('/field/validation/optionalLabel', 'optionalLabel')
 export const FieldPrepareValueLink      = ToCode('/field/validation/prepareValue', 'prepareValue')
 export const FieldValidateLink          = ToCode('/field/validation/validate', 'validate')
 export const FieldValidateOnBlurLink    = ToCode('/field/validation/validateOnBlur', 'validateOnBlur')
 export const FieldValidateOnChangeLink  = ToCode('/field/validation/validateOnChange', 'validateOnChange')
 export const FieldValidateOnInvalidLink = ToCode('/field/validation/validateOnInvalid', 'validateOnInvalid')
 export const FieldMinValidateLengthLink = ToCode('/field/validation/minValidateLength', 'minValidateLength')
+// field events
+export const FieldOnFocusLink           = ToCode('/field/events/onFocus', 'onFocus')
+export const FieldOnBlurLink            = ToCode('/field/events/onBlur', 'onBlur')
+export const FieldOnChangeLink          = ToCode('/field/events/onChange', 'onChange')
+export const FieldOnValidLink           = ToCode('/field/events/onValid', 'onValid')
+export const FieldOnInvalidLink         = ToCode('/field/events/onInvalid', 'onInvalid')
+export const FieldOnLoadLink            = ToCode('/field/events/onLoad', 'onLoad')
+// field functions
+export const FieldSetFocusLink          = ToCode('/field/functions/setFocus', 'setFocus')
+export const FieldSetValueLink          = ToCode('/field/functions/setValue', 'setValue')
+export const FieldSetValidLink          = ToCode('/field/functions/setValid', 'setValid')
+export const FieldSetInvalidLink        = ToCode('/field/functions/setInvalid', 'setInvalid')
+export const FieldResetLink             = ToCode('/field/functions/reset', 'reset')
+
 export const FieldLayoutLink            = ToCode('/field/Layout', 'Layout')
-export const FieldOnChangeLink          = ToCode('/field/onChange', 'onChange')
-export const FieldOptionalLabelLink     = ToCode('/field/optionalLabel', 'optionalLabel')
 
 export const TextInputLink              = ToCode('/input/text', 'Text')
 export const TextAreaInputLink          = ToCode('/input/textarea', 'TextArea')

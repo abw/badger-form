@@ -120,6 +120,27 @@ export const Field = {
         { to: '/field/validation/minValidateLength',  code: 'minValidateLength' },
       ]
     },
+    {
+      section: 'Events',
+      items: [
+        { to: '/field/events/onFocus',                code: 'onFocus'   },
+        { to: '/field/events/onBlur',                 code: 'onBlur'    },
+        { to: '/field/events/onChange',               code: 'onChange'  },
+        { to: '/field/events/onValid',                code: 'onValid'   },
+        { to: '/field/events/onInvalid',              code: 'onInvalid' },
+        { to: '/field/events/onLoad',                 code: 'onLoad'    },
+      ]
+    },
+    {
+      section: 'Functions',
+      items: [
+        { to: '/field/functions/setFocus',            code: 'setFocus'   },
+        { to: '/field/functions/setValue',            code: 'setValue'   },
+        { to: '/field/functions/setValid',            code: 'setValid'   },
+        { to: '/field/functions/setInvalid',          code: 'setInvalid' },
+        { to: '/field/functions/reset',               code: 'reset'      },
+      ]
+    },
   ]
 }
 

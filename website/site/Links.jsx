@@ -20,6 +20,8 @@ export const FormOnSubmitLink           = ToCode('/form/events/onSubmit', 'onSub
 export const FormOnSuccessLink          = ToCode('/form/events/onSuccess', 'onSuccess')
 export const FormOnErrorLink            = ToCode('/form/events/onError', 'onError')
 export const FormOnResetLink            = ToCode('/form/events/onReset', 'onReset')
+export const FormSetFocusLink           = ToCode('/form/functions/setFocus', 'setFocus')
+export const FormSetValuesLink          = ToCode('/form/functions/setValues', 'setValues')
 export const FormResetLink              = ToCode('/form/functions/reset', 'reset')
 
 export const FieldLink                  = ToCode('/field', 'Field')
@@ -59,7 +61,12 @@ export const FieldSetValidLink          = ToCode('/field/functions/setValid', 's
 export const FieldSetInvalidLink        = ToCode('/field/functions/setInvalid', 'setInvalid')
 export const FieldResetLink             = ToCode('/field/functions/reset', 'reset')
 
-export const FieldLayoutLink            = ToCode('/field/Layout', 'Layout')
+export const FieldLayoutLink            = ToCode('/field/components/Layout', 'Layout')
+export const FieldLabelComponentLink    = ToCode('/field/components/Label', 'Label')
+export const FieldInputLink             = ToCode('/field/components/Input', 'Input')
+export const FieldMessageLink           = ToCode('/field/components/Message', 'Message')
+export const FieldUseFieldLink          = ToCode('/field/components/UseField', 'UseField')
+
 
 export const TextInputLink              = ToCode('/input/text', 'Text')
 export const TextAreaInputLink          = ToCode('/input/textarea', 'TextArea')

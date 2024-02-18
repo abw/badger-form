@@ -141,6 +141,16 @@ export const Field = {
         { to: '/field/functions/reset',               code: 'reset'      },
       ]
     },
+    {
+      section: 'Components',
+      items: [
+        { to: '/field/components/Layout',    code: 'Layout'    },
+        { to: '/field/components/Label',     code: 'Label'     },
+        { to: '/field/components/Input',     code: 'Input'     },
+        { to: '/field/components/Message',   code: 'Message'   },
+        { to: '/field/components/UseField',  code: 'UseField'  },
+      ]
+    },
   ]
 }
 

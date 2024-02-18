@@ -8,11 +8,11 @@ import { Provider, Children }  from './Field/Context.js'
 export const Field = ({
   name,
   children,
-  Layout=FieldLayout,
   ...props
 }) => {
   const form  = useForm()
   const field = prepareField(form.fieldSpec(name, props))
+  const Layout = field.Layout || FieldLayout
 
   return (
     <Provider form={form} {...field}>

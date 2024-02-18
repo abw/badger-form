@@ -1,0 +1,18 @@
+div.animals {
+  display: flex;
+  gap: 1rem;
+}
+div.animal {
+  font-size: 0;
+  line-height: 0;
+  border: 6px solid white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.5s;
+}
+div.animal:hover {
+  border-color: #ccf;
+  cursor: pointer;
+}
+div.animal.selected {
+  border-color: #88f;
+}

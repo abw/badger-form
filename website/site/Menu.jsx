@@ -1,47 +1,29 @@
 import React from 'react'
-import Link from '../ui/Link.jsx'
+// import { useState } from 'react'
 import Context from './Context.jsx'
-import MenuTOC from './MenuTOC.jsx'
 import { useResolvedPath } from 'react-router-dom'
+import MenuItems from './MenuItems.jsx'
 
-const Menu = ({title, path, items, tocs}) => {
+const Menu = ({ title, url, items }) => {
   const resolved = useResolvedPath()
-  const open = path && resolved.pathname.slice(0, path.length) === path
+  // const open = path && resolved.pathname.slice(0, path.length) === path
+  const open = resolved.pathname.slice(0, url.length) === url
+  //const [open, setOpen] = useState(
+  //  resolved.pathname.slice(0, url.length) === url
+  //)
+  //const toggleOpen = () => {
+  //  console.log(`toggling, open is `, open ? 'true' : 'false');
+  //  setOpen( open => ! open )
+  //}
 
   return (
     <details className="menu" open={open}>
-      <summary>{title}</summary>
-      <ul>
-        { items.map(
-          item => {
-            const active = resolved.pathname === item.to
-            return (
-              <li key={item.to}>
-                <Link className="item" {...item}/>
-                { (Boolean(item.tocName) && active && tocs[item.tocName]) &&
-                  <MenuTOC toc={tocs[item.tocName]}/>
-                }
-              </li>
-            )
-          }
-        )}
-      </ul>
+      <summary>
+        {title}
+      </summary>
+      <MenuItems url={url} items={items}/>
     </details>
   )
 }
 
 export default Context.Consumer(Menu)
-/*
-import React from 'react'
-import Link from './Link.jsx'
-
-const Menu = ({title, items}) =>
-  <div className="menu">
-    <h4>{title}</h4>
-    { items.map(
-      item => <Link key={item.to} {...item}/>
-    )}
-  </div>
-
-export default Menu
-*/

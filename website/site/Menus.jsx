@@ -1,8 +1,8 @@
 import React from 'react'
 
 export const GettingStarted = {
-  title:  'Getting Started',
-  path: '/getting-started',
+  title: 'Getting Started',
+  url: '/getting-started',
   items: [
     { to: '/getting-started/installation', text: 'Installation' },
     // { to: '/getting-started/styling', text: 'Styling with CSS' },
@@ -14,7 +14,7 @@ export const GettingStarted = {
 
 export const Tutorial = {
   title:  'Tutorial',
-  path: '/tutorial',
+  url: '/tutorial',
   items: [
     { to: '/tutorial/basic-form',            text: 'A Basic Form' },
     { to: '/tutorial/field-validation',      text: 'Field Validation' },
@@ -24,11 +24,64 @@ export const Tutorial = {
     { to: '/tutorial/submission-errors',     text: 'Submission Errors' },
     { to: '/tutorial/complete-registration', text: 'Registration Form' },
     { to: '/tutorial/edit-form',             text: 'Edit Form' },
-
+    { to: '/tutorial/debugging',             text: 'Debugging' },
+    { to: '/tutorial/headless-fields',       text: 'Headless Fields' },
   // { to: '/tutorial/form-properties',  text: 'Form Properties' },
   // { to: '/tutorial/field-properties', text: 'Field Properties' },
   // { to: '/tutorial/field-types',      text: 'Field Types' },
   // { to: '/tutorial/field-validation', text: 'Field Validation' },
+  ]
+}
+
+export const Form = {
+  title:  'Form',
+  url: '/form',
+  items: [
+    { to: '/form', text: 'Form', className: 'font-mono', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/form/properties/fields',    code: 'fields'   },
+        { to: '/form/properties/values',    code: 'values'   },
+        { to: '/form/properties/hidden',    code: 'hidden'   },
+        { to: '/form/properties/children',  code: 'children' },
+      ]
+    },
+    {
+      section: 'Validation',
+      items: [
+        { to: '/form/validation/showRequired',      code: 'showRequired'      },
+        { to: '/form/validation/requiredLabel',     code: 'requiredLabel'     },
+        { to: '/form/validation/requiredMessage',   code: 'requiredMessage'   },
+        { to: '/form/validation/showOptional',      code: 'showOptional'      },
+        { to: '/form/validation/optionalLabel',     code: 'optionalLabel'     },
+        { to: '/form/validation/validate',          code: 'validate'          },
+        { to: '/form/validation/validateOnBlur',    code: 'validateOnBlur'    },
+        { to: '/form/validation/validateOnChange',  code: 'validateOnChange'  },
+        { to: '/form/validation/validateOnInvalid', code: 'validateOnInvalid' },
+        { to: '/form/validation/minValidateLength', code: 'minValidateLength' },
+        { to: '/form/validation/resetOnSuccess',    code: 'resetOnSuccess'    },
+        { to: '/form/validation/focusInvalidField', code: 'focusInvalidField' },
+      ]
+    },
+    {
+      section: 'Events',
+      items: [
+        { to: '/form/events/onLoad',    code: 'onLoad'    },
+        { to: '/form/events/onReset',   code: 'onReset'   },
+        { to: '/form/events/onSubmit',  code: 'onSubmit'  },
+        { to: '/form/events/onSuccess', code: 'onSuccess' },
+        { to: '/form/events/onError',   code: 'onError'   },
+      ]
+    },
+    {
+      section: 'Functions',
+      items: [
+        { to: '/form/functions/reset',      code: 'reset'     },
+        { to: '/form/functions/setFocus',   code: 'setFocus'  },
+        { to: '/form/functions/setValues',  code: 'setValues' },
+      ]
+    },
   ]
 }
 
@@ -44,14 +97,6 @@ export const Field = [
   { to: '/field/watch-field',         text: <code>watchField</code> },
   { to: '/field/wide',                text: <code>wide</code> },
   { to: '/field/input',               text: <code>Input</code> },
-]
-export const Form = [
-  { to: '/form',           text: <code>Form</code>, exact: true },
-  { to: '/form/fields',    text: <code>fields</code> },
-  { to: '/form/values',    text: <code>values</code> },
-  { to: '/form/onsubmit',  text: <code>onSubmit</code> },
-  { to: '/form/onsuccess', text: <code>onSuccess</code> },
-  { to: '/form/debug',     text: <code>Debug</code> },
 ]
 
 export const Controls = [

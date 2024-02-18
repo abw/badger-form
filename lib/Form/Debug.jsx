@@ -6,27 +6,29 @@ export const Debug = ({
   values=true,
   status=false,
   all=false,
-  className='info alert border shadow-2 mar-t-4 pad-b-2',
+  className='border bdr-2 shadow-2 mar-t-4 pad-4',
   ...props
 }) => {
   const form = useForm()
   return (
     <div className={className}>
       <h3 className="mar-t-none">Form Debugging</h3>
-      { values &&
-        <DebugTable
-          title="values"
-          rows={Object.entries(form.values)}
-          {...props}
-        />
-      }
-      { (status || all) && form.status &&
-        <DebugTable
-          title="Status"
-          rows={Object.entries(form.status)}
-          {...props}
-        />
-      }
+      <div className="grid-1 gap-4">
+        { values &&
+          <DebugTable
+            title="values"
+            rows={Object.entries(form.values)}
+            {...props}
+          />
+        }
+        { (status || all) && form.status &&
+          <DebugTable
+            title="Status"
+            rows={Object.entries(form.status)}
+            {...props}
+          />
+        }
+      </div>
     </div>
   )
 }
@@ -35,13 +37,13 @@ const DebugTable = ({
   title,
   rows,
   children,
-  tableClass='celled wide small mar-h-1 pad-none mar-b-4',
-  titleClass='bgc-70 bgd-30',
+  tableClass='brand shaded celled wide small pad-none mar-b-0',
+  titleClass='',
   ...props
 }) =>
   <table className={tableClass}>
     <thead>
-      <tr>
+      <tr className="grey40">
         <th colSpan={2} className={titleClass}>{title}</th>
       </tr>
     </thead>
@@ -61,13 +63,14 @@ const DebugTable = ({
 const DebugRow = ({
   name,
   value,
-  keyClass='bgc-80 bgd-20 fgc-30 fgd-70 text-right split-3',
+  // keyClass='bgc-80 bgd-20 fgc-30 fgd-70 text-right split-3',
+  keyClass='text-right split-3',
   valueClass='font-mono bgc-95 bgd-5',
 }) =>
   <tr valign="top">
-    <td className={keyClass}>
+    <th className={keyClass}>
       {name}
-    </td>
+    </th>
     <td className={valueClass}>
       <DebugValue value={value}/>
     </td>

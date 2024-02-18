@@ -36,6 +36,10 @@ $theme-transition:  0.5s;
   --menu-hover-back:      var(--grey-90);
   --menu-active-text:     var(--brand-0);
   --menu-active-back:     var(--grey20-95);
+  // toc / see-also
+  --toc-back:               var(--grey20-90);
+  --toc-border:             var(--grey20-60);
+  // --toc-head:               var(--grey40-20);
 }
 #{$dark-theme} {
   // body
@@ -71,4 +75,8 @@ $theme-transition:  0.5s;
   --menu-hover-back:    var(--grey-20);
   --menu-active-text:   var(--brand-100);
   --menu-active-back:   var(--grey20-30);
+  // toc / see-also
+  --toc-back:               var(--grey20-10);
+  --toc-border:             var(--grey20-30);
+  // --toc-head:               var(--grey40-80);
 }

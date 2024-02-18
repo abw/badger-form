@@ -6,17 +6,20 @@ export const ToCode = (to, code) => (props={}) =>
   <Link to={to} text={<code>{code}</code>} {...props}/>
 
 export const FormLink                   = ToCode('/form', 'Form')
-export const FormValuesLink             = ToCode('/form/values', 'values')
-export const FormFieldsLink             = ToCode('/form/fields', 'fields')
-export const FormHiddenLink             = ToCode('/form/hidden', 'hidden')
-export const FormValidateLink           = ToCode('/form/validate', 'validate')
-export const FormOnSubmitLink           = ToCode('/form/onSubmit', 'onSubmit')
-export const FormOnSuccessLink          = ToCode('/form/onSuccess', 'onSuccess')
-export const FormOnErrorLink            = ToCode('/form/onError', 'onError')
+export const FormValuesLink             = ToCode('/form/properties/values', 'values')
+export const FormFieldsLink             = ToCode('/form/properties/fields', 'fields')
+export const FormHiddenLink             = ToCode('/form/properties/hidden', 'hidden')
+export const FormValidateLink           = ToCode('/form/properties/validate', 'validate')
+export const FormDebugLink              = ToCode('/form/properties/debug', 'debug')
+export const FormOnSubmitLink           = ToCode('/form/events/onSubmit', 'onSubmit')
+export const FormOnSuccessLink          = ToCode('/form/events/onSuccess', 'onSuccess')
+export const FormOnErrorLink            = ToCode('/form/events/onError', 'onError')
 
 export const FieldLink                  = ToCode('/field', 'Field')
 export const FieldNameLink              = ToCode('/field/name', 'name')
 export const FieldTypeLink              = ToCode('/field/type', 'type')
+export const FieldLabelLink             = ToCode('/field/label', 'label')
+export const FieldLayoutLink            = ToCode('/field/Layout', 'Layout')
 export const FieldValidateLink          = ToCode('/field/validate', 'validate')
 export const FieldMinValidateLengthLink = ToCode('/field/minValidateLength', 'minValidateLength')
 export const FieldValidateOnBlurLink    = ToCode('/field/validateOnBlur', 'validateOnBlur')
@@ -34,7 +37,11 @@ export const HiddenInputLink            = ToCode('/input/hidden', 'Hidden')
 export const CustomInputLink            = ToCode('/input/custom', 'Custom Input')
 
 export const DebugLink                  = ToCode('/debug', 'Debug')
+export const ErrorsLink                 = ToCode('/errors', 'Errors')
 export const FieldsetLink               = ToCode('/fieldset', 'Fieldset')
+export const LabelLink                  = ToCode('/label',  'Label')
+export const LayoutLink                 = ToCode('/layout', 'Layout')
+export const MessageLink                = ToCode('/message', 'Message')
 
 
 export const PrepareValueLink    = ToCode('/field/prepare-value', 'prepareValue')
@@ -48,4 +55,3 @@ export const SubmitLink          = ToCode('/controls/submit', 'Submit')
 export const ResetSubmitLink     = ToCode('/controls/reset-submit', 'ResetSubmit')
 
 
-export const ErrorsLink           = ToCode('/errors', 'Errors')

@@ -9,7 +9,7 @@ import RegistrationFormSrc  from './_examples/RegistrationForm.jsx?raw'
 import {
   FieldLink, FieldsetLink, FormLink,
   CheckboxInputLink, RadioInputLink, SelectInputLink, FieldTypeLink,
-  ShowOptionalLink, ShowRequiredLink, FieldOnChangeLink
+  FieldShowOptionalLink, FieldShowRequiredLink, FieldOnChangeLink
 } from '@/site/Links.jsx'
 // import './_examples/CustomCSS.css'
 
@@ -54,10 +54,10 @@ const CompleteRegistration = () =>
               to group fields together in a set, complete with a <code>legend</code>.
             </p>
           </dd>
-          <dt><ShowRequiredLink/> and <ShowOptionalLink/></dt>
+          <dt><FieldShowRequiredLink/> and <FieldShowOptionalLink/></dt>
           <dd>
             <p>
-              The <ShowOptionalLink/> and <ShowRequiredLink/> properties
+              The <FieldShowOptionalLink/> and <FieldShowRequiredLink/> properties
               can be set on the <FormLink/> or individual <FieldLink/> components
               to have an additional label displayed telling the user which fields
               they do and don&apos;t need to complete.

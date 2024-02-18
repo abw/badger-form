@@ -16,7 +16,7 @@ const EditFormExample = () =>
       Another common use case for forms is in editing existing data records.
     </p>
 
-    <h2><code>values</code></h2>
+    <h2><FormValuesLink/></h2>
     <Split>
       <p>
         You can pass the <FormValuesLink/> property to a <FormLink/> to

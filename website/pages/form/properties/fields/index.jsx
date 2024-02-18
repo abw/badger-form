@@ -9,7 +9,7 @@ import { FieldLink, FieldNameLink } from '@/site/Links.jsx'
 const FieldsExamples = () =>
   <div className="prose flow">
     <h1>Form Properties</h1>
-    <h2><code>fields</code></h2>
+    <h2 className="font-mono">fields</h2>
     <p>
       The <code>fields</code> property allows you to define properties
       for form fields externally.  The <FieldLink/> <FieldNameLink/> property

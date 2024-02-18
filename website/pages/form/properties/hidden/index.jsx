@@ -5,12 +5,12 @@ import Example    from '@/site/Example.jsx'
 import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
 // import SeeAlso    from '@/site/SeeAlso.jsx'
-// import { FormHiddenLink } from '@/website/site/Links.jsx'
+// import { FormHiddenLink } from '@/site/Links.jsx'
 
 const HiddenExamples = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Form Properties</h1>
-    <h2><code>hidden</code></h2>
+    <h2 className="font-mono">hidden</h2>
     <Split align="end">
       <div>
         <p>

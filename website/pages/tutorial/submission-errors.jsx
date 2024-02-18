@@ -93,7 +93,7 @@ const SubmissionErrors = () =>
       caption="Error Thrown"
     />
 
-    <h2><code>onError</code></h2>
+    <h2><FormOnErrorLink/></h2>
     <Split>
       <p>
         You can provide an <FormOnErrorLink/> handler which will be called

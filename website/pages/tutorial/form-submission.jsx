@@ -17,7 +17,7 @@ const FormSubmission = () =>
       making a call to a back-end API but to demonstrate the basic principle
       let&apos;s start with something simpler.
     </p>
-    <h2><code>onSubmit</code> Handler</h2>
+    <h2><FormOnSubmitLink/> Handler</h2>
     <Split align="end">
       <p>
         We&apos;ll create a function which stores the submitted{' '}

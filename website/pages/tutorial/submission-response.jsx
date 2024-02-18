@@ -17,7 +17,7 @@ const SubmissionResponse = () =>
       for some reason.
     </p>
 
-    <h2><code>onSuccess</code></h2>
+    <h2><FormOnSuccessLink/></h2>
     <Split align="end">
       <div>
         <p>

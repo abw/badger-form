@@ -50,18 +50,18 @@ export const Form = {
     {
       section: 'Validation',
       items: [
-        { to: '/form/validation/showRequired',      code: 'showRequired'      },
-        { to: '/form/validation/requiredLabel',     code: 'requiredLabel'     },
-        { to: '/form/validation/requiredMessage',   code: 'requiredMessage'   },
-        { to: '/form/validation/showOptional',      code: 'showOptional'      },
-        { to: '/form/validation/optionalLabel',     code: 'optionalLabel'     },
         { to: '/form/validation/validate',          code: 'validate'          },
         { to: '/form/validation/validateOnBlur',    code: 'validateOnBlur'    },
         { to: '/form/validation/validateOnChange',  code: 'validateOnChange'  },
         { to: '/form/validation/validateOnInvalid', code: 'validateOnInvalid' },
         { to: '/form/validation/minValidateLength', code: 'minValidateLength' },
-        { to: '/form/validation/resetOnSuccess',    code: 'resetOnSuccess'    },
+        { to: '/form/validation/showRequired',      code: 'showRequired'      },
+        { to: '/form/validation/requiredLabel',     code: 'requiredLabel'     },
+        { to: '/form/validation/requiredMessage',   code: 'requiredMessage'   },
+        { to: '/form/validation/showOptional',      code: 'showOptional'      },
+        { to: '/form/validation/optionalLabel',     code: 'optionalLabel'     },
         { to: '/form/validation/focusInvalidField', code: 'focusInvalidField' },
+        { to: '/form/validation/resetOnSuccess',    code: 'resetOnSuccess'    },
       ]
     },
     {

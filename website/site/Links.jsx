@@ -2,6 +2,10 @@ import React from 'react'
 import Link from './Link.jsx'
 
 // eslint-disable-next-line react/display-name
+export const ToText = (to, text) => (props={}) =>
+  <Link to={to} text={text} {...props}/>
+
+// eslint-disable-next-line react/display-name
 export const ToCode = (to, code) => (props={}) =>
   <Link to={to} text={<code>{code}</code>} {...props}/>
 
@@ -19,21 +23,28 @@ export const FormOnResetLink            = ToCode('/form/events/onReset', 'onRese
 export const FormResetLink              = ToCode('/form/functions/reset', 'reset')
 
 export const FieldLink                  = ToCode('/field', 'Field')
-export const FieldNameLink              = ToCode('/field/name', 'name')
-export const FieldTypeLink              = ToCode('/field/type', 'type')
-export const FieldLabelLink             = ToCode('/field/label', 'label')
+export const FieldNameLink              = ToCode('/field/properties/name', 'name')
+export const FieldTypeLink              = ToCode('/field/properties/type', 'type')
+export const FieldLabelLink             = ToCode('/field/properties/label', 'label')
+export const FieldPlaceholderLink       = ToCode('/field/properties/placeholder', 'placeholder')
+export const FieldHelpLink              = ToCode('/field/properties/help', 'help')
+export const FieldPrefixLink            = ToCode('/field/properties/prefix', 'prefix')
+export const FieldSuffixLink            = ToCode('/field/properties/suffix', 'suffix')
+export const FieldChildrenLink          = ToCode('/field/properties/children', 'suffix')
+export const FieldRequiredLink          = ToCode('/field/validation/required', 'required')
+export const FieldShowRequiredLink      = ToCode('/field/validation/showRequired', 'showRequired')
+export const FieldRequiredLabelLink     = ToCode('/field/validation/requiredLabel', 'requiredLabel')
+export const FieldRequiredMessageLink   = ToCode('/field/validation/requiredMessage', 'requiredMessage')
+export const FieldShowOptionalLink      = ToCode('/field/validation/showOptional', 'showOptional')
+export const FieldPrepareValueLink      = ToCode('/field/validation/prepareValue', 'prepareValue')
+export const FieldValidateLink          = ToCode('/field/validation/validate', 'validate')
+export const FieldValidateOnBlurLink    = ToCode('/field/validation/validateOnBlur', 'validateOnBlur')
+export const FieldValidateOnChangeLink  = ToCode('/field/validation/validateOnChange', 'validateOnChange')
+export const FieldValidateOnInvalidLink = ToCode('/field/validation/validateOnInvalid', 'validateOnInvalid')
+export const FieldMinValidateLengthLink = ToCode('/field/validation/minValidateLength', 'minValidateLength')
 export const FieldLayoutLink            = ToCode('/field/Layout', 'Layout')
-export const FieldValidateLink          = ToCode('/field/validate', 'validate')
-export const FieldMinValidateLengthLink = ToCode('/field/minValidateLength', 'minValidateLength')
-export const FieldValidateOnBlurLink    = ToCode('/field/validateOnBlur', 'validateOnBlur')
-export const FieldValidateOnChangeLink  = ToCode('/field/validateOnChange', 'validateOnChange')
-export const FieldValidateOnInvalidLink = ToCode('/field/validateOnInvalid', 'validateOnInvalid')
 export const FieldOnChangeLink          = ToCode('/field/onChange', 'onChange')
-export const FieldShowOptionalLink      = ToCode('/field/showOptional', 'showOptional')
 export const FieldOptionalLabelLink     = ToCode('/field/optionalLabel', 'optionalLabel')
-export const FieldShowRequiredLink      = ToCode('/field/showRequired', 'showRequired')
-export const FieldRequiredLabelLink     = ToCode('/field/requiredLabel', 'requiredLabel')
-export const FieldRequiredMessageLink   = ToCode('/field/requiredMessage', 'requiredMessage')
 
 export const TextInputLink              = ToCode('/input/text', 'Text')
 export const TextAreaInputLink          = ToCode('/input/textarea', 'TextArea')
@@ -42,6 +53,7 @@ export const RadioInputLink             = ToCode('/input/radio', 'Radio')
 export const SelectInputLink            = ToCode('/input/select', 'Select')
 export const HiddenInputLink            = ToCode('/input/hidden', 'Hidden')
 export const CustomInputLink            = ToCode('/input/custom', 'Custom Input')
+export const InputTypesLink             = ToText('/input', 'Input Types')
 
 export const DebugLink                  = ToCode('/debug', 'Debug')
 export const ErrorsLink                 = ToCode('/errors', 'Errors')

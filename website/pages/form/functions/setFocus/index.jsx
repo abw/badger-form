@@ -12,7 +12,7 @@ import CodeBlock, { prepareCode } from '@/site/CodeBlock.jsx'
 
 const SetFocusExamples = () =>
   <div className="prose flow">
-    <h1>Focus Fields</h1>
+    <h1>Form Functions</h1>
 
     <h2 className="font-mono">setFocus()</h2>
     <Split align="end">

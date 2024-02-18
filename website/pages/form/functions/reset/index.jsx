@@ -10,7 +10,7 @@ import TryItOut         from '@/site/TryItOut.jsx'
 const ResetExamples = () =>
   <div className="prose flow">
     <h1>Form Functions</h1>
-    <h2 className="font-mono">reset</h2>
+    <h2 className="font-mono">reset()</h2>
     <Split>
       <div>
         <p>

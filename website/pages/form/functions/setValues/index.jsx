@@ -11,8 +11,8 @@ import TryItOut         from '@/site/TryItOut.jsx'
 
 const SetExamples = () =>
   <div className="prose flow">
-    <h1>Setting Form Values</h1>
-    <h2>setValues()</h2>
+    <h1>Form Functions</h1>
+    <h2 className="font-mono">setValues()</h2>
     <Split>
       <p>
         The <code>setValues</code> function can be used to programmatically

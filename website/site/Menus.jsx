@@ -85,7 +85,45 @@ export const Form = {
   ]
 }
 
-export const Field = [
+export const Field = {
+  title:  'Field',
+  url: '/field',
+  items: [
+    { to: '/field', code: 'Field', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/field/properties/name',         code: 'name'   },
+        { to: '/field/properties/label',        code: 'label'   },
+        { to: '/field/properties/type',         code: 'type'   },
+        { to: '/field/properties/placeholder',  code: 'placeholder' },
+        { to: '/field/properties/help',         code: 'help' },
+        { to: '/field/properties/prefix',       code: 'prefix' },
+        { to: '/field/properties/suffix',       code: 'suffix' },
+        { to: '/field/properties/children',     code: 'children' },
+      ]
+    },
+    {
+      section: 'Validation',
+      items: [
+        { to: '/field/validation/required',           code: 'required'          },
+        { to: '/field/validation/showRequired',       code: 'showRequired'      },
+        { to: '/field/validation/requiredLabel',      code: 'requiredLabel'     },
+        { to: '/field/validation/requiredMessage',    code: 'requiredMessage'   },
+        { to: '/field/validation/showOptional',       code: 'showOptional'      },
+        { to: '/field/validation/optionalLabel',      code: 'optionalLabel'     },
+        { to: '/field/validation/prepareValue',       code: 'prepareValue'      },
+        { to: '/field/validation/validate',           code: 'validate'          },
+        { to: '/field/validation/validateOnBlur',     code: 'validateOnBlur'    },
+        { to: '/field/validation/validateOnChange',   code: 'validateOnChange'  },
+        { to: '/field/validation/validateOnInvalid',  code: 'validateOnInvalid' },
+        { to: '/field/validation/minValidateLength',  code: 'minValidateLength' },
+      ]
+    },
+  ]
+}
+
+export const OldField = [
   { to: '/field',                     text: <code>Field</code>, exact: true },
   { to: '/field/name',                text: <code>name</code> },
   { to: '/field/type',                text: <code>type</code> },

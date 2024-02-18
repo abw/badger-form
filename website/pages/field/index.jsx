@@ -1,28 +1,23 @@
-import React from 'react'
-import FieldPager from '../../site/Pager/FieldPager.jsx'
+import React            from 'react'
+import Example          from '@/site/Example.jsx'
+import ExampleSrc       from './_examples/Example.jsx?raw'
+import ExampleElement   from './_examples/Example.jsx'
+import { FormLink } from '@/site/Links.jsx'
+// import TOC from '../../../site/TOC.jsx'
 
-const FieldIndex = () =>
-  <div className="prose">
-    <h1>Field</h1>
-    <p>
-      All of the basic HTML input properties are supported and can be
-      set on a <code>Field</code> component.  This example demonstrates
-      some of the more common ones.
+const Home = () =>
+  <>
+    <h1>Field Component</h1>
+    <p className="intro">
+      The <code>Field</code> component is used to render a field inside
+      a <FormLink/>.
     </p>
-    <h2>help</h2>
-    <p>
-      Additional help for a field, displayed underneath the input.
-    </p>
-    <h2>size</h2>
-    <p>
-      The size of a text input in characters.
-    </p>
-    <h2>required</h2>
-    <p>
-      Used to indicate that the field is required.
-    </p>
+    <Example
+      Component={ExampleElement}
+      code={ExampleSrc}
+      caption="Field" expand
+    />
+    {/* <TOC menu={FieldMenu}/> */}
+  </>
 
-    <FieldPager/>
-  </div>
-
-export default FieldIndex
+export default Home

@@ -2,7 +2,7 @@ import { Form, Field, Submit } from '@/lib/index.js'
 
 {/* START */}
 import React, { useState } from 'react'
-// PRETEND: import { Form, Field, Submit } from '@abw/react-formula'
+// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
 const OnSubmitExample = () => {
   const [msg, setMsg] = useState()

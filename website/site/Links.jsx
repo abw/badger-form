@@ -67,6 +67,14 @@ export const FieldInputLink             = ToCode('/field/components/Input', 'Inp
 export const FieldMessageLink           = ToCode('/field/components/Message', 'Message')
 export const FieldUseFieldLink          = ToCode('/field/components/UseField', 'UseField')
 
+export const FieldsLink                 = ToCode('/fields', 'Fields')
+export const FieldsNamesLink            = ToCode('/fields/properties/names', 'names')
+export const FieldsGridLink             = ToCode('/fields/properties/grid', 'grid')
+export const FieldsGapLink              = ToCode('/fields/properties/gap', 'gap')
+export const FieldsClassNameLink        = ToCode('/fields/properties/className', 'className')
+
+export const FieldsetLink               = ToCode('/fieldset', 'Fields')
+export const FieldsetLegendLink         = ToCode('/fieldset/properties/legend', 'legend')
 
 export const TextInputLink              = ToCode('/input/text', 'Text')
 export const TextAreaInputLink          = ToCode('/input/textarea', 'TextArea')
@@ -79,18 +87,12 @@ export const InputTypesLink             = ToText('/input', 'Input Types')
 
 export const DebugLink                  = ToCode('/debug', 'Debug')
 export const ErrorsLink                 = ToCode('/errors', 'Errors')
-export const FieldsetLink               = ToCode('/fieldset', 'Fieldset')
 export const LabelLink                  = ToCode('/label',  'Label')
 export const LayoutLink                 = ToCode('/layout', 'Layout')
 export const MessageLink                = ToCode('/message', 'Message')
 
 
 export const PrepareValueLink    = ToCode('/field/prepare-value', 'prepareValue')
-export const FieldsLink          = ToCode('/fields', 'Fields')
-export const FieldsNamesLink     = ToCode('/fields/names', 'names')
-export const FieldsGridLink      = ToCode('/fields/grid', 'grid')
-export const FieldsGapLink       = ToCode('/fields/gap', 'gap')
-export const FieldsClassNameLink = ToCode('/fields/class-name', 'className')
 export const ResetLink           = ToCode('/controls/reset', 'Reset')
 export const SubmitLink          = ToCode('/controls/submit', 'Submit')
 export const ResetSubmitLink     = ToCode('/controls/reset-submit', 'ResetSubmit')

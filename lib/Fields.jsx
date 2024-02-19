@@ -5,6 +5,7 @@ import { gridGapClasses } from './Utils.js'
 
 export const Fields = ({
   names,
+  className,
   grid=false,
   gap=4,
   stack,
@@ -15,7 +16,7 @@ export const Fields = ({
     grid = namesList.length
   }
   return (
-    <div className={gridGapClasses({grid, gap, stack, props})}>
+    <div className={gridGapClasses({grid, gap, stack, props}, className)}>
       { namesList.map(
         (name) => <Field key={name} name={name} {...props}/>
       )}

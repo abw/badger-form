@@ -154,6 +154,41 @@ export const Field = {
   ]
 }
 
+export const Fields = {
+  title:  'Fields',
+  url: '/fields',
+  items: [
+    { to: '/fields', code: 'Fields', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/fields/properties/names',     code: 'names'   },
+        { to: '/fields/properties/className', code: 'className'   },
+        { to: '/fields/properties/grid',      code: 'grid'   },
+        { to: '/fields/properties/gap',       code: 'gap'   },
+        { to: '/fields/properties/stack',     code: 'stack'   },
+      ]
+    },
+  ]
+}
+
+export const Fieldset = {
+  title:  'Fieldset',
+  url: '/fieldset',
+  items: [
+    { to: '/fieldset', code: 'Fields', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/fieldset/properties/legend',    code: 'legend'   },
+        { to: '/fieldset/properties/fields',    code: 'fields'  },
+        { to: '/fieldset/properties/className', code: 'className'   },
+      ]
+    },
+  ]
+}
+
+
 export const OldField = [
   { to: '/field',                     text: <code>Field</code>, exact: true },
   { to: '/field/name',                text: <code>name</code> },
@@ -175,9 +210,11 @@ export const Controls = [
   { to: '/controls/reset-submit',  text: <code>ResetSubmit</code> },
 ]
 
+/*
 export const Fields = [
   { to: '/fields',        text: <code>Fields</code> },
   { to: '/fields/names',   text: <code>names</code> },
   { to: '/fields/grid',    text: <code>grid</code> },
   { to: '/fields/gap',     text: <code>gap</code> },
 ]
+*/

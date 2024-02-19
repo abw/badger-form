@@ -1,0 +1,21 @@
+fieldset.prominent {
+  --fieldset-back: var(--grey-95);
+  --legend-text: var(--grey-20);
+  --legend-back: var(--grey-100);
+  --legend-border: var(--grey-70);
+  padding: 1rem 2rem 2rem;
+  background-color: var(--fieldset-back);
+}
+fieldset.prominent legend {
+  padding: 0.25em 0.5em;
+  color: var(--legend-text);
+  background-color: var(--legend-back);
+  border: 1px solid var(--legend-border);
+  border-radius: 0.25em;
+}
+.dark fieldset.prominent {
+  --fieldset-back: var(--grey-10);
+  --legend-text: var(--grey-80);
+  --legend-back: var(--grey-20);
+  --legend-border: var(--grey-40);
+}

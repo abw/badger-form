@@ -7,7 +7,8 @@ import MenuItems from './MenuItems.jsx'
 const Menu = ({ title, url, items }) => {
   const resolved = useResolvedPath()
   // const open = path && resolved.pathname.slice(0, path.length) === path
-  const open = resolved.pathname.slice(0, url.length) === url
+  const open = resolved.pathname === url
+    || resolved.pathname.slice(0, url.length + 1) === `${url}/`
   //const [open, setOpen] = useState(
   //  resolved.pathname.slice(0, url.length) === url
   //)

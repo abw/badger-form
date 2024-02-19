@@ -176,7 +176,7 @@ export const Fieldset = {
   title:  'Fieldset',
   url: '/fieldset',
   items: [
-    { to: '/fieldset', code: 'Fields', exact: true },
+    { to: '/fieldset', code: 'Fieldset', exact: true },
     {
       section: 'Properties',
       items: [

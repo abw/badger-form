@@ -97,6 +97,7 @@ export const Field = {
         { to: '/field/properties/label',        code: 'label'   },
         { to: '/field/properties/type',         code: 'type'   },
         { to: '/field/properties/placeholder',  code: 'placeholder' },
+        { to: '/field/properties/default',      code: 'default' },
         { to: '/field/properties/help',         code: 'help' },
         { to: '/field/properties/prefix',       code: 'prefix' },
         { to: '/field/properties/suffix',       code: 'suffix' },

@@ -2,4 +2,4 @@
 
 ## Docs
 
-* field default value
+* field value

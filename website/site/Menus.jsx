@@ -188,6 +188,38 @@ export const Fieldset = {
   ]
 }
 
+export const Submit = {
+  title:  'Submit',
+  url: '/submit',
+  items: [
+    { to: '/submit', code: 'Submit', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/submit/properties/text',      code: 'text'      },
+        { to: '/submit/properties/className', code: 'className' },
+        { to: '/submit/properties/onClick',   code: 'onClick'   },
+      ]
+    },
+  ]
+}
+
+export const Reset = {
+  title:  'Reset',
+  url: '/reset',
+  items: [
+    { to: '/reset', code: 'Reset', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/reset/properties/text',      code: 'text'      },
+        { to: '/reset/properties/className', code: 'className' },
+        { to: '/reset/properties/onClick',   code: 'onClick'   },
+      ]
+    },
+  ]
+}
+
 
 export const OldField = [
   { to: '/field',                     text: <code>Field</code>, exact: true },

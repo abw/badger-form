@@ -30,6 +30,7 @@ export const FieldNameLink              = ToCode('/field/properties/name', 'name
 export const FieldTypeLink              = ToCode('/field/properties/type', 'type')
 export const FieldLabelLink             = ToCode('/field/properties/label', 'label')
 export const FieldPlaceholderLink       = ToCode('/field/properties/placeholder', 'placeholder')
+export const FieldDefaultLink           = ToCode('/field/properties/default', 'default')
 export const FieldHelpLink              = ToCode('/field/properties/help', 'help')
 export const FieldPrefixLink            = ToCode('/field/properties/prefix', 'prefix')
 export const FieldSuffixLink            = ToCode('/field/properties/suffix', 'suffix')

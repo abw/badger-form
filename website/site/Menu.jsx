@@ -4,7 +4,7 @@ import Context from './Context.jsx'
 import { useResolvedPath } from 'react-router-dom'
 import MenuItems from './MenuItems.jsx'
 
-const Menu = ({ title, url, items }) => {
+const Menu = ({ title, code, url, items }) => {
   const resolved = useResolvedPath()
   // const open = path && resolved.pathname.slice(0, path.length) === path
   const open = resolved.pathname === url
@@ -19,8 +19,8 @@ const Menu = ({ title, url, items }) => {
 
   return (
     <details className="menu" open={open}>
-      <summary>
-        {title}
+      <summary className={code ? 'font-mono' : ''}>
+        {code || title}
       </summary>
       <MenuItems url={url} items={items}/>
     </details>

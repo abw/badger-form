@@ -7,26 +7,40 @@ export const Debug = ({
   status=false,
   all=false,
   className='border bdr-2 shadow-2 mar-t-4 pad-4',
+  title='Form Debugging',
+  valuesTitle='Values',
+  statusTitle='Status',
   ...props
 }) => {
   const form = useForm()
   return (
     <div className={className}>
-      <h3 className="mar-t-none">Form Debugging</h3>
+      { title &&
+        <h3 className="mar-t-none">{title}</h3>
+      }
       <div className="grid-1 gap-4">
         { values &&
-          <DebugTable
-            title="values"
-            rows={Object.entries(form.values)}
-            {...props}
-          />
+          <div>
+            { valuesTitle &&
+              <h4>{valuesTitle}</h4>
+            }
+            <DebugTable
+              rows={Object.entries(form.values)}
+              {...props}
+            />
+          </div>
         }
         { (status || all) && form.status &&
-          <DebugTable
-            title="Status"
-            rows={Object.entries(form.status)}
-            {...props}
-          />
+          <div>
+            { statusTitle &&
+              <h4>{statusTitle}</h4>
+            }
+            <DebugTable
+              title="Status"
+              rows={Object.entries(form.status)}
+              {...props}
+            />
+          </div>
         }
       </div>
     </div>
@@ -34,19 +48,13 @@ export const Debug = ({
 }
 
 const DebugTable = ({
-  title,
   rows,
   children,
-  tableClass='brand shaded celled wide small pad-none mar-b-0',
-  titleClass='',
+  color='brand',
+  tableClass=`${color} shaded celled wide small pad-none mar-b-0`,
   ...props
 }) =>
   <table className={tableClass}>
-    <thead>
-      <tr className="grey40">
-        <th colSpan={2} className={titleClass}>{title}</th>
-      </tr>
-    </thead>
     <tbody>
       { children || rows.map(
         ([name, value]) =>
@@ -63,7 +71,6 @@ const DebugTable = ({
 const DebugRow = ({
   name,
   value,
-  // keyClass='bgc-80 bgd-20 fgc-30 fgd-70 text-right split-3',
   keyClass='text-right split-3',
   valueClass='font-mono bgc-95 bgd-5',
 }) =>

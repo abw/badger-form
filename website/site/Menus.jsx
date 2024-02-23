@@ -37,7 +37,7 @@ export const Form = {
   title:  'Form',
   url: '/form',
   items: [
-    { to: '/form', text: 'Form', className: 'font-mono', exact: true },
+    { to: '/form', code: 'Form', exact: true },
     {
       section: 'Properties',
       items: [
@@ -45,6 +45,7 @@ export const Form = {
         { to: '/form/properties/values',    code: 'values'   },
         { to: '/form/properties/hidden',    code: 'hidden'   },
         { to: '/form/properties/children',  code: 'children' },
+        { to: '/form/properties/debug',     code: 'debug' },
       ]
     },
     {
@@ -216,6 +217,34 @@ export const Reset = {
         { to: '/reset/properties/text',      code: 'text'      },
         { to: '/reset/properties/className', code: 'className' },
         { to: '/reset/properties/onClick',   code: 'onClick'   },
+      ]
+    },
+  ]
+}
+
+export const Changed = {
+  title:  'Changed',
+  url: '/changed',
+  items: [
+    { to: '/changed', code: 'Changed', exact: true },
+  ]
+}
+
+export const Debug = {
+  title:  'Debug',
+  url: '/debug',
+  items: [
+    { to: '/debug', code: 'Debug', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/debug/properties/status',       code: 'status'      },
+        { to: '/debug/properties/values',       code: 'values'      },
+        { to: '/debug/properties/title',        code: 'title'       },
+        { to: '/debug/properties/valuesTitle',  code: 'valuesTitle' },
+        { to: '/debug/properties/statusTitle',  code: 'statusTitle' },
+        { to: '/debug/properties/color',        code: 'color'       },
+        { to: '/debug/properties/className',    code: 'className'   },
       ]
     },
   ]

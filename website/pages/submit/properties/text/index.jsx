@@ -14,7 +14,7 @@ const SubmitExamples = () =>
     <Example
       Component={Text}
       code={TextSrc}
-      caption="Properties"
+      caption="text"
       expand
     />
 

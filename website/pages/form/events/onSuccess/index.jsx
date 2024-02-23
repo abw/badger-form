@@ -14,6 +14,10 @@ const OnSuccessExamples = () =>
       that will be called in the event of a successful submission of the
       form.
     </p>
+    <p>
+      It will be passed the response data returned from the <FormOnSubmitLink/>{' '}
+      handler.
+    </p>
     <Example
       Component={OnSuccess}
       code={OnSuccessSrc}

@@ -25,5 +25,6 @@ dist-ssr
 *.sw?
 
 website/OLD-pages
+website/OLD-examples
 lib-OLD
 test-OLD

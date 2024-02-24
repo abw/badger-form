@@ -2,12 +2,11 @@
 
 ## Form
 
-* Can't re-submit after failed submit
+## Field
 
-* Form reset doesn't clear field error messages
+* default validation functions for min, max, minLength, maxLength, pattern,
+etc.
 
-* error messages get passed to fields, after submit validation message is
-still displayed.
 
 
 ## Docs

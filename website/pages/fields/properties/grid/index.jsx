@@ -19,7 +19,7 @@ const FieldsExamples = () =>
     <Example
       Component={Grid}
       code={GridSrc}
-      caption="Fields in a Grid"
+      caption="grid"
     />
     <p>
       You can also specify <code>grid</code> as the boolean value{' '}
@@ -31,7 +31,7 @@ const FieldsExamples = () =>
     <Example
       Component={Auto}
       code={AutoSrc}
-      caption="Automatic Grid Columns"
+      caption="grid"
     />
   </div>
 

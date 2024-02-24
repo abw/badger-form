@@ -15,6 +15,7 @@ const DebugExamples = () =>
       Component={Color}
       code={ColorSrc}
       caption="color"
+      undent={2}
       expand
     />
 

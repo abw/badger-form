@@ -34,7 +34,8 @@ const StatusExamples = () =>
     <Example
       Component={Any}
       code={AnySrc}
-      caption="validating"
+      caption="any"
+      undent={2}
       expand
     />
   </div>

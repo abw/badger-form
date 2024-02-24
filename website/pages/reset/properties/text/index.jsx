@@ -14,7 +14,8 @@ const ResetExamples = () =>
     <Example
       Component={Text}
       code={TextSrc}
-      caption="Properties"
+      caption="text"
+      undent={2}
       expand
     />
 

@@ -16,6 +16,7 @@ const OnClickExamples = () =>
       Component={OnClick}
       code={OnClickSrc}
       caption="onClick"
+      undent={2}
       expand
     />
   </div>

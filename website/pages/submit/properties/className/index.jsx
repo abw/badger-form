@@ -15,6 +15,7 @@ const ClassNameExamples = () =>
       Component={ClassName}
       code={ClassNameSrc}
       caption="className"
+      undent={2}
       expand
     />
   </div>

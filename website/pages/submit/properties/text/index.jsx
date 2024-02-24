@@ -15,6 +15,7 @@ const SubmitExamples = () =>
       Component={Text}
       code={TextSrc}
       caption="text"
+      undent={2}
       expand
     />
 

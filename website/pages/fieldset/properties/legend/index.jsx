@@ -14,7 +14,8 @@ const FieldsetExamples = () =>
     <Example
       Component={Legend}
       code={LegendSrc}
-      caption="Fieldset legend"
+      caption="legend"
+      undent={2}
       expand
     />
   </div>

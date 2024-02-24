@@ -1,10 +1,8 @@
+import React from 'react'
 import { Form, Field, Status, ResetSubmit, Debug } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Status, ResetSubmit, Debug } from '@abw/badger-form'
-
 const AnyExample = () =>
+  /* START */
   <Form
     onSubmit={ () => ({ ok: true }) }
   >
@@ -21,5 +19,6 @@ const AnyExample = () =>
     <ResetSubmit space/>
     <Debug status/>
   </Form>
+  /* END */
 
 export default AnyExample

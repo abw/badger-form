@@ -23,7 +23,8 @@ const StatusExamples = () =>
     <Example
       Component={Invalid}
       code={InvalidSrc}
-      caption="validating"
+      caption="invalid"
+      undent={2}
       expand
     />
   </div>

@@ -8,8 +8,11 @@ import { sleep } from '@abw/badger-utils'
 const DebugForm = () =>
   <Form
     // dummy handler for demonstration purposes
-    onSubmit={ () => sleep(1000)
-      .then( () => ({ ok: true }) ) }
+    onSubmit={
+      () => sleep(1000).then(
+        () => ({ ok: true })
+      )
+    }
   >
     <Field
       name="message"

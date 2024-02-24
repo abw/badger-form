@@ -1,10 +1,8 @@
+import React from 'react'
 import { Form, Field, Debug } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Debug } from '@abw/badger-form'
-
 const DebugForm = () =>
+  /* START */
   <Form>
     <Field
       name="message"
@@ -16,5 +14,6 @@ const DebugForm = () =>
       values={false}
     />
   </Form>
+  /* END */
 
 export default DebugForm

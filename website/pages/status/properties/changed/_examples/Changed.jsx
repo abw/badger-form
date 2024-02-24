@@ -1,10 +1,8 @@
+import React from 'react'
 import { Form, Field, Status, Reset } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Status, Reset } from '@abw/badger-form'
-
 const ChangedExample = () =>
+  /* START */
   <Form>
     <Field name="field1" label="Field One"/>
     <Status changed>
@@ -14,5 +12,6 @@ const ChangedExample = () =>
       <Reset/>
     </Status>
   </Form>
+  /* END */
 
 export default ChangedExample

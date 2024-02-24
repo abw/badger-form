@@ -14,6 +14,7 @@ const DebugExamples = () =>
       Component={Title}
       code={TitleSrc}
       caption="title"
+      undent={2}
       expand
     />
 

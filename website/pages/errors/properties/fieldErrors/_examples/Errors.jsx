@@ -1,10 +1,8 @@
+import React from 'react'
 import { Form, Field, Errors, ResetSubmit } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Errors, ResetSubmit } from '@abw/badger-form'
-
-const ChangedExample = () =>
+const ErrorsExample = () =>
+  /* START */
   <Form
     onSubmit={
       () => { throw 'This is a simulated server error' }
@@ -14,5 +12,6 @@ const ChangedExample = () =>
     <Errors fieldErrors/>
     <ResetSubmit space/>
   </Form>
+  /* END */
 
-export default ChangedExample
+export default ErrorsExample

@@ -17,7 +17,7 @@ const FieldsExamples = () =>
     <Example
       Component={Stack}
       code={StackSrc}
-      caption="Stacking Fields"
+      caption="stack"
     />
   </div>
 

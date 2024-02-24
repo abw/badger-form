@@ -1,10 +1,8 @@
+import React from 'react'
 import { Form, Field, Status, ResetSubmit } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Status, ResetSubmit } from '@abw/badger-form'
-
 const InvalidExample = () =>
+  /* START */
   <Form>
     <Field
       name="field1"
@@ -18,5 +16,6 @@ const InvalidExample = () =>
     </Status>
     <ResetSubmit space/>
   </Form>
+  /* END */
 
 export default InvalidExample

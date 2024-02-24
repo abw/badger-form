@@ -22,7 +22,7 @@ const StatusExamples = () =>
     <Example
       Component={Submitted}
       code={SubmittedSrc}
-      caption="submitting"
+      caption="submitted"
       expand
     />
   </div>

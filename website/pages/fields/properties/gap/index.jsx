@@ -15,7 +15,7 @@ const FieldsExamples = () =>
     <Example
       Component={Gap}
       code={GapSrc}
-      caption="Fields With a Gap"
+      caption="gap"
     />
   </div>
 

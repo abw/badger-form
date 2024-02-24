@@ -18,7 +18,8 @@ const FieldsExamples = () =>
     <Example
       Component={Fields}
       code={FieldsSrc}
-      caption="Fieldset fields"
+      caption="fields"
+      // undent={2}
       expand
     />
 

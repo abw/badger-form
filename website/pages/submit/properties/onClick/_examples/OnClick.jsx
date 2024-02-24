@@ -1,10 +1,8 @@
+import React from 'react'
 import { Form, Field, Submit } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
-
 const OnClick = () =>
+  /* START */
   <Form>
     <Field name="field1" label="Field One"/>
     <Submit
@@ -16,5 +14,6 @@ const OnClick = () =>
       }
     />
   </Form>
+  /* END */
 
 export default OnClick

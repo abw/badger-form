@@ -22,7 +22,8 @@ const StatusExamples = () =>
     <Example
       Component={Valid}
       code={ValidSrc}
-      caption="validating"
+      caption="valid"
+      undent={2}
       expand
     />
   </div>

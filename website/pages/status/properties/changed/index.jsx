@@ -15,6 +15,7 @@ const StatusExamples = () =>
       Component={Changed}
       code={ChangedSrc}
       caption="changed"
+      undent={2}
       expand
     />
   </div>

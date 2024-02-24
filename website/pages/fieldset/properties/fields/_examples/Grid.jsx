@@ -1,9 +1,7 @@
+import React from 'react'
 import { Form, Fieldset } from '@/lib/index.js'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Fieldset } from '@abw/badger-form'
-
+/* START */
 const fields = {
   alpha:    { label: 'Alpha'    },
   bravo:    { label: 'Bravo'    },

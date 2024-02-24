@@ -21,7 +21,8 @@ const ErrorsExamples = () =>
     <Example
       Component={Errors}
       code={ErrorsSrc}
-      caption="Errors"
+      caption="fieldErrors"
+      undent={2}
       expand
     />
   </div>

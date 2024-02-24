@@ -31,7 +31,7 @@ it(
       'two',
       'three'
     )
-  ).toBe('grid-2 gap-h-4 one two three')
+  ).toBe('grid-2 gap-v-none gap-h-4 one two three')
 )
 
 it(
@@ -47,5 +47,5 @@ it(
       'two',
       'three'
     )
-  ).toBe('grid-2 gap-h-6 one two three')
+  ).toBe('grid-2 gap-v-none gap-h-6 one two three')
 )

@@ -46,5 +46,5 @@ it(
       'two',
       'three'
     )
-  ).toBe('flex gap-h-6 one two three')
+  ).toBe('flex gap-v-none gap-h-6 one two three')
 )

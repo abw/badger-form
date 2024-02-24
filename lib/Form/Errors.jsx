@@ -4,34 +4,31 @@ import { useForm } from './Context.js'
 import { maybeFunction } from '@abw/badger-utils'
 
 const Errors = ({
-  title=false,
-  prompt=false,
+  form = useForm(),
+  title = form.errorsTitle,
+  prompt = form.errorsPrompt,
   fieldErrors=false,
   className='error alert border'
 }) => {
-  const form = useForm()
   const {
     error,
     errors,
-    errorsTitle,
-    errorsPrompt,
     Error=FormError,
   } = form
   const hasError = Boolean(error)
   const n = (fieldErrors ? errors.length : 0) + (hasError ? 1 : 0)
   const show = n !== 0
-
-  title  ||= errorsTitle
-  prompt ||= errorsPrompt
+  console.log(`Initial Errors title: `, title)
 
   if (! show) {
     return null
   }
+  console.log(`Errors title: `, title)
 
   return (
     <div className={className}>
       { Boolean(title) &&
-        <div className="headline">{title}</div>
+        <div className="headline">{maybeFunction(title, n)}</div>
       }
       <div>
         { hasError && <h4><Error error={error}/></h4> }

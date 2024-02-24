@@ -86,8 +86,10 @@ export const HiddenInputLink            = ToCode('/input/hidden', 'Hidden')
 export const CustomInputLink            = ToCode('/input/custom', 'Custom Input')
 export const InputTypesLink             = ToText('/input', 'Input Types')
 
-export const DebugLink                  = ToCode('/debug', 'Debug')
 export const ErrorsLink                 = ToCode('/errors', 'Errors')
+export const ErrorsFieldErrorsLink      = ToCode('/errors/properties/fieldErrors', 'fieldErrors')
+
+export const DebugLink                  = ToCode('/debug', 'Debug')
 export const LabelLink                  = ToCode('/label',  'Label')
 export const LayoutLink                 = ToCode('/layout', 'Layout')
 export const MessageLink                = ToCode('/message', 'Message')

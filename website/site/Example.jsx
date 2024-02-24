@@ -10,7 +10,8 @@ export const Example = ({
   caption,
   fixed,
   expand,
-  language
+  language,
+  undent
 }) => {
   return (
     <div className={`example grid-2 gap-8 stack-desktop ${className}`}>
@@ -21,6 +22,7 @@ export const Example = ({
           code={code||html}
           expand={expand}
           fixed={fixed}
+          undent={undent}
           language={html ? 'html' : language}
         />
       </div>

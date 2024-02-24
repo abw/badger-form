@@ -222,6 +222,22 @@ export const Reset = {
   ]
 }
 
+export const Errors = {
+  title:  'Errors',
+  url: '/errors',
+  items: [
+    { to: '/errors', code: 'Errors', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/errors/properties/fieldErrors', code: 'fieldErrors'    },
+        { to: '/errors/properties/title',       code: 'title'    },
+        { to: '/errors/properties/prompt',      code: 'prompt'    },
+      ]
+    },
+  ]
+}
+
 export const Changed = {
   title:  'Changed',
   url: '/changed',

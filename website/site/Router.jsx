@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from './Layout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
-import { capitalise } from '@abw/badger-utils'
-import { idSafe } from './Utils.jsx'
+// import { capitalise } from '@abw/badger-utils'
+// import { idSafe } from './Utils.jsx'
 
 // Read all the pages/* files and create React Router routes for them.
 const matchLayout = /\/_layout$/
@@ -10,8 +10,8 @@ const matchIgnore = /\/_(examples|snippets)\//
 export const routes = buildRoutes(
   import.meta.glob('../pages/**/[a-z_]*.[jt](s|sx)', { eager: true })
 )
-export const links = buildLinks(routes)
-console.log(`links:`, links)
+//export const links = buildLinks(routes)
+//console.log(`links:`, links)
 
 
 function buildRoutes(pages) {
@@ -101,7 +101,7 @@ function buildRoute([route, module]) {
   // console.log(`${route} => ${path}`)
   return { path, Component, metadata }
 }
-
+/*
 function buildLinks(routes) {
   const paths = routes.reduce(
     (links, route) => {
@@ -164,6 +164,7 @@ function buildLink({ path, metadata }) {
 
   return metadata
 }
+*/
 
 const Router = createBrowserRouter(
   [

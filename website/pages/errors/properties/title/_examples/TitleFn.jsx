@@ -7,8 +7,6 @@ import React from 'react'
 // Simulated server-side validation which will reject
 // any values containing vowels.
 const noVowels = values => {
-  console.log(`values: `, values)
-
   const errors = Object.entries(values)
     .filter(
       ([ , value]) => value.match(/[aeiou]/)

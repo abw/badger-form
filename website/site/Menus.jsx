@@ -222,6 +222,24 @@ export const Reset = {
   ]
 }
 
+export const ResetSubmit = {
+  title:  'ResetSubmit',
+  url: '/reset-submit',
+  items: [
+    { to: '/reset-submit', code: 'ResetSubmit', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/reset-submit/properties/gap',       code: 'gap'       },
+        { to: '/reset-submit/properties/space',     code: 'space'     },
+        { to: '/reset-submit/properties/reset',     code: 'reset'     },
+        { to: '/reset-submit/properties/submit',    code: 'submit'    },
+        { to: '/reset-submit/properties/className', code: 'className' },
+      ]
+    },
+  ]
+}
+
 export const Errors = {
   title:  'Errors',
   url: '/errors',

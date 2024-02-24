@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from './Menu.jsx'
 import {
-  GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset, Debug, Status, Errors
+  GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset, Debug, Status, Errors, ResetSubmit
 } from './Menus.jsx'
 
 const Sidebar = () =>
@@ -14,6 +14,7 @@ const Sidebar = () =>
     <Menu {...Fieldset}/>
     <Menu {...Submit}/>
     <Menu {...Reset}/>
+    <Menu {...ResetSubmit}/>
     <Menu {...Errors}/>
     {/* <Menu {...Changed}/> */}
     <Menu {...Status}/>

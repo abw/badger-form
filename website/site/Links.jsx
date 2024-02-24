@@ -94,10 +94,13 @@ export const LabelLink                  = ToCode('/label',  'Label')
 export const LayoutLink                 = ToCode('/layout', 'Layout')
 export const MessageLink                = ToCode('/message', 'Message')
 
+export const ResetLink                  = ToCode('/reset', 'Reset')
+export const ResetGapLink               = ToCode('/reset/properties/gap', 'gap')
+export const ResetSpaceLink             = ToCode('/reset/properties/space', 'space')
+
+export const SubmitLink                 = ToCode('/submit', 'Submit')
 
 export const PrepareValueLink    = ToCode('/field/prepare-value', 'prepareValue')
-export const ResetLink           = ToCode('/controls/reset', 'Reset')
-export const SubmitLink          = ToCode('/controls/submit', 'Submit')
 export const ResetSubmitLink     = ToCode('/controls/reset-submit', 'ResetSubmit')
 
 

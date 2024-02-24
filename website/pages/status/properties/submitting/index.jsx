@@ -1,0 +1,32 @@
+import React          from 'react'
+import Submitting     from './_examples/Submitting.jsx'
+import SubmittingSrc  from './_examples/Submitting.jsx?raw'
+import Example        from '@/site/Example.jsx'
+import TryItOut       from '@/site/TryItOut.jsx'
+import Split          from '@/site/Split.jsx'
+import { FormOnSubmitLink } from '@/site/Links.jsx'
+
+const StatusExamples = () =>
+  <div className="prose flow">
+    <h1>Status Properties</h1>
+    <h2 className="font-mono">submitting</h2>
+    <Split>
+      <p>
+        The <code>submitting</code> property indicates that the child content
+        should only be rendered while the form is submitting.
+      </p>
+      <TryItOut>
+        Try submitting the form.  There&apos;s a dummy <FormOnSubmitLink/> function
+        defined for the form which will wait for 1 second before returning
+        so you can see the form change to the <code>submitting</code> state.
+      </TryItOut>
+    </Split>
+    <Example
+      Component={Submitting}
+      code={SubmittingSrc}
+      caption="submitting"
+      expand
+    />
+  </div>
+
+export default StatusExamples

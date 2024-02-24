@@ -2,7 +2,7 @@ import React from 'react'
 import Menu from './Menu.jsx'
 // import { GettingStarted, Controls, Field, Fields, Form, Tutorial } from './Menus.jsx'
 import {
-  GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset, Changed, Debug
+  GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset, Changed, Debug, Status
 } from './Menus.jsx'
 
 const Sidebar = () =>
@@ -16,6 +16,7 @@ const Sidebar = () =>
     <Menu {...Submit}/>
     <Menu {...Reset}/>
     <Menu {...Changed}/>
+    <Menu {...Status}/>
     <Menu {...Debug}/>
     {/*
     <Menu title="Tutorial" items={Tutorial}/>

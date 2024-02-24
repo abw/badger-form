@@ -30,15 +30,18 @@ it(
     expect(bar).toHaveValue('World!')
 
     // check debug panel is displaying values
-    const debug = container.querySelector('div.info.alert')
-    const rows = debug.querySelectorAll('table tbody tr')
-    console.log(`rows: `, rows.length)
+    // screen.debug()
+    // const debug = container.querySelector('div.info.alert')
+    const rows = container.querySelectorAll('table tbody tr')
+    // console.log(`rows: `, rows.length)
 
-    const tds0 = rows[0].querySelectorAll('td')
-    const tds1 = rows[1].querySelectorAll('td')
-    expect(tds0[0]).toHaveTextContent('foo')
-    expect(tds0[1]).toHaveTextContent('Hello')
-    expect(tds1[0]).toHaveTextContent('bar')
-    expect(tds1[1]).toHaveTextContent('World!')
+    const th0 = rows[0].querySelector('th')
+    const td0 = rows[0].querySelector('td')
+    const th1 = rows[1].querySelector('th')
+    const td1 = rows[1].querySelector('td')
+    expect(th0).toHaveTextContent('foo')
+    expect(td0).toHaveTextContent('Hello')
+    expect(th1).toHaveTextContent('bar')
+    expect(td1).toHaveTextContent('World!')
   }
 )

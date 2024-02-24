@@ -230,6 +230,26 @@ export const Changed = {
   ]
 }
 
+export const Status = {
+  title:  'Status',
+  url: '/status',
+  items: [
+    { to: '/status', code: 'Status', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/status/properties/changed',      code: 'changed'    },
+        { to: '/status/properties/validating',   code: 'validating' },
+        { to: '/status/properties/valid',        code: 'valid'      },
+        { to: '/status/properties/invalid',      code: 'invalid'    },
+        { to: '/status/properties/submitting',   code: 'submitting' },
+        { to: '/status/properties/submitted',    code: 'submitted'  },
+        { to: '/status/properties/any',          code: 'any'        },
+      ]
+    },
+  ]
+}
+
 export const Debug = {
   title:  'Debug',
   url: '/debug',

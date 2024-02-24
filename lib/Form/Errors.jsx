@@ -18,12 +18,10 @@ const Errors = ({
   const hasError = Boolean(error)
   const n = (fieldErrors ? errors.length : 0) + (hasError ? 1 : 0)
   const show = n !== 0
-  console.log(`Initial Errors title: `, title)
 
   if (! show) {
     return null
   }
-  console.log(`Errors title: `, title)
 
   return (
     <div className={className}>

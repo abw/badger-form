@@ -4,7 +4,8 @@ import Badger from '../svg/badger-form.svg?react'
 import OSS from '../svg/oss.svg?react'
 
 const Index = () =>
-  <div className="max-width-40rem block-center pad-t-8">
+  // <div className="max-width-40rem block-center pad-t-8">
+  <div className="container-tablet pad-t-8">
     <Badger className="badger-form"/>
     <h1 className="intro mar-t-8">
       Simple but powerful React forms
@@ -20,25 +21,6 @@ const Index = () =>
       them with your own field input components, or manually implement the
       layout for individual fields any way you like.
     </p>
-    <h2> I know what you&apos;re thinking... </h2>
-    <ul>
-      <li>What does the World need with another React form library?</li>
-      <li>What makes this different, better, and/or worse than all the other form libraries?  </li>
-      <li>Will this guy do my homework for me?</li>
-      <li>Why do we exist?  </li>
-      <li>What is the meaning of life? </li>
-      <li>Where did I leave my car keys? </li>
-      <li>And what is it with all the badgers?</li>
-    </ul>
-    <p>
-      <b>None</b> of these questions will be answered, at least not directly.
-      You can read the copious documentation provided here if you want to
-      find out more.  Or don&apos;t.  It makes no difference to me.  Seriously,
-      I&apos;m not looking to convince you that this is any better or worse
-      than any other form library.  I&apos;m not interested in attracting new
-      users or changing the world.  Been there, done that, burned out.
-    </p>
-
     <div className="error alert border bdw-2 shadow-2 mar-v-16">
       <div className="headline">WARNING - Work in Progress</div>
       <p className="bold large">
@@ -60,7 +42,7 @@ const Index = () =>
     <h2 className="mar-t-8 mar-b-none">Read the Fine Documentation</h2>
     <ul className="large menu mar-t-none">
       <li>
-        <Link to="getting-started" text="Getting Started"/> - adding the module to your project.
+        <Link to="/getting-started/installation" text="Installation"/> - adding the module to your project.
       </li>
       <li>
         <Link to="/tutorial/basic-form" text="A Basic Form"/> - rendering your first form
@@ -70,12 +52,6 @@ const Index = () =>
       </li>
       <li>
         <Link to="/field" text="The Field Component"/> - adding a field to a form
-      </li>
-      <li>
-        <Link to="/fields" text="The Fields Component"/> - adding multiple fields to a form
-      </li>
-      <li>
-        <Link to="/controls" text="Form Controls"/> - to reset and submit a form
       </li>
     </ul>
 
@@ -98,7 +74,15 @@ const Index = () =>
       done then that&apos;s great.  But please don&apos;t expect me to
       commit <i>my</i> time to helping <i>you</i> get your job done.
     </p>
-
+    <p>
+      If you&apos;re now wondering why you should use this software, the
+      short answer is that you probably shouldn&apos;t.  There are now numerous
+      other form libraries for React that are probably better suited to your
+      needs than this.  The longer answer explaining why I wrote it (because
+      those libraries didn&apos;t exist back then) and why I
+      continue to use it (because it works for me) can be found{' '}
+      <Link to="/getting-started/why-use-it" text="here"/>.
+    </p>
   </div>
 
 export default Index

@@ -123,3 +123,6 @@ blockquote {
     --prose-width: 100%;
   }
 }
+.flow:not(.prose) p {
+  margin-bottom: 0;
+}

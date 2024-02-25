@@ -5,6 +5,7 @@ export const GettingStarted = {
   url: '/getting-started',
   items: [
     { to: '/getting-started/installation', text: 'Installation' },
+    { to: '/getting-started/why-use-it', text: 'Why Use It?' },
     // { to: '/getting-started/styling', text: 'Styling with CSS' },
   ]
   // { to: '/test', text: 'Test #1' },

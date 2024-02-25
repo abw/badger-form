@@ -1,7 +1,6 @@
 # badger-form
 
-This is a React form library built on
-[react-hook-form](https://www.react-hook-form.com/) and
+This is a React form library built on the styles provided by
 [badger-css](https://abw.github.io/badger-css/).
 
 It is a work in progress.  Use at your own risk.
@@ -61,13 +60,25 @@ To run the tests.
 $ pnpm test
 ```
 
-To build for production.
+To build everything (library, CSS and documentation) for production.
 
 ```bash
 $ pnpm build
 ```
 
-To build the documentation.
+To build the library only.
+
+```bash
+$ pnpm build:lib
+```
+
+To build the CSS only.
+
+```bash
+$ pnpm build:css
+```
+
+To build the documentation only.
 
 ```bash
 $ pnpm build:docs

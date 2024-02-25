@@ -43,7 +43,6 @@ const ValidateExamples = () =>
 
     <Split align="end">
       <p>
-        <h3>NOTE: this may change</h3>
         The <code>validate</code> function is passed four arguments.  The first
         is the field value for common cases where that&apos;s all you need to
         determine if the field is valid.  The second argument is the field

@@ -102,6 +102,7 @@ export const Field = {
         { to: '/field/properties/help',         code: 'help' },
         { to: '/field/properties/prefix',       code: 'prefix' },
         { to: '/field/properties/suffix',       code: 'suffix' },
+        { to: '/field/properties/className',    code: 'className' },
         { to: '/field/properties/children',     code: 'children' },
       ]
     },
@@ -299,6 +300,80 @@ export const Debug = {
         { to: '/debug/properties/statusTitle',  code: 'statusTitle' },
         { to: '/debug/properties/color',        code: 'color'       },
         { to: '/debug/properties/className',    code: 'className'   },
+      ]
+    },
+  ]
+}
+
+export const Text = {
+  title:  'text',
+  url: '/text',
+  items: [
+    { to: '/text', code: 'text', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/text/properties/inline',     code: 'inline'  },
+        { to: '/text/properties/size',       code: 'size'    },
+        { to: '/text/properties/type',       code: 'type'    },
+      ]
+    },
+  ]
+}
+
+export const Textarea = {
+  title:  'textarea',
+  url: '/textarea',
+  items: [
+    { to: '/textarea', code: 'textarea', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/textarea/properties/inline',     code: 'inline'  },
+        { to: '/textarea/properties/cols',       code: 'cols'    },
+        { to: '/textarea/properties/rows',       code: 'rows'    },
+      ]
+    },
+  ]
+}
+
+export const Checkbox = {
+  title:  'checkbox',
+  url: '/checkbox',
+  items: [
+    { to: '/checkbox', code: 'checkbox', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/checkbox/properties/TODO',       code: 'TODO'      },
+      ]
+    },
+  ]
+}
+
+export const Radio = {
+  title:  'radio',
+  url: '/radio',
+  items: [
+    { to: '/radio', code: 'radio', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/radio/properties/TODO',       code: 'TODO'      },
+      ]
+    },
+  ]
+}
+
+export const Select = {
+  title:  'select',
+  url: '/select',
+  items: [
+    { to: '/select', code: 'select', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/select/properties/TODO',       code: 'TODO'      },
       ]
     },
   ]

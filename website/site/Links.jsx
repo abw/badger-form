@@ -39,6 +39,7 @@ export const FieldDefaultLink           = ToCode('/field/properties/default', 'd
 export const FieldHelpLink              = ToCode('/field/properties/help', 'help')
 export const FieldPrefixLink            = ToCode('/field/properties/prefix', 'prefix')
 export const FieldSuffixLink            = ToCode('/field/properties/suffix', 'suffix')
+export const FieldClassNameLink         = ToCode('/field/properties/className', 'className')
 export const FieldChildrenLink          = ToCode('/field/properties/children', 'children')
 // field validation
 export const FieldRequiredLink          = ToCode('/field/validation/required', 'required')
@@ -103,8 +104,15 @@ export const SubmitLink                 = ToCode('/submit', 'Submit')
 export const ResetSubmitLink            = ToCode('/reset-submit', 'ResetSubmit')
 
 // inputs
-export const TextInputLink              = ToCode('/input/text', 'Text')
-export const TextAreaInputLink          = ToCode('/input/textarea', 'TextArea')
+export const TextInputLink              = ToCode('/text', 'Text')
+export const TextInputInlineLink        = ToCode('/text/properties/inline', 'inline')
+export const TextInputSizeLink          = ToCode('/text/properties/size', 'size')
+
+export const TextAreaInputLink          = ToCode('/textarea', 'TextArea')
+export const TextAreaInputInlineLink    = ToCode('/textarea/properties/inline', 'inline')
+export const TextAreaInputColsLink      = ToCode('/textarea/properties/cols',   'cols')
+export const TextAreaInputRowsLink      = ToCode('/textarea/properties/rows',   'rows')
+
 export const CheckboxInputLink          = ToCode('/input/checkbox', 'Checkbox')
 export const RadioInputLink             = ToCode('/input/radio', 'Radio')
 export const SelectInputLink            = ToCode('/input/select', 'Select')

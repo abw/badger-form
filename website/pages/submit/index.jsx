@@ -20,20 +20,4 @@ const SubmitExamples = () =>
     />
   </div>
 
-/*
-const SubmitExamples = () =>
-
-    <h2><code>onSubmit</code></h2>
-    <p>
-      The default behaviour for the button is to submit the form.
-      You can use the <FormOnSubmitLink/> form property to handle the
-      submission.
-    </p>
-    <Example
-      Element={OnSubmit} code={OnSubmitSrc}
-      caption="onSubmit" expand
-    />
-  </div>
-  */
-
 export default SubmitExamples

@@ -1,13 +1,16 @@
 import React from 'react'
 import Menu from './Menu.jsx'
 import {
-  GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset, Debug, Status, Errors, ResetSubmit
+  GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset,
+  Debug, Status, Errors, ResetSubmit, Text, Textarea, Checkbox, Radio, Select
 } from './Menus.jsx'
 
 const Sidebar = () =>
   <div>
     <Menu {...GettingStarted}/>
     <Menu {...Tutorial}/>
+
+    <h4 className="mar-b-none">Components</h4>
     <Menu {...Form}/>
     <Menu {...Field}/>
     <Menu {...Fields}/>
@@ -19,6 +22,13 @@ const Sidebar = () =>
     {/* <Menu {...Changed}/> */}
     <Menu {...Status}/>
     <Menu {...Debug}/>
+
+    <h4 className="mar-b-none">Input Types</h4>
+    <Menu {...Text}/>
+    <Menu {...Textarea}/>
+    <Menu {...Checkbox}/>
+    <Menu {...Radio}/>
+    <Menu {...Select}/>
     {/*
     <Menu title="Tutorial" items={Tutorial}/>
     <Menu title="Form" items={Form}/>

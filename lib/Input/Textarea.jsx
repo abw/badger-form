@@ -4,7 +4,7 @@ import { inputClasses } from '../Utils.js'
 // import { Themed } from '../Theme.jsx'
 
 const TextArea = ({ field=useField() }) => {
-  const { rows=5 } = field
+  const { rows=5,cols=20 } = field
   return (
     <textarea
       id={field.id}
@@ -21,6 +21,7 @@ const TextArea = ({ field=useField() }) => {
       onFocus={field.onFocus}
       onBlur={field.onBlur}
       rows={rows}
+      cols={cols}
     />
   )
 }

@@ -113,8 +113,12 @@ export const TextAreaInputInlineLink    = ToCode('/textarea/properties/inline', 
 export const TextAreaInputColsLink      = ToCode('/textarea/properties/cols',   'cols')
 export const TextAreaInputRowsLink      = ToCode('/textarea/properties/rows',   'rows')
 
-export const CheckboxInputLink          = ToCode('/input/checkbox', 'Checkbox')
-export const RadioInputLink             = ToCode('/input/radio', 'Radio')
+export const CheckboxInputLink          = ToCode('/checkbox', 'Checkbox')
+
+export const RadioInputLink             = ToCode('/radio', 'Radio')
+export const RadioOptionClassLink       = ToCode('/radio/properties/optionClass', 'optionClass')
+export const RadioOptionsClassLink      = ToCode('/radio/properties/optionsClass', 'optionsClass')
+
 export const SelectInputLink            = ToCode('/input/select', 'Select')
 export const HiddenInputLink            = ToCode('/input/hidden', 'Hidden')
 export const CustomInputLink            = ToCode('/input/custom', 'Custom Input')

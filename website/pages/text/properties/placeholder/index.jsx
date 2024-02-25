@@ -1,0 +1,23 @@
+import React          from 'react'
+import Placeholder    from './_examples/Placeholder.jsx'
+import PlaceholderSrc from './_examples/Placeholder.jsx?raw'
+import Example        from '@/site/Example.jsx'
+
+const TextExamples = () =>
+  <div className="prose flow">
+    <h1>Text Input Properties</h1>
+    <h2 className="font-mono">placeholder</h2>
+    <p>
+      The <code>placeholder</code> property can be used to add some placeholder
+      text to the input.
+    </p>
+    <Example
+      Component={Placeholder}
+      code={PlaceholderSrc}
+      caption="placeholder"
+      undent={2}
+      expand
+    />
+  </div>
+
+export default TextExamples

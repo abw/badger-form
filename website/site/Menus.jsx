@@ -313,9 +313,10 @@ export const Text = {
     {
       section: 'Properties',
       items: [
-        { to: '/text/properties/inline',     code: 'inline'  },
-        { to: '/text/properties/size',       code: 'size'    },
-        { to: '/text/properties/type',       code: 'type'    },
+        { to: '/text/properties/inline',      code: 'inline'      },
+        { to: '/text/properties/size',        code: 'size'        },
+        { to: '/text/properties/type',        code: 'type'        },
+        { to: '/text/properties/placeholder', code: 'placeholder' },
       ]
     },
   ]
@@ -329,9 +330,10 @@ export const Textarea = {
     {
       section: 'Properties',
       items: [
-        { to: '/textarea/properties/inline',     code: 'inline'  },
-        { to: '/textarea/properties/cols',       code: 'cols'    },
-        { to: '/textarea/properties/rows',       code: 'rows'    },
+        { to: '/textarea/properties/inline',      code: 'inline'      },
+        { to: '/textarea/properties/cols',        code: 'cols'        },
+        { to: '/textarea/properties/rows',        code: 'rows'        },
+        { to: '/textarea/properties/placeholder', code: 'placeholder' },
       ]
     },
   ]
@@ -361,7 +363,12 @@ export const Radio = {
     {
       section: 'Properties',
       items: [
-        { to: '/radio/properties/TODO',       code: 'TODO'      },
+        { to: '/radio/properties/options',      code: 'options'      },
+        { to: '/radio/properties/inline',       code: 'inline'       },
+        { to: '/radio/properties/border',       code: 'border'       },
+        { to: '/radio/properties/inputClass',   code: 'inputClass'   },
+        { to: '/radio/properties/optionClass',  code: 'optionClass'  },
+        { to: '/radio/properties/optionsClass', code: 'optionsClass' },
       ]
     },
   ]
@@ -375,7 +382,9 @@ export const Select = {
     {
       section: 'Properties',
       items: [
-        { to: '/select/properties/TODO',       code: 'TODO'      },
+        { to: '/select/properties/options',     code: 'options'     },
+        { to: '/select/properties/inline',      code: 'inline'      },
+        { to: '/select/properties/placeholder', code: 'placeholder' },
       ]
     },
   ]

@@ -8,9 +8,12 @@ const TextExamples = () =>
   <div className="prose flow">
     <h1>Input Types</h1>
     <h2 className="font-mono">checkbox</h2>
-    <p className="intro wide">
-      Set the <FieldLink/> <FieldTypeLink/> to <code>checkbox</code> for
-      a checkbox input.
+    <p>
+      Set the <FieldLink/> <FieldTypeLink/> to <code>checkbox</code> for a checkbox.
+      Use the <code>text</code> property to define any text that you want to
+      appear alongside the checkbox.  The <code>label</code> is optional on all
+      fields, so depending on what your checkbox text says, you might want to
+      leave it out.
     </p>
     <Example
       Component={Input}

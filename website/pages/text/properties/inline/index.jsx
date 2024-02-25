@@ -6,7 +6,7 @@ import { TextInputSizeLink } from '@/website/site/Links.jsx'
 
 const TextExamples = () =>
   <div className="prose flow">
-    <h1>Text Input</h1>
+    <h1>Text Input Properties</h1>
     <h2 className="font-mono">inline</h2>
     <p>
       The default behaviour is to make the text fields extend to the

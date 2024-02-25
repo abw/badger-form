@@ -6,7 +6,7 @@ import { TextAreaInputInlineLink } from '@/website/site/Links.jsx'
 
 const TextAreaExamples = () =>
   <div className="prose flow">
-    <h1>Textarea Input</h1>
+    <h1>Textarea Input Properties</h1>
     <h2 className="font-mono">cols</h2>
     <p>
       The <code>cols</code> property can be used to set the number of columns.

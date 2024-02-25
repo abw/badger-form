@@ -1,26 +1,20 @@
 import React from 'react'
 import { Form, Field } from '@/lib/index.js'
 
-
 const Inline = () =>
   /* START */
   <Form>
     <Field
       name="one"
-      label="An inline text field"
+      type="checkbox"
+      text="Inline checkbox"
       inline
     />
     <Field
       name="two"
-      label="With explicit size=25"
-      size="25"
-      inline
-    />
-    <Field
-      name="two"
-      label="Same size with prefix and suffix"
-      prefix="£" suffix=".00"
-      size="25"
+      type="checkbox"
+      text="Inline checkbox with border"
+      border
       inline
     />
   </Form>

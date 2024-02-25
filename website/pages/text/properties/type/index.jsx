@@ -6,7 +6,7 @@ import { FieldTypeLink } from '@/website/site/Links.jsx'
 
 const TextExamples = () =>
   <div className="prose flow">
-    <h1>Text Input</h1>
+    <h1>Text Input Properties</h1>
     <h2 className="font-mono">type</h2>
     <p>
       The <FieldTypeLink/> property can also be set to one of the other

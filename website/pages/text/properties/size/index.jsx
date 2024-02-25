@@ -6,7 +6,7 @@ import { FieldClassNameLink, FieldPrefixLink, FieldSuffixLink, TextInputInlineLi
 
 const TextExamples = () =>
   <div className="prose flow">
-    <h1>Text Input</h1>
+    <h1>Text Input Properties</h1>
     <h2 className="font-mono">size</h2>
     <p>
       The <code>size</code> property can be used to set the size (in

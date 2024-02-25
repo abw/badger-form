@@ -345,7 +345,9 @@ export const Checkbox = {
     {
       section: 'Properties',
       items: [
-        { to: '/checkbox/properties/TODO',       code: 'TODO'      },
+        { to: '/checkbox/properties/border',     code: 'border'     },
+        { to: '/checkbox/properties/inline',     code: 'inline'     },
+        { to: '/checkbox/properties/inputClass', code: 'inputClass' },
       ]
     },
   ]

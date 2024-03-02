@@ -6,8 +6,7 @@ import SimpleSrc      from './_examples/Simple.jsx?raw'
 import Example        from '@/site/Example.jsx'
 
 const SelectExample = () =>
-  <div className="prose flow">
-    <h1>Select Input Properties</h1>
+  <>
     <h2 className="font-mono">options</h2>
     <p>
       Use the <code>options</code> property to define the options for the
@@ -33,6 +32,6 @@ const SelectExample = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default SelectExample

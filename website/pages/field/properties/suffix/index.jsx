@@ -8,9 +8,7 @@ import SeeAlso    from '@/site/SeeAlso.jsx'
 import { FieldPrefixLink } from '@/website/site/Links.jsx'
 
 const SuffixExample = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">suffix</h2>
     <p>
       The <code>suffix</code> property can be used to a a suffix to a field.
@@ -40,8 +38,7 @@ const SuffixExample = () =>
         FieldPrefixLink
       ]}
     />
-
-  </div>
+  </>
 
 
 export default SuffixExample

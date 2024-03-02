@@ -1,7 +1,8 @@
-import React          from 'react'
-import Input          from './_examples/Input.jsx'
-import InputSrc       from './_examples/Input.jsx?raw'
-import Example        from '@/site/Example.jsx'
+import React        from 'react'
+import Input        from './_examples/Input.jsx'
+import InputSrc     from './_examples/Input.jsx?raw'
+import Example      from '@/site/Example.jsx'
+import SelectPager  from '@/site/Pager/SelectPager.jsx'
 import { FieldLink, FieldTypeLink } from '@/site/Links.jsx'
 
 const SelectExamples = () =>
@@ -18,6 +19,7 @@ const SelectExamples = () =>
       caption="select"
       expand
     />
+    <SelectPager/>
   </div>
 
 export default SelectExamples

@@ -4,8 +4,7 @@ import Values     from './_examples/Values.jsx'
 import ValuesSrc  from './_examples/Values.jsx?raw'
 
 const DebugExamples = () =>
-  <div className="prose flow">
-    <h1>Debug Properties</h1>
+  <>
     <h2 className="font-mono">values</h2>
     <p>
       The default behaviour is to show the form values.  If you don&apos;t
@@ -18,8 +17,6 @@ const DebugExamples = () =>
       caption="values"
       expand
     />
-
-
-  </div>
+  </>
 
 export default DebugExamples

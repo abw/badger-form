@@ -6,8 +6,7 @@ import Auto       from './_examples/FieldsGridAuto.jsx'
 import AutoSrc    from './_examples/FieldsGridAuto.jsx?raw'
 
 const FieldsExamples = () =>
-  <div className="prose flow">
-    <h1>Fields Properties</h1>
+  <>
     <h2 className="font-mono">grid</h2>
     <p>
       The <code>grid</code> property can be used to layout the fields in
@@ -33,6 +32,6 @@ const FieldsExamples = () =>
       code={AutoSrc}
       caption="grid"
     />
-  </div>
+  </>
 
 export default FieldsExamples

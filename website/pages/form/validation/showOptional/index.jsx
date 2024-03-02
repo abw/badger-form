@@ -2,8 +2,7 @@ import React from 'react'
 import { FieldShowOptionalLink } from '@/site/Links.jsx'
 
 const ShowOptional = () =>
-  <div className="prose flow">
-    <h1>Form Validation</h1>
+  <>
     <h2 className="font-mono">showOptional</h2>
     <p>
       This option can be set <code>true</code> to enable the{' '}
@@ -15,6 +14,6 @@ const ShowOptional = () =>
       When enabled, optional fields will be display an &quot;Optional&quot; tag
       in the label.
     </p>
-  </div>
+  </>
 
 export default ShowOptional

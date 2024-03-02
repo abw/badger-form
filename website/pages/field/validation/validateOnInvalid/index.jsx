@@ -2,8 +2,7 @@ import React          from 'react'
 import { FieldValidateOnBlurLink, FieldValidateOnChangeLink } from '@/site/Links.jsx'
 
 const ValidateOnInvalidExamples = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">validateOnInvalid</h2>
     <p>
       Fields are normally validated when the form is submitted.
@@ -15,7 +14,7 @@ const ValidateOnInvalidExamples = () =>
       change.  This option can be set to <code>false</code> to prevent
       this behaviour.
     </p>
-  </div>
+  </>
 
 
 export default ValidateOnInvalidExamples

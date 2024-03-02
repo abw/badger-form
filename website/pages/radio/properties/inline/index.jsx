@@ -4,8 +4,7 @@ import InlineSrc      from './_examples/Inline.jsx?raw'
 import Example        from '@/site/Example.jsx'
 
 const RadioExample = () =>
-  <div className="prose flow">
-    <h1>Radio Input Properties</h1>
+  <>
     <h2 className="font-mono">inline</h2>
     <p>
       The default behaviour is for radio button options to be displayed as
@@ -20,6 +19,6 @@ const RadioExample = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default RadioExample

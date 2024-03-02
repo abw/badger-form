@@ -14,8 +14,7 @@ import { prepareCode } from '@/site/CodeBlock.jsx'
 import { FieldLayoutLink } from '@/website/site/Links.jsx'
 
 const InputExamples = () =>
-  <div className="prose flow">
-    <h1>Field Components</h1>
+  <>
     <h2 className="font-mono">Input</h2>
     <p>
       The <code>Input</code> component is included by the <FieldLayoutLink/>{' '}
@@ -120,7 +119,6 @@ const InputExamples = () =>
       <li>Gorilla photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/images/animals/monkey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
       <li>Kitten photo by <a href="https://unsplash.com/@feneek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sergey Semin</a> on <a href="https://unsplash.com/images/animals/kitten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
     </ul>
-
-  </div>
+  </>
 
 export default InputExamples

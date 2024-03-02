@@ -6,7 +6,7 @@ import css        from './_snippets/css?raw'
 import badger_css from './_snippets/badger_css?raw'
 
 const GettingStarted = () =>
-  <div className="container-tablet">
+  <div className="flow">
     <h1>Getting Started</h1>
     <h2>Add the Module</h2>
     <p>

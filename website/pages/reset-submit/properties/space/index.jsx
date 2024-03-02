@@ -4,8 +4,7 @@ import Space    from './_examples/Space.jsx'
 import SpaceSrc from './_examples/Space.jsx?raw'
 
 const ResetSubmitExamples = () =>
-  <div className="prose flow">
-    <h1>ResetSubmit Properties</h1>
+  <>
     <h2 className="font-mono">space</h2>
     <p>
       The <code>space</code> property can be added to
@@ -19,6 +18,6 @@ const ResetSubmitExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default ResetSubmitExamples

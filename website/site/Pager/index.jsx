@@ -4,7 +4,9 @@ import PrevNext from './PrevNext.jsx'
 
 const Pager = ({ menu }) => {
   const { pathname } = useLocation()
-  const items = menu.items
+  const items = menu.items.flatMap(
+    item => item.items || item
+  )
   const index = items.findIndex(
     item => item.to === pathname
   )

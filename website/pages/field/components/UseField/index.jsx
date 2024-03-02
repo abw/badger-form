@@ -7,8 +7,7 @@ import Example             from '@/site/Example.jsx'
 import { FieldChildrenLink, FieldLink, FieldLayoutLink } from '@/site/Links.jsx'
 
 const UseFieldExamples = () =>
-  <div className="prose flow">
-    <h1>Field Components</h1>
+  <>
     <h2 className="font-mono">UseField</h2>
     <p>
       The immediate <FieldChildrenLink/> of a <FieldLink/> component can
@@ -38,6 +37,6 @@ const UseFieldExamples = () =>
       caption="UseField"
       expand
     />
-  </div>
+  </>
 
 export default UseFieldExamples

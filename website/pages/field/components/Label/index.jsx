@@ -5,8 +5,7 @@ import Example       from '@/site/Example.jsx'
 import { FieldLink } from '@/site/Links.jsx'
 
 const LabelExamples = () =>
-  <div className="prose flow">
-    <h1>Field Components</h1>
+  <>
     <h2 className="font-mono">Label</h2>
     <p>
       The <code>Label</code> component can be used to add a label to a{' '}
@@ -20,6 +19,6 @@ const LabelExamples = () =>
       expand
     >
     </Example>
-  </div>
+  </>
 
 export default LabelExamples

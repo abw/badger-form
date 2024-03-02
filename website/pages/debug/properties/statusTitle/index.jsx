@@ -4,8 +4,7 @@ import Title    from './_examples/Title.jsx'
 import TitleSrc from './_examples/Title.jsx?raw'
 
 const DebugExamples = () =>
-  <div className="prose flow">
-    <h1>Debug Properties</h1>
+  <>
     <h2 className="font-mono">statusTitle</h2>
     <p>
       You can use the <code>statusTitle</code> property to change the title
@@ -18,8 +17,6 @@ const DebugExamples = () =>
       undent={2}
       expand
     />
-
-
-  </div>
+  </>
 
 export default DebugExamples

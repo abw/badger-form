@@ -5,8 +5,7 @@ import Example        from '@/site/Example.jsx'
 import { TextInputSizeLink } from '@/website/site/Links.jsx'
 
 const TextExamples = () =>
-  <div className="prose flow">
-    <h1>Text Input Properties</h1>
+  <>
     <h2 className="font-mono">inline</h2>
     <p>
       The default behaviour is to make the text fields extend to the
@@ -27,6 +26,6 @@ const TextExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default TextExamples

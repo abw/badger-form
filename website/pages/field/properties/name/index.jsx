@@ -14,9 +14,7 @@ import {
 } from '@/site/Links.jsx'
 
 const NameExamples = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">name</h2>
     <Split>
       <p>
@@ -60,7 +58,7 @@ const NameExamples = () =>
         FormFieldsLink
       ]}
     />
-  </div>
+  </>
 
 
 export default NameExamples

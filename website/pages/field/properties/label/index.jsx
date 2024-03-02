@@ -10,9 +10,7 @@ import Suggest       from '@/site/Suggest.jsx'
 import { FieldLink, FieldNameLink, FormFieldsLink, FormLink } from '@/site/Links.jsx'
 
 const LabelExamples = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">label</h2>
     <p>
       Add a label to the field with the <code>label</code> property.
@@ -48,7 +46,7 @@ const LabelExamples = () =>
         FormFieldsLink
       ]}
     />
-  </div>
+  </>
 
 
 export default LabelExamples

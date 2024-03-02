@@ -8,9 +8,7 @@ import SeeAlso              from '@/site/SeeAlso.jsx'
 import { FieldLink, FieldOptionalLabelLink, FieldRequiredLabelLink, FieldRequiredLink, FieldShowOptionalLink, FormLink } from '@/site/Links.jsx'
 
 const ShowRequiredExample = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
-
+  <>
     <h2 className="font-mono">showRequired</h2>
     <p>
       If a <FieldLink/> is marked as <FieldRequiredLink/> then the{' '}
@@ -43,6 +41,6 @@ const ShowRequiredExample = () =>
         FieldOptionalLabelLink
       ]}
     />
-  </div>
+  </>
 
 export default ShowRequiredExample

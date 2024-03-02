@@ -2,6 +2,7 @@ import React          from 'react'
 import Input          from './_examples/Input.jsx'
 import InputSrc       from './_examples/Input.jsx?raw'
 import Example        from '@/site/Example.jsx'
+import CheckboxPager  from '@/site/Pager/CheckboxPager.jsx'
 import { FieldLink, FieldTypeLink } from '@/site/Links.jsx'
 
 const TextExamples = () =>
@@ -21,6 +22,7 @@ const TextExamples = () =>
       caption="checkbox"
       expand
     />
+    <CheckboxPager/>
   </div>
 
 export default TextExamples

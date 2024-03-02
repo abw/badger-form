@@ -4,8 +4,7 @@ import Text     from './_examples/Text.jsx'
 import TextSrc  from './_examples/Text.jsx?raw'
 
 const SubmitExamples = () =>
-  <div className="prose flow">
-    <h1>Submit Properties</h1>
+  <>
     <h2 className="font-mono">text</h2>
     <p>
       You can use the <code>text</code> property to change the text that&apos;s
@@ -18,8 +17,6 @@ const SubmitExamples = () =>
       undent={2}
       expand
     />
-
-
-  </div>
+  </>
 
 export default SubmitExamples

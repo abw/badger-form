@@ -5,6 +5,7 @@ import Example    from '@/site/Example.jsx'
 import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
 import SeeAlso    from '@/site/SeeAlso.jsx'
+import DebugPager from '@/site/Pager/DebugPager.jsx'
 import { FormDebugLink } from '@/site/Links.jsx'
 
 const DebugExamples = () =>
@@ -38,7 +39,7 @@ const DebugExamples = () =>
         FormDebugLink
       ]}
     />
-
+    <DebugPager/>
   </div>
 
 export default DebugExamples

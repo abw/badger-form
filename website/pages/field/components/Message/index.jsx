@@ -9,8 +9,7 @@ import TryItOut      from '@/site/TryItOut.jsx'
 import { FieldLink } from '@/site/Links.jsx'
 
 const MessageExamples = () =>
-  <div className="prose flow">
-    <h1>Field Components</h1>
+  <>
     <h2 className="font-mono">Message</h2>
     <p>
       The <code>Message</code> component is used to add a message underneath
@@ -50,6 +49,6 @@ const MessageExamples = () =>
       caption="Custom Message Component"
       expand
     />
-  </div>
+  </>
 
 export default MessageExamples

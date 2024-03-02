@@ -1,9 +1,10 @@
-import React    from 'react'
-import Reset    from './_examples/Reset.jsx'
-import ResetSrc from './_examples/Reset.jsx?raw'
-import Example  from '@/site/Example.jsx'
-import TryItOut from '@/site/TryItOut.jsx'
-import Split    from '@/site/Split.jsx'
+import React      from 'react'
+import Reset      from './_examples/Reset.jsx'
+import ResetSrc   from './_examples/Reset.jsx?raw'
+import Example    from '@/site/Example.jsx'
+import TryItOut   from '@/site/TryItOut.jsx'
+import Split      from '@/site/Split.jsx'
+import ResetPager from '@/site/Pager/ResetPager.jsx'
 import {
   FieldDefaultLink, FormLink, FormOnResetLink, FormValuesLink
 } from '@/site/Links.jsx'
@@ -34,6 +35,7 @@ const ResetExamples = () =>
       caption="Reset"
       expand
     />
+    <ResetPager/>
   </div>
 
 export default ResetExamples

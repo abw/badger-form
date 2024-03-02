@@ -4,9 +4,7 @@ import FunctionsSrc   from './_examples/Functions.jsx?raw'
 import Functions      from './_examples/Functions.jsx'
 
 const Children = () =>
-  <div className="prose flow">
-    <h1>Form Properties</h1>
-
+  <>
     <h2 className="font-mono">children</h2>
     <p>
       You can define children of a form, either as components or functions.
@@ -18,7 +16,7 @@ const Children = () =>
       code={FunctionsSrc}
       caption="children" expand
     />
-  </div>
+  </>
 
 
 export default Children

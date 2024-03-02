@@ -2,6 +2,7 @@ import React          from 'react'
 import Submit         from './_examples/Submit.jsx'
 import SubmitSrc      from './_examples/Submit.jsx?raw'
 import Example        from '@/site/Example.jsx'
+import SubmitPager    from '@/site/Pager/SubmitPager.jsx'
 import { FormOnSubmitLink } from '@/site/Links.jsx'
 
 const SubmitExamples = () =>
@@ -18,6 +19,7 @@ const SubmitExamples = () =>
       caption="Submit"
       expand
     />
+    <SubmitPager/>
   </div>
 
 export default SubmitExamples

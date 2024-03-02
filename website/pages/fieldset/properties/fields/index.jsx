@@ -7,8 +7,7 @@ import GridSrc    from './_examples/Grid.jsx?raw'
 import { FieldsLink } from '@/website/site/Links.jsx'
 
 const FieldsExamples = () =>
-  <div className="prose flow">
-    <h1>Fieldset Properties</h1>
+  <>
     <h2 className="font-mono">fields</h2>
     <p>
       The <code>fields</code> property can be used as
@@ -40,7 +39,6 @@ const FieldsExamples = () =>
       caption="Fieldset Grid"
       expand
     />
-
-  </div>
+  </>
 
 export default FieldsExamples

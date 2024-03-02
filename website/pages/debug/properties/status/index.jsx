@@ -6,8 +6,7 @@ import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
 
 const DebugExamples = () =>
-  <div className="prose flow">
-    <h1>Debug Properties</h1>
+  <>
     <h2 className="font-mono">status</h2>
     <Split>
       <p>
@@ -29,8 +28,6 @@ const DebugExamples = () =>
       caption="status"
       expand
     />
-
-
-  </div>
+  </>
 
 export default DebugExamples

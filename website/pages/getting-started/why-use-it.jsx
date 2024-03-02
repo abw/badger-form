@@ -2,7 +2,7 @@ import React from 'react'
 import Link from '@/ui/Link.jsx'
 
 const WhyUseIt = () =>
-  <div className="container-tablet flow">
+  <div className="flow">
     <h1>Why Use It?</h1>
     <h2> I know what you&apos;re thinking... </h2>
     <ul>

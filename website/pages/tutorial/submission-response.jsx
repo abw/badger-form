@@ -8,7 +8,7 @@ import SubmitResponseSrc  from './_examples/SubmitResponse.jsx?raw'
 import { FormOnSubmitLink, FormOnSuccessLink } from '@/site/Links.jsx'
 
 const SubmissionResponse = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Submission Response</h1>
     <p className="intro wide">
       We now need to think about what happens in the real world where a form

@@ -8,8 +8,7 @@ import TryItOut           from '@/site/TryItOut.jsx'
 import { FieldLink, FieldValidateLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink }      from '@/site/Links.jsx'
 
 const PrepareValueExamples = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">prepareValue</h2>
     <Split>
       <p>
@@ -33,7 +32,7 @@ const PrepareValueExamples = () =>
         FieldValidateOnChangeLink
       ]}
     />
-  </div>
+  </>
 
 
 export default PrepareValueExamples

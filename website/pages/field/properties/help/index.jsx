@@ -8,9 +8,7 @@ import TryItOut from '@/site/TryItOut.jsx'
 import { FieldLabelLink, FieldNameLink, FieldRequiredLink, FieldValidateLink, FormFieldsLink } from '@/website/site/Links.jsx'
 
 const HelpExamples = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">help</h2>
     <Split align="end">
       <div>
@@ -43,7 +41,7 @@ const HelpExamples = () =>
         FormFieldsLink
       ]}
     />
-  </div>
+  </>
 
 
 export default HelpExamples

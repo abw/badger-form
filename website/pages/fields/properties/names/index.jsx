@@ -9,8 +9,7 @@ import CodeBlock, { prepareCode } from '@/website/site/CodeBlock.jsx'
 import { FormFieldsLink, FormLink } from '@/website/site/Links.jsx'
 
 const FieldsExamples = () =>
-  <div className="prose flow">
-    <h1>Fields Properties</h1>
+  <>
     <h2 className="font-mono">names</h2>
     <p>
       The <code className="code">names</code> property should be used to
@@ -40,8 +39,6 @@ const FieldsExamples = () =>
       code={prepareCode(FieldsSrc)}
       caption="Fields.jsx"
     />
-
-
-  </div>
+  </>
 
 export default FieldsExamples

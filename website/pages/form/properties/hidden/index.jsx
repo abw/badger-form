@@ -4,12 +4,12 @@ import HiddenSrc  from './_examples/Hidden.jsx?raw'
 import Example    from '@/site/Example.jsx'
 import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
+
 // import SeeAlso    from '@/site/SeeAlso.jsx'
 // import { FormHiddenLink } from '@/site/Links.jsx'
 
 const HiddenExamples = () =>
-  <div className="prose flow">
-    <h1>Form Properties</h1>
+  <>
     <h2 className="font-mono">hidden</h2>
     <Split align="end">
       <div>
@@ -40,7 +40,7 @@ const HiddenExamples = () =>
       ]}
     />
     */}
-  </div>
+  </>
 
 
 export default HiddenExamples

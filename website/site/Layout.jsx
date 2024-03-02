@@ -19,7 +19,7 @@ const Layout = ({ contentRef }) => {
           <Sidebar/>
         </aside>
         <main id="content" ref={contentRef}>
-          <div className="desktop block-center">
+          <div className="Xdesktop Xblock-center">
             <Outlet/>
           </div>
         </main>

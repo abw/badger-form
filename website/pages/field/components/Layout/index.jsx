@@ -19,8 +19,7 @@ import { prepareCode } from '@/site/CodeBlock.jsx'
 import { FieldLink, FieldInputLink, FieldLabelLink, FieldMessageLink }   from '@/site/Links.jsx'
 
 const CustomLayout = () =>
-  <div className="prose flow">
-    <h1>Field Components</h1>
+  <>
     <h2 className="font-mono">Layout</h2>
     <p>
       The <code>Layout</code> component is inserted as the default content for
@@ -199,7 +198,6 @@ const CustomLayout = () =>
       language="css"
       expand
     />
-
-  </div>
+  </>
 
 export default CustomLayout

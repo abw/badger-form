@@ -10,8 +10,7 @@ import SeeAlso          from '@/site/SeeAlso.jsx'
 import { ErrorsLink, FormResetLink, FieldValidateLink } from '@/site/Links.jsx'
 
 const Validation = () =>
-  <div className="prose flow">
-    <h1>Form Validation</h1>
+  <>
     <h2 className="font-mono">validate</h2>
     <p>
       The <code>validate</code> property can be used to provide a validation
@@ -93,6 +92,6 @@ const Validation = () =>
         FieldValidateLink
       ]}
     />
-  </div>
+  </>
 
 export default Validation

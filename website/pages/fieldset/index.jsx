@@ -1,8 +1,9 @@
-import React        from 'react'
-import Fieldset     from './_examples/Fieldset.jsx'
-import FieldsetSrc  from './_examples/Fieldset.jsx?raw'
-import Example      from '@/site/Example.jsx'
-import { FieldLink } from '@/website/site/Links.jsx'
+import React          from 'react'
+import Fieldset       from './_examples/Fieldset.jsx'
+import FieldsetSrc    from './_examples/Fieldset.jsx?raw'
+import Example        from '@/site/Example.jsx'
+import FieldsetPager  from '@/site/Pager/FieldsetPager.jsx'
+import { FieldLink }  from '@/site/Links.jsx'
 
 const FieldsetExamples = () =>
   <div className="prose flow">
@@ -17,6 +18,7 @@ const FieldsetExamples = () =>
       caption="Fieldset"
       expand
     />
+    <FieldsetPager/>
   </div>
 
 export default FieldsetExamples

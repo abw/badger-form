@@ -8,7 +8,7 @@ import DummySubmitSrc from './_examples/DummySubmit.jsx?raw'
 import { FormLink, FormOnSubmitLink } from '@/site/Links.jsx'
 
 const FormSubmission = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Form Submission</h1>
     <p className="intro wide">
       To handle submission of a form we need to add an <FormOnSubmitLink/>{' '}

@@ -4,8 +4,7 @@ import Color    from './_examples/Color.jsx'
 import ColorSrc from './_examples/Color.jsx?raw'
 
 const DebugExamples = () =>
-  <div className="prose flow">
-    <h1>Debug Properties</h1>
+  <>
     <h2 className="font-mono">color</h2>
     <p>
       You can use the <code>color</code> property to set the color for the
@@ -18,8 +17,6 @@ const DebugExamples = () =>
       undent={2}
       expand
     />
-
-
-  </div>
+  </>
 
 export default DebugExamples

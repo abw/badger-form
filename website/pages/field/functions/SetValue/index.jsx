@@ -12,9 +12,7 @@ import {
 } from '@/site/Links.jsx'
 
 const SetValueExamples = () =>
-  <div className="prose flow">
-    <h1>Field Functions</h1>
-
+  <>
     <h2 className="font-mono">setValue()</h2>
     <Split>
       <p>
@@ -85,7 +83,7 @@ const SetValueExamples = () =>
         FieldResetLink
       ]}
     />
-  </div>
+  </>
 
 
 export default SetValueExamples

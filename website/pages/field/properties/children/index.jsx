@@ -6,9 +6,7 @@ import { FieldLayoutLink } from '@/site/Links.jsx'
 // import SeeAlso      from '../../../../site/SeeAlso.jsx'
 
 const Children = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">children</h2>
     <p>
       You can define children of a field, either as components or functions.
@@ -31,7 +29,7 @@ const Children = () =>
       caption="children"
       expand
     />
-  </div>
+  </>
 
 
 export default Children

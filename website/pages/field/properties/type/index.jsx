@@ -15,9 +15,7 @@ import {
 } from '@/site/Links.jsx'
 
 const TypeExamples = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">type</h2>
     <Split align="end">
       <div>
@@ -88,6 +86,6 @@ const TypeExamples = () =>
         InputTypesLink
       ]}
     />
-  </div>
+  </>
 
 export default TypeExamples

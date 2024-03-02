@@ -6,8 +6,7 @@ import SeeAlso      from '@/site/SeeAlso.jsx'
 import { FormOnErrorLink, FormOnSubmitLink, FormOnSuccessLink } from '@/site/Links.jsx'
 
 const OnResetExamples = () =>
-  <div className="prose flow">
-    <h1>Form Events</h1>
+  <>
     <h2 className="font-mono">onReset</h2>
     <p>
       The <code>onReset</code> property can be used to define a function
@@ -25,7 +24,7 @@ const OnResetExamples = () =>
         FormOnErrorLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnResetExamples

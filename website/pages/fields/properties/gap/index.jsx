@@ -5,8 +5,7 @@ import GapSrc     from './_examples/FieldsGap.jsx?raw'
 import { FieldsGridLink } from '@/website/site/Links.jsx'
 
 const FieldsExamples = () =>
-  <div className="prose flow">
-    <h1>Fields Properties</h1>
+  <>
     <h2 className="font-mono">gap</h2>
     <p>
       The <code>gap</code> property can be used to set a custom horizontal
@@ -19,6 +18,6 @@ const FieldsExamples = () =>
       code={GapSrc}
       caption="gap"
     />
-  </div>
+  </>
 
 export default FieldsExamples

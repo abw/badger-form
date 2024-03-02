@@ -12,8 +12,7 @@ import {
 } from '@/site/Links.jsx'
 
 const RequiredMessageExample = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">requiredMessage</h2>
     <Split align="end">
       <div>
@@ -48,7 +47,6 @@ const RequiredMessageExample = () =>
         FieldValidateOnBlurLink
       ]}
     />
-
-  </div>
+  </>
 
 export default RequiredMessageExample

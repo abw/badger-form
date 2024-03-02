@@ -11,8 +11,7 @@ import TryItOut       from '@/site/TryItOut.jsx'
 import { FieldRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink } from '@/site/Links.jsx'
 
 const ValidateExamples = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">validate</h2>
     <Split align="end">
       <div>
@@ -73,7 +72,6 @@ const ValidateExamples = () =>
         FieldValidateOnChangeLink
       ]}
     />
-  </div>
-
+  </>
 
 export default ValidateExamples

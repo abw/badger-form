@@ -12,7 +12,7 @@ import HeadlessBuiltinsBareSrc  from './_examples/HeadlessBuiltinsBare.jsx?raw'
 import { FieldLink, FieldLayoutLink, FieldLabelLink, FieldMessageLink, TextInputLink } from '@/site/Links.jsx'
 
 const HeadlessFieldsExample = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Headless Fields</h1>
     <p className="intro wide">
       One of the problems with any UI library is that it forces you into

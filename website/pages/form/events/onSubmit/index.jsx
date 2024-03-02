@@ -16,8 +16,7 @@ import { ErrorsFieldErrorsLink, ErrorsLink, FormOnErrorLink, FormOnSuccessLink }
 import TryItOut from '@/website/site/TryItOut.jsx'
 
 const OnSubmitExamples = () =>
-  <div className="prose flow">
-    <h1>Form Events</h1>
+  <>
     <h2 className="font-mono">onSubmit</h2>
     <Split>
       <p>
@@ -113,7 +112,7 @@ const OnSubmitExamples = () =>
         FormOnErrorLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnSubmitExamples

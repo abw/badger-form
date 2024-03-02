@@ -8,7 +8,7 @@ import Suggest        from '@/site/Suggest.jsx'
 import { Tutorial }   from '@/site/Menus.jsx'
 
 const BasicForm = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>A Basic Form</h1>
     <p className="intro wide">
       One of the underlying principles of this library is that it should

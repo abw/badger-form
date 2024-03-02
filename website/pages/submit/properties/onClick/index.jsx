@@ -4,8 +4,7 @@ import OnClick    from './_examples/OnClick.jsx'
 import OnClickSrc from './_examples/OnClick.jsx?raw'
 
 const OnClickExamples = () =>
-  <div className="prose flow">
-    <h1>Submit Properties</h1>
+  <>
     <h2 className="font-mono">onClick</h2>
     <p>
       You can use the <code>onClick</code> property to handle a click on
@@ -19,6 +18,6 @@ const OnClickExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default OnClickExamples

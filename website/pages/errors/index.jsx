@@ -1,9 +1,10 @@
-import React      from 'react'
-import Errors     from './_examples/Errors.jsx'
-import ErrorsSrc  from './_examples/Errors.jsx?raw'
-import Example    from '@/site/Example.jsx'
-import Split      from '@/site/Split.jsx'
-import TryItOut   from '@/site/TryItOut.jsx'
+import React       from 'react'
+import Errors      from './_examples/Errors.jsx'
+import ErrorsSrc   from './_examples/Errors.jsx?raw'
+import Example     from '@/site/Example.jsx'
+import Split       from '@/site/Split.jsx'
+import TryItOut    from '@/site/TryItOut.jsx'
+import ErrorsPager from '@/site/Pager/ErrorsPager.jsx'
 
 const ErrorsExamples = () =>
   <div className="prose flow">
@@ -26,6 +27,7 @@ const ErrorsExamples = () =>
       caption="Errors"
       expand
     />
+    <ErrorsPager/>
   </div>
 
 export default ErrorsExamples

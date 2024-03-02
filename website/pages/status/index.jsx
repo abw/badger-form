@@ -1,9 +1,10 @@
-import React      from 'react'
-import Status    from './_examples/Status.jsx'
-import StatusSrc from './_examples/Status.jsx?raw'
-import Example    from '@/site/Example.jsx'
-import Split      from '@/site/Split.jsx'
-import TryItOut   from '@/site/TryItOut.jsx'
+import React        from 'react'
+import Status       from './_examples/Status.jsx'
+import StatusSrc    from './_examples/Status.jsx?raw'
+import Example      from '@/site/Example.jsx'
+import Split        from '@/site/Split.jsx'
+import TryItOut     from '@/site/TryItOut.jsx'
+import StatusPager  from '@/site/Pager/StatusPager.jsx'
 
 const StatusExamples = () =>
   <div className="prose flow">
@@ -47,6 +48,7 @@ const StatusExamples = () =>
       caption="Status"
       expand
     />
+    <StatusPager/>
   </div>
 
 export default StatusExamples

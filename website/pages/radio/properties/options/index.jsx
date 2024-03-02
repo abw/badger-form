@@ -6,8 +6,7 @@ import SimpleSrc      from './_examples/Simple.jsx?raw'
 import Example        from '@/site/Example.jsx'
 
 const RadioExample = () =>
-  <div className="prose flow">
-    <h1>Radio Input Properties</h1>
+  <>
     <h2 className="font-mono">options</h2>
     <p>
       Use the <code>options</code> property to define the options for the
@@ -34,6 +33,6 @@ const RadioExample = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default RadioExample

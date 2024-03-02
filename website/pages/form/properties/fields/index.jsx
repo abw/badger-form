@@ -7,8 +7,7 @@ import Example    from '@/site/Example.jsx'
 import { FieldLink, FieldNameLink } from '@/site/Links.jsx'
 
 const FieldsExamples = () =>
-  <div className="prose flow">
-    <h1>Form Properties</h1>
+  <>
     <h2 className="font-mono">fields</h2>
     <p>
       The <code>fields</code> property allows you to define properties
@@ -50,7 +49,7 @@ const FieldsExamples = () =>
       field will be the same for each, so it makes sense to define it in one
       place.
     </p>
-  </div>
+  </>
 
 
 export default FieldsExamples

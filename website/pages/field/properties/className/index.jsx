@@ -4,9 +4,7 @@ import ClassName     from './_examples/ClassName.jsx'
 import Example       from '@/site/Example.jsx'
 
 const ClassNameExamples = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">className</h2>
     <p>
       The <code>className</code> property can be used to add a CSS class to
@@ -18,7 +16,7 @@ const ClassNameExamples = () =>
       caption="className"
       expand
     />
-  </div>
+  </>
 
 
 export default ClassNameExamples

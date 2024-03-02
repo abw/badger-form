@@ -11,8 +11,7 @@ import {
 } from '@/site/Links.jsx'
 
 const OnBlurExamples = () =>
-  <div className="prose flow">
-    <h1>Field Events</h1>
+  <>
     <h2 className="font-mono">onBlur</h2>
     <Split>
       <p>
@@ -41,7 +40,7 @@ const OnBlurExamples = () =>
         FieldOnInvalidLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnBlurExamples

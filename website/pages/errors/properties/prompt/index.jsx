@@ -11,8 +11,7 @@ import TryItOut from '@/website/site/TryItOut.jsx'
 import { ErrorsFieldErrorsLink } from '@/website/site/Links.jsx'
 
 const ErrorsExamples = () =>
-  <div className="prose flow">
-    <h1>Errors Properties</h1>
+  <>
     <h2 className="font-mono">prompt</h2>
     <Split>
       <p>
@@ -54,6 +53,6 @@ const ErrorsExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default ErrorsExamples

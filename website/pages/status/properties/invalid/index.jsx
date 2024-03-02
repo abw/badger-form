@@ -6,8 +6,7 @@ import TryItOut   from '@/site/TryItOut.jsx'
 import Split      from '@/site/Split.jsx'
 
 const StatusExamples = () =>
-  <div className="prose flow">
-    <h1>Status Properties</h1>
+  <>
     <h2 className="font-mono">invalid</h2>
     <Split>
       <p>
@@ -27,6 +26,6 @@ const StatusExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default StatusExamples

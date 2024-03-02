@@ -4,8 +4,7 @@ import PlaceholderSrc from './_examples/Placeholder.jsx?raw'
 import Example        from '@/site/Example.jsx'
 
 const TextAreaExamples = () =>
-  <div className="prose flow">
-    <h1>Textarea Input Properties</h1>
+  <>
     <h2 className="font-mono">placeholder</h2>
     <p>
       The <code>placeholder</code> property can be used to add some placeholder
@@ -18,6 +17,6 @@ const TextAreaExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default TextAreaExamples

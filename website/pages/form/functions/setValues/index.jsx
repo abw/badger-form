@@ -10,8 +10,7 @@ import Split            from '@/site/Split.jsx'
 import TryItOut         from '@/site/TryItOut.jsx'
 
 const SetExamples = () =>
-  <div className="prose flow">
-    <h1>Form Functions</h1>
+  <>
     <h2 className="font-mono">setValues()</h2>
     <Split>
       <p>
@@ -55,6 +54,6 @@ const SetExamples = () =>
       code={UseSetValuesESrc}
       caption="setValues"
     />
-  </div>
+  </>
 
 export default SetExamples

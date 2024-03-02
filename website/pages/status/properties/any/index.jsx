@@ -7,8 +7,7 @@ import Split      from '@/site/Split.jsx'
 import { DebugLink } from '@/website/site/Links.jsx'
 
 const StatusExamples = () =>
-  <div className="prose flow">
-    <h1>Status Properties</h1>
+  <>
     <h2 className="font-mono">any</h2>
     <Split>
       <div>
@@ -38,6 +37,6 @@ const StatusExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default StatusExamples

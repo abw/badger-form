@@ -5,8 +5,7 @@ import Example        from '@/site/Example.jsx'
 import { TextAreaInputColsLink } from '@/website/site/Links.jsx'
 
 const TextAreaExamples = () =>
-  <div className="prose flow">
-    <h1>Textarea Input Properties</h1>
+  <>
     <h2 className="font-mono">inline</h2>
     <p>
       You can set the <code>inline</code> property on a field if you want
@@ -21,6 +20,6 @@ const TextAreaExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default TextAreaExamples

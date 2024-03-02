@@ -6,9 +6,7 @@ import SeeAlso   from '@/site/SeeAlso.jsx'
 import { FieldSuffixLink } from '@/website/site/Links.jsx'
 
 const PrefixExample = () =>
-  <div className="prose flow">
-    <h1>Field Properties</h1>
-
+  <>
     <h2 className="font-mono">prefix</h2>
     <p>
       You can add a <code>prefix</code> to a <code>text</code> field or any
@@ -33,6 +31,6 @@ const PrefixExample = () =>
         FieldSuffixLink
       ]}
     />
-  </div>
+  </>
 
 export default PrefixExample

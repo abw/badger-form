@@ -11,9 +11,7 @@ import { FieldLink, FormLink, FormOnLoadLink } from '@/site/Links.jsx'
 import CodeBlock, { prepareCode } from '@/site/CodeBlock.jsx'
 
 const SetFocusExamples = () =>
-  <div className="prose flow">
-    <h1>Form Functions</h1>
-
+  <>
     <h2 className="font-mono">setFocus()</h2>
     <Split align="end">
       <div>
@@ -61,8 +59,7 @@ const SetFocusExamples = () =>
       </p>
       <CodeBlock code={prepareCode(FocusButtonSrc)} expand/>
     </Split>
-
-  </div>
+  </>
 
 
 export default SetFocusExamples

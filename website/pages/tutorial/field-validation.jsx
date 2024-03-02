@@ -12,7 +12,7 @@ import Split from '@/site/Split.jsx'
 import Suggest from '@/site/Suggest.jsx'
 
 const FieldValidation = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Field Validation</h1>
     <p className="intro wide">
       It&apos;s good practice to validate fields as thoroughly as possible.  On

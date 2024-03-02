@@ -8,9 +8,7 @@ import TryItOut       from '@/site/TryItOut.jsx'
 import { FieldOnInvalidLink, FieldOnLoadLink, FieldSetValidLink } from '@/site/Links.jsx'
 
 const SetInvalidExamples = () =>
-  <div className="prose flow">
-    <h1>Field Functions</h1>
-
+  <>
     <h2 className="font-mono">setInvalid()</h2>
     <Split>
       <div>
@@ -42,7 +40,7 @@ const SetInvalidExamples = () =>
         FieldOnInvalidLink
       ]}
     />
-  </div>
+  </>
 
 
 export default SetInvalidExamples

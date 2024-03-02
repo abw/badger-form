@@ -2,6 +2,7 @@ import React          from 'react'
 import Input          from './_examples/Input.jsx'
 import InputSrc       from './_examples/Input.jsx?raw'
 import Example        from '@/site/Example.jsx'
+import TextPager      from '@/site/Pager/TextPager.jsx'
 import { FieldLink, FieldTypeLink } from '@/site/Links.jsx'
 
 const TextExamples = () =>
@@ -20,6 +21,7 @@ const TextExamples = () =>
       undent={2}
       expand
     />
+    <TextPager/>
   </div>
 
 export default TextExamples

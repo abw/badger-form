@@ -1,4 +1,4 @@
-import React      from 'react'
+import React          from 'react'
 import Debug          from './_examples/Debug.jsx'
 import DebugSrc       from './_examples/Debug.jsx?raw'
 import Example        from '@/site/Example.jsx'
@@ -8,8 +8,7 @@ import Split          from '@/site/Split.jsx'
 import { DebugLink }  from '@/site/Links.jsx'
 
 const DebugExamples = () =>
-  <div className="prose flow">
-    <h1>Form Properties</h1>
+  <>
     <h2 className="font-mono">debug</h2>
     <Split>
       <p>
@@ -34,7 +33,7 @@ const DebugExamples = () =>
         DebugLink
       ]}
     />
-  </div>
+  </>
 
 
 export default DebugExamples

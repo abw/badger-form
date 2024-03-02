@@ -11,10 +11,8 @@ import {
 } from '@/site/Links.jsx'
 
 const OnChangeExamples = () =>
-  <div className="prose flow">
-    <h1>Field Events</h1>
+  <>
     <h2 className="font-mono">onChange</h2>
-
     <Split>
       <p>
         You can add an <code>onChange</code> handler to a <FieldLink/>{' '}
@@ -43,7 +41,7 @@ const OnChangeExamples = () =>
         FieldOnInvalidLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnChangeExamples

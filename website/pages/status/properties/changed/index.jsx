@@ -4,8 +4,7 @@ import ChangedSrc from './_examples/Changed.jsx?raw'
 import Example    from '@/site/Example.jsx'
 
 const StatusExamples = () =>
-  <div className="prose flow">
-    <h1>Status Properties</h1>
+  <>
     <h2 className="font-mono">changed</h2>
     <p>
       The <code>changed</code> property indicates that the child content
@@ -18,6 +17,6 @@ const StatusExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default StatusExamples

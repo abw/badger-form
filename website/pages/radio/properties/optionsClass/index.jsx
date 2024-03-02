@@ -4,8 +4,7 @@ import OptionsClassSrc  from './_examples/OptionsClass.jsx?raw'
 import Example          from '@/site/Example.jsx'
 
 const RadioExample = () =>
-  <div className="prose flow">
-    <h1>Radio Input Properties</h1>
+  <>
     <h2 className="font-mono">optionsClass</h2>
     <p>
       The <code>optionsClass</code> property can be used to add a CSS class
@@ -18,6 +17,6 @@ const RadioExample = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default RadioExample

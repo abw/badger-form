@@ -8,8 +8,7 @@ import TryItOut   from '@/site/TryItOut.jsx'
 import { FieldLink, FieldOnBlurLink, FieldOnChangeLink, FieldOnFocusLink, FieldOnInvalidLink, FieldValidateLink, FormLink } from '@/site/Links.jsx'
 
 const OnValidExamples = () =>
-  <div className="prose flow">
-    <h1>Field Events</h1>
+  <>
     <h2 className="font-mono">onValid</h2>
     <Split>
       <p>
@@ -40,7 +39,7 @@ const OnValidExamples = () =>
         FieldOnInvalidLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnValidExamples

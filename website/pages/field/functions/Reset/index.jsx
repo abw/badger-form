@@ -10,8 +10,7 @@ import {
 } from '@/site/Links.jsx'
 
 const ResetExamples = () =>
-  <div className="prose flow">
-    <h1>Field Functions</h1>
+  <>
     <h2 className="font-mono">reset()</h2>
     <Split>
       <div>
@@ -46,7 +45,7 @@ const ResetExamples = () =>
         FieldOnBlurLink
       ]}
     />
-  </div>
+  </>
 
 
 export default ResetExamples

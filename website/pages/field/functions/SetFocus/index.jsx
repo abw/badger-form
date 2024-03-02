@@ -8,9 +8,7 @@ import TryItOut     from '@/site/TryItOut.jsx'
 import { FormLink, FormSetFocusLink, FieldOnLoadLink, FieldOnFocusLink, FieldOnBlurLink } from '@/site/Links.jsx'
 
 const SetFocusExamples = () =>
-  <div className="prose flow">
-    <h1>Field Functions</h1>
-
+  <>
     <h2 className="font-mono">setFocus()</h2>
     <Split>
       <div>
@@ -45,6 +43,6 @@ const SetFocusExamples = () =>
         FieldOnBlurLink
       ]}
     />
-  </div>
+  </>
 
 export default SetFocusExamples

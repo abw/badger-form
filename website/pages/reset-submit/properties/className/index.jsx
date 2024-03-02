@@ -6,8 +6,7 @@ import Split        from '@/site/Split.jsx'
 import { ResetGapLink, ResetSpaceLink } from '@/site/Links.jsx'
 
 const ClassNameExamples = () =>
-  <div className="prose flow">
-    <h1>ResetSubmit Properties</h1>
+  <>
     <h2 className="font-mono">className</h2>
     <Split>
       <p>
@@ -36,6 +35,6 @@ const ClassNameExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default ClassNameExamples

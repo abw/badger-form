@@ -10,7 +10,7 @@ import {
 } from '@/site/Links.jsx'
 
 const EditFormExample = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Edit Form</h1>
     <p className="intro wide">
       Another common use case for forms is in editing existing data records.

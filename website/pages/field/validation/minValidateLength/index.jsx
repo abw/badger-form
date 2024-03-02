@@ -11,8 +11,7 @@ import {
 } from '@/site/Links.jsx'
 
 const MinValidateLengthExamples = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">minValidateLength</h2>
     <Split>
       <p>
@@ -47,7 +46,7 @@ const MinValidateLengthExamples = () =>
         FieldValidateOnChangeLink,
       ]}
     />
-  </div>
+  </>
 
 
 export default MinValidateLengthExamples

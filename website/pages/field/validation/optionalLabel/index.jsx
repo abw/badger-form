@@ -9,8 +9,7 @@ import {
 } from '@/site/Links.jsx'
 
 const OptionalLabelExample = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">optionalLabel</h2>
     <p>
       You can use the <code className="code">optionalLabel</code> property
@@ -33,6 +32,6 @@ const OptionalLabelExample = () =>
         FieldRequiredLabelLink
       ]}
     />
-  </div>
+  </>
 
 export default OptionalLabelExample

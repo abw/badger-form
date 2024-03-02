@@ -14,7 +14,7 @@ import OnErrorSrc         from './_examples/OnError.jsx?raw'
 import { ErrorsLink, FormOnErrorLink } from '@/site/Links.jsx'
 
 const SubmissionErrors = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Submission Errors</h1>
     <p className="intro wide">
       For a good user experience we should use client-side validation to

@@ -9,8 +9,7 @@ import {
 } from '@/site/Links.jsx'
 
 const ShowOptionalExample = () =>
-  <div className="prose flow">
-    <h1>Field Validation</h1>
+  <>
     <h2 className="font-mono">showOptional</h2>
     <p>
       If a field is <b>NOT</b> marked as <FieldRequiredLink/> then it is optional.
@@ -37,7 +36,6 @@ const ShowOptionalExample = () =>
         FieldRequiredLabelLink
       ]}
     />
-
-  </div>
+  </>
 
 export default ShowOptionalExample

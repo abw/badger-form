@@ -6,8 +6,7 @@ import FieldsetCSS  from './_examples/fieldset.css?raw'
 import CodeBlock    from '@/site/CodeBlock.jsx'
 
 const FieldsetExamples = () =>
-  <div className="prose flow">
-    <h1>Fieldset Properties</h1>
+  <>
     <h2 className="font-mono">className</h2>
     <p>
       The <code>className</code> property can be used to add a CSS class to
@@ -30,6 +29,6 @@ const FieldsetExamples = () =>
       language="css"
       expand
     />
-  </div>
+  </>
 
 export default FieldsetExamples

@@ -4,8 +4,7 @@ import Gap      from './_examples/Gap.jsx'
 import GapSrc   from './_examples/Gap.jsx?raw'
 
 const GapExamples = () =>
-  <div className="prose flow">
-    <h1>ResetSubmit Properties</h1>
+  <>
     <h2 className="font-mono">gap</h2>
     <p>
       The default CSS class for the container uses flexbox and sets a gap of
@@ -20,6 +19,6 @@ const GapExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default GapExamples

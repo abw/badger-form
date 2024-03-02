@@ -6,8 +6,7 @@ import SeeAlso    from '@/site/SeeAlso.jsx'
 import { FormHiddenLink } from '@/site/Links.jsx'
 
 const ValuesExamples = () =>
-  <div className="prose flow">
-    <h1>Form Properties</h1>
+  <>
     <h2 className="font-mono">values</h2>
     <p>
       The <code>values</code> property can be used to pre-define values
@@ -24,7 +23,7 @@ const ValuesExamples = () =>
         FormHiddenLink
       ]}
     />
-  </div>
+  </>
 
 
 export default ValuesExamples

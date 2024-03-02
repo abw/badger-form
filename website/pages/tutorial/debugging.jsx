@@ -8,7 +8,7 @@ import DebuggingSrc       from './_examples/Debugging.jsx?raw'
 import { DebugLink, FormDebugLink, FieldLink, FieldsLink, FormLink } from '@/site/Links.jsx'
 
 const DebuggingExample = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Debugging</h1>
     <p className="intro wide">
       Let&apos;t face it, things don&apos;t always work right first time,

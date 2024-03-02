@@ -6,8 +6,7 @@ import SeeAlso      from '@/site/SeeAlso.jsx'
 import { FormOnErrorLink, FormOnSubmitLink } from '@/site/Links.jsx'
 
 const OnSuccessExamples = () =>
-  <div className="prose flow">
-    <h1>Form Events</h1>
+  <>
     <h2 className="font-mono">onSuccess</h2>
     <p>
       The <code>onSuccess</code> property can be used to define a function
@@ -29,7 +28,7 @@ const OnSuccessExamples = () =>
         FormOnErrorLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnSuccessExamples

@@ -5,8 +5,7 @@ import SubmitSrc  from './_examples/Submit.jsx?raw'
 import { SubmitLink } from '@/website/site/Links.jsx'
 
 const SubmitExamples = () =>
-  <div className="prose flow">
-    <h1>ResetSubmit Properties</h1>
+  <>
     <h2 className="font-mono">submit</h2>
     <p>
       The <code>submit</code> property can be used to pass properties to
@@ -19,6 +18,6 @@ const SubmitExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default SubmitExamples

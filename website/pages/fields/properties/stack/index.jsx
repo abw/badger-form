@@ -4,8 +4,7 @@ import Stack      from './_examples/FieldsStack.jsx'
 import StackSrc   from './_examples/FieldsStack.jsx?raw'
 
 const FieldsExamples = () =>
-  <div className="prose flow">
-    <h1>Fields Properties</h1>
+  <>
     <h2 className="font-mono">stack</h2>
     <p>
       The <code>stack</code> property can be used to define a stacking
@@ -19,6 +18,6 @@ const FieldsExamples = () =>
       code={StackSrc}
       caption="stack"
     />
-  </div>
+  </>
 
 export default FieldsExamples

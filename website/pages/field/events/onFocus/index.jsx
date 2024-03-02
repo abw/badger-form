@@ -11,8 +11,7 @@ import {
 } from '@/site/Links.jsx'
 
 const OnFocusExamples = () =>
-  <div className="prose flow">
-    <h1>Field Events</h1>
+  <>
     <h2 className="font-mono">onFocus</h2>
     <Split>
       <p>
@@ -40,7 +39,7 @@ const OnFocusExamples = () =>
         FieldOnInvalidLink
       ]}
     />
-  </div>
+  </>
 
 
 export default OnFocusExamples

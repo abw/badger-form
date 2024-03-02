@@ -14,7 +14,7 @@ export const metadata = {
 }
 
 const FormValidation = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Form Validation</h1>
     <p className="intro wide">
       Sometimes you need access to all the submitted field values to validate

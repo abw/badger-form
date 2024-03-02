@@ -2,8 +2,7 @@ import React from 'react'
 import { FieldValidateOnBlurLink } from '@/site/Links.jsx'
 
 const ValidateOnBlurExamples = () =>
-  <div className="prose flow">
-    <h1>Form Validation</h1>
+  <>
     <h2 className="font-mono">validateOnBlur</h2>
     <p>
       Fields are usually only validated when the form is submitted.
@@ -15,6 +14,6 @@ const ValidateOnBlurExamples = () =>
       When enabled, fields will be validated whenever the input loses focus.
     </p>
 
-  </div>
+  </>
 
 export default ValidateOnBlurExamples

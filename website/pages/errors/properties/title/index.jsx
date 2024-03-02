@@ -10,8 +10,7 @@ import Split      from '@/site/Split.jsx'
 import TryItOut from '@/website/site/TryItOut.jsx'
 
 const ErrorsExamples = () =>
-  <div className="prose flow">
-    <h1>Errors Properties</h1>
+  <>
     <h2 className="font-mono">title</h2>
     <p>
       The <code>title</code> property can be used to set the title
@@ -51,6 +50,6 @@ const ErrorsExamples = () =>
       caption="title function"
       expand
     />
-  </div>
+  </>
 
 export default ErrorsExamples

@@ -14,7 +14,7 @@ import {
 // import './_examples/CustomCSS.css'
 
 const CompleteRegistration = () =>
-  <div className="prose">
+  <div className="prose flow">
     <h1>Complete Registration Form</h1>
     <p className="intro wide">
       Here&apos;s a more complete (albeit rather contrived) example of a

@@ -5,7 +5,7 @@ import OSS from '../svg/oss.svg?react'
 
 const Index = () =>
   // <div className="max-width-40rem block-center pad-t-8">
-  <div className="container-tablet pad-t-8">
+  <div className="pad-t-8">
     <Badger className="badger-form"/>
     <h1 className="intro mar-t-8">
       Simple but powerful React forms

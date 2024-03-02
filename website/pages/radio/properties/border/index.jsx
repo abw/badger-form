@@ -5,8 +5,7 @@ import Example        from '@/site/Example.jsx'
 import { RadioOptionClassLink, RadioOptionsClassLink } from '@/website/site/Links.jsx'
 
 const RadioExample = () =>
-  <div className="prose flow">
-    <h1>Radio Input Properties</h1>
+  <>
     <h2 className="font-mono">border</h2>
     <p>
       You can set the <code>border</code> property to add a border around
@@ -22,6 +21,6 @@ const RadioExample = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default RadioExample

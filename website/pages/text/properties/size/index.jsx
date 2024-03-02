@@ -5,8 +5,7 @@ import Example  from '@/site/Example.jsx'
 import { FieldClassNameLink, FieldPrefixLink, FieldSuffixLink, TextInputInlineLink } from '@/website/site/Links.jsx'
 
 const TextExamples = () =>
-  <div className="prose flow">
-    <h1>Text Input Properties</h1>
+  <>
     <h2 className="font-mono">size</h2>
     <p>
       The <code>size</code> property can be used to set the size (in
@@ -28,6 +27,6 @@ const TextExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default TextExamples

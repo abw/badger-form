@@ -11,8 +11,7 @@ import {
 } from '@/site/Links.jsx'
 
 const OnLoadExamples = () =>
-  <div className="prose flow">
-    <h1>Field Events</h1>
+  <>
     <h2 className="font-mono">onLoad</h2>
 
     <Split>
@@ -42,6 +41,6 @@ const OnLoadExamples = () =>
         FieldOnInvalidLink,
       ]}
     />
-  </div>
+  </>
 
 export default OnLoadExamples

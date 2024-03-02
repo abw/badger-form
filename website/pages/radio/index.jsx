@@ -2,6 +2,7 @@ import React          from 'react'
 import Input          from './_examples/Input.jsx'
 import InputSrc       from './_examples/Input.jsx?raw'
 import Example        from '@/site/Example.jsx'
+import RadioPager     from '@/site/Pager/RadioPager.jsx'
 import { FieldLink, FieldTypeLink } from '@/site/Links.jsx'
 
 const RadioExamples = () =>
@@ -18,6 +19,7 @@ const RadioExamples = () =>
       caption="checkbox"
       expand
     />
+    <RadioPager/>
   </div>
 
 export default RadioExamples

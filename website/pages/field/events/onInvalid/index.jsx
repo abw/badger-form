@@ -12,8 +12,7 @@ import {
 } from '@/site/Links.jsx'
 
 const OnInvalidExamples = () =>
-  <div className="prose flow">
-    <h1>Field Events</h1>
+  <>
     <h2 className="font-mono">onInvalid</h2>
 
     <Split>
@@ -53,6 +52,6 @@ const OnInvalidExamples = () =>
         FieldOnValidLink
       ]}
     />
-  </div>
+  </>
 
 export default OnInvalidExamples

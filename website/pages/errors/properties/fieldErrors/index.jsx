@@ -6,8 +6,7 @@ import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
 
 const ErrorsExamples = () =>
-  <div className="prose flow">
-    <h1>Errors Properties</h1>
+  <>
     <h2 className="font-mono">fieldErrors</h2>
     <Split>
       <p>
@@ -25,6 +24,6 @@ const ErrorsExamples = () =>
       undent={2}
       expand
     />
-  </div>
+  </>
 
 export default ErrorsExamples

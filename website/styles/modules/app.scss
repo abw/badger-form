@@ -1,6 +1,14 @@
+// main body: 80rem
+// sidebar: 20rem;
+
 #app {
   position: relative;
   width: 100%;
+  // max-width: var(--combined-width);
+  margin: 0 auto;
+  // background-color: var(--main-back);
+  // border: 1px solid red;
+
   height: calc(100vh - #{$header-height});
   padding: 0;
   display: flex;
@@ -11,24 +19,44 @@
     transition: background-color $theme-transition ease-in-out;
   }
   & > aside {
-    flex-basis: var(--sidebar-width);
-    margin-left: var(--sidebar-margin-left);
-    padding: var(--sidebar-padding);
+    width: max(var(--side-width), var(--side-total));
+    // width: var(--side-width);
+    padding: var(--side-padding);
+    padding-left: max(var(--side-padding), var(--half-pad));
+    // flex-basis: var(--sidebar-width);
+    // margin-left: var(--sidebar-margin-left);
+    margin-left: var(--side-margin);
     border-right: 1px solid var(--side-border);
+    // border-left: 1px solid var(--side-border);
+    // border: 1px solid green;
     background-color: var(--side-back);
     box-shadow:
       inset 0 6px 4px -4px var(--top-shadow),
-      inset -2px 0 2px var(--side-shadow);
+      inset -2px 0 2px var(--side-shadow),
+      -2px 0 3px var(--side-shadow);
     transition:
-      margin-left 300ms ease-in-out,
+      margin-left var(--side-transition),
       background-color $theme-transition ease-in-out;
   }
   & > main {
+    // border: 1px solid blue;
     margin-left: 0;
-    flex-basis: 100%;
+    // flex-basis: 100%;
+    width: var(--main-total);
     padding: 1.5rem 3rem 3rem 3rem;
-    box-shadow:  2px 4px 6px var(--top-shadow);
+    padding-top: 3rem;
+    padding-right: max(var(--main-padding), var(--main-pad-right));
+    // padding-left: max(var(--main-padding), var(--main-pad-left));
+    // padding-left: var(--main-padding);
+    padding-left: max(var(--main-padding), var(--main-pad-left));
+
+    // box-shadow:  2px 4px 6px var(--top-shadow);
     background-color: var(--main-back);
+    transition:
+      width var(--side-transition),
+      padding-left var(--side-transition),
+      padding-right var(--side-transition);
+
     &.wide {
       margin-left: 0;
       flex-basis: 100%;

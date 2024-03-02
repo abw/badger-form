@@ -6,16 +6,19 @@ import OSS from '../svg/oss.svg?react'
 const Index = () =>
   // <div className="max-width-40rem block-center pad-t-8">
   <div className="pad-t-8">
-    <Badger className="badger-form"/>
-    <h1 className="intro mar-t-8">
-      Simple but powerful React forms
-    </h1>
-    <p className="large">
-      Badger Form is a yet another module for building forms in React.  It
-      implements state management for forms with styles provided by{' '}
-      <a href="https://abw.github.io/badger-css/">Badger CSS</a>.
-    </p>
-    <p>
+    <div className="grid-2 gap-12 start stack-laptop">
+      <div>
+        <Badger className="badger-form mar-t-4"/>
+      </div>
+      <div>
+        <p className="larger">
+          Badger Form is a yet another module for building forms in React.  It
+          implements state management for forms with styles provided by{' '}
+          <a href="https://abw.github.io/badger-css/">Badger CSS</a>.
+        </p>
+      </div>
+    </div>
+    <p className="intro">
       It provides default components for rendering form fields which
       simplifies the process of creating and using forms.  You can override
       them with your own field input components, or manually implement the

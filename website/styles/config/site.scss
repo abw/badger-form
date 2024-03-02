@@ -1,6 +1,11 @@
 $header-height:     42px;
-$sidebar-width:     320px;
-$sidebar-padding:   1rem;
+$side-width:        12rem;
+$side-padding:      1rem;
+$main-width:        68rem;
+$main-padding:      3rem;
+$head-padding:      1rem;
+$app-width:         $side-width + $main-width;
+$head-width:        $app-width + $head-padding;
 $theme-transition:  0.5s;
 
 :where(html) {

@@ -8,8 +8,8 @@ $codeblock-back-dark-to:     rgba($codeblock-back-dark, 0.9);
 
 :where(html) {
   // code
-  --code-back:            var(--grey20-95);
-  --code-text:            var(--grey20-40);
+  --code-back:            var(--grey20-90);
+  --code-text:            var(--grey20-30);
   --code-border:          var(--grey20-80);
   --code-line:            var(--grey40-50);
   --code-hover-text:      var(--grey40-10);
@@ -34,12 +34,12 @@ $codeblock-back-dark-to:     rgba($codeblock-back-dark, 0.9);
 }
 #{$dark-theme} {
   // code
-  --code-back:            var(--grey20-25);
+  --code-back:            var(--grey20-20);
   --code-text:            var(--grey40-90);
-  --code-border:          var(--grey20-20);
-  --code-line:            var(--grey40-50);
+  --code-border:          var(--grey20-10);
+  --code-line:            var(--grey40-40);
   --code-hover-text:      var(--grey40-90);
-  --code-hover-back:      var(--grey40-30);
+  --code-hover-back:      var(--grey40-25);
   --code-hover-border:    var(--code-line);
   // codeblock
   --codeblock-back:       var(--grey-5);
@@ -123,9 +123,6 @@ div.codeblock {
   color: var(--codeblock-text);
   background-color: var(--codeblock-back);
   border: 1px solid var(--codeblock-border);
-  &.expandable {
-    //background-color: rgba(43, 43, 43);
-  }
   pre {
     border-radius: $codeblock-radius;
     margin: 0 !important;

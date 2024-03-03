@@ -1,7 +1,7 @@
 $header-height:     42px;
-$side-width:        12rem;
+$side-width:        15rem;
 $side-padding:      1rem;
-$main-width:        68rem;
+$main-width:        65rem;
 $main-padding:      3rem;
 $head-padding:      1rem;
 $app-width:         $side-width + $main-width;
@@ -27,23 +27,23 @@ $theme-transition:  0.5s;
   // app
   // --side-back:
   --app-back:             var(--grey-70);
-  --main-back:            var(--grey-90);
-  --side-back:            var(--grey-80);
-  --side-border:          var(--grey-60);
+  --main-back:            var(--grey-95);
+  --side-back:            var(--grey-85);
+  --side-border:          var(--grey-70);
   // --side-border:          var(--grey-70);
   --side-shadow:        rgba(0, 0, 0, 0.04);
   --top-shadow:         rgba(0, 0, 0, 0.08);
   // menu
   --menu-head:            var(--grey20-20);
   --menu-text:            var(--grey-20);
-  --menu-back:            var(--grey-85);
+  --menu-back:            var(--grey-90);
   --menu-hover-text:      var(--brand-10);
-  --menu-hover-back:      var(--grey-90);
+  --menu-hover-back:      var(--grey20-95);
   --menu-active-text:     var(--brand-0);
-  --menu-active-back:     var(--grey20-95);
+  --menu-active-back:     var(--grey40-100);
   // toc / see-also
-  --toc-back:               var(--grey20-90);
-  --toc-border:             var(--grey20-60);
+  --toc-back:               var(--grey20-100);
+  --toc-border:             var(--grey20-80);
   // --toc-head:               var(--grey40-20);
 }
 #{$dark-theme} {
@@ -66,9 +66,9 @@ $theme-transition:  0.5s;
   --footer-border:      black;
   // app
   --app-back:           var(--grey-0);
-  --main-back:          var(--grey-20);
+  --main-back:          var(--grey-15);
   --side-back:          var(--grey-10);
-  --side-border:        var(--grey-30);
+  --side-border:        var(--grey-25);
   // --side-border:        var(--grey-20);
   --side-shadow:      rgba(0, 0, 0, 0.2);
   --top-shadow:       rgba(0, 0, 0, 0.15);
@@ -81,7 +81,7 @@ $theme-transition:  0.5s;
   --menu-active-text:   var(--brand-100);
   --menu-active-back:   var(--grey20-30);
   // toc / see-also
-  --toc-back:               var(--grey20-10);
-  --toc-border:             var(--grey20-30);
+  --toc-back:               var(--grey20-5);
+  --toc-border:             var(--grey20-25);
   // --toc-head:               var(--grey40-80);
 }

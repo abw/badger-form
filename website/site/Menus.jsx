@@ -391,6 +391,14 @@ export const Select = {
   ]
 }
 
+export const Utils = {
+  title: 'Utilities',
+  url: '/utilities',
+  items: [
+    { to: '/utils/addInputType',     code: 'addInputType()' },
+  ]
+}
+
 
 export const OldField = [
   { to: '/field',                     text: <code>Field</code>, exact: true },

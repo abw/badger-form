@@ -2,7 +2,8 @@ import React from 'react'
 import Menu from './Menu.jsx'
 import {
   GettingStarted, Tutorial, Form, Field, Fields, Fieldset, Submit, Reset,
-  Debug, Status, Errors, ResetSubmit, Text, Textarea, Checkbox, Radio, Select
+  Debug, Status, Errors, ResetSubmit, Text, Textarea, Checkbox, Radio, Select,
+  Utils
 } from './Menus.jsx'
 
 const Sidebar = () =>
@@ -29,6 +30,9 @@ const Sidebar = () =>
     <Menu {...Checkbox}/>
     <Menu {...Radio}/>
     <Menu {...Select}/>
+
+    <h4 className="mar-b-none">Miscellaneous</h4>
+    <Menu {...Utils}/>
     {/*
     <Menu title="Tutorial" items={Tutorial}/>
     <Menu title="Form" items={Form}/>

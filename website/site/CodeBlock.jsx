@@ -75,8 +75,8 @@ export const prepareCode = (code, options={}) => {
     .replaceAll(/\/\/\s*PRETEND:\s/g, '')
     // also cleanup {/* PRETEND: some stuff */}
     .replaceAll(/{?\/\*\s*PRETEND:\s(.*?)\s+\*\/}?/g, '$1')
-    // .replaceAll(/\/\*\s*REAL\s*\*\/.*?\/\*\s*UNREAL\s*\*\//g, '')
-    // .replaceAll(/{\/\*\s*(UN?)PRETEND\s*\*\/}/g, '')
+    .replaceAll(/\/\*\s*REAL\s*\*\/.*?\/\*\s*UNREAL\s*\*\//g, '')
+    .replaceAll(/{\/\*\s*(UN?)PRETEND\s*\*\/}/g, '')
     .replace(/\n+$/, '')
     // .replaceAll(/*REAL:\s*\n.*?\n/g, '')       // and any line after // REAL:
   if (options.undent) {

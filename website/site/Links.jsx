@@ -82,7 +82,7 @@ export const FieldsGapLink              = ToCode('/fields/properties/gap', 'gap'
 export const FieldsClassNameLink        = ToCode('/fields/properties/className', 'className')
 
 // fieldset
-export const FieldsetLink               = ToCode('/fieldset', 'Fields')
+export const FieldsetLink               = ToCode('/fieldset', 'Fieldset')
 export const FieldsetLegendLink         = ToCode('/fieldset/properties/legend', 'legend')
 
 // errors
@@ -114,12 +114,16 @@ export const TextAreaInputColsLink      = ToCode('/textarea/properties/cols',   
 export const TextAreaInputRowsLink      = ToCode('/textarea/properties/rows',   'rows')
 
 export const CheckboxInputLink          = ToCode('/checkbox', 'Checkbox')
+export const CheckboxTextLink           = ToCode('/checkbox/properties/text', 'text')
 
 export const RadioInputLink             = ToCode('/radio', 'Radio')
+export const RadioOptionsLink           = ToCode('/radio/properties/options', 'options')
 export const RadioOptionClassLink       = ToCode('/radio/properties/optionClass', 'optionClass')
 export const RadioOptionsClassLink      = ToCode('/radio/properties/optionsClass', 'optionsClass')
 
-export const SelectInputLink            = ToCode('/input/select', 'Select')
+export const SelectInputLink            = ToCode('/select', 'Select')
+export const SelectOptionsLink          = ToCode('/select/properties/options', 'options')
+
 export const HiddenInputLink            = ToCode('/input/hidden', 'Hidden')
 export const CustomInputLink            = ToCode('/input/custom', 'Custom Input')
 export const InputTypesLink             = ToText('/input', 'Input Types')

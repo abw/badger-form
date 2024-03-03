@@ -7,12 +7,16 @@ import React, { useState } from 'react'
 const SubmitResponse = () => {
   const [response, setResponse] = useState()
 
+  // handle successful response
+  const onSuccess = response =>
+    setResponse(response.data)
+
   // dummy submission in the style of fetch or axios
-  const onSubmit = values => {
-    return Promise.resolve({
+  const onSubmit = values =>
+    Promise.resolve({
       status: 200,
       data:   {
-        message: 'Welcome back!  You are now logged in.',
+        message: 'Welcome back!',
         user:    {
           id:    12345,
           email: values.email,
@@ -20,14 +24,13 @@ const SubmitResponse = () => {
         },
       }
     })
-  }
-
-  // handle successful response
-  const onSuccess = response => setResponse(response.data)
 
   return (
     <>
-      <Form onSubmit={onSubmit} onSuccess={onSuccess} debug>
+      <Form
+        onSubmit={onSubmit}
+        onSuccess={onSuccess}
+      >
         <Field
           name="email"
           label="Email Address"

@@ -9,7 +9,7 @@ import RegistrationFormSrc  from './_examples/RegistrationForm.jsx?raw'
 import {
   FieldLink, FieldsetLink, FormLink,
   CheckboxInputLink, RadioInputLink, SelectInputLink, FieldTypeLink,
-  FieldShowOptionalLink, FieldShowRequiredLink, FieldOnChangeLink
+  FieldShowOptionalLink, FieldShowRequiredLink, FieldOnChangeLink, RadioOptionsLink, SelectOptionsLink, CheckboxTextLink, FieldsetLegendLink
 } from '@/site/Links.jsx'
 // import './_examples/CustomCSS.css'
 
@@ -23,19 +23,30 @@ const CompleteRegistration = () =>
 
     <h2>Input Types</h2>
     <Split>
-      <p>
-        This example demonstrates some of the other fields input types.
-        Set the <FieldLink/> <FieldTypeLink/> to <code>radio</code> for
-        a <RadioInputLink/> button input and provide some <code>options</code>,
-        as shown here for the <code>experience</code> field.  Or set it
-        to <code>select</code> for a <SelectInputLink/> input as shown in the{' '}
-        <code>animal</code> field.  Set it to <code>checkbox</code> for a{' '}
-        <CheckboxInputLink/> and provide some <code>text</code> to go alongside it.
-      </p>
-      <p>
-        You can also use the <FieldTypeLink/> to set other text input types,
-        like <code>number</code> and <code>date</code>.
-      </p>
+      <div>
+        <p>
+          This example demonstrates some of the other fields input types.
+        </p>
+        <p>
+          Set the <FieldLink/> <FieldTypeLink/> to <code>radio</code> for
+          a <RadioInputLink/> button input and provide some <RadioOptionsLink/>,
+          as shown here for the <code>experience</code> field.
+        </p>
+        <p>
+          Or set it to <code>select</code> for a <SelectInputLink/> input
+          and provide some <SelectOptionsLink/>, as shown in the <code>animal</code> field.
+        </p>
+      </div>
+      <div>
+        <p>
+          Set it to <code>checkbox</code> for a <CheckboxInputLink/> and
+          provide some <CheckboxTextLink/> to go alongside it.
+        </p>
+        <p>
+          You can also use the <FieldTypeLink/> to set other text input types,
+          like <code>number</code> and <code>date</code>.
+        </p>
+      </div>
     </Split>
     <Example
       Component={RegistrationForm}
@@ -51,7 +62,7 @@ const CompleteRegistration = () =>
           <dd>
             <p>
               The example includes the <FieldsetLink/> component which can be used
-              to group fields together in a set, complete with a <code>legend</code>.
+              to group fields together in a set, complete with a <FieldsetLegendLink/>.
             </p>
           </dd>
           <dt><FieldShowRequiredLink/> and <FieldShowOptionalLink/></dt>

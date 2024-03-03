@@ -26,10 +26,10 @@ const SubmissionResponse = () =>
           which returns a resolved promise.  This is emulating how both{' '}
           <a href="https://axios-http.com/">Axios</a> and the native{' '}
           <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a>{' '}
-          API work.
+          work.
         </p>
         <p>
-          The additional step is to defined an <FormOnSuccessLink/> handler
+          The additional step is to define an <FormOnSuccessLink/> handler
           which can do something to handle the successful response.  In this
           case we&apos;re calling the <code>setResponse</code> function to store
           the response data, much like in the previous example, except that this

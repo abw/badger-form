@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-form",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React form library",
   "type": "module",
   "files": [
@@ -45,9 +45,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@abw/badger-css": "^0.2.20",
-    "@abw/badger-timestamp": "^1.0.4",
-    "@abw/badger-utils": "^1.0.23",
+    "@abw/badger-css": "^0.2.22",
+    "@abw/badger-timestamp": "^1.0.5",
+    "@abw/badger-utils": "^1.0.25",
     "@abw/react-night-and-day": "^0.0.5",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",

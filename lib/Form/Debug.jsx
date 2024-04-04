@@ -6,7 +6,7 @@ export const Debug = ({
   values=true,
   status=false,
   all=false,
-  className='border bdr-2 shadow-2 mar-t-4 pad-4',
+  className='border bdr-2 shadow-2 mar-v-4 pad-4 form-debug',
   title='Form Debugging',
   valuesTitle='Values',
   statusTitle='Status',
@@ -16,13 +16,13 @@ export const Debug = ({
   return (
     <div className={className}>
       { title &&
-        <h3 className="mar-t-none">{title}</h3>
+        <h3 className="mar-v-none">{title}</h3>
       }
       <div className="grid-1 gap-4">
         { values &&
           <div>
             { valuesTitle &&
-              <h4>{valuesTitle}</h4>
+              <h4 className="mar-v-none">{valuesTitle}</h4>
             }
             <DebugTable
               rows={Object.entries(form.values)}

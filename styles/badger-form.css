@@ -4126,6 +4126,8 @@ h1, h2, h3, h4, h5, h6 {
   --input-focus-background-color: var(--blue-100);
   --input-focus-ring-color: var(--blue-70);
   --input-focus-gap-color: var(--blue-90);
+  --input-range-track-color: var(--brand-90);
+  --input-range-thumb-color: var(--brand-50);
 }
 
 :where(.field) {
@@ -4149,7 +4151,7 @@ h1, h2, h3, h4, h5, h6 {
   --margin-bottom: 1rem;
   --required-text: "Required";
   --optional-text: "Optional";
-  --valid-help-prefix: "✔︎";
+  --valid-help-prefix: "✓";
   --invalid-help-prefix: "✗";
 }
 
@@ -4163,22 +4165,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :where(.field.valid) {
-  --label-color: var(--green-30);
-  --help-color: var(--green-45);
-  --help-prefix-color: var(--green-45);
-  --input-color: var(--green-40);
-  --input-border-color: var(--green-60);
-  --input-background-color: var(--green-95);
+  --label-color: var(--green-25);
+  --help-color: var(--green-40);
+  --help-prefix-color: var(--green-40);
+  --input-color: var(--green-30);
+  --input-border-color: var(--green-50);
+  --input-background-color: var(--green-100);
   --input-placeholder-color: var(--green-60);
   --input-hover-color: var(--green-20);
   --input-hover-border-color: var(--green-55);
-  --input-hover-background-color: var(--green-90);
+  --input-hover-background-color: var(--green-95);
   --input-hover-placeholder-color: var(--green-50);
   --input-focus-color: var(--green-0);
   --input-focus-border-color: var(--green-50);
   --input-focus-background-color: var(--green-100);
-  --input-focus-ring-color: var(--green-70);
-  --input-focus-gap-color: var(--green-90);
+  --input-focus-ring-color: var(--green-75);
+  --input-focus-gap-color: var(--green-95);
   --fix-color: var(--green-40);
   --fix-background: var(--green-90);
   --fix-hover-color: var(--green-30);
@@ -4191,21 +4193,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :where(.field.invalid) {
-  --label-color: var(--red-30);
-  --help-color: var(--red-45);
-  --help-prefix-color: var(--red-45);
+  --label-color: var(--red-20);
+  --help-color: var(--red-35);
+  --help-prefix-color: var(--red-35);
   --input-color: var(--red-40);
-  --input-border-color: var(--red-65);
-  --input-background-color: var(--red-95);
+  --input-border-color: var(--red-55);
+  --input-background-color: var(--red-100);
   --input-placeholder-color: var(--red-60);
   --input-hover-color: var(--red-20);
   --input-hover-border-color: var(--red-60);
-  --input-hover-background-color: var(--red-90);
+  --input-hover-background-color: var(--red-95);
   --input-hover-placeholder-color: var(--red-50);
   --input-focus-color: var(--red-0);
   --input-focus-border-color: var(--red-55);
   --input-focus-background-color: var(--red-100);
-  --input-focus-ring-color: var(--red-70);
+  --input-focus-ring-color: var(--red-80);
   --input-focus-gap-color: var(--red-90);
   --fix-color: var(--red-40);
   --fix-background: var(--red-90);
@@ -4223,13 +4225,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 :where(.surface-1) :where(.field) {
   --help-color: var(--color-30);
+  --help-prefix-color: var(--color-30);
 }
 :where(.surface-1) :where(.field.valid) {
   --help-color: var(--green-30);
+  --help-prefix-color: var(--green-30);
   --input-border-color: var(--green-50);
 }
 :where(.surface-1) :where(.field.invalid) {
   --help-color: var(--red-30);
+  --help-prefix-color: var(--red-30);
   --input-border-color: var(--red-50);
 }
 
@@ -4247,6 +4252,8 @@ h1, h2, h3, h4, h5, h6 {
   --input-focus-background-color: var(--blue-5);
   --input-focus-ring-color: var(--blue-30);
   --input-focus-gap-color: var(--blue-10);
+  --input-range-track-color: var(--brand-15);
+  --input-range-thumb-color: var(--brand-40);
 }
 [data-theme=dark] :where(.field) {
   --label-color: var(--grey-90);
@@ -4268,9 +4275,9 @@ h1, h2, h3, h4, h5, h6 {
   --fix-focus-background: var(--blue-20);
 }
 [data-theme=dark] :where(.field.valid) {
-  --label-color: var(--green-50);
-  --help-color: var(--green-40);
-  --help-prefix-color: var(--green-40);
+  --label-color: var(--green-70);
+  --help-color: var(--green-60);
+  --help-prefix-color: var(--green-60);
   --input-color: var(--green-65);
   --input-border-color: var(--green-40);
   --input-background-color: var(--green-5);
@@ -4295,9 +4302,9 @@ h1, h2, h3, h4, h5, h6 {
   --fix-focus-background: var(--green-20);
 }
 [data-theme=dark] :where(.field.invalid) {
-  --label-color: var(--red-50);
-  --help-color: var(--red-40);
-  --help-prefix-color: var(--red-40);
+  --label-color: var(--red-70);
+  --help-color: var(--red-60);
+  --help-prefix-color: var(--red-60);
   --input-color: var(--red-60);
   --input-border-color: var(--red-40);
   --input-background-color: var(--red-5);
@@ -4327,11 +4334,11 @@ h1, h2, h3, h4, h5, h6 {
   --help-color: var(--color-50);
 }
 [data-theme=dark] :where(.surface-1) :where(.field.valid) {
-  --help-color: var(--green-40);
+  --help-color: var(--green-50);
   --input-border-color: var(--green-40);
 }
 [data-theme=dark] :where(.surface-1) :where(.field.invalid) {
-  --help-color: var(--red-40);
+  --help-color: var(--red-60);
   --input-border-color: var(--red-40);
 }
 [data-theme=dark] :where(.surface-4, .surface-5) {
@@ -4344,7 +4351,7 @@ h1, h2, h3, h4, h5, h6 {
   --help-color: var(--green-50);
 }
 [data-theme=dark] :where(.surface-4, .surface-5) :where(.field.invalid) {
-  --help-color: var(--red-50);
+  --help-color: var(--red-60);
 }
 
 :where(input:not([type=checkbox], [type=radio]), textarea, select, label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])), .field, .inputs, .input, button, .button, [role=button]) {
@@ -4635,6 +4642,51 @@ input:not([type=checkbox], [type=radio]):disabled, input:not([type=checkbox], [t
 
 input[type=color] {
   height: var(--input-outer-height);
+}
+
+input[type=range] {
+  border-color: transparent;
+  background-color: transparent !important;
+  padding: var(--padding-v) 0;
+}
+input[type=range]:focus {
+  box-shadow: none !important;
+}
+input[type=range]:focus::-webkit-slider-thumb {
+  box-shadow: var(--focus-ring);
+}
+input[type=range]:focus::-moz-range-thumb {
+  box-shadow: var(--focus-ring);
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: calc(1em * var(--line-height));
+  background-color: var(--input-range-track-color);
+  border-radius: var(--border-radius);
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: var(--input-range-thumb-color);
+  height: calc(1em * var(--line-height) + var(--padding-v) * 2);
+  margin-top: calc(0rem - var(--padding-v));
+  border-radius: var(--border-radius);
+  width: 1em;
+}
+input[type=range]::-moz-range-track {
+  height: calc(1em * var(--line-height));
+  background-color: var(--input-range-track-color);
+  border-radius: var(--border-radius);
+}
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: var(--input-range-thumb-color);
+  height: calc(1em * var(--line-height) + var(--padding-v) * 2);
+  margin-top: calc(0rem - var(--padding-v));
+  border-radius: var(--border-radius);
+  width: 1em;
 }
 
 /* forms/fields.scss */
@@ -5383,26 +5435,26 @@ svg.icon.on-right {
   margin-right: var(--icon-pull);
 }
 svg.icon.spin {
-  animation: linear var(--animation-time, 2s) var(--animation-repeat, infinite) spin;
-  animation-direction: var(--animation-direction, normal);
+  animation: linear var(--icon-animation-time, 2s) var(--icon-animation-repeat, infinite) spin;
+  animation-direction: var(--icon-animation-direction, normal);
 }
 svg.icon.beat {
-  animation: linear var(--animation-time, 1s) var(--animation-repeat, infinite) beat;
+  animation: linear var(--icon-animation-time, 1s) var(--icon-animation-repeat, infinite) beat;
 }
 svg.icon.beat.fast {
-  --animation-time: 0.5s;
+  --icon-animation-time: 0.5s;
 }
 svg.icon.beat.slow {
-  --animation-time: 2s;
+  --icon-animation-time: 2s;
 }
 svg.icon.reverse {
-  --animation-direction: reverse;
+  --icon-animation-direction: reverse;
 }
 svg.icon.fast {
-  --animation-time: 1s;
+  --icon-animation-time: 1s;
 }
 svg.icon.slow {
-  --animation-time: 4s;
+  --icon-animation-time: 4s;
 }
 @keyframes spin {
   0% {
@@ -5417,14 +5469,14 @@ svg.icon.slow {
     transform: scale(1);
   }
   10% {
-    transform: scale(var(--beat-scale, 1.25));
+    transform: scale(var(--icon-beat-scale, 1.25));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   svg.icon.spin {
-    --animation-time: 0;
-    --animation-repeat: 0;
+    --icon-animation-time: 0;
+    --icon-animation-repeat: 0;
   }
 }
 .flc-0 {

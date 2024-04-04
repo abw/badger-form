@@ -6,6 +6,8 @@ import UseFormResetSrc  from './_examples/UseFormReset.jsx?raw'
 import Example          from '@/site/Example.jsx'
 import Split            from '@/site/Split.jsx'
 import TryItOut         from '@/site/TryItOut.jsx'
+import SeeAlso from '@/website/site/SeeAlso.jsx'
+import { FormResetOnSuccessLink, FormUnvalidateLink } from '@/website/site/Links.jsx'
 
 const ResetExamples = () =>
   <>
@@ -39,6 +41,13 @@ const ResetExamples = () =>
       code={UseFormResetSrc}
       caption="useForm() and reset()"
     />
+    <SeeAlso
+      links={[
+        FormResetOnSuccessLink,
+        FormUnvalidateLink
+      ]}
+    />
+
   </>
 
 export default ResetExamples

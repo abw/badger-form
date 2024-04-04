@@ -15,8 +15,12 @@ export const FormLink                   = ToCode('/form', 'Form')
 export const FormValuesLink             = ToCode('/form/properties/values', 'values')
 export const FormFieldsLink             = ToCode('/form/properties/fields', 'fields')
 export const FormHiddenLink             = ToCode('/form/properties/hidden', 'hidden')
-export const FormValidateLink           = ToCode('/form/properties/validate', 'validate')
 export const FormDebugLink              = ToCode('/form/properties/debug', 'debug')
+export const FormResetOnSuccessLink     = ToCode('/form/properties/resetOnSuccess', 'resetOnSuccess')
+export const FormUnvalidateOnSuccessLink  = ToCode('/form/properties/unvalidateOnSuccess', 'unvalidateOnSuccess')
+
+// form validation
+export const FormValidateLink           = ToCode('/form/validation/validate', 'validate')
 // form events
 export const FormOnLoadLink             = ToCode('/form/events/onLoad', 'onLoad')
 export const FormOnSubmitLink           = ToCode('/form/events/onSubmit', 'onSubmit')
@@ -27,6 +31,7 @@ export const FormOnResetLink            = ToCode('/form/events/onReset', 'onRese
 export const FormSetFocusLink           = ToCode('/form/functions/setFocus', 'setFocus')
 export const FormSetValuesLink          = ToCode('/form/functions/setValues', 'setValues')
 export const FormResetLink              = ToCode('/form/functions/reset', 'reset')
+export const FormUnvalidateLink         = ToCode('/form/functions/unvalidate', 'unvalidate')
 
 // field
 export const FieldLink                  = ToCode('/field', 'Field')

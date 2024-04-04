@@ -47,6 +47,9 @@ export const Form = {
         { to: '/form/properties/hidden',    code: 'hidden'   },
         { to: '/form/properties/children',  code: 'children' },
         { to: '/form/properties/debug',     code: 'debug' },
+        { to: '/form/properties/resetOnSuccess', code: 'resetOnSuccess' },
+        { to: '/form/properties/unvalidateOnSuccess', code: 'unvalidateOnSuccess' },
+
       ]
     },
     {
@@ -63,7 +66,7 @@ export const Form = {
         { to: '/form/validation/showOptional',      code: 'showOptional'      },
         { to: '/form/validation/optionalLabel',     code: 'optionalLabel'     },
         { to: '/form/validation/focusInvalidField', code: 'focusInvalidField' },
-        { to: '/form/validation/resetOnSuccess',    code: 'resetOnSuccess'    },
+
       ]
     },
     {
@@ -79,9 +82,10 @@ export const Form = {
     {
       section: 'Functions',
       items: [
-        { to: '/form/functions/reset',      code: 'reset'     },
-        { to: '/form/functions/setFocus',   code: 'setFocus'  },
-        { to: '/form/functions/setValues',  code: 'setValues' },
+        { to: '/form/functions/reset',      code: 'reset'      },
+        { to: '/form/functions/unvalidate', code: 'unvalidate' },
+        { to: '/form/functions/setFocus',   code: 'setFocus'   },
+        { to: '/form/functions/setValues',  code: 'setValues'  },
       ]
     },
   ]

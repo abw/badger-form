@@ -17,8 +17,8 @@ dependencies:
 
 devDependencies:
   '@abw/badger-css':
-    specifier: ^0.2.22
-    version: 0.2.22
+    specifier: ^1.0.1
+    version: 1.0.1
   '@abw/badger-timestamp':
     specifier: ^1.0.5
     version: 1.0.5
@@ -103,15 +103,15 @@ packages:
       js-yaml: 4.1.0
     dev: true
 
-  /@abw/badger-css@0.2.22:
-    resolution: {integrity: sha512-gAKjoU1F5r0GkvnpnTKY5AbF8fXUoqkAn3PpH1BABuhjiBmGuGd/BzCaS1fxfqamte25h4BsZ54SCfiR55cz8A==}
+  /@abw/badger-css@1.0.1:
+    resolution: {integrity: sha512-nBaVAnB0r5FnBxXGxvpvuW7oHtlOMMZ5tjkL+coVjXU+lpHjGAyu/PUU8ZdL4R2Dybw3PIfs+a6NffhbSJLK0g==}
     hasBin: true
     dependencies:
-      '@abw/badger': 1.2.3
+      '@abw/badger': 1.2.4
     dev: true
 
-  /@abw/badger-filesystem@1.0.5:
-    resolution: {integrity: sha512-EXQvMJhGEbsGzBltfc6tQJEA/hsZfKrqFdHDoMWCdp2ZmZWadJ6dXvdcW0szpAsszBNO3HlF5F0KApOdU3vD9w==}
+  /@abw/badger-filesystem@1.0.6:
+    resolution: {integrity: sha512-WiMn0WRb49sYBFXxZHpLSPtQ75jlayjMKkQuCAEOkQj19H5EDCFSe86c79dE0TeHaqmMEFxUcFQulrNetWN7EQ==}
     dependencies:
       '@abw/badger-codecs': 1.0.3
       '@abw/badger-utils': 1.0.25
@@ -127,17 +127,17 @@ packages:
     resolution: {integrity: sha512-glGZ47pC7jFmKFZ7FcbqQZhHD0mS+PmickhREirily+k3bWzew7SA72+02HWM8uCwBOP0rLK0BfqrGJ+8a7fgg==}
     dev: true
 
-  /@abw/badger@1.2.3:
-    resolution: {integrity: sha512-EyEjLOtS1A/payuUIpG9o+tJkkkwn+UF0VbbHmU8t6L2DKjMW9nmp1orvh0M5zOGfDbtn0xj72B09tywkUGZIg==}
+  /@abw/badger@1.2.4:
+    resolution: {integrity: sha512-6QWQFlrK2s7pL/FT34Nw6aXYIqcZl6+QnZfha9NBEu32Smb3tA1lVVajsfQu3+qZDR8Ik7kyWN0AucKv9K+jgA==}
     hasBin: true
     dependencies:
       '@abw/badger-codecs': 1.0.3
-      '@abw/badger-filesystem': 1.0.5
+      '@abw/badger-filesystem': 1.0.6
       '@abw/badger-timestamp': 1.0.5
       '@abw/badger-utils': 1.0.25
       chokidar: 3.6.0
       commander: 11.1.0
-      dotenv: 16.4.4
+      dotenv: 16.4.5
       js-yaml: 4.1.0
       prompts: 2.4.2
     dev: true
@@ -1845,8 +1845,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /dotenv@16.4.4:
-    resolution: {integrity: sha512-XvPXc8XAQThSjAbY6cQ/9PcBXmFoWuw1sQ3b8HqUCR6ziGXjkTi//kB9SWa2UwqlgdAIuRqAa/9hVljzPehbYg==}
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
     dev: true
 

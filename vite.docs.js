@@ -22,7 +22,8 @@ export default defineConfig({
   define,
   build: {
     emptyOutDir: true,
-    outDir: '../docs'
+    outDir: '../docs',
+    chunkSizeWarningLimit: 800
   },
   server: {
     host: 'badger-form.local.wardley.org',

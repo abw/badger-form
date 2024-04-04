@@ -4347,7 +4347,7 @@ h1, h2, h3, h4, h5, h6 {
   --help-color: var(--red-50);
 }
 
-:where(input:not([type=checkbox], [type=radio]), textarea, select, label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])), .field, .inputs, .input, button, .button) {
+:where(input:not([type=checkbox], [type=radio]), textarea, select, label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])), .field, .inputs, .input, button, .button, [role=button]) {
   --color: var(--input-color);
   --background-color: var(--input-background-color);
   --placeholder-color: var(--input-placeholder-color);
@@ -4398,7 +4398,7 @@ h1, h2, h3, h4, h5, h6 {
   inherits: false;
   initial-value: blue;
 }
-:where(button, .button) {
+:where(button, .button, [role=button]) {
   --color: var(--color-100);
   --border-color: var(--color-50);
   --background-color: var(--color-50);
@@ -4406,12 +4406,12 @@ h1, h2, h3, h4, h5, h6 {
   --icon-pull: -0.125em;
 }
 
-:is(button, .button) {
+:is(button, .button, [role=button]) {
   --padding-h: 1em;
   --padless-h: 0.5em;
 }
 
-button, .button {
+button, .button, [role=button] {
   display: inline-flex;
   position: relative;
   appearance: none;
@@ -4436,48 +4436,48 @@ button, .button {
   transition: all var(--transition-time);
   cursor: pointer;
 }
-button:hover, .button:hover {
+button:hover, .button:hover, [role=button]:hover {
   --border-color: var(--color-55);
   --background-color: var(--color-55);
 }
-button.outline, .button.outline {
+button.outline, .button.outline, [role=button].outline {
   --color: var(--color-40);
   --background-color: var(--color-95);
   --border-color: var(--color-70);
 }
-button.outline:hover, .button.outline:hover {
+button.outline:hover, .button.outline:hover, [role=button].outline:hover {
   --color: var(--color-30);
   --background-color: var(--color-90);
   --border-color: var(--color-60);
 }
-button.bare, .button.bare {
+button.bare, .button.bare, [role=button].bare {
   --color: var(--color-50);
   --background-color: transparent;
   --border-color: transparent;
 }
-button.bare:hover, .button.bare:hover {
+button.bare:hover, .button.bare:hover, [role=button].bare:hover {
   --color: var(--color-35);
   --background-color: var(--color-95);
   --border-color: var(--color-85);
 }
-button.dark, .button.dark {
+button.dark, .button.dark, [role=button].dark {
   --border-color: var(--color-40);
   --background-color: var(--color-40);
 }
-button.dark:hover, .button.dark:hover {
+button.dark:hover, .button.dark:hover, [role=button].dark:hover {
   --background-color: var(--color-45);
   --border-color: var(--color-45);
 }
-button.bright, .button.bright {
+button.bright, .button.bright, [role=button].bright {
   --color: var(--color-0);
   --border-color: var(--color-60);
   --background-color: var(--color-60);
 }
-button.bright:hover, .button.bright:hover {
+button.bright:hover, .button.bright:hover, [role=button].bright:hover {
   --background-color: var(--color-55);
   --border-color: var(--color-55);
 }
-button.shaded, .button.shaded {
+button.shaded, .button.shaded, [role=button].shaded {
   --color: var(--color-100);
   --border-color: var(--color-50);
   --gradient-from: var(--color-55);
@@ -4490,13 +4490,14 @@ button.shaded, .button.shaded {
   border-bottom-color: var(--gradient-to);
   border-right-color: var(--gradient-to);
 }
-button.shaded:hover, button.shaded:focus, .button.shaded:hover, .button.shaded:focus {
+button.shaded:hover, button.shaded:focus, .button.shaded:hover, .button.shaded:focus, [role=button].shaded:hover, [role=button].shaded:focus {
   --gradient-from: var(--color-45);
   --gradient-to: var(--color-50);
 }
 button.disabled, button:disabled,
 button .disabled, .button.disabled, .button:disabled,
-.button .disabled {
+.button .disabled, [role=button].disabled, [role=button]:disabled,
+[role=button] .disabled {
   cursor: not-allowed;
   pointer-events: none;
   opacity: var(--input-disabled-opacity);
@@ -4504,27 +4505,28 @@ button .disabled, .button.disabled, .button:disabled,
 }
 button.disabled:hover, button:disabled:hover,
 button .disabled:hover, .button.disabled:hover, .button:disabled:hover,
-.button .disabled:hover {
+.button .disabled:hover, [role=button].disabled:hover, [role=button]:disabled:hover,
+[role=button] .disabled:hover {
   --color: var(--grey-40);
   --border-color: var(--grey-50);
   --background-color: var(--grey-60);
 }
-button.focus-visible:not(.no-focus), button:focus-visible:not(.no-focus), .button.focus-visible:not(.no-focus), .button:focus-visible:not(.no-focus) {
+button.focus-visible:not(.no-focus), button:focus-visible:not(.no-focus), .button.focus-visible:not(.no-focus), .button:focus-visible:not(.no-focus), [role=button].focus-visible:not(.no-focus), [role=button]:focus-visible:not(.no-focus) {
   box-shadow: var(--focus-ring);
 }
-button svg.icon, .button svg.icon {
+button svg.icon, .button svg.icon, [role=button] svg.icon {
   font-size: calc(1em + var(--padding-v));
   margin: calc(var(--padding-v) / 2);
 }
-button svg.icon.on-left, button svg.icon:first-child:not(:last-child), .button svg.icon.on-left, .button svg.icon:first-child:not(:last-child) {
+button svg.icon.on-left, button svg.icon:first-child:not(:last-child), .button svg.icon.on-left, .button svg.icon:first-child:not(:last-child), [role=button] svg.icon.on-left, [role=button] svg.icon:first-child:not(:last-child) {
   margin-left: var(--icon-pull);
   margin-right: var(--icon-margin);
 }
-button svg.icon.on-right, button svg.icon:last-child:not(:first-child), .button svg.icon.on-right, .button svg.icon:last-child:not(:first-child) {
+button svg.icon.on-right, button svg.icon:last-child:not(:first-child), .button svg.icon.on-right, .button svg.icon:last-child:not(:first-child), [role=button] svg.icon.on-right, [role=button] svg.icon:last-child:not(:first-child) {
   margin-left: var(--icon-margin);
   margin-right: var(--icon-pull);
 }
-button.icon, .button.icon {
+button.icon, .button.icon, [role=button].icon {
   padding-right: 0.5em;
   padding-left: 0.5em;
 }
@@ -4532,67 +4534,67 @@ button.icon, .button.icon {
 .buttons {
   display: inline-flex;
 }
-.buttons button:hover, .buttons .button:hover {
+.buttons button:hover, .buttons .button:hover, .buttons [role=button]:hover {
   z-index: 1;
 }
-.buttons button:not(:first-child), .buttons .button:not(:first-child) {
+.buttons button:not(:first-child), .buttons .button:not(:first-child), .buttons [role=button]:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: calc(var(--border-width) * -1);
 }
-.buttons button:not(:last-child), .buttons .button:not(:last-child) {
+.buttons button:not(:last-child), .buttons .button:not(:last-child), .buttons [role=button]:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-[data-theme=dark] button, [data-theme=dark] .button {
+[data-theme=dark] button, [data-theme=dark] .button, [data-theme=dark] [role=button] {
   --color: var(--color-90);
   --border-color: var(--color-40);
   --background-color: var(--color-40);
 }
-[data-theme=dark] button:hover, [data-theme=dark] .button:hover {
+[data-theme=dark] button:hover, [data-theme=dark] .button:hover, [data-theme=dark] [role=button]:hover {
   --color: var(--color-100);
   --border-color: var(--color-45);
   --background-color: var(--color-45);
 }
-[data-theme=dark] button.outline, [data-theme=dark] .button.outline {
+[data-theme=dark] button.outline, [data-theme=dark] .button.outline, [data-theme=dark] [role=button].outline {
   --color: var(--color-80);
   --border-color: var(--color-40);
   --background-color: var(--color-5);
 }
-[data-theme=dark] button.outline:hover, [data-theme=dark] .button.outline:hover {
+[data-theme=dark] button.outline:hover, [data-theme=dark] .button.outline:hover, [data-theme=dark] [role=button].outline:hover {
   --color: var(--color-100);
   --border-color: var(--color-50);
   --background-color: var(--color-10);
 }
-[data-theme=dark] button.bare, [data-theme=dark] .button.bare {
+[data-theme=dark] button.bare, [data-theme=dark] .button.bare, [data-theme=dark] [role=button].bare {
   --color: var(--color-50);
   --background-color: transparent;
   --border-color: transparent;
 }
-[data-theme=dark] button.bare:hover, [data-theme=dark] .button.bare:hover {
+[data-theme=dark] button.bare:hover, [data-theme=dark] .button.bare:hover, [data-theme=dark] [role=button].bare:hover {
   --color: var(--color-65);
   --background-color: var(--color-5);
   --border-color: var(--color-15);
 }
-[data-theme=dark] button.dark, [data-theme=dark] .button.dark {
+[data-theme=dark] button.dark, [data-theme=dark] .button.dark, [data-theme=dark] [role=button].dark {
   --border-color: var(--color-30);
   --background-color: var(--color-30);
 }
-[data-theme=dark] button.dark:hover, [data-theme=dark] .button.dark:hover {
+[data-theme=dark] button.dark:hover, [data-theme=dark] .button.dark:hover, [data-theme=dark] [role=button].dark:hover {
   --background-color: var(--color-35);
   --border-color: var(--color-35);
 }
-[data-theme=dark] button.bright, [data-theme=dark] .button.bright {
+[data-theme=dark] button.bright, [data-theme=dark] .button.bright, [data-theme=dark] [role=button].bright {
   --color: var(--color-0);
   --border-color: var(--color-55);
   --background-color: var(--color-55);
 }
-[data-theme=dark] button.bright:hover, [data-theme=dark] .button.bright:hover {
+[data-theme=dark] button.bright:hover, [data-theme=dark] .button.bright:hover, [data-theme=dark] [role=button].bright:hover {
   --background-color: var(--color-60);
   --border-color: var(--color-60);
 }
-[data-theme=dark] button.shaded, [data-theme=dark] .button.shaded {
+[data-theme=dark] button.shaded, [data-theme=dark] .button.shaded, [data-theme=dark] [role=button].shaded {
   --gradient-from: var(--color-45);
   --gradient-to: var(--color-35);
 }
@@ -5077,6 +5079,58 @@ fieldset:has(:focus) {
 [data-theme=dark] .alert.stripe {
   --border-color: var(--color-50);
   --background-color: black;
+}
+
+/*-- components/alerts.scss --*/
+:where(.badge) {
+  --border-radius: 1em;
+  --border-width: 1px;
+  --tag-radius: 0.25rem;
+  --tag-padding-left: 1.5em;
+  --tag-padding-right: 0.5rem;
+  --hole-size: 0.25rem;
+  --color: var(--color-40);
+  --background-color: var(--color-95);
+  --border-color: var(--color-75);
+  --hole-color: var(--color-100);
+}
+
+.badge {
+  --padding-v: 0.25em;
+  --padding-h: 0.75em;
+  display: inline-block;
+  position: relative;
+  padding: var(--padding-v) var(--padding-h);
+  color: var(--color);
+  background-color: var(--background-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  text-wrap: nowrap;
+  line-height: 1;
+}
+.badge.tag {
+  border-radius: var(--border-radius) var(--tag-radius) var(--tag-radius) var(--border-radius);
+  padding-left: var(--tag-padding-left);
+  padding-right: var(--tag-padding-right);
+}
+.badge.tag::after {
+  position: absolute;
+  left: 0.5em;
+  top: 50%;
+  height: 0.5em;
+  width: 0.5em;
+  content: "";
+  background-color: var(--hole-color);
+  border: 2px solid var(--border-color);
+  border-radius: 0.25em;
+  transform: translate(0, -50%);
+}
+
+[data-theme=dark] .badge {
+  --color: var(--color-60);
+  --background-color: var(--color-10);
+  --border-color: var(--color-40);
+  --hole-color: var(--color-0);
 }
 
 details {
@@ -5676,8 +5730,8 @@ svg.icon.slow {
   --item-border-width: 1px;
   --item-border-style: solid;
   --item-border-color: var(--color-90);
-  --active-color: var(--brand-100);
-  --active-background: var(--brand-50);
+  --active-color: var(--selectable-color);
+  --active-background: var(--selectable-background);
   --selected-background: var(--brand-40);
   --none-color: var(--orange-30);
   --none-background: var(--orange-100);
@@ -5689,8 +5743,6 @@ svg.icon.slow {
   --item-color: var(--color-90);
   --item-background: var(--color-0);
   --item-border-color: var(--color-15);
-  --active-color: var(--brand-100);
-  --active-background: var(--brand-40);
   --selected-background: var(--brand-30);
   --none-color: var(--orange-40);
   --none-background: var(--orange-0);
@@ -5797,6 +5849,16 @@ svg.icon.slow {
   }
 }
 
+/*-- components/selectable.scss --*/
+:where(html) {
+  --selectable-color: var(--brand-100);
+  --selectable-background: var(--brand-50);
+}
+
+:where([data-theme=dark]) {
+  --selectable-background: var(--brand-40);
+}
+
 /*-- components/tables.scss --*/
 :where(table) {
   --border-width: 1px;
@@ -5897,6 +5959,9 @@ table.celled tr > *:last-child, table.shaded tr > *:last-child, table.striped tr
 table.shaded th, table.striped th {
   --background-color: var(--table-shade-3);
 }
+table.shaded thead th, table.striped thead th {
+  --background-color: var(--table-shade-4);
+}
 table.shaded td, table.striped td {
   --background-color: var(--table-shade-2);
 }
@@ -5920,6 +5985,19 @@ table .even-4 td {
 }
 table .even-5 td {
   width: 20% !important;
+}
+table.compressed {
+  --table-padding-v: 0.125em;
+  --table-padding-h: 0.25em;
+}
+table.expanded {
+  --table-padding-v: 0.5em;
+  --table-padding-h: 1em;
+}
+table.selectable tbody tr:hover:not(.unselectable) td, table.selectable tbody tr:hover:not(.unselectable) th {
+  color: var(--selectable-color);
+  background-color: var(--selectable-background);
+  cursor: pointer;
 }
 
 [data-theme=dark] table {

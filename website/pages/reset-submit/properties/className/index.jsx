@@ -3,7 +3,7 @@ import Example      from '@/site/Example.jsx'
 import ClassName    from './_examples/ClassName.jsx'
 import ClassNameSrc from './_examples/ClassName.jsx?raw'
 import Split        from '@/site/Split.jsx'
-import { ResetGapLink, ResetSpaceLink } from '@/site/Links.jsx'
+import { ResetGapLink, ResetSizeLink, ResetSpaceLink } from '@/site/Links.jsx'
 
 const ClassNameExamples = () =>
   <>
@@ -12,7 +12,7 @@ const ClassNameExamples = () =>
       <p>
         The <code>className</code> property can be set to define your own
         CSS class for the container.  When this is defined the <ResetGapLink/>{' '}
-        and <ResetSpaceLink/> properties have no effect.
+        <ResetSpaceLink/> and <ResetSizeLink/> properties have no effect.
       </p>
       <p>
         In this example we use <code>flex space</code> to separate the buttons,

@@ -99,8 +99,12 @@ export const DebugLink                  = ToCode('/debug', 'Debug')
 
 // reset
 export const ResetLink                  = ToCode('/reset', 'Reset')
-export const ResetGapLink               = ToCode('/reset/properties/gap', 'gap')
-export const ResetSpaceLink             = ToCode('/reset/properties/space', 'space')
+export const ResetGapLink               = ToCode('/reset-submit/properties/gap', 'gap')
+export const ResetSpaceLink             = ToCode('/reset-submit/properties/space', 'space')
+export const ResetSizeLink              = ToCode('/reset-submit/properties/size', 'size')
+export const CancelGapLink              = ToCode('/cancel-submit/properties/gap', 'gap')
+export const CancelSpaceLink            = ToCode('/cancel-submit/properties/space', 'space')
+export const CancelSizeLink             = ToCode('/cancel-submit/properties/size', 'size')
 
 // submit
 export const SubmitLink                 = ToCode('/submit', 'Submit')

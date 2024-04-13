@@ -40,9 +40,9 @@ p.subintro {
   font-size: 1.25em;
 }
 .prose {
-  --prose-width: calc(50% - 1rem);
+  // --prose-width: calc(50% - 1rem);
+  --prose-width: 100%;
   p, blockquote {
-    max-width: var(--prose-width);
   }
   .wide {
     --prose-width: 100%;

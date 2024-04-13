@@ -9,10 +9,13 @@ const ResetSubmit = ({
   className,
   gap=4,
   space=false,
+  size,
   reset={},
   submit={}
 }) =>
-  <div className={flexGapSpaceClasses({ className, gap, space }, CONTROLS)}>
+  <div
+    className={flexGapSpaceClasses({ className, gap, space }, size, CONTROLS)}
+  >
     <Reset  {...reset}/>
     <Submit {...submit}/>
   </div>

@@ -238,9 +238,29 @@ export const ResetSubmit = {
       items: [
         { to: '/reset-submit/properties/gap',       code: 'gap'       },
         { to: '/reset-submit/properties/space',     code: 'space'     },
+        { to: '/reset-submit/properties/size',      code: 'size'      },
         { to: '/reset-submit/properties/reset',     code: 'reset'     },
         { to: '/reset-submit/properties/submit',    code: 'submit'    },
         { to: '/reset-submit/properties/className', code: 'className' },
+      ]
+    },
+  ]
+}
+
+export const CancelSubmit = {
+  title:  'CancelSubmit',
+  url: '/cancel-submit',
+  items: [
+    { to: '/cancel-submit', code: 'CancelSubmit', exact: true },
+    {
+      section: 'Properties',
+      items: [
+        { to: '/cancel-submit/properties/gap',       code: 'gap'       },
+        { to: '/cancel-submit/properties/space',     code: 'space'     },
+        { to: '/cancel-submit/properties/size',      code: 'size'      },
+        { to: '/cancel-submit/properties/cancel',    code: 'cancel'    },
+        { to: '/cancel-submit/properties/submit',    code: 'submit'    },
+        { to: '/cancel-submit/properties/className', code: 'className' },
       ]
     },
   ]

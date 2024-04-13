@@ -2,8 +2,6 @@
 
 ## Form
 
-* UseForm component
-
 ## Field
 
 * decide on validate options, update docs

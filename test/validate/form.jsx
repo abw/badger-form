@@ -62,6 +62,7 @@ it('should validate all fields',
         <Field name="zag" id="zag" className="zag" validate={ValidateThrow}/>
         <Field name="zog" id="zog" className="zog" validate={ValidateFail}/>
         <Field name="zug" id="zug" className="zug" validate={ValidateBadJS}/>
+        <Field name="opt" id="opt" className="opt" optional validate={ValidateReject}/>
         <Submit/>
       </Form>
     )
@@ -158,5 +159,9 @@ it('should validate all fields',
     expect(zugField).toHaveClass('invalid')
     expect(zugField.getElementsByClassName('help')[0])
       .toHaveTextContent('value.nukeAll is not a function')
+
+    // optional field should be OK when empty
+    const optField = container.getElementsByClassName('opt')[0]
+    expect(optField).toHaveClass('valid')
   }
 )

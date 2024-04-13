@@ -118,6 +118,7 @@ export const Field = {
         { to: '/field/validation/showRequired',       code: 'showRequired'      },
         { to: '/field/validation/requiredLabel',      code: 'requiredLabel'     },
         { to: '/field/validation/requiredMessage',    code: 'requiredMessage'   },
+        { to: '/field/validation/optional',           code: 'optional'          },
         { to: '/field/validation/showOptional',       code: 'showOptional'      },
         { to: '/field/validation/optionalLabel',      code: 'optionalLabel'     },
         { to: '/field/validation/prepareValue',       code: 'prepareValue'      },

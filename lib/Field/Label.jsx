@@ -4,9 +4,9 @@ import { REQUIRED, OPTIONAL } from '../Constants.jsx'
 // import { Themed } from '../Theme.jsx'
 
 const Label = ({ field=useField() }) => {
-  const { label, id, required } = field
+  const { label, id, required, optional } = field
   const showRequired = field.showRequired  && required
-  const showOptional = field.showOptional  && ! required
+  const showOptional = field.showOptional  && (optional || ! required)
   const hasLabel     = label || showRequired || showOptional
   const className    = field.labelClass
   const style        = { }

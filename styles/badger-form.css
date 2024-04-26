@@ -1572,6 +1572,16 @@ input[type=password] {
   --background-color: var(--color-100);
 }
 
+.inverse {
+  --inverse-color: var(--color-100);
+  --inverse-background: var(--color-50);
+  color: var(--inverse-color);
+  background-color: var(--inverse-background);
+}
+.inverse h1, .inverse h2, .inverse h3, .inverse h4, .inverse h5, .inverse h6 {
+  color: var(--inverse-color);
+}
+
 [class*=fgc-] {
   color: var(--color);
 }
@@ -1836,6 +1846,9 @@ input[type=password] {
   --heading-color: var(--color-100);
 }
 
+[data-theme=dark] .inverse {
+  --inverse-background: var(--color-40);
+}
 [data-theme=dark] [class*=fgd-] {
   color: var(--color);
 }
@@ -2041,32 +2054,32 @@ input[type=password] {
   --column-gap: 2rem;
 }
 
-.cols-1:not(.wide) {
+.columns-1:not(.wide) {
   --columns: 1;
 }
 
-.cols-2:not(.wide) {
+.columns-2:not(.wide) {
   --columns: 2;
 }
 
-.cols-3:not(.wide) {
+.columns-3:not(.wide) {
   --columns: 3;
 }
 
-.cols-4:not(.wide) {
+.columns-4:not(.wide) {
   --columns: 4;
 }
 
-.cols-5:not(.wide) {
+.columns-5:not(.wide) {
   --columns: 5;
 }
 
-[class*=cols-] {
+[class*=columns-] {
   columns: var(--columns);
   orphans: var(--column-orphans);
   column-gap: var(--column-gap);
 }
-[class*=cols-] > * {
+[class*=columns-] > * {
   orphans: var(--column-orphans);
 }
 
@@ -2181,6 +2194,15 @@ input[type=password] {
 }
 .flex.wrap {
   flex-wrap: wrap;
+}
+.flex .rigid {
+  flex: 0 0 auto;
+}
+.flex .shrink {
+  flex-shrink: 1;
+}
+.flex .grow {
+  flex-grow: 1;
 }
 
 .flex-inflexible {
@@ -3701,21 +3723,33 @@ input[type=password] {
 }
 
 /* utilities/styles.scss */
-.italic {
+.text-italic {
   font-style: italic;
 }
 
-.underline {
+.text-underline {
   text-decoration: underline;
   text-decoration-skip-ink: auto;
 }
 
-.strike {
+.text-strike {
   text-decoration: line-through;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 /* utilities/surfaces.scss */
-:is(.surface) {
+:is(.surface, .paper) {
   --color: var(--color-0);
   --background-color: white;
   --border-color: var(--color-80);
@@ -3751,7 +3785,7 @@ input[type=password] {
   --border-color: var(--color-85);
 }
 
-[data-theme=dark] :is(.surface) {
+[data-theme=dark] :is(.surface, .paper) {
   --color: var(--color-100);
   --background-color: black;
   --border-color: var(--color-15);
@@ -3782,7 +3816,7 @@ input[type=password] {
   --border-color: var(--color-35);
 }
 
-[class*=surface] {
+[class*=surface], .paper {
   color: var(--color);
   background-color: var(--background-color);
 }
@@ -3909,8 +3943,16 @@ h1, h2, h3, h4, h5, h6 {
   --width: 2rem;
 }
 
+[class*="-3rem"], [class*="-48px"] {
+  --width: 3rem;
+}
+
 [class*="-4rem"], [class*="-64px"] {
   --width: 4rem;
+}
+
+[class*="-5rem"], [class*="-80px"] {
+  --width: 5rem;
 }
 
 [class*="-6rem"], [class*="-96px"] {
@@ -4023,6 +4065,26 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
 }
 
+.wrap {
+  text-wrap: wrap;
+}
+
+.nowrap {
+  text-wrap: nowrap;
+}
+
+.wrap-balance {
+  text-wrap: balance;
+}
+
+.wrap-pretty {
+  text-wrap: pretty;
+}
+
+.wrap-stable {
+  text-wrap: stable;
+}
+
 /* utilities/responsive.scss */
 @media only screen and (max-width: 30rem) {
   .stack-mobile[class*=split-], .stack-mobile > [class*=split-] {
@@ -4034,7 +4096,7 @@ h1, h2, h3, h4, h5, h6 {
   .stack-mobile[class*=grid-] {
     grid-template-columns: 1fr;
   }
-  .stack-mobile[class*=cols-] {
+  .stack-mobile[class*=columns-] {
     --columns: 1;
   }
 }
@@ -4048,7 +4110,7 @@ h1, h2, h3, h4, h5, h6 {
   .stack-tablet[class*=grid-] {
     grid-template-columns: 1fr;
   }
-  .stack-tablet[class*=cols-] {
+  .stack-tablet[class*=columns-] {
     --columns: 1;
   }
 }
@@ -4062,7 +4124,7 @@ h1, h2, h3, h4, h5, h6 {
   .stack-laptop[class*=grid-] {
     grid-template-columns: 1fr;
   }
-  .stack-laptop[class*=cols-] {
+  .stack-laptop[class*=columns-] {
     --columns: 1;
   }
 }
@@ -4076,7 +4138,7 @@ h1, h2, h3, h4, h5, h6 {
   .stack-desktop[class*=grid-] {
     grid-template-columns: 1fr;
   }
-  .stack-desktop[class*=cols-] {
+  .stack-desktop[class*=columns-] {
     --columns: 1;
   }
 }
@@ -4090,7 +4152,7 @@ h1, h2, h3, h4, h5, h6 {
   .stack-widescreen[class*=grid-] {
     grid-template-columns: 1fr;
   }
-  .stack-widescreen[class*=cols-] {
+  .stack-widescreen[class*=columns-] {
     --columns: 1;
   }
 }
@@ -4354,7 +4416,7 @@ h1, h2, h3, h4, h5, h6 {
   --help-color: var(--red-60);
 }
 
-:where(input:not([type=checkbox], [type=radio]), textarea, select, label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])), .field, .inputs, .input, button, .button, [role=button]) {
+:where(input:not([type=checkbox], [type=radio]), textarea, select, label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])), .field, .inputs, .input, button, .button) {
   --color: var(--input-color);
   --background-color: var(--input-background-color);
   --placeholder-color: var(--input-placeholder-color);
@@ -4405,7 +4467,7 @@ h1, h2, h3, h4, h5, h6 {
   inherits: false;
   initial-value: blue;
 }
-:where(button, .button, [role=button]) {
+:where(button, .button) {
   --color: var(--color-100);
   --border-color: var(--color-50);
   --background-color: var(--color-50);
@@ -4413,12 +4475,12 @@ h1, h2, h3, h4, h5, h6 {
   --icon-pull: -0.125em;
 }
 
-:is(button, .button, [role=button]) {
+:is(button, .button) {
   --padding-h: 1em;
   --padless-h: 0.5em;
 }
 
-button, .button, [role=button] {
+button, .button {
   display: inline-flex;
   position: relative;
   appearance: none;
@@ -4443,48 +4505,48 @@ button, .button, [role=button] {
   transition: all var(--transition-time);
   cursor: pointer;
 }
-button:hover, .button:hover, [role=button]:hover {
+button:hover, .button:hover {
   --border-color: var(--color-55);
   --background-color: var(--color-55);
 }
-button.outline, .button.outline, [role=button].outline {
+button.outline, .button.outline {
   --color: var(--color-40);
   --background-color: var(--color-95);
-  --border-color: var(--color-70);
+  --border-color: var(--color-50);
 }
-button.outline:hover, .button.outline:hover, [role=button].outline:hover {
+button.outline:hover, .button.outline:hover {
   --color: var(--color-30);
   --background-color: var(--color-90);
   --border-color: var(--color-60);
 }
-button.bare, .button.bare, [role=button].bare {
+button.bare, .button.bare {
   --color: var(--color-50);
   --background-color: transparent;
   --border-color: transparent;
 }
-button.bare:hover, .button.bare:hover, [role=button].bare:hover {
+button.bare:hover, .button.bare:hover {
   --color: var(--color-35);
   --background-color: var(--color-95);
   --border-color: var(--color-85);
 }
-button.dark, .button.dark, [role=button].dark {
+button.dark, .button.dark {
   --border-color: var(--color-40);
   --background-color: var(--color-40);
 }
-button.dark:hover, .button.dark:hover, [role=button].dark:hover {
+button.dark:hover, .button.dark:hover {
   --background-color: var(--color-45);
   --border-color: var(--color-45);
 }
-button.bright, .button.bright, [role=button].bright {
+button.bright, .button.bright {
   --color: var(--color-0);
   --border-color: var(--color-60);
   --background-color: var(--color-60);
 }
-button.bright:hover, .button.bright:hover, [role=button].bright:hover {
+button.bright:hover, .button.bright:hover {
   --background-color: var(--color-55);
   --border-color: var(--color-55);
 }
-button.shaded, .button.shaded, [role=button].shaded {
+button.shaded, .button.shaded {
   --color: var(--color-100);
   --border-color: var(--color-50);
   --gradient-from: var(--color-55);
@@ -4497,14 +4559,13 @@ button.shaded, .button.shaded, [role=button].shaded {
   border-bottom-color: var(--gradient-to);
   border-right-color: var(--gradient-to);
 }
-button.shaded:hover, button.shaded:focus, .button.shaded:hover, .button.shaded:focus, [role=button].shaded:hover, [role=button].shaded:focus {
+button.shaded:hover, button.shaded:focus, .button.shaded:hover, .button.shaded:focus {
   --gradient-from: var(--color-45);
   --gradient-to: var(--color-50);
 }
 button.disabled, button:disabled,
 button .disabled, .button.disabled, .button:disabled,
-.button .disabled, [role=button].disabled, [role=button]:disabled,
-[role=button] .disabled {
+.button .disabled {
   cursor: not-allowed;
   pointer-events: none;
   opacity: var(--input-disabled-opacity);
@@ -4512,28 +4573,27 @@ button .disabled, .button.disabled, .button:disabled,
 }
 button.disabled:hover, button:disabled:hover,
 button .disabled:hover, .button.disabled:hover, .button:disabled:hover,
-.button .disabled:hover, [role=button].disabled:hover, [role=button]:disabled:hover,
-[role=button] .disabled:hover {
+.button .disabled:hover {
   --color: var(--grey-40);
   --border-color: var(--grey-50);
   --background-color: var(--grey-60);
 }
-button.focus-visible:not(.no-focus), button:focus-visible:not(.no-focus), .button.focus-visible:not(.no-focus), .button:focus-visible:not(.no-focus), [role=button].focus-visible:not(.no-focus), [role=button]:focus-visible:not(.no-focus) {
+button.focus-visible:not(.no-focus), button:focus-visible:not(.no-focus), .button.focus-visible:not(.no-focus), .button:focus-visible:not(.no-focus) {
   box-shadow: var(--focus-ring);
 }
-button svg.icon, .button svg.icon, [role=button] svg.icon {
+button svg.icon, .button svg.icon {
   font-size: calc(1em + var(--padding-v));
   margin: calc(var(--padding-v) / 2);
 }
-button svg.icon.on-left, button svg.icon:first-child:not(:last-child), .button svg.icon.on-left, .button svg.icon:first-child:not(:last-child), [role=button] svg.icon.on-left, [role=button] svg.icon:first-child:not(:last-child) {
+button svg.icon.on-left, button svg.icon:first-child:not(:last-child), .button svg.icon.on-left, .button svg.icon:first-child:not(:last-child) {
   margin-left: var(--icon-pull);
   margin-right: var(--icon-margin);
 }
-button svg.icon.on-right, button svg.icon:last-child:not(:first-child), .button svg.icon.on-right, .button svg.icon:last-child:not(:first-child), [role=button] svg.icon.on-right, [role=button] svg.icon:last-child:not(:first-child) {
+button svg.icon.on-right, button svg.icon:last-child:not(:first-child), .button svg.icon.on-right, .button svg.icon:last-child:not(:first-child) {
   margin-left: var(--icon-margin);
   margin-right: var(--icon-pull);
 }
-button.icon, .button.icon, [role=button].icon {
+button.icon, .button.icon {
   padding-right: 0.5em;
   padding-left: 0.5em;
 }
@@ -4541,67 +4601,67 @@ button.icon, .button.icon, [role=button].icon {
 .buttons {
   display: inline-flex;
 }
-.buttons button:hover, .buttons .button:hover, .buttons [role=button]:hover {
+.buttons button:hover, .buttons .button:hover {
   z-index: 1;
 }
-.buttons button:not(:first-child), .buttons .button:not(:first-child), .buttons [role=button]:not(:first-child) {
+.buttons button:not(:first-child), .buttons .button:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: calc(var(--border-width) * -1);
 }
-.buttons button:not(:last-child), .buttons .button:not(:last-child), .buttons [role=button]:not(:last-child) {
+.buttons button:not(:last-child), .buttons .button:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-[data-theme=dark] button, [data-theme=dark] .button, [data-theme=dark] [role=button] {
+[data-theme=dark] button, [data-theme=dark] .button {
   --color: var(--color-90);
   --border-color: var(--color-40);
   --background-color: var(--color-40);
 }
-[data-theme=dark] button:hover, [data-theme=dark] .button:hover, [data-theme=dark] [role=button]:hover {
+[data-theme=dark] button:hover, [data-theme=dark] .button:hover {
   --color: var(--color-100);
   --border-color: var(--color-45);
   --background-color: var(--color-45);
 }
-[data-theme=dark] button.outline, [data-theme=dark] .button.outline, [data-theme=dark] [role=button].outline {
+[data-theme=dark] button.outline, [data-theme=dark] .button.outline {
   --color: var(--color-80);
   --border-color: var(--color-40);
   --background-color: var(--color-5);
 }
-[data-theme=dark] button.outline:hover, [data-theme=dark] .button.outline:hover, [data-theme=dark] [role=button].outline:hover {
+[data-theme=dark] button.outline:hover, [data-theme=dark] .button.outline:hover {
   --color: var(--color-100);
   --border-color: var(--color-50);
   --background-color: var(--color-10);
 }
-[data-theme=dark] button.bare, [data-theme=dark] .button.bare, [data-theme=dark] [role=button].bare {
+[data-theme=dark] button.bare, [data-theme=dark] .button.bare {
   --color: var(--color-50);
   --background-color: transparent;
   --border-color: transparent;
 }
-[data-theme=dark] button.bare:hover, [data-theme=dark] .button.bare:hover, [data-theme=dark] [role=button].bare:hover {
+[data-theme=dark] button.bare:hover, [data-theme=dark] .button.bare:hover {
   --color: var(--color-65);
   --background-color: var(--color-5);
   --border-color: var(--color-15);
 }
-[data-theme=dark] button.dark, [data-theme=dark] .button.dark, [data-theme=dark] [role=button].dark {
+[data-theme=dark] button.dark, [data-theme=dark] .button.dark {
   --border-color: var(--color-30);
   --background-color: var(--color-30);
 }
-[data-theme=dark] button.dark:hover, [data-theme=dark] .button.dark:hover, [data-theme=dark] [role=button].dark:hover {
+[data-theme=dark] button.dark:hover, [data-theme=dark] .button.dark:hover {
   --background-color: var(--color-35);
   --border-color: var(--color-35);
 }
-[data-theme=dark] button.bright, [data-theme=dark] .button.bright, [data-theme=dark] [role=button].bright {
+[data-theme=dark] button.bright, [data-theme=dark] .button.bright {
   --color: var(--color-0);
   --border-color: var(--color-55);
   --background-color: var(--color-55);
 }
-[data-theme=dark] button.bright:hover, [data-theme=dark] .button.bright:hover, [data-theme=dark] [role=button].bright:hover {
+[data-theme=dark] button.bright:hover, [data-theme=dark] .button.bright:hover {
   --background-color: var(--color-60);
   --border-color: var(--color-60);
 }
-[data-theme=dark] button.shaded, [data-theme=dark] .button.shaded, [data-theme=dark] [role=button].shaded {
+[data-theme=dark] button.shaded, [data-theme=dark] .button.shaded {
   --gradient-from: var(--color-45);
   --gradient-to: var(--color-35);
 }
@@ -4830,6 +4890,7 @@ label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) input
   line-height: var(--line-height);
   outline: none;
   flex-basis: 1em;
+  flex-shrink: 0;
 }
 label:is(.checkbox, .radio, :has(input[type=checkbox], input[type=radio])) span {
   text-align: left;
@@ -5185,7 +5246,7 @@ fieldset:has(:focus) {
   --hole-color: var(--color-0);
 }
 
-details {
+details, .details {
   --icon-svg: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpolyline points='6 9 12 15 18 9' style='fill:none;stroke:rgba%280%2C0%2C0%2C0.5%29%0A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round'%3e%3c/polyline%3e%3c/svg%3e");
   --icon-align: left;
   --icon-margin: 0.25rem;
@@ -5203,26 +5264,69 @@ details {
   --body-shade-text: var(--color-30);
   --shade-transition: 0.25s;
   overflow: auto;
+  padding: 0 var(--body-padding);
 }
-details summary {
-  position: relative;
+details > *:last-child, .details > *:last-child {
+  margin-block-end: var(--body-padding);
+}
+details.lined, .details.lined {
+  --head-margin: 0.5em;
+}
+details.border, details.shaded, .details.border, .details.shaded {
+  --icon-position: 0.5em;
+  --icon-padding: 2em;
+  --body-padding: 1em;
+  --head-margin: 0.5em;
+}
+details.border.shaded, details.border.lined, details.shaded.shaded, details.shaded.lined, .details.border.shaded, .details.border.lined, .details.shaded.shaded, .details.shaded.lined {
+  --head-margin: 1em;
+}
+details.shaded, .details.shaded {
+  background-color: var(--body-shade-back);
+  color: var(--body-shade-text);
+}
+details.icon-right, .details.icon-right {
+  --icon-align: left;
+}
+
+details > summary, .details > .summary {
   display: flex;
+  position: relative;
+  margin: 0 calc(0rem - var(--body-padding));
   padding: 0.25em 0;
+  padding-left: var(--body-padding);
   cursor: pointer;
   list-style: none;
 }
-details summary::-webkit-details-marker {
+details > summary::-webkit-details-marker, .details > .summary::-webkit-details-marker {
   display: none;
 }
-details summary > * {
+details > summary > *, .details > .summary > * {
   display: inline;
 }
-details summary::before {
+details > summary::before, .details > .summary::before {
   display: inline-block;
   width: 1em;
   height: 1em;
   margin: 0.25em var(--icon-margin) 0 var(--icon-position);
   line-height: inherit;
+  /*
+  background-image: var(--icon-svg);
+  background-position: var(--icon-align) 0 center;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  transform: rotate(var(--icon-rotate));
+  transition: transform var(--icon-transition) ease-in-out;
+  content: "";
+  */
+}
+
+details:not(.no-icon) > summary,
+.details:not(.no-icon) > .summary {
+  padding-left: 0;
+}
+details:not(.no-icon) > summary::before,
+.details:not(.no-icon) > .summary::before {
   background-image: var(--icon-svg);
   background-position: var(--icon-align) 0 center;
   background-repeat: no-repeat;
@@ -5231,59 +5335,60 @@ details summary::before {
   transition: transform var(--icon-transition) ease-in-out;
   content: "";
 }
-details > *:not(summary) {
-  padding: 0 var(--body-padding);
-}
-details > *:last-child {
-  margin-block-end: var(--body-padding);
-}
-details[open] {
+
+details[open], .details.open {
   --icon-rotate: 0deg;
 }
-details[open] summary {
+
+details[open] > summary, .details.open > .summary {
   margin-bottom: var(--head-margin);
 }
-details.lined {
-  --head-margin: 0.5em;
-}
-details.border, details.shaded {
-  --icon-position: 0.5em;
-  --icon-padding: 2em;
-  --body-padding: 1em;
-  --head-margin: 0.5em;
-}
-details.border.shaded, details.border.lined, details.shaded.shaded, details.shaded.lined {
-  --head-margin: 1em;
-}
-details.lined[open] summary {
+
+details.lined[open] > summary, .details.lined.open > .summary {
   border-bottom: var(--line-width) var(--line-style) var(--line-color);
 }
-details.shaded {
-  background-color: var(--body-shade-back);
-  color: var(--body-shade-text);
-}
-details.shaded summary {
+
+details.shaded > summary, .details.shaded > .summary {
   transition: background-color var(--shade-transition);
   background-color: var(--head-shade-back);
   color: var(--head-shade-text);
 }
-details.shaded summary:hover {
+details.shaded > summary:hover, .details.shaded > .summary:hover {
   color: var(--hover-shade-text);
   background-color: var(--hover-shade-back);
 }
-details.icon-right {
-  --icon-align: left;
-}
-details[class*=bdr-] summary {
+
+details[class*=bdr-] > summary,
+.details[class*=bdr-] > .summary {
   border-top-left-radius: var(--radius-top-left);
   border-top-right-radius: var(--radius-top-right);
 }
-details[class*=bdr-]:not([open]) summary {
+
+details[class*=bdr-]:not([open]) > summary,
+.details[class*=bdr-]:not(.open) > .summary {
   border-bottom-left-radius: var(--radius-bottom-left);
   border-bottom-right-radius: var(--radius-bottom-right);
 }
 
-:where(details.lined) {
+.accordion > details.shaded:not(:first-child), .accordion > details.border:not(:first-child), .accordion > .details.shaded:not(:first-child), .accordion > .details.border:not(:first-child) {
+  border-top-width: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.accordion > details.shaded:not(:first-child) > summary, .accordion > details.shaded:not(:first-child) > .summary, .accordion > details.border:not(:first-child) > summary, .accordion > details.border:not(:first-child) > .summary, .accordion > .details.shaded:not(:first-child) > summary, .accordion > .details.shaded:not(:first-child) > .summary, .accordion > .details.border:not(:first-child) > summary, .accordion > .details.border:not(:first-child) > .summary {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.accordion > details.shaded:not(:last-child), .accordion > details.border:not(:last-child), .accordion > .details.shaded:not(:last-child), .accordion > .details.border:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.accordion > details.shaded:not(:last-child) > summary, .accordion > details.shaded:not(:last-child) > .summary, .accordion > details.border:not(:last-child) > summary, .accordion > details.border:not(:last-child) > .summary, .accordion > .details.shaded:not(:last-child) > summary, .accordion > .details.shaded:not(:last-child) > .summary, .accordion > .details.border:not(:last-child) > summary, .accordion > .details.border:not(:last-child) > .summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+:where(details.lined, .details.lined) {
   --border-width: 1px;
   --border-style: solid;
   --border-color: var(--color-75);
@@ -5293,11 +5398,12 @@ details[class*=bdr-]:not([open]) summary {
   --line-color: var(--border-color);
 }
 
-:where([data-theme=dark] details.lined) {
+:where([data-theme=dark]) details.lined, :where([data-theme=dark]) .details.line, :where([data-theme=dark]) details.border, :where([data-theme=dark]) .details.border {
   --border-color: var(--color-25);
+  --line-color: var(--border-color);
 }
 
-[data-theme=dark] details {
+[data-theme=dark] details, [data-theme=dark] .details {
   --icon-svg: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpolyline points='6 9 12 15 18 9' style='fill:none;stroke:rgba%28255%2C255%2C255%2C0.5%29%0A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round'%3e%3c/polyline%3e%3c/svg%3e");
   --head-shade-back: var(--color-20);
   --head-shade-text: var(--color-90);
@@ -5784,9 +5890,17 @@ svg.icon.slow {
   --item-border-color: var(--color-90);
   --active-color: var(--selectable-color);
   --active-background: var(--selectable-background);
+  --heading-weight: 500;
+  --heading-size: var(--size-smaller);
+  --heading-padding-h: 0.67em;
+  --heading-color: var(--color-30);
+  --heading-background: var(--color-95);
   --selected-background: var(--brand-40);
   --none-color: var(--orange-30);
   --none-background: var(--orange-100);
+  --separator-width: 4px;
+  --separator-style: var(--item-border-style);
+  --separator-color: var(--item-border-color);
   --disabled-opacity: 0.5;
   --z-index: 100;
 }
@@ -5795,6 +5909,8 @@ svg.icon.slow {
   --item-color: var(--color-90);
   --item-background: var(--color-0);
   --item-border-color: var(--color-15);
+  --heading-color: var(--color-100);
+  --heading-background: var(--color-5);
   --selected-background: var(--brand-30);
   --none-color: var(--orange-40);
   --none-background: var(--orange-0);
@@ -5823,10 +5939,25 @@ svg.icon.slow {
   border-bottom-left-radius: var(--inner-radius);
   border-bottom-right-radius: var(--inner-radius);
 }
+.menu .item.heading, .menu .none.heading {
+  --item-padding-h: var(--heading-padding-h);
+  color: var(--heading-color);
+  font-weight: var(--heading-weight);
+  font-size: var(--heading-size);
+  background-color: var(--heading-background);
+}
 .menu .item.active, .menu .item:hover:not(.disabled):not(.no-hover), .menu .none.active, .menu .none:hover:not(.disabled):not(.no-hover) {
   cursor: pointer;
   background-color: var(--active-background);
   color: var(--active-color);
+}
+.menu .item.active *, .menu .item:hover:not(.disabled):not(.no-hover) *, .menu .none.active *, .menu .none:hover:not(.disabled):not(.no-hover) * {
+  background-color: transparent;
+  color: var(--active-color);
+}
+.menu .item.active .inverse, .menu .item.active .badge, .menu .item.active .button, .menu .item.active button, .menu .item:hover:not(.disabled):not(.no-hover) .inverse, .menu .item:hover:not(.disabled):not(.no-hover) .badge, .menu .item:hover:not(.disabled):not(.no-hover) .button, .menu .item:hover:not(.disabled):not(.no-hover) button, .menu .none.active .inverse, .menu .none.active .badge, .menu .none.active .button, .menu .none.active button, .menu .none:hover:not(.disabled):not(.no-hover) .inverse, .menu .none:hover:not(.disabled):not(.no-hover) .badge, .menu .none:hover:not(.disabled):not(.no-hover) .button, .menu .none:hover:not(.disabled):not(.no-hover) button {
+  border-color: color-mix(in srgb, var(--active-color), transparent 30%);
+  background-color: color-mix(in srgb, var(--active-color), transparent 80%);
 }
 .menu .item.active.selected, .menu .item:hover:not(.disabled):not(.no-hover).selected, .menu .none.active.selected, .menu .none:hover:not(.disabled):not(.no-hover).selected {
   animation: selection 0.3s;
@@ -5839,7 +5970,7 @@ svg.icon.slow {
     background-color: var(--selected-background);
   }
 }
-.menu .item.disabled, .menu .item:disabled, .menu .item[aria-disabled], .menu .none.disabled, .menu .none:disabled, .menu .none[aria-disabled] {
+.menu .item.disabled, .menu .item:disabled, .menu .item[aria-disabled=true], .menu .none.disabled, .menu .none:disabled, .menu .none[aria-disabled=true] {
   cursor: not-allowed;
   pointer-events: none;
   opacity: var(--disabled-opacity);
@@ -5847,6 +5978,25 @@ svg.icon.slow {
 .menu .none {
   color: var(--none-color);
   background-color: var(--none-background);
+}
+.menu .separator {
+  border-bottom: var(--separator-width) var(--separator-style) var(--separator-color);
+}
+
+.menu .item.indent-1 {
+  padding-left: calc(var(--item-padding-h) * 2);
+}
+
+.menu .item.indent-2 {
+  padding-left: calc(var(--item-padding-h) * 3);
+}
+
+.menu .item.indent-3 {
+  padding-left: calc(var(--item-padding-h) * 4);
+}
+
+.menu .item.indent-4 {
+  padding-left: calc(var(--item-padding-h) * 5);
 }
 
 /*-- components/overlay.scss --*/
@@ -5920,7 +6070,7 @@ svg.icon.slow {
 table {
   --table-padding-v: 0.25em;
   --table-padding-h: 0.5em;
-  --table-border-width: 1px;
+  --table-border-width: var(--border-width);
   --border-radius: 0.25rem;
   --border-right: 0;
   --table-border: var(--color-80);
@@ -5983,15 +6133,15 @@ table tr > *:last-child {
 }
 table.lined tr {
   --border-color: var(--table-line);
-  --border-bottom: 1px;
+  --border-bottom: var(--border-width);
 }
 table.lined :last-child > tr:last-child > * {
   --border-bottom: 0;
 }
 table.celled {
   --border-color: var(--table-border);
-  --border-right: 1px;
-  border: 1px solid var(--border-color);
+  --border-right: var(--border-width);
+  border: var(--border-width) solid var(--border-color);
 }
 table.celled > * tr > *:last-child {
   --border-right: 0;
@@ -6038,7 +6188,7 @@ table .even-4 td {
 table .even-5 td {
   width: 20% !important;
 }
-table.compressed {
+table.compressed, table.compact {
   --table-padding-v: 0.125em;
   --table-padding-h: 0.25em;
 }
@@ -6074,6 +6224,7 @@ table.selectable tbody tr:hover:not(.unselectable) td, table.selectable tbody tr
   --tab-border-radius: 0.25rem;
   --tab-line-width: 1px;
   --tab-transition-time: 0.3s;
+  --tab-disabled-opacity: 0.5;
   --tab-color: var(--color-30);
   --tab-background: var(--color-90);
   --tab-border-color: var(--color-80);
@@ -6119,16 +6270,23 @@ table.selectable tbody tr:hover:not(.unselectable) td, table.selectable tbody tr
   border-bottom-right-radius: 0;
   transition: all var(--tab-transition-time) ease-out;
 }
-.tabset > .tabs > *:hover, .tabset > .tabs .tab:hover {
-  color: var(--tab-hover-color);
-  background: var(--tab-hover-background);
-  border-color: var(--tab-hover-border-color);
-  cursor: pointer;
-}
 .tabset > .tabs > *.active, .tabset > .tabs .tab.active {
   color: var(--tab-active-color);
   background: var(--tab-active-background);
   border-color: var(--tab-active-border-color);
+}
+.tabset > .tabs > *:hover:not(.disabled), .tabset > .tabs .tab:hover:not(.disabled) {
+  cursor: pointer;
+}
+.tabset > .tabs > *:hover:not(.disabled):not(.active), .tabset > .tabs .tab:hover:not(.disabled):not(.active) {
+  color: var(--tab-hover-color);
+  background: var(--tab-hover-background);
+  border-color: var(--tab-hover-border-color);
+}
+.tabset > .tabs > *.disabled, .tabset > .tabs > *:disabled, .tabset > .tabs .tab.disabled, .tabset > .tabs .tab:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: var(--tab-disabled-opacity);
 }
 .tabset.center > .tabs {
   justify-content: center;
@@ -6158,6 +6316,7 @@ table.selectable tbody tr:hover:not(.unselectable) td, table.selectable tbody tr
 }
 .tabset.solid.lined > .tabs {
   overflow-x: auto;
+  overflow-y: hidden;
   border-bottom: var(--tab-line-width) solid var(--tab-active-border-color);
 }
 

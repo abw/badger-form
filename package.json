@@ -30,6 +30,7 @@
     "preview": "vite preview --config vite.docs.js",
     "lint": "eslint 'src/**/*.{js,jsx}' 'lib/**/*.{js,jsx}'"
   },
+  "homepage": "https://abw.github.io/badger-form",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abw/badger-form.git"

@@ -20,6 +20,7 @@ const TextArea = ({ field=useField() }) => {
       onChange={e => field.onChange(e.target.value)}
       onFocus={field.onFocus}
       onBlur={field.onBlur}
+      onSelect={field.onSelect}
       rows={rows}
       cols={cols}
     />

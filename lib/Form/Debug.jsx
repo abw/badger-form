@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from './Context.js'
-import { hasValue, isObject } from '@abw/badger-utils'
+import { hasValue, isSimple } from '@abw/badger-utils'
 
 export const Debug = ({
   values=true,
@@ -84,11 +84,10 @@ const DebugRow = ({
   </tr>
 
 const DebugValue = ({value}) => {
-  if (isObject(value)) {
-    return JSON.stringify(value)
-  }
   return hasValue(value)
-    ? value.toString()
+    ? isSimple(value)
+      ? value.toString()
+      : JSON.stringify(value)
     : ''
 }
 

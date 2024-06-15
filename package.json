@@ -48,7 +48,7 @@
   "devDependencies": {
     "@abw/badger-css": "^1.0.18",
     "@abw/badger-timestamp": "^1.0.5",
-    "@abw/badger-utils": "^1.0.25",
+    "@abw/badger-utils": "^1.1.0",
     "@abw/react-night-and-day": "^0.0.5",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",

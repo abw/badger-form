@@ -197,6 +197,19 @@ export const Fieldset = {
   ]
 }
 
+export const Complex = {
+  title:  'Complex',
+  url: '/complex',
+  items: [
+    { to: '/complex', code: 'Complex', exact: true },
+    {
+      section: 'Properties',
+      items: [
+      ]
+    },
+  ]
+}
+
 export const Submit = {
   title:  'Submit',
   url: '/submit',

@@ -5,6 +5,7 @@ import {
   Submit, Reset, ResetSubmit, CancelSubmit,
   Text, Textarea, Checkbox, Radio, Select,
   Debug, Status, Errors, Utils,
+  Complex
 } from './Menus.jsx'
 
 const Sidebar = () =>
@@ -17,6 +18,7 @@ const Sidebar = () =>
     <Menu {...Field}/>
     <Menu {...Fields}/>
     <Menu {...Fieldset}/>
+    <Menu {...Complex}/>
     <Menu {...Submit}/>
     <Menu {...Reset}/>
     <Menu {...ResetSubmit}/>

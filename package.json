@@ -39,7 +39,7 @@
     "url": "https://github.com/abw/badger-form/issues"
   },
   "dependencies": {
-    "@abw/react-context": "^2.0.4"
+    "@abw/react-context": "^2.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",

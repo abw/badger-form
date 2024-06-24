@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@abw/react-context':
-    specifier: ^2.0.4
-    version: 2.0.4
+    specifier: ^2.1.0
+    version: 2.1.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -142,8 +142,8 @@ packages:
       prompts: 2.4.2
     dev: true
 
-  /@abw/react-context@2.0.4:
-    resolution: {integrity: sha512-ZZ4MyEMjiVdH5R0KTnKhcBywo5gITvel2a3eTIMrWirxtsv3+qCAeIByhPwnUTW8St/SB13dyFQRhCbwSwSK3Q==}
+  /@abw/react-context@2.1.0:
+    resolution: {integrity: sha512-P+aM29cGPCcJNt1/6jsdtifnwfZeSttINVRar279v/o0UbCrwYkdig/RsDXJ97M5VlEYDkcqyW91Bfu1nyLkTg==}
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

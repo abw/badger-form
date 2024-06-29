@@ -2,7 +2,6 @@ import React from 'react'
 import Handlers from './Handlers.js'
 import { inputAttrs, inputClasses, valueOption } from '../Utils.js'
 import { useField } from '../Field/Context.js'
-// import { Themed } from '../Theme.jsx'
 
 const Select = ({ field=useField() }) => {
   const {
@@ -48,4 +47,3 @@ const Select = ({ field=useField() }) => {
 }
 
 export default Select
-// export default Themed(Select, 'Form.Input.Select')

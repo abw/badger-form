@@ -5,7 +5,6 @@ import DefaultMessage from './Message.jsx'
 import Hidden from '../Input/Hidden.jsx'
 import { useField } from './Context.js'
 import { fieldClass } from '../Utils.js'
-// import { Themed } from '../Theme.jsx'
 
 const Layout = ({
   field=useField(),
@@ -38,4 +37,3 @@ const Layout = ({
 }
 
 export default Layout
-// export default Themed(Layout, 'Form.Field.Layout')

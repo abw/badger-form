@@ -1,7 +1,6 @@
 import React from 'react'
 import DefaultButton from './Button.jsx'
 import { useForm } from '../Form/Context.js'
-// import { Themed } from '../Theme.jsx'
 
 const Submit = ({
   type='submit',
@@ -24,4 +23,3 @@ const Submit = ({
 }
 
 export default Submit
-// export default Themed(Submit, 'Form.Submit')

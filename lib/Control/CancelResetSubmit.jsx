@@ -4,7 +4,6 @@ import Reset from './Reset.jsx'
 import Submit from './Submit.jsx'
 import { flexGapSpaceClasses } from '../Utils.js'
 import { CONTROLS } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const CancelResetSubmit = ({
   className,
@@ -24,4 +23,3 @@ const CancelResetSubmit = ({
   </div>
 
 export default CancelResetSubmit
-// export default Themed(CancelResetSubmit, 'Form.CancelResetSubmit')

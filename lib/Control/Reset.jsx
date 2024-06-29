@@ -1,7 +1,6 @@
 import React from 'react'
 import DefaultButton from './Button.jsx'
 import { useForm } from '../Form/Context.js'
-// import { Themed } from '../Theme.jsx'
 
 const Reset = ({
   type='reset',
@@ -23,4 +22,3 @@ const Reset = ({
 }
 
 export default Reset
-// export default Themed(Reset, 'Form.Reset')

@@ -3,7 +3,6 @@ import Cancel from './Cancel.jsx'
 import Submit from './Submit.jsx'
 import { flexGapSpaceClasses } from '../Utils.js'
 import { CONTROLS } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const CancelSubmit = ({
   className,
@@ -21,4 +20,3 @@ const CancelSubmit = ({
   </div>
 
 export default CancelSubmit
-// export default Themed(CancelSubmit, 'Form.CancelSubmit')

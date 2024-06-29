@@ -1,7 +1,6 @@
 import React from 'react'
 import { useField } from './Context.js'
 import { selectClass } from '../Utils.js'
-// import { Themed } from '../Theme.jsx'
 
 const Message = ({ field=useField() }) => {
   const { help, message, classes } = field
@@ -13,4 +12,3 @@ const Message = ({ field=useField() }) => {
 }
 
 export default Message
-// export default Themed(Message, 'Form.Field.Message')

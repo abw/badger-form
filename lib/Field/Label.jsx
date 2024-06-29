@@ -1,7 +1,6 @@
 import React from 'react'
 import { useField } from './Context.js'
 import { REQUIRED, OPTIONAL } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const Label = ({ field=useField() }) => {
   const { label, id, required, optional } = field
@@ -24,4 +23,3 @@ const Label = ({ field=useField() }) => {
 }
 
 export default Label
-// export default Themed(Label, 'Form.Field.Label')

@@ -3,7 +3,6 @@ import Reset  from './Reset.jsx'
 import Submit from './Submit.jsx'
 import { flexGapSpaceClasses } from '../Utils.js'
 import { CONTROLS } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const ResetSubmit = ({
   className,
@@ -21,4 +20,3 @@ const ResetSubmit = ({
   </div>
 
 export default ResetSubmit
-// export default Themed(ResetSubmit, 'Form.ResetSubmit')

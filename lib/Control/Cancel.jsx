@@ -1,6 +1,5 @@
 import React from 'react'
 import DefaultButton from './Button.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const Cancel = ({
   text='Cancel',
@@ -15,4 +14,3 @@ const Cancel = ({
   />
 
 export default Cancel
-// export default Themed(Cancel, 'Form.Cancel')

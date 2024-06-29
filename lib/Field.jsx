@@ -3,7 +3,6 @@ import prepareField from './Field/Prepare.jsx'
 import FieldLayout from './Field/Layout.jsx'
 import { useForm } from './Form/Context.js'
 import { Provider, Children }  from './Field/Context.js'
-// import { Themed } from './Theme.jsx'
 
 export const Field = ({
   name,

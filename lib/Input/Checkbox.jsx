@@ -2,7 +2,6 @@ import React from 'react'
 import Handlers from './Handlers.js'
 import { classes, inputAttrs, inputClasses } from '../Utils.js'
 import { useField } from '../Field/Context.js'
-// import { Themed } from '../Theme.jsx'
 
 const Checkbox = ({
   field=useField()
@@ -37,5 +36,4 @@ const Checkbox = ({
 }
 
 export default Checkbox
-// export default Themed(Checkbox, 'Form.Input.Checkbox')
 

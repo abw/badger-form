@@ -1,7 +1,6 @@
 import React from 'react'
 import { useField } from './Context.js'
 import { classes } from '../Utils.js'
-// import { Themed } from '../Theme.jsx'
 
 const Suffix = ({
   field=useField()
@@ -11,4 +10,3 @@ const Suffix = ({
   </div>
 
 export default Suffix
-// export default Themed(Suffix, 'Form.Input.Suffix')

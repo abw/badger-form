@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Themed } from '../Theme.jsx'
 
 const Button = ({
   onClick,
@@ -17,5 +16,4 @@ const Button = ({
   </button>
 
 export default Button
-// export default Themed(Button, 'Form.Button')
 

@@ -3,7 +3,6 @@ import Handlers from './Handlers.js'
 import { inputClasses, inputAttrs } from '../Utils.js'
 import { useField } from '../Field/Context.js'
 import { TEXT } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 export const Text = ({ field=useField() }) => {
   const {
@@ -29,5 +28,4 @@ export const Text = ({ field=useField() }) => {
 }
 
 export default Text
-// export default Themed(Text, 'Form.Input.Text')
 

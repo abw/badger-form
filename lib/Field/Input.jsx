@@ -1,10 +1,9 @@
 import React from 'react'
 import Inputs from './Inputs.jsx'
-import InputTypes from '../Input/index.js'
+import { getInputType } from '../Input/index.js'
 import { useField } from './Context.js'
 import { hasValue } from '@abw/badger-utils'
 import { RADIO, TEXT } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const Input = ({
   field=useField()
@@ -14,7 +13,7 @@ const Input = ({
     suffix,
     type=TEXT,
   } = field
-  const Type = InputTypes[type] || InputTypes.default
+  const Type = getInputType(type)
 
   if (type == RADIO) {
     return <Type field={field}/>
@@ -28,4 +27,3 @@ const Input = ({
 }
 
 export default Input
-// export default Themed(Input, 'Form.Field.Input')

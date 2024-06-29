@@ -1,12 +1,11 @@
 import React from 'react'
-import InputTypes from '../Input/index.js'
 import DefaultPrefix from './Prefix.jsx'
 import DefaultSuffix from './Suffix.jsx'
+import { getInputType } from '../Input/index.js'
 import { useField } from './Context.js'
 import { selectClass } from '../Utils.js'
 import { hasValue } from '@abw/badger-utils'
 import { TEXT } from '../Constants.jsx'
-// import { Themed } from '../Theme.jsx'
 
 const Inputs = ({ field=useField() }) => {
   const {
@@ -15,10 +14,9 @@ const Inputs = ({ field=useField() }) => {
     Prefix=DefaultPrefix,
     Suffix=DefaultSuffix,
   } = field
-  const Type = InputTypes[type] || InputTypes.default
+  const Type = getInputType(type)
   let classNames = [
     selectClass(classes, 'inputs'),
-    // selectClass(classes, type)
   ]
   if (hasValue(prefix)) {
     classNames.push(selectClass(classes, 'prefixed'))
@@ -44,4 +42,3 @@ const Inputs = ({ field=useField() }) => {
 }
 
 export default Inputs
-// export default Themed(Inputs, 'Form.Field.Inputs')

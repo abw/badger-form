@@ -13,6 +13,14 @@ const AddInput = () =>
       name="color"
       type="colorButton"
     />
+    <Field
+      name="color"
+      type="color-button"
+    />
+    <Field
+      name="color"
+      type="colorbutton"
+    />
   </Form>
 
 export default AddInput

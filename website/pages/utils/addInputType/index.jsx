@@ -43,6 +43,13 @@ const AddInputExamples = () =>
       access it using the name you give it.  In this example we give it
       the name <code>colorButton</code>.
     </p>
+    <p>
+      Note that input type names are converted to a canonical form, both
+      when being defined and being accessed.  Non-word characters are removed
+      and the name is converted to lower case.  As shown in this example,
+      input types of <code>colorButton</code>, <code>color-button</code> and{' '}
+      <code>colorbutton</code> are all considered to be the same thing.
+    </p>
     <Example
       Component={AddInput}
       code={AddInputSrc}

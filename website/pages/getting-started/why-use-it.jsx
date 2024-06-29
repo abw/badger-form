@@ -173,15 +173,18 @@ const WhyUseIt = () =>
       So I still use it, and have occasional bursts of development/maintenance
       where I add new features, clean up ugly bits of code, fix minor bugs
       or limitations that have been annoying me for a while, or update the
-      documentation and examples.  That&apos;s what I&apos;m doing right now,
-      as it happens.
+      documentation and examples.
     </p>
     <p>
-      For the last few years it&apos;s been an integral part
-      of my <a href="https://github.com/abw/badger-ui">badger-ui</a> library
-      but I&apos;m now trying to break things up a little bit and extract some
-      of the reusable functionality into different modules.  So that&apos;s
-      how we got here.
+      For a number of years it was an integral part of
+      my personal <a href="https://github.com/abw/badger-ui">badger-ui</a> library.
+      That has now been cleaned up and split up into{' '}
+      <a href="https://github.com/abw/badger-css">Badger CSS</a>,{' '}
+      <a href="https://github.com/abw/badger-react-ui">Badger React UI</a> and{' '}
+      <a href="https://github.com/abw/badger-icon">Badger Icon</a>, with{' '}
+      <a href="https://github.com/abw/badger-color">Badger Color</a> in a
+      supporting role. All of the form functionality was separated out into
+      this module.  So that&apos;s how we got here.
     </p>
     <p>
       But the best reason of all is that I built it because I <i>wanted</i> to.

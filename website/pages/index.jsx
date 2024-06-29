@@ -24,6 +24,7 @@ const Index = () =>
       them with your own field input components, or manually implement the
       layout for individual fields any way you like.
     </p>
+    {/*
     <div className="error alert border bdw-2 shadow-2 mar-v-16">
       <div className="headline">WARNING - Work in Progress</div>
       <p className="bold large">
@@ -41,9 +42,13 @@ const Index = () =>
         look at it.  You&apos;ve seen enough of that one.
       </p>
     </div>
-
+    */}
     <h2 className="mar-t-8 mar-b-none">Read the Fine Documentation</h2>
-    <ul className="large menu mar-t-none">
+    <p className="mar-b-none intro">
+      There&apos;s lots of it, complete with numerous examples.  Here are
+      some good places to start.
+    </p>
+    <ul className="large menu mar-t-none pad-l-4">
       <li>
         <Link to="/getting-started/installation" text="Installation"/> - adding the module to your project.
       </li>
@@ -55,6 +60,9 @@ const Index = () =>
       </li>
       <li>
         <Link to="/field" text="The Field Component"/> - adding a field to a form
+      </li>
+      <li>
+        <Link to="/fields" text="The Fields Component"/> - a handy shortcut to add multiple fields
       </li>
     </ul>
 

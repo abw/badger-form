@@ -2345,6 +2345,18 @@ input[type=password] {
   grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr));
 }
 
+.gap-none {
+  --gap: 0;
+}
+
+.gap-h-none {
+  --column-gap: 0;
+}
+
+.gap-v-none {
+  --row-gap: 0;
+}
+
 .gap-0 {
   --gap: 0rem;
 }
@@ -4375,7 +4387,7 @@ h1, h2, h3, h4, h5, h6 {
   --input-focus-ring-color: var(--blue-70);
   --input-focus-gap-color: var(--blue-90);
   --input-focus-inset: ;
-  --input-range-track-color: var(--brand-90);
+  --input-range-track-color: var(--brand-75);
   --input-range-thumb-color: var(--brand-50);
 }
 
@@ -4509,8 +4521,8 @@ h1, h2, h3, h4, h5, h6 {
   --input-focus-background-color: var(--blue-5);
   --input-focus-ring-color: var(--blue-30);
   --input-focus-gap-color: var(--blue-10);
-  --input-range-track-color: var(--brand-15);
-  --input-range-thumb-color: var(--brand-40);
+  --input-range-track-color: var(--brand-30);
+  --input-range-thumb-color: var(--brand-50);
 }
 [data-theme=dark] :where(.field) {
   --label-color: var(--grey-90);
@@ -4945,40 +4957,6 @@ input[type=color] {
   height: var(--input-outer-height);
 }
 
-input[type=range] {
-  accent-color: var(--input-accent-color);
-}
-input[type=range]:not(.inline) {
-  width: 100%;
-}
-input[type=range]:focus {
-  outline: 0;
-}
-input[type=range]::-webkit-slider-runnable-track {
-  height: 16px;
-  border-radius: 16px;
-}
-input[type=range]::-webkit-slider-thumb {
-  border-radius: 0.5em;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-accent-color), black 40%);
-  transition: box-shadow 300ms;
-}
-input[type=range]:focus::-webkit-slider-thumb, input[type=range]::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 0 8px color-mix(in srgb, var(--input-accent-color), transparent 70%);
-}
-input[type=range]::-moz-range-track {
-  height: 16px;
-  border-radius: 16px;
-}
-input[type=range]::-moz-range-thumb {
-  border-radius: 0.5em;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-accent-color), black 40%);
-  transition: box-shadow 300ms;
-}
-input[type=range]:focus::-moz-range-thumb, input[type=range]::-moz-range-thumb:hover {
-  box-shadow: 0 0 0 8px color-mix(in srgb, var(--input-accent-color), transparent 70%);
-}
-
 /* forms/fields.scss */
 .inputs {
   position: relative;
@@ -5235,6 +5213,40 @@ input[type=checkbox][role=switch].square {
 [data-theme=dark] input[type=checkbox][role=switch]:checked:hover {
   --border-color: var(--brand-40);
   --background-color: var(--brand-35);
+}
+
+input[type=range] {
+  accent-color: var(--input-accent-color);
+}
+input[type=range]:not(.inline) {
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: 0;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 16px;
+  border-radius: 16px;
+}
+input[type=range]::-webkit-slider-thumb {
+  border-radius: 0.5em;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-accent-color), black 40%);
+  transition: box-shadow 300ms;
+}
+input[type=range]:focus::-webkit-slider-thumb, input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--input-accent-color), transparent 70%);
+}
+input[type=range]::-moz-range-track {
+  height: 16px;
+  border-radius: 16px;
+}
+input[type=range]::-moz-range-thumb {
+  border-radius: 0.5em;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-accent-color), black 40%);
+  transition: box-shadow 300ms;
+}
+input[type=range]:focus::-moz-range-thumb, input[type=range]::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--input-accent-color), transparent 70%);
 }
 
 /* forms/fields.scss */

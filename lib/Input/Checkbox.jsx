@@ -13,6 +13,9 @@ const Checkbox = ({
     border,
     labelClass,
     type='checkbox',
+    switch: isSwitch,
+    round,
+    square,
     handler=Handlers[type]||Handlers.default
   } = field
   const attrs = inputAttrs(field)
@@ -26,9 +29,10 @@ const Checkbox = ({
         aria-disabled={field.disabled}
         tabIndex={field.disabled ? -1 : field.tabIndex}
         onChange={handler(field)}
-        className={inputClasses(field)}
+        className={inputClasses(field, { round, square })}
         {...attrs}
         checked={field.value}
+        role={isSwitch ? 'switch' : ''}
       />
       {text}
     </label>

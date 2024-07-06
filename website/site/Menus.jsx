@@ -377,6 +377,7 @@ export const Checkbox = {
         { to: '/checkbox/properties/border',     code: 'border'     },
         { to: '/checkbox/properties/inline',     code: 'inline'     },
         { to: '/checkbox/properties/inputClass', code: 'inputClass' },
+        { to: '/checkbox/properties/switch',     code: 'switch' },
       ]
     },
   ]

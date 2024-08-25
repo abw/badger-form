@@ -4,7 +4,6 @@ import Badger from '../svg/badger-form.svg?react'
 import OSS from '../svg/oss.svg?react'
 
 const Index = () =>
-  // <div className="max-width-40rem block-center pad-t-8">
   <div className="pad-t-8">
     <div className="grid-2 gap-12 start stack-laptop">
       <div>
@@ -14,7 +13,12 @@ const Index = () =>
         <p className="larger">
           Badger Form is a yet another module for building forms in React.  It
           implements state management for forms with styles provided by{' '}
-          <a href="https://abw.github.io/badger-css/">Badger CSS</a>.
+          <a
+            href="https://badgerpower.com/badger-css/"
+            target="_blank" rel="noreferrer"
+          >
+            Badger CSS
+          </a>.
         </p>
       </div>
     </div>
@@ -24,25 +28,6 @@ const Index = () =>
       them with your own field input components, or manually implement the
       layout for individual fields any way you like.
     </p>
-    {/*
-    <div className="error alert border bdw-2 shadow-2 mar-v-16">
-      <div className="headline">WARNING - Work in Progress</div>
-      <p className="bold large">
-        Do not use this library unless you like living dangerously!
-      </p>
-      <p>
-        It&apos;s in the process of being re-written and it&apos;s special.
-        Look... see... still got the uh... the ol&apos; tagger on it... see...
-        never even played it... Don&apos;t touch it!  Don&apos;t touch it!
-        No one... no one... no!  Don&apos;t touch it. Don&apos;t point, even.
-        No.  It can&apos;t be played... never... I mean...
-      </p>
-      <p className="mar-b-0 bold fgc-30 fgd-80">
-        Don&apos;t even
-        look at it.  You&apos;ve seen enough of that one.
-      </p>
-    </div>
-    */}
     <h2 className="mar-t-8 mar-b-none">Read the Fine Documentation</h2>
     <p className="mar-b-none intro">
       There&apos;s lots of it, complete with numerous examples.  Here are

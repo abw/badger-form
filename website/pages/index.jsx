@@ -7,12 +7,21 @@ const Index = () =>
   <div className="pad-t-8">
     <div className="grid-2 gap-12 start stack-laptop">
       <div>
-        <Badger className="badger-form mar-t-4"/>
+        <Badger className="badger-form"/>
       </div>
       <div>
+        <h1 className="mar-v-none">
+          React Form Components
+        </h1>
+        <h2 className="mar-t-none mar-b-2 small">
+          Powered by Badgers
+        </h2>
         <p className="larger">
-          Badger Form is a yet another module for building forms in React.  It
-          implements state management for forms with styles provided by{' '}
+          Badger Form is a yet another module for building forms in React.
+        </p>
+        <p className="large">
+          It implements form rendering, state management and validation for
+          forms with styles provided by{' '}
           <a
             href="https://badgerpower.com/badger-css/"
             target="_blank" rel="noreferrer"
@@ -51,9 +60,6 @@ const Index = () =>
       </li>
     </ul>
 
-    <div className="text-center">
-      <OSS className="width-12rem"/>
-    </div>
     <h2>This is Opinionated and Selfish Software...</h2>
     <p>
       I wrote this library to help me do my job and make the process of
@@ -79,6 +85,10 @@ const Index = () =>
       continue to use it (because it works for me) can be found{' '}
       <Link to="/getting-started/why-use-it" text="here"/>.
     </p>
+    <div className="text-center">
+      <OSS className="width-10rem"/>
+    </div>
+
   </div>
 
 export default Index

@@ -177,12 +177,13 @@ const WhyUseIt = () =>
     </p>
     <p>
       For a number of years it was an integral part of
-      my personal <a href="https://github.com/abw/badger-ui">badger-ui</a> library.
+      my personal{' '}
+      <a href="https://github.com/abw/badger-ui" target="_blank" rel="noreferrer">badger-ui</a> library.
       That has now been cleaned up and split up into{' '}
-      <a href="https://github.com/abw/badger-css">Badger CSS</a>,{' '}
-      <a href="https://github.com/abw/badger-react-ui">Badger React UI</a> and{' '}
-      <a href="https://github.com/abw/badger-icon">Badger Icon</a>, with{' '}
-      <a href="https://github.com/abw/badger-color">Badger Color</a> in a
+      <a href="https://badgerpower.com/badger-css/"      target="_blank" rel="noreferrer">Badger CSS</a>,{' '}
+      <a href="https://badgerpower.com/badger-react-ui/" target="_blank" rel="noreferrer">Badger React UI</a> and{' '}
+      <a href="https://badgerpower.com/badger-icon/"     target="_blank" rel="noreferrer">Badger Icon</a>, with{' '}
+      <a href="https://badgerpower.com/badger-color/"    target="_blank" rel="noreferrer">Badger Color</a> in a
       supporting role. All of the form functionality was separated out into
       this module.  So that&apos;s how we got here.
     </p>

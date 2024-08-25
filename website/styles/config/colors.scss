@@ -2,4 +2,4 @@ $teal-hue: 185;
 $brand-hue: $teal-hue;
 $grey-hue: $brand-hue;
 $brand-color: 'teal';
-$dark-theme: '#site.dark, .dark';
+$dark-theme: '#site[data-theme="dark"]';

@@ -64,29 +64,29 @@
     padding: 1rem;
     border-top: 1px solid var(--footer-border);
     box-shadow: inset 0 1px 1px var(--top-shadow);
-    & > div {
+    & > nav {
       max-width: var(--app-width);
       margin: 0 auto;
-    }
-    a {
-      color: var(--footer-link);
-      transition: color var(--unit-transition);
-      &:hover {
-        color: var(--footer-hover);
-      }
-      &.badgerpower {
-          display: flex;
-          gap: 0.75rem;
-          align-items: center;
-          // font-size: 1.25rem;
-          white-space: nowrap;
-          svg {
-            height: 2.5rem;
-          }
+      padding: 0 var(--head-pad, 0);
+      a {
+        color: var(--footer-link);
+        transition: color var(--unit-transition);
+        &:hover {
+          color: var(--footer-hover);
+        }
+        &.badgerpower {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            white-space: nowrap;
+            svg {
+              height: 2.5rem;
+            }
+        }
       }
     }
   }
-  &.no-sidebar {
+  &[data-sidebar="no-sidebar"] {
     --side-margin: calc(0px - max(var(--side-total), var(--side-width)));
     --main-total: 100%;
     --main-pad-right: var(--half-pad);

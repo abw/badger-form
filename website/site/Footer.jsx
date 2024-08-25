@@ -4,16 +4,18 @@ import { version, date, years } from './Utils.jsx'
 
 const Footer = () =>
   <footer>
-    <div className="flex space middle gap-2">
-      <a
-        href="https://badgerpower.com"
-        target="_blank"
-        rel="noreferrer"
-        className="badgerpower"
-      >
-        <Badger/>
-        Badger Powered
-      </a>
+    <nav className="flex space middle gap-4 stack-tablet">
+      <div>
+        <a
+          href="https://badgerpower.com"
+          target="_blank"
+          rel="noreferrer"
+          className="badgerpower"
+        >
+          <Badger/>
+          Badger Powered
+        </a>
+      </div>
       <div>
         &copy; Copyright {years} {' '}
         <a
@@ -24,7 +26,7 @@ const Footer = () =>
       <div>
         v{version} - {date}
       </div>
-    </div>
+    </nav>
   </footer>
 
 export default Footer

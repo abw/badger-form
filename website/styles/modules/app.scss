@@ -1,15 +1,9 @@
-// main body: 80rem
-// sidebar: 20rem;
-
 #app {
+  --app-height: calc(100vh - #{$header-height});
   position: relative;
   width: 100%;
-  // max-width: var(--combined-width);
   margin: 0 auto;
-  // background-color: var(--main-back);
-  // border: 1px solid red;
-
-  height: calc(100vh - #{$header-height});
+  height: var(--app-height);
   padding: 0;
   display: flex;
   & > aside,
@@ -20,15 +14,10 @@
   }
   & > aside {
     width: max(var(--side-width), var(--side-total));
-    // width: var(--side-width);
     padding: var(--side-padding);
     padding-left: max(var(--side-padding), var(--half-pad));
-    // flex-basis: var(--sidebar-width);
-    // margin-left: var(--sidebar-margin-left);
     margin-left: var(--side-margin);
     border-right: 1px solid var(--side-border);
-    // border-left: 1px solid var(--side-border);
-    // border: 1px solid green;
     background-color: var(--side-back);
     box-shadow:
       inset 0 6px 4px -4px var(--top-shadow),
@@ -39,18 +28,12 @@
       background-color $theme-transition ease-in-out;
   }
   & > main {
-    // border: 1px solid blue;
     margin-left: 0;
-    // flex-basis: 100%;
     width: var(--main-total);
     padding: 1.5rem 3rem 3rem 3rem;
     padding-top: 3rem;
     padding-right: max(var(--main-padding), var(--main-pad-right));
-    // padding-left: max(var(--main-padding), var(--main-pad-left));
-    // padding-left: var(--main-padding);
     padding-left: max(var(--main-padding), var(--main-pad-left));
-
-    // box-shadow:  2px 4px 6px var(--top-shadow);
     background-color: var(--main-back);
     transition:
       width var(--side-transition),
@@ -187,6 +170,49 @@
     --text-color: var(--grey20-80);
     --line-color: var(--grey40-40);
     --background-color: var(--grey-30);
+  }
+}
+
+@media (max-width: $head-width) {
+  :root {
+    --head-pad: #{$head-padding};
+  }
+}
+@media only screen and (max-width: #{$tablet}) {
+  #site {
+    --sidebar-width: min(80vw, #{$side-width});
+    #app {
+      & > aside {
+        position: fixed;
+        z-index: 1000;
+        width: var(--sidebar-width);
+        margin: 0;
+        margin-left: var(--sidebar-margin-left, 0);
+        height: var(--app-height);
+        overflow-y: scroll;
+        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+      }
+      & > main {
+        transition: background-color $theme-transition ease-in-out;
+      }
+    }
+    &:not([data-sidebar-action="open"]) {
+      --sidebar-margin-left: calc(0rem - var(--sidebar-width));
+      --sidebar-toggle-opacity: 0.5;
+    }
+    &[data-sidebar-action="open"] {
+      --sidebar-margin-left: 0px;
+      --sidebar-toggle-opacity: 1;
+    }
+    & > footer > nav > * {
+      display: block;
+      width: 100%;
+      text-align: center;
+      a.badgerpower {
+        justify-content: center;
+      }
+    }
   }
 }
 

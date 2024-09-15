@@ -1,13 +1,12 @@
-import React      from 'react'
+import React       from 'react'
 import Prompt      from './_examples/Prompt.jsx'
 import PromptSrc   from './_examples/Prompt.jsx?raw'
 import NoPrompt    from './_examples/NoPrompt.jsx'
 import NoPromptSrc from './_examples/NoPrompt.jsx?raw'
 import PromptFn    from './_examples/PromptFn.jsx'
 import PromptFnSrc from './_examples/PromptFn.jsx?raw'
-import Example    from '@/site/Example.jsx'
-import Split      from '@/site/Split.jsx'
-import TryItOut from '@/website/site/TryItOut.jsx'
+import TryItOut    from '@/website/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { ErrorsFieldErrorsLink } from '@/website/site/Links.jsx'
 
 const ErrorsExamples = () =>

@@ -1,7 +1,7 @@
-import React    from 'react'
-import Example  from '@/site/Example.jsx'
-import Gap      from './_examples/Gap.jsx'
-import GapSrc   from './_examples/Gap.jsx?raw'
+import React       from 'react'
+import Gap         from './_examples/Gap.jsx'
+import GapSrc      from './_examples/Gap.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const GapExamples = () =>
   <>

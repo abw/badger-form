@@ -1,0 +1,31 @@
+import React     from 'react'
+import PrefixSrc from './_examples/Prefix.jsx?raw'
+import Prefix    from './_examples/Prefix.jsx'
+import SeeAlso   from '@/site/SeeAlso.jsx'
+import { Example } from '@abw/badger-website'
+import { FieldSuffixLink } from '@/website/site/Links.jsx'
+
+## `prefix`
+
+You can add a `prefix` to a `text` field or any
+of the other types using the basic text input, e.g.
+`money`, `date`, etc.  The prefix can be text,
+an SVG icon or any other JSX fragment.
+
+The `prefixClass` property can be used to set a CSS class
+for the prefix.  Badger CSS provides two built in styles:
+`lined` to add a dividing line, and `shaded` to
+add some background shading.
+
+<Example
+  Component={Prefix}
+  code={PrefixSrc}
+  caption="prefix"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldSuffixLink
+  ]}
+/>

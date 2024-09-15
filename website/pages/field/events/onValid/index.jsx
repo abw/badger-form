@@ -1,10 +1,9 @@
 import React      from 'react'
 import OnValid    from './_examples/OnValid.jsx'
 import OnValidSrc from './_examples/OnValid.jsx?raw'
-import Example    from '@/site/Example.jsx'
 import SeeAlso    from '@/site/SeeAlso.jsx'
-import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { FieldLink, FieldOnBlurLink, FieldOnChangeLink, FieldOnFocusLink, FieldOnInvalidLink, FieldValidateLink, FormLink } from '@/site/Links.jsx'
 
 const OnValidExamples = () =>

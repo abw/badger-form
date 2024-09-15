@@ -1,10 +1,9 @@
 import React              from 'react'
 import PrepareValueSource from './_examples/PrepareValue.jsx?raw'
 import PrepareValue       from './_examples/PrepareValue.jsx'
-import Example            from '@/site/Example.jsx'
 import SeeAlso            from '@/site/SeeAlso.jsx'
-import Split              from '@/site/Split.jsx'
 import TryItOut           from '@/site/TryItOut.jsx'
+import { Example, Split }    from '@abw/badger-website'
 import { FieldLink, FieldValidateLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink }      from '@/site/Links.jsx'
 
 const PrepareValueExamples = () =>

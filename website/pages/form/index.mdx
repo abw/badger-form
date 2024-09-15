@@ -1,0 +1,20 @@
+import React          from 'react'
+import ExampleSrc     from './_examples/Example.jsx?raw'
+import ExampleElement from './_examples/Example.jsx'
+import { Example }    from '@abw/badger-website'
+import { FieldLink, SubmitLink } from '@/site/Links.jsx'
+
+# Form
+
+<div className="intro wide">
+  The `Form` component is used to render a form. Inside the form you will
+  typically have one or more <FieldLink/> components to render the fields
+  and a <SubmitLink/> component to add a submit button.
+</div>
+
+<Example
+  Component={ExampleElement}
+  code={ExampleSrc}
+  caption="Form"
+  expand
+/>

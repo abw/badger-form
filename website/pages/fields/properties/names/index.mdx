@@ -1,0 +1,39 @@
+import React      from 'react'
+import FieldsSrc  from './_examples/Fields.jsx?raw'
+import String     from './_examples/String.jsx'
+import StringSrc  from './_examples/String.jsx?raw'
+import Array      from './_examples/Array.jsx'
+import ArraySrc   from './_examples/Array.jsx?raw'
+import { Example, Source } from '@abw/badger-website'
+import { FormFieldsLink, FormLink } from '@/website/site/Links.jsx'
+
+## `names`
+
+The `names` property should be used to specify the list of field names.
+This can be a string of whitespace delimited field names that should be
+defined in the <FormLink/> <FormFieldsLink/>.
+
+<Example
+  Component={String}
+  code={StringSrc}
+  caption="Fields"
+  expand
+/>
+
+The `names` can also be an array of field names.
+
+<Example
+  Component={Array}
+  code={ArraySrc}
+  caption="Fields"
+  expand
+/>
+
+<Source
+  code={FieldsSrc}
+  caption="Fields.jsx"
+>
+  In the above examples the `fields` are defined in a separate `Fields.jsx`
+  module, shown here.
+</Source>
+

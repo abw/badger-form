@@ -1,7 +1,7 @@
-import React      from 'react'
-import Example    from '@/site/Example.jsx'
-import Submit     from './_examples/Submit.jsx'
-import SubmitSrc  from './_examples/Submit.jsx?raw'
+import React          from 'react'
+import Submit         from './_examples/Submit.jsx'
+import SubmitSrc      from './_examples/Submit.jsx?raw'
+import { Example }    from '@abw/badger-website'
 import { SubmitLink } from '@/website/site/Links.jsx'
 
 const SubmitExamples = () =>

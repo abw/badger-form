@@ -1,10 +1,9 @@
 import React    from 'react'
 import ResetSrc from './_examples/Reset.jsx?raw'
 import Reset    from './_examples/Reset.jsx'
-import Example  from '@/site/Example.jsx'
 import SeeAlso  from '@/site/SeeAlso.jsx'
-import Split    from '@/site/Split.jsx'
 import TryItOut from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import {
   FieldOnBlurLink, FieldOnFocusLink, FieldOnLoadLink, FormSetFocusLink
 } from '@/site/Links.jsx'

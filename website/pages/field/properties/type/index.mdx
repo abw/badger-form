@@ -1,0 +1,82 @@
+import React          from 'react'
+import TypeSrc        from './_examples/Type.jsx?raw'
+import Type           from './_examples/Type.jsx'
+import FormFieldsSrc  from './_examples/FormFields.jsx?raw'
+import FormFields     from './_examples/FormFields.jsx'
+import SeeAlso        from '@/site/SeeAlso.jsx'
+import Suggest        from '@/site/Suggest.jsx'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import {
+  CheckboxInputLink, DebugLink, FieldLabelLink, FieldLink, FieldNameLink, FormFieldsLink, FormLink,
+  HiddenInputLink, InputTypesLink, RadioInputLink, SelectInputLink, TextAreaInputLink,
+  TextInputLink
+} from '@/site/Links.jsx'
+
+## `type`
+<Split align="end">
+  <div>
+    The `type` property specifies what kind of input should be
+    displayed.  The default value is `text` corresponding to
+    the <TextInputLink/> input component.  Other values can be
+    `textarea` (see <TextAreaInputLink/>),
+    `checkbox` (see <CheckboxInputLink/>),
+    `radio` (see <RadioInputLink/>),
+    `select` (see <SelectInputLink/>) and
+    `hidden` (see <HiddenInputLink/>) corresponding to the basic
+    HTML input types.
+
+    You can also set `type` to be one of the other valid HTML
+    input types, e.g. `password`, `email`,
+    `number`, `date`, `color`,
+    and so on.  These use the same basic <TextInputLink/> input component
+    as for `text` types, but with the `type` attribute
+    set appropriately to use the browser-specific functionality.
+  </div>
+
+  <TryItOut>
+    Enter some text in the input fields below. Note how the number field
+    uses the browser&apos;s built-in functionality to accept only numbers,
+    and the date field provides a date picker.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Type}
+  code={TypeSrc}
+  caption="type"
+  expand
+/>
+
+<Split>
+  As with all other <FieldLink/> properties, they can be defined using
+  <FormFieldsLink/> set on the <FormLink/>.
+  The benefit of this approach is that it keeps the field definitions
+  and markup separate.  As well as making them easier to read and
+  maintain, it also has the benefit that field definitions can be
+  reused across multiple forms.
+
+  <Suggest>
+    The example below generates exactly the same form as the one above
+    (with the exception of the additional <DebugLink/> component).
+    Note that the form data will only include fields that are present
+    in the <FormLink/>.  The `field5` field definition is
+    effectively ignored.
+  </Suggest>
+</Split>
+
+<Example
+  Component={FormFields}
+  code={FormFieldsSrc}
+  caption="Form fields"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldNameLink,
+    FieldLabelLink,
+    FormFieldsLink,
+    InputTypesLink
+  ]}
+/>

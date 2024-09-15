@@ -1,10 +1,9 @@
 import React        from 'react'
 import Required     from './_examples/Required.jsx'
 import RequiredSrc  from './_examples/Required.jsx?raw'
-import Example      from '@/site/Example.jsx'
 import SeeAlso      from '@/site/SeeAlso.jsx'
-import Split        from '@/site/Split.jsx'
 import TryItOut     from '@/site/TryItOut.jsx'
+import { Example, Split }    from '@abw/badger-website'
 import { FieldRequiredLabelLink, FieldRequiredMessageLink, FieldShowRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink } from '@/website/site/Links.jsx'
 
 const RequiredExample = () =>

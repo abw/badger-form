@@ -1,9 +1,8 @@
 import React          from 'react'
 import Validating     from './_examples/Validating.jsx'
 import ValidatingSrc  from './_examples/Validating.jsx?raw'
-import Example        from '@/site/Example.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
-import Split          from '@/site/Split.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { FieldValidateLink } from '@/site/Links.jsx'
 
 const StatusExamples = () =>

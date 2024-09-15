@@ -1,9 +1,8 @@
 import React      from 'react'
-import Example    from '@/site/Example.jsx'
 import Status     from './_examples/Status.jsx'
 import StatusSrc  from './_examples/Status.jsx?raw'
-import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 
 const DebugExamples = () =>
   <>

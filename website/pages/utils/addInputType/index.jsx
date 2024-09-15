@@ -4,8 +4,7 @@ import UseInputSrc    from './_examples/UseInput.jsx?raw'
 import AddInput       from './_examples/AddInput.jsx'
 import AddInputSrc    from './_examples/AddInput.jsx?raw'
 import ColorButtonSrc from './_examples/ColorButtonInput.jsx?raw'
-import Example        from '@/site/Example.jsx'
-import CodeBlock      from '@/site/CodeBlock.jsx'
+import { Example, Source } from '@abw/badger-website'
 import { FieldInputLink, FieldTypeLink } from '@/website/site/Links.jsx'
 
 const AddInputExamples = () =>
@@ -20,7 +19,7 @@ const AddInputExamples = () =>
       <code>ColorButtonInput</code> input, allowing
       a user to click on a button to select a color.
     </p>
-    <CodeBlock
+    <Source
       code={ColorButtonSrc}
       caption="ColorButtonInput.jsx"
     />

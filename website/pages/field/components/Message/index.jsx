@@ -3,9 +3,8 @@ import Message       from './_examples/Message.jsx'
 import MessageSrc    from './_examples/Message.jsx?raw'
 import Custom        from './_examples/CustomMessage.jsx'
 import CustomSrc     from './_examples/CustomMessage.jsx?raw'
-import Example       from '@/site/Example.jsx'
-import Split         from '@/site/Split.jsx'
 import TryItOut      from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { FieldLink } from '@/site/Links.jsx'
 
 const MessageExamples = () =>

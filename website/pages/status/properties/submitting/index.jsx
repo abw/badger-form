@@ -1,9 +1,8 @@
 import React          from 'react'
 import Submitting     from './_examples/Submitting.jsx'
 import SubmittingSrc  from './_examples/Submitting.jsx?raw'
-import Example        from '@/site/Example.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
-import Split          from '@/site/Split.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { FormOnSubmitLink } from '@/site/Links.jsx'
 
 const StatusExamples = () =>

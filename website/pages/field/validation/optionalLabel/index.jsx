@@ -1,8 +1,8 @@
 import React             from 'react'
 import OptionalLabelSrc  from './_examples/OptionalLabel.jsx?raw'
 import OptionalLabel     from './_examples/OptionalLabel.jsx'
-import Example           from '@/site/Example.jsx'
 import SeeAlso           from '@/site/SeeAlso.jsx'
+import { Example }    from '@abw/badger-website'
 import {
   FieldLink, FieldRequiredLabelLink, FieldRequiredLink, FieldShowOptionalLink,
   FieldShowRequiredLink, FormLink

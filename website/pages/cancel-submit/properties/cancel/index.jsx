@@ -1,7 +1,7 @@
-import React      from 'react'
-import Example    from '@/site/Example.jsx'
+import React       from 'react'
 import Cancel      from './_examples/Cancel.jsx'
 import CancelSrc   from './_examples/Cancel.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const CancelSubmitExamples = () =>
   <>

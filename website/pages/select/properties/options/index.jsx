@@ -1,9 +1,9 @@
-import React          from 'react'
-import Options        from './_examples/Options.jsx'
-import OptionsSrc     from './_examples/Options.jsx?raw'
-import Simple         from './_examples/Simple.jsx'
-import SimpleSrc      from './_examples/Simple.jsx?raw'
-import Example        from '@/site/Example.jsx'
+import React       from 'react'
+import Options     from './_examples/Options.jsx'
+import OptionsSrc  from './_examples/Options.jsx?raw'
+import Simple      from './_examples/Simple.jsx'
+import SimpleSrc   from './_examples/Simple.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const SelectExample = () =>
   <>

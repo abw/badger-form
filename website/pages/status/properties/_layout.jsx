@@ -1,12 +1,14 @@
-import React       from 'react'
-import StatusPager from '@/site/Pager/StatusPager.jsx'
-import { Outlet }  from 'react-router-dom'
+import React      from 'react'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const StatusPropertiesLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Status Properties</h1>
     <Outlet/>
-    <StatusPager/>
-  </div>
+  </>
 
 export default StatusPropertiesLayout

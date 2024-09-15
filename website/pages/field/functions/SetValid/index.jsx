@@ -1,10 +1,9 @@
 import React          from 'react'
 import SetValidSrc    from './_examples/SetValid.jsx?raw'
 import SetValid       from './_examples/SetValid.jsx'
-import Example        from '@/site/Example.jsx'
 import SeeAlso        from '@/site/SeeAlso.jsx'
-import Split          from '@/site/Split.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { FieldOnLoadLink, FieldOnValidLink, FieldSetInvalidLink } from '@/site/Links.jsx'
 
 const SetValidExamples = () =>

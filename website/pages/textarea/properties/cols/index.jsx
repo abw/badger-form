@@ -1,7 +1,7 @@
 import React    from 'react'
 import Cols     from './_examples/Cols.jsx'
 import ColsSrc  from './_examples/Cols.jsx?raw'
-import Example  from '@/site/Example.jsx'
+import { Example } from '@abw/badger-website'
 import { TextAreaInputInlineLink } from '@/website/site/Links.jsx'
 
 const TextAreaExamples = () =>

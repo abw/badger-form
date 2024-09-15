@@ -1,0 +1,47 @@
+import React          from 'react'
+import Suggest        from '@/site/Suggest.jsx'
+import DummySubmit    from './_examples/DummySubmit.jsx'
+import DummySubmitSrc from './_examples/DummySubmit.jsx?raw'
+import { Example, Split } from '@abw/badger-website'
+import { FormLink, FormOnSubmitLink } from '@/site/Links.jsx'
+
+# Form Submission
+
+<div className="intro">
+  To handle submission of a form we need to add an <FormOnSubmitLink/>{' '}
+  handler to the <FormLink/> component.
+  In most cases this will be
+  making a call to a back-end API but to demonstrate the basic principle
+  let's start with something simpler.
+</div>
+
+## `onSubmit`
+
+<Split align="end">
+  We'll create a function which stores the submitted `values` in a state
+  variable and displays them on the screen.  The <FormOnSubmitLink/> handler
+  is passed an object containing the validated form values.  It should return
+  a Promise which resolves on success.  If an error occurs then the Promise
+  should reject, returning an object containing either an `error` and/or an
+  array of `errors`.  These are handled the same as for
+  client-side form validation.
+
+  <Suggest>
+    Try entering some values in the form below and click on the
+    "Login" button.  You should see the submitted values
+    appear in a debugging window beneath the form.
+  </Suggest>
+</Split>
+
+<Example
+  Component={DummySubmit}
+  code={DummySubmitSrc}
+  caption="Dummy Submission"
+/>
+
+## Where Next?
+
+When the form is submitted there are two possible outcomes.  Either
+the submission is successful, or there's an error (or errors)
+that need to be handled.  We'll look at these in the next few
+pages.

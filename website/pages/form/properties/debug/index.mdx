@@ -1,0 +1,30 @@
+import Debug          from './_examples/Debug.jsx'
+import DebugSrc       from './_examples/Debug.jsx?raw'
+import SeeAlso        from '@/site/SeeAlso.jsx'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { DebugLink }  from '@/site/Links.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `debug`
+
+<Split>
+  The `debug` property is your friend when it's 5pm on a
+  Friday and you promised your boss/client that you would get the form
+  changes made before you went home, but you can't figure out why
+  it's not working.
+  <TryItOut>
+    Open up the Javascript console and watch the pretty messages go
+    flying by!
+  </TryItOut>
+</Split>
+<Example
+  Component={Debug}
+  code={DebugSrc}
+  caption="debug"
+  expand
+/>
+<SeeAlso
+  links={[
+    DebugLink
+  ]}
+/>

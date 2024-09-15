@@ -11,11 +11,8 @@ import OptionsSrc      from './_examples/Options.jsx?raw'
 import OptionSrc       from './_examples/Option.jsx?raw'
 import SummarySrc      from './_examples/Summary.jsx?raw'
 import PizzaCSS        from './_examples/pizza.scss?raw'
-import Example         from '@/site/Example.jsx'
-import CodeBlock       from '@/site/CodeBlock.jsx'
-import Split           from '@/site/Split.jsx'
 import TryItOut        from '@/site/TryItOut.jsx'
-import { prepareCode } from '@/site/CodeBlock.jsx'
+import { Example, Split, Source } from '@abw/badger-website'
 import { FieldLink, FieldInputLink, FieldLabelLink, FieldMessageLink }   from '@/site/Links.jsx'
 
 const CustomLayout = () =>
@@ -105,12 +102,12 @@ const CustomLayout = () =>
     <p>
       Here&apos;s the implementation of the <code>Toppings</code> component.
     </p>
-    <Split>
-      <CodeBlock
-        code={prepareCode(ToppingsSrc)}
-        caption="Toppings"
-        expand
-      />
+    <Source
+      code={ToppingsSrc}
+      caption="Toppings"
+      language="jsx"
+      expand
+    >
       <div>
         <p>
           On line 8 we call <code>useField()</code> to get the current field{' '}
@@ -140,15 +137,16 @@ const CustomLayout = () =>
           <code>Summary</code> component.
         </p>
       </div>
-    </Split>
+    </Source>
 
     <h2>Utility Functions</h2>
     <p>
       Here&apos;s the definitions for those utility functions.
     </p>
-    <CodeBlock
-      code={prepareCode(UtilsSrc)}
+    <Source
+      code={UtilsSrc}
       caption="Utils.js"
+      language="js"
       expand
     />
 
@@ -159,9 +157,10 @@ const CustomLayout = () =>
       custom <code>id</code>, <code>selected</code> flag and{' '}
       <code>select</code> function tailored to each option.
     </p>
-    <CodeBlock
-      code={prepareCode(OptionsSrc)}
+    <Source
+      code={OptionsSrc}
       caption="Options.jsx"
+      language="jsx"
       expand
     />
 
@@ -170,9 +169,10 @@ const CustomLayout = () =>
       The <code>Option</code> component simply renders a checkbox in a label
       using those properties.
     </p>
-    <CodeBlock
-      code={prepareCode(OptionSrc)}
+    <Source
+      code={OptionSrc}
       caption="Option.jsx"
+      language="jsx"
       expand
     />
 
@@ -181,9 +181,10 @@ const CustomLayout = () =>
       The <code>Summary</code> component displays a summary of the selected
       toppings.
     </p>
-    <CodeBlock
-      code={prepareCode(SummarySrc)}
+    <Source
+      code={SummarySrc}
       caption="Summary.jsx"
+      language="jsx"
       expand
     />
 
@@ -192,10 +193,10 @@ const CustomLayout = () =>
       And finally, here&apos;s the additional SCSS we&apos;re using to
       apply the styling.
     </p>
-    <CodeBlock
+    <Source
       code={PizzaCSS}
       caption="pizza.scss"
-      language="css"
+      language="scss"
       expand
     />
   </>

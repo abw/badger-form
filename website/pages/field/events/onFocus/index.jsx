@@ -1,10 +1,9 @@
 import React          from 'react'
 import OnFocus        from './_examples/OnFocus.jsx'
 import OnFocusSrc     from './_examples/OnFocus.jsx?raw'
-import Example        from '@/site/Example.jsx'
 import SeeAlso        from '@/site/SeeAlso.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
-import Split          from '@/site/Split.jsx'
+import { Example, Split }    from '@abw/badger-website'
 import {
   FieldLink, FieldOnBlurLink, FieldOnChangeLink,
   FieldOnInvalidLink, FieldOnValidLink

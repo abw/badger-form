@@ -1,8 +1,10 @@
 import React    from 'react'
 import Size     from './_examples/Size.jsx'
 import SizeSrc  from './_examples/Size.jsx?raw'
-import Example  from '@/site/Example.jsx'
-import { FieldClassNameLink, FieldPrefixLink, FieldSuffixLink, TextInputInlineLink } from '@/website/site/Links.jsx'
+import { Example } from '@abw/badger-website'
+import {
+  FieldClassNameLink, FieldPrefixLink, FieldSuffixLink, TextInputInlineLink
+} from '@/website/site/Links.jsx'
 
 const TextExamples = () =>
   <>

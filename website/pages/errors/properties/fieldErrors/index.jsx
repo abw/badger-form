@@ -1,9 +1,8 @@
 import React      from 'react'
 import Errors     from './_examples/Errors.jsx'
 import ErrorsSrc  from './_examples/Errors.jsx?raw'
-import Example    from '@/site/Example.jsx'
-import Split      from '@/site/Split.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 
 const ErrorsExamples = () =>
   <>

@@ -1,12 +1,14 @@
 import React       from 'react'
-import ResetPager  from '@/site/Pager/ResetPager.jsx'
-import { Outlet }  from 'react-router-dom'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const ResetPropertiesLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Reset Properties</h1>
     <Outlet/>
-    <ResetPager/>
-  </div>
+  </>
 
 export default ResetPropertiesLayout

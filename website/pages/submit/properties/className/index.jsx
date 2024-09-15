@@ -1,7 +1,7 @@
 import React        from 'react'
-import Example      from '@/site/Example.jsx'
 import ClassName    from './_examples/ClassName.jsx'
 import ClassNameSrc from './_examples/ClassName.jsx?raw'
+import { Example }  from '@abw/badger-website'
 
 const ClassNameExamples = () =>
   <>

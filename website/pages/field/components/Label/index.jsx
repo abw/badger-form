@@ -1,7 +1,7 @@
 import React         from 'react'
 import Label         from './_examples/Label.jsx'
 import LabelSrc      from './_examples/Label.jsx?raw'
-import Example       from '@/site/Example.jsx'
+import { Example }   from '@abw/badger-website'
 import { FieldLink } from '@/site/Links.jsx'
 
 const LabelExamples = () =>

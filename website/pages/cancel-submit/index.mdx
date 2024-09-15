@@ -1,0 +1,22 @@
+import React                from 'react'
+import CancelSubmit         from './_examples/CancelSubmit.jsx'
+import CancelSubmitSrc      from './_examples/CancelSubmit.jsx?raw'
+import { Example }          from '@abw/badger-website'
+import { SubmitLink }       from '@/site/Links.jsx'
+
+# CancelSubmit
+
+<div className="intro">
+  Renders a cancel button and a <SubmitLink/> button.
+</div>
+
+This example shows how you might want to toggle between "view" and "edit"
+mode.  Click on the edit button to start editing. The cancel button will then
+switch back to view mode without saving any changes
+
+<Example
+  Component={CancelSubmit}
+  code={CancelSubmitSrc}
+  caption="CancelSubmit"
+  expand
+/>

@@ -1,0 +1,46 @@
+import Suggest            from '@/site/Suggest.jsx'
+import Debugging          from './_examples/Debugging.jsx'
+import DebuggingSrc       from './_examples/Debugging.jsx?raw'
+import { Example, Split } from '@abw/badger-website'
+import { DebugLink, FormDebugLink, FieldLink, FieldsLink, FormLink } from '@/site/Links.jsx'
+
+# Debugging
+
+<div className="intro">
+  Let't face it, things don't always work right first time,
+  so being able to debug your forms is an important requirement.
+</div>
+
+## `Debug` Component and `debug` Property
+
+<Split align="end">
+  <div>
+    The <DebugLink/> component can be added to a form to display information
+    about the form values and other state variables.  By default it shows
+    only the form values, but you can use the `status` option to
+    also show the form status.  If for some reason you don't want to
+    see the values you can set `values` to `false`.
+
+    If you add the <FormDebugLink/> property to a <FormLink/> or{' '}
+    <FieldLink/> then it will enable debugging messages for that component.
+    These will be output to the Javascript console.  Any properties (like{' '}
+    `debug`) that are passed to the <FieldsLink/> component will
+    be forwarded onto the respective <FieldLink/> components, so it works
+    there too.
+  </div>
+  <Suggest>
+    Try changing some of the values in the form.  Watch the form values
+    and status change in the debugging panel.  Also check out the
+    Javascript console for further debugging messages.
+  </Suggest>
+</Split>
+
+<Example
+  Component={Debugging}
+  code={DebuggingSrc}
+  caption="Debugging"
+/>
+
+## Where Next?
+
+On the next page we'll look at how you can define your own field layout.

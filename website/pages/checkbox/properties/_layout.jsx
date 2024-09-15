@@ -1,12 +1,14 @@
-import React          from 'react'
-import CheckboxPager  from '@/site/Pager/CheckboxPager.jsx'
-import { Outlet }     from 'react-router-dom'
+import React      from 'react'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const CheckboxPropertiesLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Checkbox Properties</h1>
     <Outlet/>
-    <CheckboxPager/>
-  </div>
+  </>
 
 export default CheckboxPropertiesLayout

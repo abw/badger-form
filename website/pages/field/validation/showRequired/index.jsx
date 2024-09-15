@@ -3,8 +3,8 @@ import ShowRequired         from './_examples/ShowRequired.jsx'
 import ShowRequiredSrc      from './_examples/ShowRequired.jsx?raw'
 import ShowRequiredForm     from './_examples/ShowRequiredForm.jsx'
 import ShowRequiredFormSrc  from './_examples/ShowRequiredForm.jsx?raw'
-import Example              from '@/site/Example.jsx'
 import SeeAlso              from '@/site/SeeAlso.jsx'
+import { Example }          from '@abw/badger-website'
 import { FieldLink, FieldOptionalLabelLink, FieldRequiredLabelLink, FieldRequiredLink, FieldShowOptionalLink, FormLink } from '@/site/Links.jsx'
 
 const ShowRequiredExample = () =>

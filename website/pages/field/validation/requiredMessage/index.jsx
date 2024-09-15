@@ -1,10 +1,9 @@
 import React              from 'react'
 import RequiredMessageSrc from './_examples/RequiredMessage.jsx?raw'
 import RequiredMessage    from './_examples/RequiredMessage.jsx'
-import Example            from '@/site/Example.jsx'
 import SeeAlso            from '@/site/SeeAlso.jsx'
-import Split              from '@/site/Split.jsx'
 import TryItOut           from '@/site/TryItOut.jsx'
+import { Example, Split }    from '@abw/badger-website'
 import {
   FieldLink, FieldRequiredLabelLink, FieldRequiredLink,
   FieldShowRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink,

@@ -1,7 +1,7 @@
-import React    from 'react'
-import Example  from '@/site/Example.jsx'
-import Space    from './_examples/Space.jsx'
-import SpaceSrc from './_examples/Space.jsx?raw'
+import React       from 'react'
+import Space       from './_examples/Space.jsx'
+import SpaceSrc    from './_examples/Space.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const ResetSubmitExamples = () =>
   <>

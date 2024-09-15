@@ -1,0 +1,39 @@
+import React      from 'react'
+import Debug      from './_examples/Debug.jsx'
+import DebugSrc   from './_examples/Debug.jsx?raw'
+import TryItOut   from '@/site/TryItOut.jsx'
+import SeeAlso    from '@/site/SeeAlso.jsx'
+import { FormDebugLink } from '@/site/Links.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+# Debug
+
+<div className="intro">
+  The `Debug` component can be used in development to debug your form.
+</div>
+
+<Split>
+  <p>
+    In the words of Robert "Mr T" Burns: *"The best laid schemes of mice and
+    men gang aft a-gley, and I pity the fool who doesn't have some good
+    debugging tools on hand for when things go a bit pear-shaped"*.
+    The example below shows the default behaviour which is to display the
+    form values.
+  </p>
+  <TryItOut>
+    Try updating the form values and see how the debugging data changes.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Debug}
+  code={DebugSrc}
+  caption="Debug"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FormDebugLink
+  ]}
+/>

@@ -1,10 +1,9 @@
 import React      from 'react'
 import Any        from './_examples/Any.jsx'
 import AnySrc     from './_examples/Any.jsx?raw'
-import Example    from '@/site/Example.jsx'
 import TryItOut   from '@/site/TryItOut.jsx'
-import Split      from '@/site/Split.jsx'
 import { DebugLink } from '@/website/site/Links.jsx'
+import { Example, Split } from '@abw/badger-website'
 
 const StatusExamples = () =>
   <>

@@ -1,0 +1,37 @@
+import React      from 'react'
+import SuffixSrc  from './_examples/Suffix.jsx?raw'
+import Suffix     from './_examples/Suffix.jsx'
+import BothSrc    from './_examples/Both.jsx?raw'
+import Both       from './_examples/Both.jsx'
+import SeeAlso    from '@/site/SeeAlso.jsx'
+import { Example } from '@abw/badger-website'
+import { FieldPrefixLink } from '@/website/site/Links.jsx'
+
+## `suffix`
+
+The `suffix` property can be used to a a suffix to a field.
+This can be text, an SVG icon or other JSX fragment.
+
+<Example
+  Component={Suffix}
+  code={SuffixSrc}
+  caption="suffix" expand
+/>
+
+The `suffixClass` property can be used to set a CSS class
+for the suffix.  Badger CSS provides two built in styles: {' '}
+`lined` to add a dividing line, and `shaded` to
+add some background shading.
+
+<Example
+  Component={Both}
+  code={BothSrc}
+  caption="prefix and suffix"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldPrefixLink
+  ]}
+/>

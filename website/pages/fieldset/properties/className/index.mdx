@@ -1,0 +1,29 @@
+import React        from 'react'
+import ClassName    from './_examples/ClassName.jsx'
+import ClassNameSrc from './_examples/ClassName.jsx?raw'
+import FieldsetCSS  from './_examples/fieldset.css?raw'
+import { Example, Source }  from '@abw/badger-website'
+
+## `className`
+
+The `className` property can be used to add a CSS class to
+the fieldset container.
+
+<Example
+  Component={ClassName}
+  code={ClassNameSrc}
+  caption="Fieldset className"
+  expand
+/>
+
+## Additional Styles
+
+For completeness, here's the additional CSS we're using to apply the styling
+in the above example.
+
+<Source
+  code={FieldsetCSS}
+  caption="fieldset.scss"
+  language="scss"
+  expand
+/>

@@ -1,7 +1,7 @@
-import React            from 'react'
-import OptionsClass     from './_examples/OptionsClass.jsx'
-import OptionsClassSrc  from './_examples/OptionsClass.jsx?raw'
-import Example          from '@/site/Example.jsx'
+import React           from 'react'
+import OptionsClass    from './_examples/OptionsClass.jsx'
+import OptionsClassSrc from './_examples/OptionsClass.jsx?raw'
+import { Example }     from '@abw/badger-website'
 
 const RadioExample = () =>
   <>

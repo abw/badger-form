@@ -1,7 +1,7 @@
 import React          from 'react'
 import InputClass     from './_examples/InputClass.jsx'
 import InputClassSrc  from './_examples/InputClass.jsx?raw'
-import Example        from '@/site/Example.jsx'
+import { Example }    from '@abw/badger-website'
 
 const CheckboxExample = () =>
   <>

@@ -1,7 +1,7 @@
-import React          from 'react'
-import Border         from './_examples/Border.jsx'
-import BorderSrc      from './_examples/Border.jsx?raw'
-import Example        from '@/site/Example.jsx'
+import React       from 'react'
+import Border      from './_examples/Border.jsx'
+import BorderSrc   from './_examples/Border.jsx?raw'
+import { Example } from '@abw/badger-website'
 import { RadioOptionClassLink, RadioOptionsClassLink } from '@/website/site/Links.jsx'
 
 const RadioExample = () =>

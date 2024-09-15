@@ -1,0 +1,15 @@
+import FunctionsSrc   from './_examples/Functions.jsx?raw'
+import Functions      from './_examples/Functions.jsx'
+import { Example } from '@abw/badger-website'
+
+## `children`
+
+You can define children of a form, either as components or functions.
+Components can access the form context via `useForm`.
+Functions receive the form context as the first argument.
+
+<Example
+  Component={Functions}
+  code={FunctionsSrc}
+  caption="children" expand
+/>

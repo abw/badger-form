@@ -1,7 +1,7 @@
-import React    from 'react'
-import Rows     from './_examples/Rows.jsx'
-import RowsSrc  from './_examples/Rows.jsx?raw'
-import Example  from '@/site/Example.jsx'
+import React       from 'react'
+import Rows        from './_examples/Rows.jsx'
+import RowsSrc     from './_examples/Rows.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const TextAreaExamples = () =>
   <>

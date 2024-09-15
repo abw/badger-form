@@ -1,0 +1,56 @@
+import FormFocusSrc     from './_examples/FormFocus.jsx?raw'
+import FormFocus        from './_examples/FormFocus.jsx'
+import UseFormFocusSrc  from './_examples/UseFormFocus.jsx?raw'
+import UseFormFocus     from './_examples/UseFormFocus.jsx'
+import FocusButtonSrc   from './_examples/FocusButton.jsx?raw'
+import TryItOut         from '@/site/TryItOut.jsx'
+import { Example, Split, Source }    from '@abw/badger-website'
+import { FieldLink, FormLink, FormOnLoadLink } from '@/site/Links.jsx'
+
+## `setFocus()`
+
+<Split align="end">
+  <div>
+    You can programmatically set the focus on a <FieldLink/> by calling
+    the `setFocus()` method on the <FormLink/>, passing the
+    name of the field that you want to focus as an argument.
+
+    You can capture a reference to the form using the <FormOnLoadLink/>{' '}
+    property to set a state variable, as shown in this example.
+  </div>
+  <TryItOut>
+    Click on one of the buttons to focus on a field.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={FormFocus}
+  code={FormFocusSrc}
+  caption="onLoad() and setFocus()"
+/>
+
+## `useForm`
+
+If the buttons (or other controls) that you want to use to focus
+the fields are contained within the <FormLink/> then you can
+call the `useForm()` function to gain access to the form
+context.
+
+<Example
+  Component={UseFormFocus}
+  code={UseFormFocusSrc}
+  caption="useForm() and setFocus()"
+/>
+
+## Preventing Default Event
+
+<Source
+  code={FocusButtonSrc}
+  expand
+>
+  Be careful to make sure that your buttons call{' '}
+  `e.preventDefault()` on the event, as shown in the example
+  above, otherwise the form may be submitted.  Alternately you can pass
+  the event to the `setFocus()` method as the second argument
+  and it will do it for you, as shown below.
+</Source>

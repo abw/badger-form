@@ -1,7 +1,7 @@
 import React          from 'react'
 import Placeholder    from './_examples/Placeholder.jsx'
 import PlaceholderSrc from './_examples/Placeholder.jsx?raw'
-import Example        from '@/site/Example.jsx'
+import { Example }    from '@abw/badger-website'
 
 const TextAreaExamples = () =>
   <>

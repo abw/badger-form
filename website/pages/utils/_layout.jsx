@@ -1,12 +1,14 @@
 import React      from 'react'
-import UtilsPager from '@/site/Pager/UtilsPager.jsx'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const UtilsLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Utilities</h1>
     <Outlet/>
-    <UtilsPager/>
-  </div>
+  </>
 
 export default UtilsLayout

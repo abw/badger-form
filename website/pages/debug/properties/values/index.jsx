@@ -1,7 +1,7 @@
-import React      from 'react'
-import Example    from '@/site/Example.jsx'
-import Values     from './_examples/Values.jsx'
-import ValuesSrc  from './_examples/Values.jsx?raw'
+import React       from 'react'
+import Values      from './_examples/Values.jsx'
+import ValuesSrc   from './_examples/Values.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const DebugExamples = () =>
   <>

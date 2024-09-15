@@ -1,0 +1,23 @@
+import Reset      from './_examples/ResetOnSuccess.jsx'
+import ResetSrc   from './_examples/ResetOnSuccess.jsx?raw'
+import SeeAlso    from '@/site/SeeAlso.jsx'
+import { FormResetLink, FormUnvalidateOnSuccessLink } from '@/site/Links.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `resetOnSuccess`
+
+The `resetOnSuccess` property can be set to automatically
+reset the form on successful submission.
+
+<Example
+  Component={Reset}
+  code={ResetSrc}
+  caption="resetOnSuccess" expand
+/>
+
+<SeeAlso
+  links={[
+    FormResetLink,
+    FormUnvalidateOnSuccessLink
+  ]}
+/>

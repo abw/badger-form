@@ -1,7 +1,7 @@
 import React      from 'react'
 import Changed    from './_examples/Changed.jsx'
 import ChangedSrc from './_examples/Changed.jsx?raw'
-import Example    from '@/site/Example.jsx'
+import { Example } from '@abw/badger-website'
 
 const StatusExamples = () =>
   <>

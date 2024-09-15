@@ -1,0 +1,43 @@
+import React            from 'react'
+import Reset            from './_examples/Reset.jsx'
+import ResetSrc         from './_examples/Reset.jsx?raw'
+import UseFormReset     from './_examples/UseFormReset.jsx'
+import UseFormResetSrc  from './_examples/UseFormReset.jsx?raw'
+import TryItOut         from '@/site/TryItOut.jsx'
+import SeeAlso from '@/website/site/SeeAlso.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FormResetOnSuccessLink, FormUnvalidateLink } from '@/website/site/Links.jsx'
+
+## `reset()`
+
+<Split>
+  You can programmatically reset a form by calling the the `reset()` method.
+
+  <TryItOut>
+    Enter some values in the fields and then click on the reset button.
+  </TryItOut>
+</Split>
+<Example
+  Component={Reset}
+  code={ResetSrc}
+  caption="reset"
+/>
+
+## `useForm`
+
+If the buttons (or other controls) that you want to use to reset the form are
+contained within the form then you can call the `useForm()` function to gain
+access to the form context.
+
+<Example
+  Component={UseFormReset}
+  code={UseFormResetSrc}
+  caption="useForm() and reset()"
+/>
+
+<SeeAlso
+  links={[
+    FormResetOnSuccessLink,
+    FormUnvalidateLink
+  ]}
+/>

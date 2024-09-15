@@ -1,0 +1,39 @@
+import Suggest        from '@/site/Suggest.jsx'
+import EditForm       from './_examples/EditForm.jsx'
+import EditFormSrc    from './_examples/EditForm.jsx?raw'
+import { Example, Split } from '@abw/badger-website'
+import {
+  DebugLink, FormHiddenLink, FormLink, FormValuesLink
+} from '@/site/Links.jsx'
+
+# Edit Form
+
+<div className="intro">
+  Another common use case for forms is in editing existing data records.
+</div>
+
+## `values`
+
+<Split>
+  You can pass the <FormValuesLink/> property to a <FormLink/> to
+  seed it with initial values for fields.  If there are additional
+  hidden values that you want to include when you submit the form then
+  you can provide them using the <FormHiddenLink/> property.
+
+  <Suggest>
+    Try changing some of the values in the form and then
+    click on the <b>Reset</b> button.  The fields will
+    reset to their original values.
+  </Suggest>
+</Split>
+
+<Example
+  Component={EditForm}
+  code={EditFormSrc}
+  caption="Edit Form"
+/>
+
+## Where Next?
+
+You've seen an example of the <DebugLink/> component in action.
+Now it's time to talk about debugging in a little more detail.

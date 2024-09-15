@@ -1,0 +1,46 @@
+import React         from 'react'
+import LabelSrc      from './_examples/Label.jsx?raw'
+import Label         from './_examples/Label.jsx'
+import FormFieldsSrc from './_examples/FormFields.jsx?raw'
+import FormFields    from './_examples/FormFields.jsx'
+import SeeAlso       from '@/site/SeeAlso.jsx'
+import Suggest       from '@/site/Suggest.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FieldLink, FieldNameLink, FormFieldsLink, FormLink } from '@/site/Links.jsx'
+
+## `label`
+
+Add a label to the field with the `label` property.
+
+<Example
+  Component={Label}
+  code={LabelSrc}
+  caption="name"
+  expand
+/>
+
+<Split>
+  Like all other field properties, they can be defined via <FormFieldsLink/>
+  on the <FormLink/>.  If you explicitly set a `label` on the
+  <FieldLink/> then it will take precedence.
+
+  <Suggest>
+    Note how the first field has the `label` defined in the
+    <FormFieldsLink/> but the second defines its own `label`
+    which is used instead of the one defined in the <FormFieldsLink/>.
+  </Suggest>
+</Split>
+
+<Example
+  Component={FormFields}
+  code={FormFieldsSrc}
+  caption="Form fields"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldNameLink,
+    FormFieldsLink
+  ]}
+/>

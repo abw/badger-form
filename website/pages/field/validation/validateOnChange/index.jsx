@@ -1,10 +1,9 @@
 import React          from 'react'
 import OnChangeSrc    from './_examples/OnChange.jsx?raw'
 import OnChange       from './_examples/OnChange.jsx'
-import Example        from '@/site/Example.jsx'
 import SeeAlso        from '@/site/SeeAlso.jsx'
-import Split          from '@/site/Split.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split }    from '@abw/badger-website'
 import { FieldMinValidateLengthLink, FieldRequiredLink, FieldValidateLink, FieldValidateOnBlurLink } from '@/site/Links.jsx'
 
 const ValidateOnChangeExamples = () =>

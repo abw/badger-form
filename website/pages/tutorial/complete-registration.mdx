@@ -1,0 +1,77 @@
+import { Example, Split } from '@abw/badger-website'
+import RegistrationForm     from './_examples/RegistrationForm.jsx'
+import RegistrationFormSrc  from './_examples/RegistrationForm.jsx?raw'
+import {
+  FieldLink, FieldsetLink, FormLink,
+  CheckboxInputLink, RadioInputLink, SelectInputLink, FieldTypeLink,
+  FieldShowOptionalLink, FieldShowRequiredLink, FieldOnChangeLink, RadioOptionsLink, SelectOptionsLink, CheckboxTextLink, FieldsetLegendLink
+} from '@/site/Links.jsx'
+
+# Complete Registration Form
+
+<div className="wide">
+  Here's a more complete (albeit rather contrived) example of a
+  user registration form.
+</div>
+
+## Input Types
+
+<Split>
+  <div>
+    This example demonstrates some of the other fields input types.
+
+    Set the <FieldLink/> <FieldTypeLink/> to <code>radio</code> for
+    a <RadioInputLink/> button input and provide some <RadioOptionsLink/>,
+    as shown here for the <code>experience</code> field.
+
+    Or set it to <code>select</code> for a <SelectInputLink/> input
+    and provide some <SelectOptionsLink/>, as shown in the <code>animal</code> field.
+  </div>
+  <div>
+    Set it to <code>checkbox</code> for a <CheckboxInputLink/> and
+    provide some <CheckboxTextLink/> to go alongside it.
+
+    You can also use the <FieldTypeLink/> to set other text input types,
+    like <code>number</code> and <code>date</code>.
+  </div>
+</Split>
+<Example
+  Component={RegistrationForm}
+  code={RegistrationFormSrc}
+  caption="Registration Form"
+/>
+
+## Components and Properties
+
+<dl>
+  <dt><FieldsetLink/> Component</dt>
+  <dd>
+    <p>
+      The example includes the <FieldsetLink/> component which can be used
+      to group fields together in a set, complete with a <FieldsetLegendLink/>.
+    </p>
+  </dd>
+  <dt><FieldShowRequiredLink/> and <FieldShowOptionalLink/></dt>
+  <dd>
+    <p>
+      The <FieldShowOptionalLink/> and <FieldShowRequiredLink/> properties
+      can be set on the <FormLink/> or individual <FieldLink/> components
+      to have an additional label displayed telling the user which fields
+      they do and don't need to complete.
+    </p>
+  </dd>
+  <dt><FieldOnChangeLink/></dt>
+  <dd>
+    <p>
+      The <FieldOnChangeLink/> property can be added to a <FieldLink/> to
+      watch for changes in the field value.  You can see it in use above in
+      the <code>color</code> field.
+    </p>
+  </dd>
+</dl>
+
+## Where Next?
+
+There's a lot to take in there.  For the next example we'll scale things back
+a bit and look at the common case where you want to edit some existing data
+using a form.

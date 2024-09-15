@@ -1,0 +1,29 @@
+import React       from 'react'
+import Errors      from './_examples/Errors.jsx'
+import ErrorsSrc   from './_examples/Errors.jsx?raw'
+import TryItOut    from '@/site/TryItOut.jsx'
+import ErrorsPager from '@/site/Pager/ErrorsPager.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+# Errors
+
+<div className="intro">
+  The `Errors` component can be used to display any form
+  validation errors.
+</div>
+
+<Split>
+  <p>
+    A typical example is shown below.
+  </p>
+  <TryItOut>
+    Try submitting the form without entering anything.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Errors}
+  code={ErrorsSrc}
+  caption="Errors"
+  expand
+/>

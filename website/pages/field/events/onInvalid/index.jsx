@@ -1,10 +1,9 @@
 import React        from 'react'
 import OnInvalid    from './_examples/OnInvalid.jsx'
 import OnInvalidSrc from './_examples/OnInvalid.jsx?raw'
-import Example      from '@/site/Example.jsx'
 import SeeAlso      from '@/site/SeeAlso.jsx'
-import Split        from '@/site/Split.jsx'
 import TryItOut     from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import {
   FieldLink, FormLink, FieldRequiredLink, FieldRequiredMessageLink,
   FieldValidateOnBlurLink, FieldValidateLink, FieldOnBlurLink,

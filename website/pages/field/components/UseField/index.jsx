@@ -1,9 +1,9 @@
-import React               from 'react'
-import Children            from './_examples/Children.jsx'
-import ChildrenSrc         from './_examples/Children.jsx?raw'
-import UFExample           from './_examples/UFExample.jsx'
-import UFExampleSrc        from './_examples/UFExample.jsx?raw'
-import Example             from '@/site/Example.jsx'
+import React        from 'react'
+import Children     from './_examples/Children.jsx'
+import ChildrenSrc  from './_examples/Children.jsx?raw'
+import UFExample    from './_examples/UFExample.jsx'
+import UFExampleSrc from './_examples/UFExample.jsx?raw'
+import { Example }  from '@abw/badger-website'
 import { FieldChildrenLink, FieldLink, FieldLayoutLink } from '@/site/Links.jsx'
 
 const UseFieldExamples = () =>

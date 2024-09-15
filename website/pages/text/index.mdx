@@ -1,0 +1,22 @@
+import React       from 'react'
+import Input       from './_examples/Input.jsx'
+import InputSrc    from './_examples/Input.jsx?raw'
+import { Example } from '@abw/badger-website'
+import { FieldLink, FieldTypeLink } from '@/site/Links.jsx'
+
+# Input Types
+
+## `text`
+
+<div className="intro">
+  The `text` input is the default <FieldTypeLink/> for a <FieldLink/>.  You
+  can specify it explicitly if you like, but it's entirely optional.
+</div>
+
+<Example
+  Component={Input}
+  code={InputSrc}
+  caption="text"
+  undent={2}
+  expand
+/>

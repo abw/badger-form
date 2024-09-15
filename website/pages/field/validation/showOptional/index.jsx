@@ -1,8 +1,8 @@
 import React            from 'react'
 import ShowOptional     from './_examples/ShowOptional.jsx'
 import ShowOptionalSrc  from './_examples/ShowOptional.jsx?raw'
-import Example          from '@/site/Example.jsx'
 import SeeAlso          from '@/site/SeeAlso.jsx'
+import { Example }    from '@abw/badger-website'
 import {
   FieldLink, FieldOptionalLabelLink, FieldRequiredLabelLink,
   FieldRequiredLink, FieldShowRequiredLink, FormLink

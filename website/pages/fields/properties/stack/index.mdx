@@ -1,0 +1,17 @@
+import React      from 'react'
+import Stack      from './_examples/FieldsStack.jsx'
+import StackSrc   from './_examples/FieldsStack.jsx?raw'
+import { Example } from '@abw/badger-website'
+
+## `stack`
+
+The `stack` property can be used to define a stacking breakpoint.  This will
+add the corresponding `stack-XXX` CSS class.  Try resizing your browser window
+to see the effect.  With a width of less than 800px, the fields will be
+stacked, otherwise they will be displayed in three columns.
+
+<Example
+  Component={Stack}
+  code={StackSrc}
+  caption="stack"
+/>

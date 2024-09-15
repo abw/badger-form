@@ -1,4 +1,4 @@
-import React          from 'react'
+import React from 'react'
 import { FieldValidateOnBlurLink, FieldValidateOnChangeLink } from '@/site/Links.jsx'
 
 const ValidateOnInvalidExamples = () =>

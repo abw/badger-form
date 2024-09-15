@@ -6,11 +6,8 @@ import PictureFormSrc  from './_examples/PictureForm.jsx?raw'
 import PictureInputSrc from './_examples/PictureInput.jsx?raw'
 import PictureSrc      from './_examples/Picture.jsx?raw'
 import AnimalsCSS      from './_examples/animals.css?raw'
-import Example         from '@/site/Example.jsx'
-import CodeBlock       from '@/site/CodeBlock.jsx'
-import Split           from '@/site/Split.jsx'
 import Suggest         from '@/site/Suggest.jsx'
-import { prepareCode } from '@/site/CodeBlock.jsx'
+import { Example, Split, Source } from '@abw/badger-website'
 import { FieldLayoutLink } from '@/website/site/Links.jsx'
 
 const InputExamples = () =>
@@ -60,9 +57,10 @@ const InputExamples = () =>
     />
     <h2>The <code>PictureInput</code> Component</h2>
     <Split>
-      <CodeBlock
-        code={prepareCode(PictureInputSrc)}
+      <Source
+        code={PictureInputSrc}
         caption="PictureInput"
+        language="jsx"
         expand
       />
       <div>
@@ -84,9 +82,10 @@ const InputExamples = () =>
 
     <h2>The <code>Picture</code> Component</h2>
     <Split>
-      <CodeBlock
-        code={prepareCode(PictureSrc)}
+      <Source
+        code={PictureSrc}
         caption="Picture"
+        language="jsx"
         expand
       />
       <p>
@@ -101,7 +100,7 @@ const InputExamples = () =>
 
     <h2>Additional Styles</h2>
     <Split>
-      <CodeBlock
+      <Source
         code={AnimalsCSS}
         caption="animals.css"
         language="css"

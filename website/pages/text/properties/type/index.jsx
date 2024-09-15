@@ -1,7 +1,7 @@
 import React    from 'react'
 import Type     from './_examples/Type.jsx'
 import TypeSrc  from './_examples/Type.jsx?raw'
-import Example  from '@/site/Example.jsx'
+import { Example } from '@abw/badger-website'
 import { FieldTypeLink } from '@/website/site/Links.jsx'
 
 const TextExamples = () =>

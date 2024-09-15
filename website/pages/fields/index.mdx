@@ -1,0 +1,24 @@
+import Fields       from './_examples/Fields.jsx'
+import FieldsSrc    from './_examples/Fields.jsx?raw'
+import { Example, Split } from '@abw/badger-website'
+import { FieldsNamesLink } from '@/site/Links.jsx'
+
+# Fields
+
+<div className="intro">
+  The `Fields` component can be used to render multiple fields.
+</div>
+
+This is a shortcut for convenience, but it depends on you having all
+your form fields defined in a separate schema so you can reference them
+only by name.
+
+The <FieldsNamesLink/> property should be used to
+specify the list of field names.  It renders each of the fields,
+collected together in a single `div` element.
+
+<Example
+  Component={Fields}
+  code={FieldsSrc}
+  caption="Fields"
+/>

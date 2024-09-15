@@ -3,10 +3,9 @@ import SetValueSrc      from './_examples/SetValue.jsx?raw'
 import SetValue         from './_examples/SetValue.jsx'
 import SetValueEventSrc from './_examples/SetValueEvent.jsx?raw'
 import SetValueEvent    from './_examples/SetValueEvent.jsx'
-import Example          from '@/site/Example.jsx'
 import SeeAlso          from '@/site/SeeAlso.jsx'
-import Split            from '@/site/Split.jsx'
 import TryItOut         from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import {
   FieldResetLink, FormLink, FormSetValuesLink, FieldOnLoadLink
 } from '@/site/Links.jsx'

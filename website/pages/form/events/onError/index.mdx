@@ -1,0 +1,24 @@
+import OnError    from './_examples/OnError.jsx'
+import OnErrorSrc from './_examples/OnError.jsx?raw'
+import SeeAlso    from '@/site/SeeAlso.jsx'
+import { FormOnSubmitLink, FormOnSuccessLink } from '@/site/Links.jsx'
+import { Example } from '@abw/badger-website'
+
+## `onError`
+
+The `onError` property can be used to define a function
+that will be called in the event of a failed submission of the
+form.
+
+<Example
+  Component={OnError}
+  code={OnErrorSrc}
+  caption="onError"
+/>
+
+<SeeAlso
+  links={[
+    FormOnSubmitLink,
+    FormOnSuccessLink
+  ]}
+/>

@@ -1,7 +1,7 @@
-import React      from 'react'
-import Example    from '@/site/Example.jsx'
+import React    from 'react'
 import Text     from './_examples/Text.jsx'
 import TextSrc  from './_examples/Text.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const SubmitExamples = () =>
   <>

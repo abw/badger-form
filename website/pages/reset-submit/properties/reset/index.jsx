@@ -1,7 +1,7 @@
-import React      from 'react'
-import Example    from '@/site/Example.jsx'
-import Reset      from './_examples/Reset.jsx'
-import ResetSrc   from './_examples/Reset.jsx?raw'
+import React         from 'react'
+import Reset         from './_examples/Reset.jsx'
+import ResetSrc      from './_examples/Reset.jsx?raw'
+import { Example }   from '@abw/badger-website'
 import { ResetLink } from '@/site/Links.jsx'
 
 const ResetSubmitExamples = () =>

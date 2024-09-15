@@ -1,0 +1,85 @@
+import React            from 'react'
+import Passwords        from './_examples/Passwords.jsx'
+import PasswordsSrc     from './_examples/Passwords.jsx?raw'
+import Advanced         from './_examples/Advanced.jsx'
+import AdvancedSrc      from './_examples/Advanced.jsx?raw'
+import TryItOut         from '@/site/TryItOut.jsx'
+import SeeAlso          from '@/site/SeeAlso.jsx'
+import { ErrorsLink, FormResetLink, FieldValidateLink } from '@/site/Links.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `validate`
+
+The `validate` property can be used to provide a validation
+function for all the form data.  You can also define <FieldValidateLink/>
+function on individual fields.  The form validation will be run after
+all the fields have validated successfully.  If any individual fields
+fail validation then the form validation is not run.
+
+## Simple Example
+
+<Split>
+  <div>
+    The `validate` function is passed the form values as the
+    first argument.
+
+    If the form validation fails then the function
+    should return a rejected promise.  The rejected value should be an
+    object containing either an `error` message, used to
+    indicate a generic error and/or an array of `errors` to
+    indicate errors in particular fields.
+
+    If the validation passes then
+    the function should return a resolved promise with the form values.
+    The form values can be modified or augmented by the function.
+  </div>
+  <div>
+    You should include the <ErrorsLink/> component somewhere in your
+    form to report any validation errors.  In this example we're
+    setting the `fieldErrors` property to `false`
+    so that the component only displays the generic `error`.
+    The separate field `errors` are already being displayed
+    beneath each field input.
+    <TryItOut>
+      Try entering two different passwords in the form below then click
+      on the Submit button.
+    </TryItOut>
+  </div>
+</Split>
+
+<Example
+  Component={Passwords}
+  code={PasswordsSrc}
+  caption="Form Validation"
+/>
+
+## More Advanced Example
+
+<Split align="end">
+  <div>
+    The `validate` function is passed the form context as
+    the second argument.  In this example we call the <FormResetLink/>
+    method to reset the form if the passwords don't match.
+
+    Also note that in this example we're trimming any whitespace
+    from the passwords and, if they match, we return a single
+    `password` value in the submission values.
+  </div>
+  <TryItOut>
+    Try entering two passwords in the fields below then click on the
+    submit button.  Additional leading and trailing whitespace on the
+    passwords is removed.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Advanced}
+  code={AdvancedSrc}
+  caption="Form Validation"
+/>
+
+<SeeAlso
+  links={[
+    FieldValidateLink
+  ]}
+/>

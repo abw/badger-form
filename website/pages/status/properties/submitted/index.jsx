@@ -1,9 +1,8 @@
 import React          from 'react'
 import Submitted      from './_examples/Submitted.jsx'
 import SubmittedSrc   from './_examples/Submitted.jsx?raw'
-import Example        from '@/site/Example.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
-import Split          from '@/site/Split.jsx'
+import { Example, Split } from '@abw/badger-website'
 
 const StatusExamples = () =>
   <>

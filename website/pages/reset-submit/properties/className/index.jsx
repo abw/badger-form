@@ -1,8 +1,7 @@
 import React        from 'react'
-import Example      from '@/site/Example.jsx'
 import ClassName    from './_examples/ClassName.jsx'
 import ClassNameSrc from './_examples/ClassName.jsx?raw'
-import Split        from '@/site/Split.jsx'
+import { Example, Split }  from '@abw/badger-website'
 import { ResetGapLink, ResetSizeLink, ResetSpaceLink } from '@/site/Links.jsx'
 
 const ClassNameExamples = () =>

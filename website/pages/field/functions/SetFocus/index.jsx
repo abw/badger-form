@@ -1,10 +1,9 @@
 import React        from 'react'
 import SetFocusSrc  from './_examples/SetFocus.jsx?raw'
 import SetFocus     from './_examples/SetFocus.jsx'
-import Example      from '@/site/Example.jsx'
 import SeeAlso      from '@/site/SeeAlso.jsx'
-import Split        from '@/site/Split.jsx'
 import TryItOut     from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 import { FormLink, FormSetFocusLink, FieldOnLoadLink, FieldOnFocusLink, FieldOnBlurLink } from '@/site/Links.jsx'
 
 const SetFocusExamples = () =>

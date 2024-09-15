@@ -1,0 +1,17 @@
+import React      from 'react'
+import Gap        from './_examples/FieldsGap.jsx'
+import GapSrc     from './_examples/FieldsGap.jsx?raw'
+import { Example } from '@abw/badger-website'
+import { FieldsGridLink } from '@/website/site/Links.jsx'
+
+## `gap`
+
+The `gap` property can be used to set a custom horizontal gap between fields
+when the <FieldsGridLink/> option is set.  The value should be an integer
+number of margin units of 0.25rem. The default value is 4 (1rem).
+
+<Example
+  Component={Gap}
+  code={GapSrc}
+  caption="gap"
+/>

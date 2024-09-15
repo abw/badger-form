@@ -1,7 +1,7 @@
-import React    from 'react'
-import Example  from '@/site/Example.jsx'
-import Title    from './_examples/Title.jsx'
-import TitleSrc from './_examples/Title.jsx?raw'
+import React       from 'react'
+import Title       from './_examples/Title.jsx'
+import TitleSrc    from './_examples/Title.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const DebugExamples = () =>
   <>

@@ -1,7 +1,7 @@
 import React    from 'react'
-import Example  from '@/site/Example.jsx'
 import Color    from './_examples/Color.jsx'
 import ColorSrc from './_examples/Color.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const DebugExamples = () =>
   <>

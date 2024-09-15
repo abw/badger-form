@@ -1,8 +1,8 @@
 import React        from 'react'
 import Optional     from './_examples/Optional.jsx'
 import OptionalSrc  from './_examples/Optional.jsx?raw'
-import Example      from '@/site/Example.jsx'
 import SeeAlso      from '@/site/SeeAlso.jsx'
+import { Example }    from '@abw/badger-website'
 import { FieldOptionalLabelLink, FieldRequiredLink, FieldShowOptionalLink, FieldValidateLink } from '@/website/site/Links.jsx'
 
 const OptionalExample = () =>

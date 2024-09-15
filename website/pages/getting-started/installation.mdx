@@ -1,0 +1,52 @@
+import { Snippet } from '@abw/badger-website'
+import { BadgerCSSLink } from '@/site/Links.jsx'
+
+# Getting Started
+
+## Add the Module
+
+Add the `@abw/badger-form` module to your project using your favourite package
+manager.
+
+<Snippet
+  file="getting-started/add.bash"
+  expand
+/>
+
+## Import the Components
+
+You can then import the form components and start using them.
+
+<Snippet
+  file="getting-started/use.jsx"
+  caption="Importing"
+  expand
+/>
+
+## Import the CSS
+
+Badger Form works out of the box with the form styles provided by
+<BadgerCSSLink/>.  If you're already using Badger CSS then you don't need to
+do anything else as you should already have something like this in your app.
+
+<Snippet
+  file="getting-started/badger-css.jsx"
+  caption="Importing Badger CSS"
+  expand
+/>
+
+If you're not already using Badger CSS then you'll need to import the relevant
+CSS styles. As a convenience, they're bundled with this module.  Note that you
+only need to import **either** the Badger CSS styles as shown above, **or**
+the Badger Form styles as shown below.
+
+The precise details on how you import the CSS will vary depending on what
+framework and bundler you're using.  For a React app using Vite or running
+under Next.js, for example, you can add the CSS file to your main application
+script like so:
+
+<Snippet
+  file="getting-started/badger-form-css.jsx"
+  caption="Importing Badger Form CSS"
+  expand
+/>

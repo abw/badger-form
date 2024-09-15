@@ -1,0 +1,31 @@
+import React      from 'react'
+import Grid       from './_examples/FieldsGrid.jsx'
+import GridSrc    from './_examples/FieldsGrid.jsx?raw'
+import Auto       from './_examples/FieldsGridAuto.jsx'
+import AutoSrc    from './_examples/FieldsGridAuto.jsx?raw'
+import { Example } from '@abw/badger-website'
+import { BadgerCSSLink } from '@/site/Links.jsx'
+
+## `grid`
+
+The `grid` property can be used to layout the fields in a grid.  Set the
+property to the number of columns you want.  The default gap between the
+fields will be 1rem (using the `gap-h-4` utility class provided by
+<BadgerCSSLink path="utilities/spacing"/>.
+
+<Example
+  Component={Grid}
+  code={GridSrc}
+  caption="grid"
+/>
+
+You can also specify `grid` as the boolean value `true` (which React will
+conveniently set for you if you include it as a valueless property) and it
+will automatically select the correct number of columns based on how many
+fields it is rendering.
+
+<Example
+  Component={Auto}
+  code={AutoSrc}
+  caption="grid"
+/>

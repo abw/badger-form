@@ -1,12 +1,14 @@
 import React      from 'react'
-import DebugPager from '@/site/Pager/DebugPager.jsx'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const DebugPropertiesLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Debug Properties</h1>
     <Outlet/>
-    <DebugPager/>
-  </div>
+  </>
 
 export default DebugPropertiesLayout

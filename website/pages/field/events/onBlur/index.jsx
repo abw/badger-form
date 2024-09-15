@@ -1,10 +1,9 @@
 import React         from 'react'
 import OnBlur        from './_examples/OnBlur.jsx'
 import OnBlurSrc     from './_examples/OnBlur.jsx?raw'
-import Example       from '@/site/Example.jsx'
 import SeeAlso       from '@/site/SeeAlso.jsx'
-import Split         from '@/site/Split.jsx'
 import TryItOut      from '@/site/TryItOut.jsx'
+import { Example, Split }    from '@abw/badger-website'
 import {
   FieldLink, FieldOnChangeLink, FieldOnFocusLink, FieldOnInvalidLink,
   FieldOnValidLink, FieldValidateOnBlurLink

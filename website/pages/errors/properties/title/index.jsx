@@ -5,9 +5,8 @@ import NoTitle    from './_examples/NoTitle.jsx'
 import NoTitleSrc from './_examples/NoTitle.jsx?raw'
 import TitleFn    from './_examples/TitleFn.jsx'
 import TitleFnSrc from './_examples/TitleFn.jsx?raw'
-import Example    from '@/site/Example.jsx'
-import Split      from '@/site/Split.jsx'
-import TryItOut from '@/website/site/TryItOut.jsx'
+import TryItOut   from '@/website/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
 
 const ErrorsExamples = () =>
   <>

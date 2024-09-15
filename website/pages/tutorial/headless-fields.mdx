@@ -1,0 +1,68 @@
+import { Example }              from '@abw/badger-website'
+import TutorialPager            from '@/site/Pager/Tutorial.jsx'
+import HeadlessFields           from './_examples/HeadlessFields.jsx'
+import HeadlessFieldsSrc        from './_examples/HeadlessFields.jsx?raw'
+import HeadlessBlank            from './_examples/HeadlessBlank.jsx'
+import HeadlessBlankSrc         from './_examples/HeadlessBlank.jsx?raw'
+import HeadlessBuiltins         from './_examples/HeadlessBuiltins.jsx'
+import HeadlessBuiltinsSrc      from './_examples/HeadlessBuiltins.jsx?raw'
+import HeadlessBuiltinsBare     from './_examples/HeadlessBuiltinsBare.jsx'
+import HeadlessBuiltinsBareSrc  from './_examples/HeadlessBuiltinsBare.jsx?raw'
+import { FieldLink, FieldLayoutLink, FieldMessageLink, TextInputLink, FieldLabelComponentLink } from '@/site/Links.jsx'
+
+# Headless Fields
+
+<div className="intro">
+  One of the problems with any UI library is that it forces you into
+  using the styles provided, or requires you to customise the CSS to
+  match your in-house brand.  This is the problem that &quot;Headless&quot;
+  UI components are designed to solve.
+</div>
+
+## Field Render Function
+
+Instead of using the default rendering components for a field you can
+provide a function as a child element.  The function will be passed
+the field context and can render the field any way it likes.
+
+<Example
+  Component={HeadlessBlank}
+  code={HeadlessBlankSrc}
+  caption="Headless Fields"
+/>
+
+## Typical Render Function
+
+Here's a more complete example showing how a field would typically
+be rendered using the builtin components.
+
+<Example
+  Component={HeadlessFields}
+  code={HeadlessFieldsSrc}
+  caption="Headless Fields"
+/>
+
+## Builtin Components
+
+You can mix and match your own layout with the builtin components.
+This example shows how you can use the <FieldLayoutLink/>, <FieldLabelComponentLink/>,
+<TextInputLink/> and <FieldMessageLink/> components to build up the field content.
+
+<Example
+  Component={HeadlessBuiltins}
+  code={HeadlessBuiltinsSrc}
+  caption="Builtin Components"
+/>
+
+## Child Components
+
+If you're using the default layout components and/or providing
+your own that can access the field context using `useField`
+then you don't need to define a function for the <FieldLink/> body.
+You can just include them as children of the field component.
+
+<Example
+  Component={HeadlessBuiltinsBare}
+  code={HeadlessBuiltinsBareSrc}
+  caption="Builtin Components"
+/>

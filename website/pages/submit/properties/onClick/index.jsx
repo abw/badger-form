@@ -1,7 +1,7 @@
 import React      from 'react'
-import Example    from '@/site/Example.jsx'
 import OnClick    from './_examples/OnClick.jsx'
 import OnClickSrc from './_examples/OnClick.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const OnClickExamples = () =>
   <>

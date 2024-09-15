@@ -1,12 +1,14 @@
-import React            from 'react'
-import ResetSubmitPager from '@/site/Pager/ResetSubmitPager.jsx'
-import { Outlet }       from 'react-router-dom'
+import React      from 'react'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const ResetSubmitPropertiesLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>ResetSubmit Properties</h1>
     <Outlet/>
-    <ResetSubmitPager/>
-  </div>
+  </>
 
 export default ResetSubmitPropertiesLayout

@@ -1,0 +1,26 @@
+import React          from 'react'
+import FunctionsSrc   from './_examples/Functions.jsx?raw'
+import Functions      from './_examples/Functions.jsx'
+import { Example }    from '@abw/badger-website'
+import { FieldLayoutLink } from '@/site/Links.jsx'
+
+## `children`
+
+You can define children of a field, either as components or functions.
+Components can access the field context via `useField`.
+Functions receive the field context as the first argument.
+
+Note that if you define children for the field then it will
+replace the default <FieldLayoutLink/> component.  In this case it&apos;s
+up to you to render the field content.
+
+If you want to include the default layout for a field and add
+some content of your own then you can include the <FieldLayoutLink/> component
+manually.
+
+<Example
+  Component={Functions}
+  code={FunctionsSrc}
+  caption="children"
+  expand
+/>

@@ -1,7 +1,7 @@
-import React          from 'react'
-import Inline         from './_examples/Inline.jsx'
-import InlineSrc      from './_examples/Inline.jsx?raw'
-import Example        from '@/site/Example.jsx'
+import React       from 'react'
+import Inline      from './_examples/Inline.jsx'
+import InlineSrc   from './_examples/Inline.jsx?raw'
+import { Example } from '@abw/badger-website'
 import { TextAreaInputColsLink } from '@/website/site/Links.jsx'
 
 const TextAreaExamples = () =>

@@ -1,12 +1,14 @@
 import React      from 'react'
-import FieldPager from '@/site/Pager/FieldPager.jsx'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const FieldFunctionsLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Field Functions</h1>
     <Outlet/>
-    <FieldPager/>
-  </div>
+  </>
 
 export default FieldFunctionsLayout

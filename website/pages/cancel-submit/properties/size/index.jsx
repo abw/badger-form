@@ -1,7 +1,7 @@
-import React    from 'react'
-import Example  from '@/site/Example.jsx'
-import Size     from './_examples/Size.jsx'
-import SizeSrc  from './_examples/Size.jsx?raw'
+import React       from 'react'
+import Size        from './_examples/Size.jsx'
+import SizeSrc     from './_examples/Size.jsx?raw'
+import { Example } from '@abw/badger-website'
 
 const CancelSubmitExamples = () =>
   <>

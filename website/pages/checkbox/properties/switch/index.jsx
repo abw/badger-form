@@ -1,7 +1,7 @@
 import React     from 'react'
 import Switch    from './_examples/Switch.jsx'
 import SwitchSrc from './_examples/Switch.jsx?raw'
-import Example   from '@/site/Example.jsx'
+import { Example } from '@abw/badger-website'
 
 const CheckboxExample = () =>
   <>

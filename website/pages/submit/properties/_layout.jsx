@@ -1,12 +1,14 @@
-import React       from 'react'
-import SubmitPager from '@/site/Pager/SubmitPager.jsx'
-import { Outlet }  from 'react-router-dom'
+import React      from 'react'
+import { Outlet } from '@abw/badger-website'
+
+export const metadata = {
+  prevNext: false,
+}
 
 const SubmitPropertiesLayout = () =>
-  <div className="prose flow">
+  <>
     <h1>Submit Properties</h1>
     <Outlet/>
-    <SubmitPager/>
-  </div>
+  </>
 
 export default SubmitPropertiesLayout

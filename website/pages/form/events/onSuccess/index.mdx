@@ -1,0 +1,27 @@
+import React        from 'react'
+import OnSuccess    from './_examples/OnSuccess.jsx'
+import OnSuccessSrc from './_examples/OnSuccess.jsx?raw'
+import SeeAlso      from '@/site/SeeAlso.jsx'
+import { Example } from '@abw/badger-website'
+import { FormOnErrorLink, FormOnSubmitLink } from '@/site/Links.jsx'
+
+## `onSuccess`
+
+The <code>onSuccess</code> property can be used to define a function
+that will be called in the event of a successful submission of the
+form.
+It will be passed the response data returned from the <FormOnSubmitLink/>{' '}
+handler.
+
+<Example
+  Component={OnSuccess}
+  code={OnSuccessSrc}
+  caption="onSuccess"
+/>
+
+<SeeAlso
+  links={[
+    FormOnSubmitLink,
+    FormOnErrorLink
+  ]}
+/>

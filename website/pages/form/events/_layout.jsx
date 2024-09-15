@@ -1,12 +1,15 @@
 import React     from 'react'
-import FormPager from '@/site/Pager/FormPager.jsx'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from '@abw/badger-website'
 
-const FormEventsLayout = () =>
-  <div className="prose flow">
+export const metadata = {
+  prevNext: false,
+}
+
+export const Layout = () =>
+  <>
     <h1>Form Events</h1>
     <Outlet/>
-    <FormPager/>
-  </div>
+  </>
 
-export default FormEventsLayout
+export default Layout
+

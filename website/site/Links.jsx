@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from './Link.jsx'
+import { Link } from '@abw/badger-website'
 
 // eslint-disable-next-line react/display-name
 export const ToText = (to, text) => (props={}) =>
@@ -7,7 +7,16 @@ export const ToText = (to, text) => (props={}) =>
 
 // eslint-disable-next-line react/display-name
 export const ToCode = (to, code) => (props={}) =>
-  <Link to={to} text={<code>{code}</code>} {...props}/>
+  <Link to={to} code={code} {...props}/>
+
+// eslint-disable-next-line react/display-name
+const ExtLinker = (href, text=href) => (props={}) =>
+  <Link
+    {...props}
+    href={`${href}${props.path||''}`}
+    text={props.text||text}
+    targetBlank
+  />
 
 // form
 export const FormLink                   = ToCode('/form', 'Form')
@@ -137,3 +146,8 @@ export const HiddenInputLink            = ToCode('/input/hidden', 'Hidden')
 export const CustomInputLink            = ToCode('/input/custom', 'Custom Input')
 export const InputTypesLink             = ToText('/input', 'Input Types')
 
+export const BadgerCSSLink     = ExtLinker('https://badgerpower.com/badger-css/',       'Badger CSS')
+export const BadgerReactUILink = ExtLinker('https://badgerpower.com/badger-react-ui/',  'Badger React UI')
+export const BadgerIconLink    = ExtLinker('https://badgerpower.com/badger-icon/',      'Badger Icon')
+export const BadgerColorLink   = ExtLinker('https://badgerpower.com/badger-color/',     'Badger Color')
+export const BadgerUILink      = ExtLinker('https://github.com/abw/badger-ui',          'Badger UI')

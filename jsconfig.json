@@ -5,6 +5,7 @@
       "@/lib/*":        ["./lib/*"],
       "@/styles/*":     ["./styles/*"],
       "@/website/*":    ["./website/*"],
+      "@/config/*":     ["./website/config/*"],
       "@/pages/*":      ["./website/pages/*"],
       "@/site/*":       ["./website/site/*"],
       "@/snippets/*":   ["./website/snippets/*"],

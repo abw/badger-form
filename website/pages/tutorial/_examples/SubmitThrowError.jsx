@@ -11,7 +11,7 @@ const SubmitThrow = () => {
 
   return (
     <>
-      <Form onSubmit={onSubmit} debug>
+      <Form onSubmit={onSubmit}>
         <Errors/>
         <Field
           name="email"

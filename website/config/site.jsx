@@ -19,8 +19,8 @@ const site = {
   repository: 'https://github.com/abw/badger-form',
   badgerpower: true,
   basename:    import.meta.env.BASE_URL,
-  debugRouter: true,
-  debugPages:  true,
+  debugRouter: false,
+  debugPages:  false,
 }
 
 export default site

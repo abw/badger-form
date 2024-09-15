@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^1.1.1
     version: 1.1.1
   '@abw/badger-website':
-    specifier: ^0.1.5
-    version: 0.1.5(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^0.1.10
+    version: 0.1.10(react-dom@18.3.1)(react@18.3.1)
   '@abw/react-night-and-day':
     specifier: ^0.0.5
     version: 0.0.5(react-dom@18.3.1)(react@18.3.1)
@@ -196,8 +196,8 @@ packages:
     resolution: {integrity: sha512-hgYDLqhTmVOSnbfi95ITz+RunSDu/7Nn9evJzWHbm4nqm0hGpBy6tfRoGcSLwp4XNa2eHBtQpDFovXU2Pho2zA==}
     dev: true
 
-  /@abw/badger-website@0.1.5(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-U5knsXvbz7hYoobsoZMxoAW5H+iinvIXKykgEPpsldc5s7sjAvAym2XWzq3pckHOeQvjZ36Vz4VkRZZ1smAXFQ==}
+  /@abw/badger-website@0.1.10(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-Q1ISbjRsi+kgj1tFJtu2xtt86ILL7sxZGenLpHheBMnmUbr6mwwLX/vlIxy/LA8vC23KfOCpGDJVJwg9byZY7w==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0

@@ -1,5 +1,8 @@
-$teal-hue: 185;
-$brand-hue: $teal-hue;
-$grey-hue: $brand-hue;
-$brand-color: 'teal';
-$dark-theme: '#site[data-theme="dark"]';
+:where(html) {
+  --toc-back:               var(--grey20-100);
+  --toc-border:             var(--grey20-80);
+}
+#{$dark-theme} {
+  --toc-back:               var(--grey20-5);
+  --toc-border:             var(--grey20-25);
+}

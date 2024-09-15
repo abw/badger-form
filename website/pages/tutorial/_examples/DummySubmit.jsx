@@ -13,7 +13,7 @@ const DummySubmit = () => {
 
   return (
     <>
-      <Form onSubmit={onSubmit} debug>
+      <Form onSubmit={onSubmit}>
         <Field
           name="email"
           label="Email Address"

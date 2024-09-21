@@ -69,4 +69,8 @@ div.toc ul.menu {
   }
 }
 
+#app > aside div.menu > div.menu .item.active {
+  color: var(--menu-active-text);
+  background-color: var(--menu-active-back);
+}
 

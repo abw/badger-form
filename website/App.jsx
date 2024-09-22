@@ -18,20 +18,18 @@ const snippets = import.meta.glob(
   }
 )
 
-// Hmmm... this MDXProvider shouldn't be required as it should be included
-// in SiteProvider, but it doesn't work.
-
 const App = () =>
-  // I don't think we want the MDX provider because we don't want MDX headings
-  // to generate TOC entries
-  // TODO: add option to badger-website to suppress sidebar TOCs
-  // <MDXProvider components={mdxComponents}>
-  <SiteProvider
-    site={site}
-    pages={pages}
-    sidebar={sidebar}
-    snippets={snippets}
-  />
-  // </MDXProvider>
+  <MDXProvider components={mdxComponents}>
+    <SiteProvider
+      site={site}
+      pages={pages}
+      sidebar={sidebar}
+      snippets={snippets}
+      sidebarToc={false}
+      // prevNextArrows
+      // debugRouter
+      // debugPages
+    />
+  </MDXProvider>
 
 export default App

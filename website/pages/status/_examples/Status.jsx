@@ -4,7 +4,7 @@ import { Form, Field, Status, ResetSubmit } from '@/lib/index.js'
 import React from 'react'
 // PRETEND: import { Form, Field, Status, ResetSubmit } from '@abw/badger-form'
 
-const ChangedExample = () =>
+const StatusExample = () =>
   <Form>
     <Field name="field1" label="Field One"/>
     <Field name="field2" label="Field Two" value="Hello World!"/>
@@ -15,6 +15,9 @@ const ChangedExample = () =>
         submit={{ className: 'blue' }}
       />
     </Status>
+    <Status not changed>
+      Make a change to either of the fields.
+    </Status>
   </Form>
 
-export default ChangedExample
+export default StatusExample

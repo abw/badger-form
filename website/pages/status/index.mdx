@@ -16,8 +16,11 @@ import { Example, Split } from '@abw/badger-website'
     The component expects one or more properties relating to different
     form status conditions: `changed`, `validating`, `valid`, `invalid`,
     `submitting` and `submitted`. The default behaviour is to only render
-    the children when all of the specified conditions are met.  The `any`
-    property can be provided to change that to match any condition.
+    the children when all of the specified conditions are met.
+
+    The `any` property can be provided to change that to match any condition.
+
+    The `not` property can be provided to negate the condition condition.
 
     A simple example is shown below. The "Reset" and "Submit" buttons are only
     displayed once the user has made changes to a form field and the form

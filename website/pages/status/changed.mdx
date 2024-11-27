@@ -1,0 +1,35 @@
+import React              from 'react'
+import Changed            from './_examples/Changed.jsx'
+import ChangedSrc         from './_examples/Changed.jsx?raw'
+import TryItOut           from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+# Changed
+
+<div className="intro">
+  The `Changed` component is a shortcut implemented as a wrapper around
+  the `Status` component for the common case where you only want to display
+  part of the form (typically the submit and other buttons) when the form
+  has changed.
+</div>
+
+<Split>
+  <div>
+    A simple example is shown below. The "Reset" and "Submit" buttons are only
+    displayed once the user has made changes to a form field and the form
+    `changed` status flag is true.
+  </div>
+  <TryItOut>
+    Edit one of the fields in the form and you should see the
+    "Reset" and "Submit" buttons appear as if by
+    magic.  Try clicking on the "Reset" button and they will
+    be hidden again.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Changed}
+  code={ChangedSrc}
+  caption="Changed"
+  expand
+/>

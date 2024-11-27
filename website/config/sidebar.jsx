@@ -305,6 +305,7 @@ export const Status = {
   revealable: true,
   menu: [
     { to: '/status', code: 'Status', exact: true },
+    { to: '/status/changed', code: 'Changed' },
     {
       title: 'Properties',
       menu: [
@@ -315,6 +316,7 @@ export const Status = {
         { to: '/status/properties/submitting',   code: 'submitting' },
         { to: '/status/properties/submitted',    code: 'submitted'  },
         { to: '/status/properties/any',          code: 'any'        },
+        { to: '/status/properties/not',          code: 'not'        },
       ]
     },
   ]

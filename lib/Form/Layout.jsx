@@ -1,6 +1,6 @@
 import React from 'react'
 import { Children, useForm } from './Context.js'
-import { formAttrs } from '../Utils.js'
+import { formAttrs } from '../Utils'
 
 const Layout = ({
   children,

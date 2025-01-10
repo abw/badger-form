@@ -1,6 +1,6 @@
 import React from 'react'
 import Handlers from './Handlers.js'
-import { classes, inputAttrs, inputClasses } from '../Utils.js'
+import { classes, inputAttrs, inputClasses } from '../Utils'
 import { useField } from '../Field/Context.js'
 
 const Checkbox = ({

@@ -3,9 +3,9 @@ import DefaultPrefix from './Prefix.jsx'
 import DefaultSuffix from './Suffix.jsx'
 import { getInputType } from '../Input/index.js'
 import { useField } from './Context.js'
-import { selectClass } from '../Utils.js'
+import { selectClass } from '../Utils'
 import { hasValue } from '@abw/badger-utils'
-import { TEXT } from '../Constants.jsx'
+import { TEXT } from '../Constants'
 
 const Inputs = ({ field=useField() }) => {
   const {

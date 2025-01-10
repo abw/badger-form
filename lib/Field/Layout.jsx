@@ -4,7 +4,7 @@ import DefaultInput from './Input.jsx'
 import DefaultMessage from './Message.jsx'
 import Hidden from '../Input/Hidden.jsx'
 import { useField } from './Context.js'
-import { fieldClass } from '../Utils.js'
+import { fieldClass } from '../Utils'
 
 const Layout = ({
   field=useField(),

@@ -1,7 +1,7 @@
 import React from 'react'
 import Field from './Field.jsx'
 import { isBoolean, splitList } from '@abw/badger-utils'
-import { gridGapClasses } from './Utils.js'
+import { gridGapClasses } from './Utils'
 
 export const Fields = ({
   names,

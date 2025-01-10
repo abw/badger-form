@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { BLANK } from '../Constants.jsx'
+import { BLANK } from '../Constants'
 
 export const prepareField = field => {
   // The form can be passed a large set of fields, not all of which may be

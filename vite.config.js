@@ -37,7 +37,7 @@ export default defineConfig({
     minify: true,
     sourcemap: false,
     lib: {
-      entry: 'lib/index.js',
+      entry: 'lib/index.ts',
       name: '@abw/badger-form',
       fileName: 'badger-form',
     },

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useField } from './Context.js'
-import { selectClass } from '../Utils.js'
+import { selectClass } from '../Utils'
 
 const Message = ({ field=useField() }) => {
   const { help, message, classes } = field

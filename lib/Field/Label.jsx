@@ -1,6 +1,6 @@
 import React from 'react'
 import { useField } from './Context.js'
-import { REQUIRED, OPTIONAL } from '../Constants.jsx'
+import { REQUIRED, OPTIONAL } from '../Constants'
 
 const Label = ({ field=useField() }) => {
   const { label, id, required, optional } = field

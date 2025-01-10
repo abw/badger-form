@@ -1,6 +1,6 @@
 import React from 'react'
 import { useField } from './Context.js'
-import { classes } from '../Utils.js'
+import { classes } from '../Utils'
 
 const Prefix = ({
   field=useField()

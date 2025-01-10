@@ -3,7 +3,7 @@ import Inputs from './Inputs.jsx'
 import { getInputType } from '../Input/index.js'
 import { useField } from './Context.js'
 import { hasValue } from '@abw/badger-utils'
-import { RADIO, TEXT } from '../Constants.jsx'
+import { RADIO, TEXT } from '../Constants'
 
 const Input = ({
   field=useField()

@@ -1,8 +1,8 @@
 import React from 'react'
 import Handlers from './Handlers.js'
-import { inputClasses, inputAttrs } from '../Utils.js'
+import { inputClasses, inputAttrs } from '../Utils'
 import { useField } from '../Field/Context.js'
-import { TEXT } from '../Constants.jsx'
+import { TEXT } from '../Constants'
 
 export const Text = ({ field=useField() }) => {
   const {

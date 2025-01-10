@@ -1,8 +1,8 @@
 import React  from 'react'
 import Reset  from './Reset.jsx'
 import Submit from './Submit.jsx'
-import { flexGapSpaceClasses } from '../Utils.js'
-import { CONTROLS } from '../Constants.jsx'
+import { flexGapSpaceClasses } from '../Utils'
+import { CONTROLS } from '../Constants'
 
 const ResetSubmit = ({
   className,

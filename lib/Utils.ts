@@ -213,7 +213,7 @@ export const valueTypes: Record<string, boolean> = {
  * numbers, otherwise they must be objects containing `value` and `text`.
  * This function returns `true` if the `option` is a suitable simple type.
  */
-export const valueOption = (option: string) =>
+export const valueOption = (option: unknown) =>
   valueTypes[typeof option]
     ? { value: option, text: option }
     : option

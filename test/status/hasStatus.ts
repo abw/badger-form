@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest'
-import { hasStatus } from '../../lib/Status.js'
+import { hasStatus } from '@/lib/Status'
 
 it(
   'has not changed',
@@ -50,18 +50,3 @@ it(
     })
   ).toBe(true)
 )
-
-/*
-export const hasStatus = ({
-  status,
-  any=false,
-  ...props
-}) => {
-  const states = [VALID, INVALID, CHANGED, VALIDATING, SUBMITTING, SUBMITTED]
-    .filter( state => hasValue(props[state]) )
-    .map( state => status[state] )
-  return any
-    ? states.some(Boolean)
-    : states.every(Boolean)
-}
-*/

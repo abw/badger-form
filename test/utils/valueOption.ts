@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { valueOption } from '@/lib/Utils.js'
+import { valueOption } from '@/lib/Utils'
 
 describe(
   'valueOption()',

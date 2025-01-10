@@ -1,3 +1,4 @@
+import { StatusFlags } from './types'
 import { hasValue } from '@abw/badger-utils'
 import {
   CHANGED, DISABLED, FOCUS, INVALID, SUBMITTED, SUBMITTING, VALID, VALIDATING
@@ -6,51 +7,51 @@ import {
 // Forms and fields maintain a status in their internal state which contains
 // boolean flags to indicate if the component is changed, valid, focussed,
 // etc.
-const unvalidated = {
+const unvalidated: StatusFlags = {
   [VALID]: false,
   [INVALID]: false,
 }
-const changed = {
+const changed: StatusFlags = {
   ...unvalidated,
   [CHANGED]: true
 }
-const validating = {
+const validating: StatusFlags = {
   ...unvalidated,
   [VALIDATING]: true
 }
-const invalid = {
+const invalid: StatusFlags = {
   [VALID]: false,
   [INVALID]: true,
   [VALIDATING]: false
 }
-const valid = {
+const valid: StatusFlags = {
   [VALID]: true,
   [INVALID]: false,
   [VALIDATING]: false
 }
-const blur = {
+const blur: StatusFlags = {
   [FOCUS]: false
 }
-const focus = {
+const focus: StatusFlags = {
   [FOCUS]: true
 }
-const submitting = {
+const submitting: StatusFlags = {
   [SUBMITTING]: true,
   [SUBMITTED]: false
 }
-const submitted = {
+const submitted: StatusFlags = {
   [SUBMITTING]: false,
   [SUBMITTED]: true
 }
 
 // Some of these states are common to both forms and fields.
-const commonStatusChanges = {
+const commonStatusChanges: Record<string, StatusFlags> = {
   changed, validating, invalid, valid
 }
 
 // Factory to return a function to select a new status
-const newStatus = statusChanges =>
-  (status, oldStatus={}) => ({
+const newStatus = (statusChanges:  Record<string, StatusFlags>) =>
+  (status: string, oldStatus: StatusFlags = { }) => ({
     ...oldStatus,
     ...(statusChanges[status] || { [status]: true })
   })
@@ -71,7 +72,7 @@ export const newFormStatus = () => {
 }
 
 // Factory to return a function to select a new field status
-export const newFieldStatus = (props={}) => {
+export const newFieldStatus = (props: { disabled?: boolean, [key: string]: unknown } = { }) => {
   const reset = {
     ...unvalidated,
     [CHANGED]:    false,
@@ -85,11 +86,24 @@ export const newFieldStatus = (props={}) => {
   })
 }
 
+/**
+ * Looks for any of the standard status values ('changed', 'validating',
+ * 'valid', etc) in the `props` and extract the values of those that are
+ * truthy from the `status` object.  If the `any` flag is set then the
+ * function returns `true` if any of the values are true.  Otherwise, all
+ * of the values must be true.  The `not` flag can be used to negate the
+ * return value.
+ */
 export const hasStatus = ({
   status,
   not=false,
   any=false,
   ...props
+}: {
+  status: Record<string, boolean>,
+  not?: boolean,
+  any?: boolean,
+  [key: string]: unknown
 }) => {
   const states = [CHANGED, VALIDATING, VALID, INVALID, SUBMITTING, SUBMITTED]
     .filter( state => hasValue(props[state]) )

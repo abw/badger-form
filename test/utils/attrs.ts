@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formAttrs, inputAttrs } from '@/lib/Utils.js'
+import { formAttrs, inputAttrs } from '@/lib/Utils'
 
 describe(
   'inputAttrs()',

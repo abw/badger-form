@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest'
-import { canonicalInputTypeName } from '@/lib/Utils.js'
+import { canonicalInputTypeName } from '@/lib/Utils'
 
 it(
   'the song remains the same',

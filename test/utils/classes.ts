@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest'
-import { classes } from '../../lib/Utils.js'
+import { classes } from '@/lib/Utils'
 
 it(
   'joins strings',

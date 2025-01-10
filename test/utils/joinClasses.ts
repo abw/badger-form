@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest'
-import { joinClasses } from '../../lib/Utils.js'
+import { joinClasses } from '@/lib/Utils'
 
 it(
   'should return foo',

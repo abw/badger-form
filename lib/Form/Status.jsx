@@ -1,5 +1,5 @@
 import { Consumer } from './Context.js'
-import { hasStatus } from '../Status.js'
+import { hasStatus } from '../Status'
 
 const Status = ({
   children,

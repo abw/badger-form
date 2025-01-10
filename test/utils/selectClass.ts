@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest'
-import { selectClass } from '@/lib/Utils.js'
+import { selectClass } from '@/lib/Utils'
 
 it(
   'should return foo',

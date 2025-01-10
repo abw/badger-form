@@ -1,13 +1,13 @@
 import { it, expect } from 'vitest'
-import { flexGapSpaceClasses } from '../../lib/Utils.js'
+import { gridGapClasses } from '@/lib/Utils'
 
 it(
   'honours className',
   () => expect(
-    flexGapSpaceClasses(
+    gridGapClasses(
       {
         className: 'just-this',
-        space: true,
+        grid: 10,
         gap: 99,
         other: 'ignored'
       },
@@ -19,26 +19,27 @@ it(
 )
 
 it(
-  'uses space',
+  'uses grid',
   () => expect(
-    flexGapSpaceClasses(
+    gridGapClasses(
       {
-        space: true,
-        gap: 99,
+        grid: 2,
+        gap: 4,
         other: 'ignored'
       },
       'one',
       'two',
       'three'
     )
-  ).toBe('flex space one two three')
+  ).toBe('grid-2 gap-v-none gap-h-4 one two three')
 )
 
 it(
-  'sets gap',
+  'sets grid and gap',
   () => expect(
-    flexGapSpaceClasses(
+    gridGapClasses(
       {
+        grid: 2,
         gap: 6,
         other: 'ignored'
       },
@@ -46,5 +47,5 @@ it(
       'two',
       'three'
     )
-  ).toBe('flex gap-v-none gap-h-6 one two three')
+  ).toBe('grid-2 gap-v-none gap-h-6 one two three')
 )

@@ -9,3 +9,5 @@ export type FlexGridProps = {
   className?: string
   [key: string]: unknown
 }
+
+export type StatusFlags = Record<string, boolean>

@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { newFieldStatus } from '../../lib/Status.js'
-import { BLUR, CHANGED, FOCUS, INVALID, RESET, VALID, VALIDATING } from '../../lib/Constants.jsx'
+import { newFormStatus } from '@/lib/Status'
+import { CHANGED, INVALID, RESET, SUBMITTED, SUBMITTING, VALID, VALIDATING } from '@/lib/Constants'
 
 describe(
-  'Default field status',
+  'Default form status',
   () => {
-    const newStatus = newFieldStatus({})
+    const newStatus = newFormStatus()
     it(
       'has reset status',
       () => {
@@ -15,8 +15,8 @@ describe(
           invalid: false,
           changed: false,
           validating: false,
-          focus: false,
-          disabled: false,
+          submitting: false,
+          submitted: false,
         })
       }
     )
@@ -65,20 +65,22 @@ describe(
       }
     )
     it(
-      'has focus status',
+      'has submitting status',
       () => {
-        const status = newStatus(FOCUS)
+        const status = newStatus(SUBMITTING)
         expect(status).toEqual({
-          focus: true,
+          submitting: true,
+          submitted: false,
         })
       }
     )
     it(
-      'has blur status',
+      'has submitted status',
       () => {
-        const status = newStatus(BLUR)
+        const status = newStatus(SUBMITTED)
         expect(status).toEqual({
-          focus: false,
+          submitting: false,
+          submitted: true,
         })
       }
     )
@@ -86,120 +88,99 @@ describe(
 )
 
 describe(
-  'Disabled field status',
+  'Changing form status',
   () => {
-    const newStatus = newFieldStatus({ disabled: true })
-    it(
-      'has reset status',
-      () => {
-        const status = newStatus(RESET)
-        expect(status).toEqual({
-          valid: false,
-          invalid: false,
-          changed: false,
-          validating: false,
-          focus: false,
-          disabled: true,
-        })
-      }
-    )
-  }
-)
-
-describe(
-  'Changing field status',
-  () => {
-    const newStatus = newFieldStatus({})
-    const status = newStatus(RESET)
-
+    const newStatus = newFormStatus()
+    const status1 = newStatus(RESET)
     it(
       'starts with reset status',
-      () => expect(status).toEqual({
+      () => expect(status1).toEqual({
+        changed: false,
         valid: false,
         invalid: false,
-        changed: false,
         validating: false,
-        focus: false,
-        disabled: false,
+        submitting: false,
+        submitted: false,
       })
     )
 
-    const status2 = newStatus(FOCUS, status)
-    it(
-      'changes to focus status',
-      () => expect(status2).toEqual({
-        valid: false,
-        invalid: false,
-        changed: false,
-        validating: false,
-        focus: true,
-        disabled: false,
-      })
-    )
-
-    const status3 = newStatus(BLUR, status2)
-    it(
-      'changes to blur status',
-      () => expect(status3).toEqual({
-        valid: false,
-        invalid: false,
-        changed: false,
-        validating: false,
-        focus: false,
-        disabled: false,
-      })
-    )
-
-    const status4 = newStatus(CHANGED, status3)
+    const status2 = newStatus(CHANGED, status1)
     it(
       'changes to changed status',
-      () => expect(status4).toEqual({
+      () => expect(status2).toEqual({
+        changed: true,
         valid: false,
         invalid: false,
-        changed: true,
         validating: false,
-        focus: false,
-        disabled: false,
+        submitting: false,
+        submitted: false,
       })
     )
 
-    const status5 = newStatus(VALIDATING, status4)
+    const status3 = newStatus(VALIDATING, status2)
     it(
       'changes to validating status',
-      () => expect(status5).toEqual({
+      () => expect(status3).toEqual({
+        changed: true,
         valid: false,
         invalid: false,
-        changed: true,
         validating: true,
-        focus: false,
-        disabled: false,
+        submitting: false,
+        submitted: false,
       })
     )
 
-    const status6 = newStatus(VALID, status5)
+    const status4 = newStatus(VALID, status3)
     it(
       'changes to valid status',
-      () => expect(status6).toEqual({
+      () => expect(status4).toEqual({
+        changed: true,
         valid: true,
         invalid: false,
-        changed: true,
         validating: false,
-        focus: false,
-        disabled: false,
+        submitting: false,
+        submitted: false,
       })
     )
 
-    const status7 = newStatus(INVALID, status6)
+    const status5 = newStatus(INVALID, status4)
     it(
       'changes to invalid status',
-      () => expect(status7).toEqual({
+      () => expect(status5).toEqual({
+        changed: true,
         valid: false,
         invalid: true,
-        changed: true,
         validating: false,
-        focus: false,
-        disabled: false,
+        submitting: false,
+        submitted: false,
+      })
+    )
+
+    const status6 = newStatus(SUBMITTING, status5)
+    it(
+      'changes to submitting status',
+      () => expect(status6).toEqual({
+        changed: true,
+        valid: false,
+        invalid: true,
+        validating: false,
+        submitting: true,
+        submitted: false,
+      })
+    )
+
+    const status7 = newStatus(SUBMITTED, status6)
+    it(
+      'changes to submitted status',
+      () => expect(status7).toEqual({
+        changed: true,
+        valid: false,
+        invalid: true,
+        validating: false,
+        submitting: false,
+        submitted: true,
       })
     )
   }
 )
+

@@ -2,7 +2,7 @@ import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, Reset } from '../../lib/index.js'
+import { Form, Field, Reset } from '../../lib/index'
 
 const ResetTest = () =>
   <Form values={{ foo: 'Hello' }}>

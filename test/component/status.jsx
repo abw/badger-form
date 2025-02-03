@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { act } from 'react'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, Status, ResetSubmit } from '@/lib/index.js'
+import { Form, Field, Status, ResetSubmit } from '@/lib/index'
 
 const StatusExample = () =>
   <Form>

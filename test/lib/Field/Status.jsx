@@ -1,5 +1,5 @@
 import React from 'react'
-import { useField } from '@/lib/index.js'
+import { useField } from '@/lib/index'
 import { isBoolean } from '@abw/badger-utils'
 
 const Status = () => {

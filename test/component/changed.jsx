@@ -2,7 +2,7 @@ import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen, act } from '@testing-library/react'
-import { Form, Field, Changed, ResetSubmit } from '@/lib/index.js'
+import { Form, Field, Changed, ResetSubmit } from '@/lib/index'
 
 const ChangedExample = () =>
   <Form>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, Hidden, useForm } from '@/lib/index.js'
+import { Form, Field, Hidden, useForm } from '@/lib/index'
 
 const ShowHiddenValue = ({name}) => {
   const form = useForm()

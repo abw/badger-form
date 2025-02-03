@@ -2,7 +2,7 @@ import React from 'react'
 import { it, expect } from 'vitest'
 import userEvent from '@testing-library/user-event'
 import { render, screen, act, fireEvent } from '@testing-library/react'
-import { Form, Field, useForm } from '../../lib/index.js'
+import { Form, Field, useForm } from '../../lib/index'
 
 const ShowValue = ({name}) => {
   const form = useForm()

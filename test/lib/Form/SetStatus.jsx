@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm } from '@/lib/index.js'
+import { useForm } from '@/lib/index'
 
 const SetStatus = () => {
   const {

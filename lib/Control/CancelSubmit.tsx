@@ -1,25 +1,22 @@
-import React from 'react'
-import Cancel from './Cancel.jsx'
-import Reset from './Reset.jsx'
-import Submit from './Submit.jsx'
+import Cancel from './Cancel'
+import Submit from './Submit'
 import { flexGapSpaceClasses } from '../Utils'
 import { CONTROLS } from '../Constants'
+import { FormCancelSubmitProps } from '../types'
 
-const CancelResetSubmit = ({
+export const CancelSubmit = ({
   className,
   gap=4,
   space=false,
   size,
   cancel={},
-  reset={},
   submit={}
-}) =>
+}: FormCancelSubmitProps) =>
   <div
     className={flexGapSpaceClasses({ className, gap, space }, size, CONTROLS)}
   >
     <Cancel {...cancel}/>
-    <Reset {...reset}/>
     <Submit {...submit}/>
   </div>
 
-export default CancelResetSubmit
+export default CancelSubmit

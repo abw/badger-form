@@ -1,14 +1,14 @@
-import React from 'react'
-import DefaultButton from './Button.jsx'
+import DefaultButton from './Button'
 import { useForm } from '../Form/Context.js'
+import { FormSubmitProps } from '../types'
 
-const Submit = ({
+export const Submit = ({
   type='submit',
   text='Submit',
   className='submit',
   Button=DefaultButton,
   ...props
-}) => {
+}: FormSubmitProps) => {
   const { submit, status } = useForm()
   return (
     <Button

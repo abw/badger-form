@@ -1,14 +1,14 @@
-import React from 'react'
-import DefaultButton from './Button.jsx'
+import DefaultButton from './Button.js'
 import { useForm } from '../Form/Context.js'
+import { FormResetProps } from '../types'
 
-const Reset = ({
+export const Reset = ({
   type='reset',
   text='Reset',
   className='reset',
   Button=DefaultButton,
   ...props
-}) => {
+}: FormResetProps) => {
   const { reset } = useForm()
   return (
     <Button

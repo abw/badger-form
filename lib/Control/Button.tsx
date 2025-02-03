@@ -1,12 +1,12 @@
-import React from 'react'
+import { FormButtonProps } from '../types'
 
-const Button = ({
+export const Button = ({
   onClick,
   children,
   text='Button',
   type='button',
   ...props
-}) =>
+}: FormButtonProps) =>
   <button
     type={type}
     onClick={onClick}

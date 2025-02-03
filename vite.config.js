@@ -3,19 +3,26 @@ import react            from '@vitejs/plugin-react'
 import jsconfigPaths    from 'vite-jsconfig-paths'
 import copy             from 'rollup-plugin-copy'
 import define           from  './vite.defs.js'
+import dts              from 'vite-plugin-dts'
 
 export default defineConfig({
   plugins: [
     react(),
-    jsconfigPaths()
+    jsconfigPaths(),
+    dts({
+      exclude: [
+        'test',
+        'website'
+      ],
+    })
   ],
   define,
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: './test/setup.js',
+    setupFiles: './test/setup.ts',
     include: ['test/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    exclude: ['test/setup.js', 'test/lib'],
+    exclude: ['test/setup.ts', 'test/lib'],
     coverage: {
       provider: 'v8',
       reporter: ['html'],

@@ -21,6 +21,8 @@ export type HasStatusProps = StatusFlags & {
   not?: boolean,
   any?: boolean,
 }
+
+// NOTE: moved to form/types.ts
 export type AddState<State> = Partial<State> | AddStateFn<State>
 export type AddStateFn<State> = (oldState: Partial<State>) => Partial<State>
 export type StateCallback = () => void
@@ -38,9 +40,9 @@ export type BaseContextConstructorProps = ContextConstructorProps<
 >
 
 // export type BaseContextProps = ContextProps<{ }>
-export type FormContextProps = {
-  // onLoad:
-}
+//export type FormContextProps = {
+//    // onLoad:
+//}
 
 export type CSSClassItem = string|undefined|null
 export type CSSClassHash = Record<string, unknown>

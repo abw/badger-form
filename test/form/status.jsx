@@ -10,30 +10,25 @@ describe(
   'Form status',
   () => {
     it(
-      'should have an initial status',
+      'form should have an initial status',
       () => {
         render(
           <Form>
             <Status/>
           </Form>
         )
-        // screen.debug()
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
       }
     ),
     it(
-      'should change status on changed',
+      'form changed status',
       async () => {
         render(
           <Form>
@@ -41,113 +36,275 @@ describe(
             <Status/>
           </Form>
         )
-        // screen.debug()
+        await userEvent.click(
+          screen.getByTestId('set-changed-state')
+        )
+        expectState({
+          changed: true,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
+      }
+    ),
+    it(
+      'form validating status',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        await userEvent.click(
+          screen.getByTestId('set-validating-state')
+        )
+        expectState({
+          changed: false,
+          validating: true,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
+      }
+    ),
+    it(
+      'form invalid status',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        await userEvent.click(
+          screen.getByTestId('set-invalid-state')
+        )
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: true,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
+      }
+    ),
+    it(
+      'form valid status',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        await userEvent.click(
+          screen.getByTestId('set-valid-state')
+        )
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: true,
+          submitting: false,
+          submitted: false,
+        })
+      }
+    ),
+    it(
+      'form submitting status',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        await userEvent.click(
+          screen.getByTestId('set-submitting-state')
+        )
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: true,
+          submitted: false,
+        })
+      }
+    ),
+    it(
+      'form submitted status',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        await userEvent.click(
+          screen.getByTestId('set-submitted-state')
+        )
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: true,
+        })
+      }
+    ),
+    it(
+      'form reset status',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        await userEvent.click(
+          screen.getByTestId('set-reset-state')
+        )
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
+      }
+    ),
+    it(
+      'form multi-status changes',
+      async () => {
+        render(
+          <Form>
+            <SetStatus/>
+            <Status/>
+          </Form>
+        )
+        // initial state
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
         // changed
-        await act( () => userEvent.click(screen.getByTestId('set-changed-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
-
+        await userEvent.click(
+          screen.getByTestId('set-changed-state')
+        )
+        expectState({
+          changed: true,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
         // validating
-        await act( () => userEvent.click(screen.getByTestId('set-validating-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
-
+        await userEvent.click(
+          screen.getByTestId('set-validating-state')
+        )
+        expectState({
+          changed: true,
+          validating: true,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
         // invalid
-        await act( () => userEvent.click(screen.getByTestId('set-invalid-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
-
+        await userEvent.click(
+          screen.getByTestId('set-invalid-state')
+        )
+        expectState({
+          changed: true,
+          validating: false,
+          invalid: true,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
+        // validating
+        await userEvent.click(
+          screen.getByTestId('set-validating-state')
+        )
+        expectState({
+          changed: true,
+          validating: true,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
         // valid
-        await act( () => userEvent.click(screen.getByTestId('set-valid-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
-
+        await userEvent.click(
+          screen.getByTestId('set-valid-state')
+        )
+        expectState({
+          changed: true,
+          validating: false,
+          invalid: false,
+          valid: true,
+          submitting: false,
+          submitted: false,
+        })
         // submitting
-        await act( () => userEvent.click(screen.getByTestId('set-submitting-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
-
+        await userEvent.click(
+          screen.getByTestId('set-submitting-state')
+        )
+        expectState({
+          changed: true,
+          validating: false,
+          invalid: false,
+          valid: true,
+          submitting: true,
+          submitted: false,
+        })
         // submitted
-        await act( () => userEvent.click(screen.getByTestId('set-submitted-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('TRUE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('TRUE')
-
+        await userEvent.click(
+          screen.getByTestId('set-submitted-state')
+        )
+        expectState({
+          changed: true,
+          validating: false,
+          invalid: false,
+          valid: true,
+          submitting: false,
+          submitted: true,
+        })
         // reset
-        await act( () => userEvent.click(screen.getByTestId('set-reset-state')) )
-        expect(screen.getByTestId('changed'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('validating'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('invalid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('valid'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitting'))
-          .toHaveTextContent('FALSE')
-        expect(screen.getByTestId('submitted'))
-          .toHaveTextContent('FALSE')
+        await userEvent.click(
+          screen.getByTestId('set-reset-state')
+        )
+        expectState({
+          changed: false,
+          validating: false,
+          invalid: false,
+          valid: false,
+          submitting: false,
+          submitted: false,
+        })
       }
     )
   }
 )
 
+function expectState(state) {
+  Object.entries(state).forEach(
+    ([key, expected]) => {
+      expect(screen.getByTestId(key))
+        .toHaveTextContent(expected ? 'TRUE' : 'FALSE')
+    }
+  )
+}

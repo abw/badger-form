@@ -2,6 +2,9 @@ import { describe, it, expect } from 'vitest'
 import { newFormStatus } from '@/lib/Status'
 import { CHANGED, INVALID, RESET, SUBMITTED, SUBMITTING, VALID, VALIDATING } from '@/lib/Constants'
 
+// Deprecated - now integrated into Form/Context rather than being a separate
+// utility function.  See tests in ../form/status instead.
+
 describe(
   'Default form status',
   () => {

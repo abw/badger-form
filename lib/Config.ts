@@ -1,11 +1,13 @@
 import {
-  OPTIONAL, REQUIRED, REQUIRED_MSG, SUBMITTING, VALIDATING
+  OPTIONAL, REQUIRED, REQUIRED_MSG,
+  //SUBMITTING, VALIDATING
 } from './Constants'
 
-export const errorsTitle = (n: number) =>
+/* Moved to form/defaults.ts
+export const errorsTitle = (n: number): ReactNode =>
   `Form Error${n > 1 ? 's' : ''}`
 
-export const errorsPrompt = (n: number) =>
+export const errorsPrompt = (n: number): ReactNode =>
   `Please correct ${n === 1 ? 'this problem' : 'these problems'} and re-submit:`
 
 // default properties for a form
@@ -19,6 +21,7 @@ export const formDefaultProperties = {
   errorsTitle,
   errorsPrompt,
 }
+*/
 
 // default properties for a field
 export const fieldDefaultProperties = {

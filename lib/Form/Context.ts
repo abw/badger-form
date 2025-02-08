@@ -1,13 +1,21 @@
-import BaseContext from '../Context.js'
-import { Generator } from '@abw/react-context'
-import { FULFILLED, SUBMITTED, SUBMITTING } from '../Constants.js'
-import { doNothing, extract, isArray, isObject, isString } from '@abw/badger-utils'
+// import BaseContext from '../Context.js'
+import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
+import { CHANGED, FULFILLED, INVALID, RESET, SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING } from '../Constants.js'
+import { doNothing, extract, isArray, isFunction, isObject, isString } from '@abw/badger-utils'
 import { callFunctions, stringToObject } from '../Utils.js'
-import { formDefaultProperties, formFieldProperties } from '../Config.js'
-import { newFormStatus } from '../Status.js'
+// import { formModelDefaults } from './defaults.js'
+import { formFieldProperties } from '../Config.js'
+import { formStatusSets } from '../Status.js'
+import { AddFormState, AddFormStateFn, FormActions, FormConstructorProps, FormProps, FormState } from './types.js'
+import { formModelDefaults } from './defaults'
+import { ContextStatus, StateCallback } from '../types.js'
 
-class FormContext extends BaseContext {
-  static newStatus    = newFormStatus
+class FormContext extends BaseContext<
+  FormProps,
+  FormState,
+  FormActions
+> {
+  // static newStatus    = newFormStatus
   static debug        = false
   static debugPrefix  = 'Form > '
   static debugColor   = 'rebeccapurple'
@@ -20,14 +28,31 @@ class FormContext extends BaseContext {
     'setValue', 'setValues', 'setHidden',
     // should this be kept internal?
     'setStatus',
-    'setResetState', 'setChangedState',
-    'setValidatingState', 'setValidState', 'setInvalidState',
-    'setSubmittingState', 'setSubmittedState',
+    'setResetState',
+    'setChangedState',
+    'setValidatingState',
+    'setValidState',
+    'setInvalidState',
+    'setUnvalidatedState',
+    'setSubmittingState',
+    'setSubmittedState',
     'handleError'
   ]
 
-  constructor(props) {
+  mounted?: boolean
+  config: WithRequiredFrom<
+    FormProps,
+    typeof formModelDefaults
+  >
+
+  constructor(
+    props: FormConstructorProps
+  ) {
     super(props)
+    this.config = {
+      ...formModelDefaults,
+      ...props
+    }
     this.fields = { }
 
     const {
@@ -36,7 +61,7 @@ class FormContext extends BaseContext {
     } = props
     const initialValues = { ...hidden }
     const defaults = {
-      ...formDefaultProperties,
+      ...formModelDefaults,
       ...this.props,
     }
 
@@ -45,6 +70,7 @@ class FormContext extends BaseContext {
       ...defaults,
       ...this.state,
       initialValues,
+      status: formStatusSets.reset,
       values: { ...initialValues },
       errors: [ ],
       error: null
@@ -62,6 +88,59 @@ class FormContext extends BaseContext {
     this.debug('componentWillUnmount()')
     this.mounted = false
   }
+
+  //--------------------------------------------------------------------------
+  // Status
+  //--------------------------------------------------------------------------
+  setStatus(
+    status: ContextStatus,
+    addState: AddFormState = {},
+    callback: StateCallback = doNothing
+  ) {
+    if (! this.mounted) {
+      return
+    }
+    this.setState(
+      oldState => ({
+        ...(
+          isFunction<AddFormStateFn>(addState)
+            ? addState(oldState)
+            : addState
+        ),
+        status: {
+          ...oldState.status,
+          ...(formStatusSets[status] || { [status]: true })
+        }
+      }),
+      callback
+    )
+  }
+  setResetState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(RESET, state, callback)
+  }
+  setChangedState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(CHANGED, state, callback)
+  }
+  setValidatingState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(VALIDATING, state, callback)
+  }
+  setInvalidState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(INVALID, state, callback)
+  }
+  setValidState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(VALID, state, callback)
+  }
+  setUnvalidatedState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(UNVALIDATED, state, callback)
+  }
+  setSubmittingState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(SUBMITTING, state, callback)
+  }
+  setSubmittedState(state?: AddFormState, callback?: StateCallback) {
+    this.setStatus(SUBMITTED, state, callback)
+  }
+
+
 
   // Fields
   fieldSpec(name, props) {
@@ -92,12 +171,6 @@ class FormContext extends BaseContext {
     delete this.fields[name]
   }
 
-  setSubmittingState(state, callback) {
-    this.setStatus(SUBMITTING, state, callback)
-  }
-  setSubmittedState(state, callback) {
-    this.setStatus(SUBMITTED, state, callback)
-  }
 
   //--------------------------------------------------------------------------
   // Field focus

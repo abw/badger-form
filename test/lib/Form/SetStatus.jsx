@@ -3,9 +3,14 @@ import { useForm } from '@/lib/index'
 
 const SetStatus = () => {
   const {
-    setResetState, setChangedState,
-    setValidatingState, setValidState, setInvalidState,
-    setSubmittingState, setSubmittedState
+    setResetState,
+    setChangedState,
+    setValidatingState,
+    setValidState,
+    setInvalidState,
+    setUnvalidatedState,
+    setSubmittingState,
+    setSubmittedState
   } = useForm()
   return <>
     <CallbackButton
@@ -32,6 +37,11 @@ const SetStatus = () => {
       callback={setValidState}
       id="set-valid-state"
       text="SetValidState"
+    />
+    <CallbackButton
+      callback={setUnvalidatedState}
+      id="set-unvalidated-state"
+      text="SetUnvalidatedState"
     />
     <CallbackButton
       callback={setSubmittingState}

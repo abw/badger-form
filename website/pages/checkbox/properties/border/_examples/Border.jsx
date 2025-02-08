@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field } from '@/lib/index.js'
+import { Form, Field } from '@/lib/index'
 
 const Border = () =>
   /* START */

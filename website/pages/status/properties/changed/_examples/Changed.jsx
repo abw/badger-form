@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, Status, Reset } from '@/lib/index.js'
+import { Form, Field, Status, Reset } from '@/lib/index'
 
 const ChangedExample = () =>
   /* START */

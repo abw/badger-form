@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, CancelSubmit } from '@/lib/index.js'
+import { Form, Field, CancelSubmit } from '@/lib/index'
 
 const ResetSubmitSpace = () =>
   /* START */

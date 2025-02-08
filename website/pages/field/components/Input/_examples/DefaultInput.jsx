@@ -1,4 +1,4 @@
-import { Form, Field, Input } from '@/lib/index.js'
+import { Form, Field, Input } from '@/lib/index'
 
 {/* START */}
 import React from 'react'

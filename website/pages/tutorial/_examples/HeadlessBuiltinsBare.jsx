@@ -1,6 +1,6 @@
 import {
   Form, Field, Layout, Label, Text, Message, Submit
-} from '@/lib/index.js'
+} from '@/lib/index'
 
 {/* START */}
 import React from 'react'

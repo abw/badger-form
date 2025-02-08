@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, CancelSubmit } from '@/lib/index.js'
+import { Form, Field, CancelSubmit } from '@/lib/index'
 
 // PRETEND: import { Form, Field, CancelSubmit } from '@abw/badger-form'
 

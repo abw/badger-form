@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, Errors, ResetSubmit } from '@/lib/index.js'
+import { Form, Field, Errors, ResetSubmit } from '@/lib/index'
 
 const ErrorsExample = () =>
   /* START */

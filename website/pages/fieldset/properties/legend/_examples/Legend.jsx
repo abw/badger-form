@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, Fieldset } from '@/lib/index.js'
+import { Form, Field, Fieldset } from '@/lib/index'
 
 const FieldsetExample = () =>
   /* START */

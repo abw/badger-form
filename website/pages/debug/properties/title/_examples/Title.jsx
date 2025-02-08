@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, Debug } from '@/lib/index.js'
+import { Form, Field, Debug } from '@/lib/index'
 
 const DebugForm = () =>
   /* START */

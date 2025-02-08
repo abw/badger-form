@@ -1,4 +1,4 @@
-import { useField } from '@/lib/index.js'
+import { useField } from '@/lib/index'
 
 {/* START */}
 import React from 'react'

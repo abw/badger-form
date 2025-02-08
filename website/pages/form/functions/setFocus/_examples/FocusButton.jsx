@@ -1,4 +1,4 @@
-import { useForm } from '@/lib/index.js'
+import { useForm } from '@/lib/index'
 
 {/* START */}
 import React  from 'react'

@@ -1,4 +1,4 @@
-import { Label, useField } from '@/lib/index.js'
+import { Label, useField } from '@/lib/index'
 {/* START */}
 import React from 'react'
 import Options from './Options.jsx'

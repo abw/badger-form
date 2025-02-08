@@ -1,4 +1,4 @@
-import { Form, Field, Submit } from '@/lib/index.js'
+import { Form, Field, Submit } from '@/lib/index'
 import { sleep } from '@abw/badger-utils'
 
 {/* START */}

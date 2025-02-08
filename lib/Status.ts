@@ -1,13 +1,13 @@
-import { StatusFlags } from './types'
 import { hasValue } from '@abw/badger-utils'
+import { HasStatusProps, NewStatus, StatusFlags, StatusSets } from './types'
 import {
-  CHANGED, DISABLED, FOCUS, INVALID, SUBMITTED, SUBMITTING, VALID, VALIDATING
+  CHANGED, DISABLED, FOCUS, HAS_STATUS, INVALID, SUBMITTED, SUBMITTING, VALID, VALIDATING
 } from './Constants'
 
 // Forms and fields maintain a status in their internal state which contains
 // boolean flags to indicate if the component is changed, valid, focussed,
 // etc.
-const unvalidated: StatusFlags = {
+export const unvalidated: StatusFlags = {
   [VALID]: false,
   [INVALID]: false,
 }
@@ -45,20 +45,70 @@ const submitted: StatusFlags = {
 }
 
 // Some of these states are common to both forms and fields.
-const commonStatusChanges: Record<string, StatusFlags> = {
+const commonStatusChanges: StatusSets = {
   changed, validating, invalid, valid
 }
 
+export const formStatusSets: StatusSets = {
+  ...commonStatusChanges,
+  submitting,
+  submitted,
+  unvalidated,
+  reset: {
+    ...unvalidated,
+    [CHANGED]:    false,
+    [VALIDATING]: false,
+    [SUBMITTED]:  false,
+    [SUBMITTING]: false,
+  }
+}
+
+//  props: {
+//    disabled?: boolean,
+//    [key: string]: unknown
+//  } = { }
+
+export const fieldStatusSets = {
+  ...commonStatusChanges,
+  focus,
+  blur,
+  unvalidated,
+  reset: {
+    ...unvalidated,
+    [CHANGED]:    false,
+    [VALIDATING]: false,
+    [FOCUS]:      false,
+    // [DISABLED]:   props.disabled || false
+  },
+  resetDisabled: {
+    ...unvalidated,
+    [CHANGED]:    false,
+    [VALIDATING]: false,
+    [FOCUS]:      false,
+    [DISABLED]:   true
+  }
+}
+
+
 // Factory to return a function to select a new status
-const newStatus = (statusChanges:  Record<string, StatusFlags>) =>
+const newStatus = (
+  statusChanges: Record<string, StatusFlags>
+): NewStatus =>
   (status: string, oldStatus: StatusFlags = { }) => ({
     ...oldStatus,
     ...(statusChanges[status] || { [status]: true })
   })
 
+export const newBaseStatus = () => {
+  return newStatus({
+    reset: unvalidated,
+    changed, validating, invalid, valid, unvalidated
+  })
+}
+
 // Factory to return a function to select a new form status
 export const newFormStatus = () => {
-  const reset = {
+  const reset: StatusFlags = {
     ...unvalidated,
     [CHANGED]:    false,
     [VALIDATING]: false,
@@ -72,7 +122,12 @@ export const newFormStatus = () => {
 }
 
 // Factory to return a function to select a new field status
-export const newFieldStatus = (props: { disabled?: boolean, [key: string]: unknown } = { }) => {
+export const newFieldStatus = (
+  props: {
+    disabled?: boolean,
+    [key: string]: unknown
+  } = { }
+) => {
   const reset = {
     ...unvalidated,
     [CHANGED]:    false,
@@ -99,13 +154,8 @@ export const hasStatus = ({
   not=false,
   any=false,
   ...props
-}: {
-  status: Record<string, boolean>,
-  not?: boolean,
-  any?: boolean,
-  [key: string]: unknown
-}) => {
-  const states = [CHANGED, VALIDATING, VALID, INVALID, SUBMITTING, SUBMITTED]
+}: HasStatusProps) => {
+  const states = HAS_STATUS
     .filter( state => hasValue(props[state]) )
     .map( state => status[state] )
   const match = any

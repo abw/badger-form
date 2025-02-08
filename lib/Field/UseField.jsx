@@ -1,5 +1,5 @@
 import React from 'react'
-import { Children } from './Context.js'
+import { Children } from './Context'
 
 export const UseField = ({ children }) =>
   <Children>

@@ -1,3 +1,5 @@
+import { ContextStatus } from './types'
+
 export const BLANK        = ''
 export const BLUR         = 'blur'
 export const CHANGED      = 'changed'
@@ -32,4 +34,11 @@ export const INPUT_ATTRS  = [
 export const FORM_ATTRS = [
   'id', 'name', 'action', 'method', 'encType'
 ]
-
+export const HAS_STATUS: ContextStatus[] = [
+  CHANGED,
+  VALIDATING,
+  VALID,
+  INVALID,
+  SUBMITTING,
+  SUBMITTED
+]

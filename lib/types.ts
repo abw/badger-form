@@ -1,4 +1,46 @@
 import { ReactNode } from 'react'
+import { CHANGED, FOCUS, INVALID, RESET, SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING } from './Constants'
+import { ContextConstructorProps, ContextDebugOptions, ContextProps } from '@abw/react-context'
+
+export type ContextStatus =
+  typeof CHANGED |
+  typeof FOCUS |
+  typeof INVALID |
+  typeof RESET |
+  typeof SUBMITTED |
+  typeof SUBMITTING |
+  typeof UNVALIDATED |
+  typeof VALID |
+  typeof VALIDATING
+
+export type StatusFlags = Partial<Record<ContextStatus, boolean>>
+export type StatusSets = Record<string, StatusFlags>
+export type NewStatus = (status: string, oldStatus?: StatusFlags) => StatusFlags
+export type HasStatusProps = StatusFlags & {
+  status: StatusFlags,
+  not?: boolean,
+  any?: boolean,
+}
+export type AddState<State> = Partial<State> | AddStateFn<State>
+export type AddStateFn<State> = (oldState: Partial<State>) => Partial<State>
+export type StateCallback = () => void
+export type ContextState = {
+  status: StatusFlags
+}
+// export type BaseContextProps = ContextProps<ContextDebugOptions>
+export type BaseContextProps = { } //ContextProps<{ i?: number }>
+export type BaseContextState = {
+  status?: StatusFlags
+}
+export type BaseContextConstructorProps = ContextConstructorProps<
+  BaseContextProps,
+  BaseContextState
+>
+
+// export type BaseContextProps = ContextProps<{ }>
+export type FormContextProps = {
+  // onLoad:
+}
 
 export type CSSClassItem = string|undefined|null
 export type CSSClassHash = Record<string, unknown>
@@ -12,7 +54,6 @@ export type FlexGridProps = {
   [key: string]: unknown
 }
 
-export type StatusFlags = Record<string, boolean>
 
 export type FormButtonProps = {
   text?: ReactNode

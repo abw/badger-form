@@ -1,4 +1,4 @@
-import { Consumer } from './Context.js'
+import { Consumer } from './Context'
 import { hasStatus } from '../Status'
 
 const Status = ({

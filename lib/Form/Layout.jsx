@@ -1,5 +1,5 @@
 import React from 'react'
-import { Children, useForm } from './Context.js'
+import { Children, useForm } from './Context'
 import { formAttrs } from '../Utils'
 
 const Layout = ({

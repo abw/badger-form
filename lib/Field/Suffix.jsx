@@ -1,5 +1,5 @@
 import React from 'react'
-import { useField } from './Context.js'
+import { useField } from './Context'
 import { classes } from '../Utils'
 
 const Suffix = ({

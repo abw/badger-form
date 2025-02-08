@@ -1,8 +1,8 @@
 import React from 'react'
 import prepareField from './Field/Prepare.jsx'
 import FieldLayout from './Field/Layout.jsx'
-import { useForm } from './Form/Context.js'
-import { Provider, Children }  from './Field/Context.js'
+import { useForm } from './Form/Context'
+import { Provider, Children }  from './Field/Context'
 
 export const Field = ({
   name,

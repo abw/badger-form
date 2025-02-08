@@ -3,7 +3,7 @@ import DefaultLabel from './Label.jsx'
 import DefaultInput from './Input.jsx'
 import DefaultMessage from './Message.jsx'
 import Hidden from '../Input/Hidden.jsx'
-import { useField } from './Context.js'
+import { useField } from './Context'
 import { fieldClass } from '../Utils'
 
 const Layout = ({

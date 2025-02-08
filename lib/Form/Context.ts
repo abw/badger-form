@@ -1,10 +1,10 @@
 import BaseContext from '../Context.js'
 import { Generator } from '@abw/react-context'
-import { FULFILLED, SUBMITTED, SUBMITTING } from '../Constants'
+import { FULFILLED, SUBMITTED, SUBMITTING } from '../Constants.js'
 import { doNothing, extract, isArray, isObject, isString } from '@abw/badger-utils'
-import { callFunctions, stringToObject } from '../Utils'
+import { callFunctions, stringToObject } from '../Utils.js'
 import { formDefaultProperties, formFieldProperties } from '../Config.js'
-import { newFormStatus } from '../Status'
+import { newFormStatus } from '../Status.js'
 
 class FormContext extends BaseContext {
   static newStatus    = newFormStatus

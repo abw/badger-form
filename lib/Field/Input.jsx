@@ -1,7 +1,7 @@
 import React from 'react'
 import Inputs from './Inputs.jsx'
 import { getInputType } from '../Input/index.js'
-import { useField } from './Context.js'
+import { useField } from './Context'
 import { hasValue } from '@abw/badger-utils'
 import { RADIO, TEXT } from '../Constants'
 

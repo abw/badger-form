@@ -1,6 +1,6 @@
 import React from 'react'
-import DefaultPrefix from './Prefix.jsx'
-import DefaultSuffix from './Suffix.jsx'
+import DefaultPrefix from './Prefix'
+import DefaultSuffix from './Suffix'
 import { getInputType } from '../Input/index.js'
 import { useField } from './Context'
 import { selectClass } from '../Utils'

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useField } from '@/lib/index'
 import { isBoolean } from '@abw/badger-utils'
 
@@ -20,11 +19,14 @@ const Status = () => {
     <div data-testid="focus">
       {BoolVal(status.focus)}
     </div>
+    <div data-testid="disabled">
+      {BoolVal(status.disabled)}
+    </div>
   </>
 }
 
-const BoolVal = value =>
-  isBoolean
+const BoolVal = (value?: boolean) =>
+  isBoolean(value)
     ? (value ? 'TRUE' : 'FALSE')
     : '???'
 

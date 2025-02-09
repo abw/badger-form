@@ -1,21 +1,22 @@
 import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
-import { BLUR, CHANGED, FOCUS, INVALID, RESET, RESET_DISABLED, UNVALIDATED, VALID, VALIDATING } from '../Constants'
+import { BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED, UNVALIDATED, VALID, VALIDATING } from '../Constants'
 import { callFunctions, lengthEmpty } from '../Utils'
 import { createRef } from 'react'
 import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
-import { fieldModelDefaults } from './defaults'
+import { fieldDefaults, fieldModelDefaults } from './defaults'
 import { fieldStatusSets } from '../Status'
-import { AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps, FieldProps, FieldState } from './types'
+import { AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps, FieldProps, FieldRenderProps, FieldState } from './types'
 import { FieldStatusChange, StateCallback } from '../types'
 
 class FieldContext extends BaseContext<
   FieldProps,
   FieldState,
-  FieldActions
+  FieldActions,
+  FieldRenderProps & FieldState & FieldActions
 > {
   // static newStatus    = newFieldStatus
   static debug        = false
-  static debugPrefix  = props => `Field [${props.name}] > `
+  static debugPrefix  = `Field > `// props => `Field [${props.name}] > `
   static debugColor   = 'teal'
   static actions      = [
     'onFocus',
@@ -33,6 +34,8 @@ class FieldContext extends BaseContext<
     'setInvalidState',
     'setFocusState',
     'setBlurState',
+    'setDisabledState',
+    'setEnabledState',
   ]
 
   mounted?: boolean
@@ -46,7 +49,7 @@ class FieldContext extends BaseContext<
   ) {
     super(props)
     this.config = {
-      ...fieldModelDefaults,
+      ...fieldDefaults,
       ...props
     }
 
@@ -59,6 +62,9 @@ class FieldContext extends BaseContext<
     this.state = {
       ...this.state,
       initialValue,
+      status: props.disabled
+        ? fieldStatusSets.resetDisabled
+        : fieldStatusSets.reset,
       value,
       error: null
     }
@@ -113,8 +119,8 @@ class FieldContext extends BaseContext<
       oldState => ({
         ...(
           isFunction<AddFieldStateFn>(addState)
-            ? addState(oldState)
-            : addState
+            ? addState(oldState) as FieldState
+            : addState as FieldState
         ),
         status: {
           ...oldState.status,
@@ -144,6 +150,12 @@ class FieldContext extends BaseContext<
   }
   setBlurState(state?: AddFieldState, callback?: StateCallback) {
     this.setStatus(BLUR, state, callback)
+  }
+  setDisabledState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(DISABLED, state, callback)
+  }
+  setEnabledState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(ENABLED, state, callback)
   }
   setResetState(state?: AddFieldState, callback?: StateCallback) {
     this.setStatus(
@@ -273,7 +285,7 @@ class FieldContext extends BaseContext<
       const { value='' } = this.state
       const {
         validate, required, optional, requiredMessage, validMessage,
-      } = { ...fieldDefaultProperties, ...this.props }
+      } = { ...fieldDefaults, ...this.props }
       const [ , empty] = lengthEmpty(value)
 
       // let validate = validateOnChange || (validateOnInvalid && invalid)
@@ -374,14 +386,15 @@ class FieldContext extends BaseContext<
 
   getContext() {
     const context = {
-      ...fieldDefaultProperties,
-      ...this.props,
+      // ...fieldDefaultProperties,
+      // ...this.props,
+      ...this.config,
       ...this.state,
       ...this.actions,
-      name:     this.name,
-      inputRef: this.inputRef,
-      resetRef: this.resetRef,
-      setRef:   this.resetRef,      // OLD name
+      // name:     this.name,
+      // inputRef: this.inputRef,
+      // resetRef: this.resetRef,
+      // setRef:   this.resetRef,      // OLD name
     }
     delete context.form
     delete context.children
@@ -391,5 +404,12 @@ class FieldContext extends BaseContext<
 }
 
 const generated = Generator(FieldContext)
-export const { Context, Provider, Consumer, Children, Use: useField } = generated
+
+export const {
+  Context,
+  Provider,
+  Consumer,
+  Children,
+  Use: useField
+} = generated
 export default generated

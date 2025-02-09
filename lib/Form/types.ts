@@ -3,6 +3,11 @@ import { formModelDefaults, formRenderDefaults } from './defaults'
 import { FormStatusFlags, StateCallback } from '../types'
 import { ContextConstructorProps } from '@abw/react-context'
 
+// TODO
+// * fields
+// * onLoad
+// * props.fields
+
 export type FormModelDefaults = typeof formModelDefaults
 export type FormRenderDefaults = typeof formRenderDefaults
 
@@ -27,6 +32,10 @@ export type FormProps = {
   showOptional?: boolean
   optionalLabel?: ReactNode
   focusInvalidField?: boolean
+  errorsTitle?: ErrorsTitle,
+  errorsPrompt?: ErrorsPrompt,
+  Error?: FormErrorComponent
+  Layout?: FormLayoutComponent
 } & Partial<FormModelDefaults>
   & Partial<FormRenderDefaults>
 
@@ -36,13 +45,19 @@ export type FormRenderProps = {
 
 export type FormState = {
   // TODO: more
+  error?: FormErrorItem | null
+  errors: FormErrorItem[]
   status: FormStatusFlags
   initialValues: Record<string, unknown>
   values: Record<string, unknown>
 }
 
+// export type SomeFormState = Pick<FormState, keyof FormState>
 export type AddFormState = Partial<FormState> | AddFormStateFn
+// export type AddFormState = PartialButNotUndefined<FormState> | AddFormStateFn
+// export type AddFormState = SomeFormState | AddFormStateFn
 export type AddFormStateFn = (state: FormState) => Partial<FormState>
+// export type AddFormStateFn = (state: FormState) => SomeFormState
 
 export type FormStateSetter = (state?: AddFormState, callback?: StateCallback) => void
 
@@ -74,7 +89,7 @@ export type FormConstructorProps = ContextConstructorProps<
 >
 
 export interface FormComponentProps extends FormProps {
-  Layout?: FormLayoutComponent,
+  // Layout?: FormLayoutComponent,  // Now in context props
   children?: ReactNode
 }
 
@@ -129,5 +144,34 @@ export interface UseFormProps {
   children?: ReactNode
 }
 
+export interface FormErrorsProps {
+  // form = useForm(),
+  title?: ErrorsTitle
+  prompt?: ErrorsPrompt
+  fieldErrors?: boolean
+  className?: string
+}
+
+export interface FormErrorProps {
+  error: FormErrorItem
+}
+
+export interface FormErrorObjectProps {
+  error: FormErrorObjectItem
+}
+
+export type FormErrorItem = string | FormErrorObjectItem
+export type FormErrorObjectItem = {
+  label?: string
+  name?: string
+  message?: string
+}
+// } & Record<string, unknown>
+
+export type ErrorsTitle = ReactNode | ErrorsTitleFn
+export type ErrorsPrompt = ReactNode | ErrorsPromptFn
+export type ErrorsTitleFn = (n: number) => ReactNode
+export type ErrorsPromptFn = (n: number) => ReactNode
 
 export type FormLayoutComponent = React.FC<FormLayoutProps>
+export type FormErrorComponent = React.FC<FormErrorProps>

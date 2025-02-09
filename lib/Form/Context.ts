@@ -6,7 +6,7 @@ import { callFunctions, stringToObject } from '../Utils.js'
 // import { formModelDefaults } from './defaults.js'
 import { formFieldProperties } from '../Config.js'
 import { formStatusSets } from '../Status.js'
-import { AddFormState, AddFormStateFn, FormActions, FormConstructorProps, FormProps, FormState, FormSubmitEvent } from './types.js'
+import { AddFormState, AddFormStateFn, FormActions, FormConstructorProps, FormProps, FormState } from './types.js'
 import { formModelDefaults } from './defaults'
 import { FormStatusChange, StateCallback } from '../types.js'
 import { FormEvent } from 'react'
@@ -105,8 +105,8 @@ class FormContext extends BaseContext<
       oldState => ({
         ...(
           isFunction<AddFormStateFn>(addState)
-            ? addState(oldState)
-            : addState
+            ? addState(oldState) as FormState   // Annoyingly required because
+            : addState as FormState             // Partial<...> allows undefined
         ),
         status: {
           ...oldState.status,

@@ -76,7 +76,7 @@ export const fieldStatusSets: FieldStatusSets = {
     [CHANGED]:    false,
     [VALIDATING]: false,
     [FOCUS]:      false,
-    // [DISABLED]:   props.disabled || false
+    [DISABLED]:   false
   },
   resetDisabled: {
     ...unvalidated,
@@ -84,6 +84,12 @@ export const fieldStatusSets: FieldStatusSets = {
     [VALIDATING]: false,
     [FOCUS]:      false,
     [DISABLED]:   true
+  },
+  disabled: {
+    [DISABLED]: true
+  },
+  enabled: {
+    [DISABLED]: false
   }
 }
 

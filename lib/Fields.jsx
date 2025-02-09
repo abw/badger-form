@@ -1,5 +1,5 @@
 import React from 'react'
-import Field from './Field.jsx'
+import Field from './Field'
 import { isBoolean, splitList } from '@abw/badger-utils'
 import { gridGapClasses } from './Utils'
 

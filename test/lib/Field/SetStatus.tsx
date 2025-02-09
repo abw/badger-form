@@ -1,11 +1,16 @@
-import React from 'react'
 import { useField } from '@/lib/index'
 
 const SetStatus = () => {
   const {
-    setResetState, setChangedState,
-    setValidatingState, setValidState, setInvalidState,
-    setFocusState, setBlurState
+    setResetState,
+    setChangedState,
+    setValidatingState,
+    setValidState,
+    setInvalidState,
+    setFocusState,
+    setBlurState,
+    setDisabledState,
+    setEnabledState
   } = useField()
   return <>
     <CallbackButton
@@ -43,10 +48,23 @@ const SetStatus = () => {
       id="set-blur-state"
       text="SetBlurState"
     />
+    <CallbackButton
+      callback={setDisabledState}
+      id="set-disabled-state"
+      text="SetDisabledState"
+    />
+    <CallbackButton
+      callback={setEnabledState}
+      id="set-enabled-state"
+      text="SetEnabledState"
+    />
   </>
 }
 
-const CallbackButton = ({callback, id, text}) =>
+const CallbackButton = (
+  { callback, id, text }:
+  { callback: () => void, id: string, text: string }
+) =>
   <button
     onClick={e => { e.preventDefault(); callback() }}
     data-testid={id}

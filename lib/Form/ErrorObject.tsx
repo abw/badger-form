@@ -1,6 +1,8 @@
-import React from 'react'
+import { FormErrorObjectProps } from './types'
 
-export const FormErrorObject = ({ error }) => {
+export const FormErrorObject = ({
+  error
+}: FormErrorObjectProps) => {
   const label = error.label || error.name
   return (
     <>

@@ -3,6 +3,9 @@ import { doNothing, isFunction } from '@abw/badger-utils'
 import { CHANGED, INVALID, RESET, UNVALIDATED, VALID, VALIDATING } from './Constants'
 
 // Base class for form and field contexts that has function to set status
+// NO LONGER USED - it was easier to copy-n-paste these base class methods
+// into the Form and Field contexts than try to wrangle the generics down
+// to the BaseContext from @abw/react-context
 
 class Context extends BaseContext {
   constructor(props) {

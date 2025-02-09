@@ -1,8 +1,6 @@
-import { ReactNode } from 'react'
-import { ContextConstructorProps } from '@abw/react-context'
 import {
-  BLUR, CHANGED, DISABLED, FOCUS, INVALID, RESET, RESET_DISABLED, SUBMITTED,
-  SUBMITTING, UNVALIDATED, VALID, VALIDATING
+  BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED,
+  SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING
 } from './Constants'
 
 /**
@@ -92,7 +90,9 @@ export type FieldStatusChange =
   typeof BLUR |
   typeof UNVALIDATED |
   typeof RESET |
-  typeof RESET_DISABLED
+  typeof RESET_DISABLED |
+  typeof DISABLED |
+  typeof ENABLED
 
 /**
   Generic type for mapping status change strings to the corresponding status

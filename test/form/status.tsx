@@ -1,7 +1,6 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
-import { render, screen, act } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Form } from '@/lib/index'
 import Status from '../lib/Form/Status'
 import SetStatus from '../lib/Form/SetStatus'
@@ -26,7 +25,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form changed status',
       async () => {
@@ -48,7 +47,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form validating status',
       async () => {
@@ -70,7 +69,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form invalid status',
       async () => {
@@ -92,7 +91,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form valid status',
       async () => {
@@ -114,7 +113,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form submitting status',
       async () => {
@@ -136,7 +135,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form submitted status',
       async () => {
@@ -158,7 +157,7 @@ describe(
           submitted: true,
         })
       }
-    ),
+    )
     it(
       'form reset status',
       async () => {
@@ -180,7 +179,7 @@ describe(
           submitted: false,
         })
       }
-    ),
+    )
     it(
       'form multi-status changes',
       async () => {
@@ -300,7 +299,7 @@ describe(
   }
 )
 
-function expectState(state) {
+function expectState(state: Record<string, boolean>) {
   Object.entries(state).forEach(
     ([key, expected]) => {
       expect(screen.getByTestId(key))

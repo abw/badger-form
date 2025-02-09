@@ -1,6 +1,6 @@
 import React from 'react'
 import Handlers from './Handlers.js'
-import { useField } from '../Field/Context.js'
+import { useField } from '../Field/Context'
 import { inputAttrs, classes, valueOption } from '../Utils'
 
 const Radio = ({

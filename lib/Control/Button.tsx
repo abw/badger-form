@@ -1,4 +1,4 @@
-import { FormButtonProps } from '../types'
+import { FormButtonProps } from './types'
 
 export const Button = ({
   onClick,

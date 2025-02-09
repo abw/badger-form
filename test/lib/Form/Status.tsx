@@ -1,4 +1,3 @@
-import React from 'react'
 import { useForm } from '@/lib/index'
 import { isBoolean } from '@abw/badger-utils'
 
@@ -26,8 +25,8 @@ const Status = () => {
   </>
 }
 
-const BoolVal = value =>
-  isBoolean
+const BoolVal = (value?: boolean) =>
+  isBoolean(value)
     ? (value ? 'TRUE' : 'FALSE')
     : '???'
 

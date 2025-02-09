@@ -2,7 +2,7 @@ import Reset  from './Reset'
 import Submit from './Submit'
 import { flexGapSpaceClasses } from '../Utils'
 import { CONTROLS } from '../Constants'
-import { FormResetSubmitProps } from '../types'
+import { FormResetSubmitProps } from './types'
 
 export const ResetSubmit = ({
   className,

@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import { render, screen, act } from '@testing-library/react'
 import { Form } from '@/lib/index'
-import Status from '../lib/Form/Status.jsx'
-import SetStatus from '../lib/Form/SetStatus.jsx'
+import Status from '../lib/Form/Status'
+import SetStatus from '../lib/Form/SetStatus'
 
 describe(
   'Form status',

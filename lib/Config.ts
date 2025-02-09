@@ -1,8 +1,3 @@
-import {
-  OPTIONAL, REQUIRED, REQUIRED_MSG,
-  //SUBMITTING, VALIDATING
-} from './Constants'
-
 /* Moved to form/defaults.ts
 export const errorsTitle = (n: number): ReactNode =>
   `Form Error${n > 1 ? 's' : ''}`
@@ -24,6 +19,7 @@ export const formDefaultProperties = {
 */
 
 // default properties for a field
+/*
 export const fieldDefaultProperties = {
   validateOnChange:  false,
   validateOnBlur:    false,
@@ -36,6 +32,7 @@ export const fieldDefaultProperties = {
   requiredLabel:     REQUIRED,
   optionalLabel:     OPTIONAL,
 }
+*/
 
 // properties that can be defined on the form and are inherited by fields
 export const formFieldProperties = {

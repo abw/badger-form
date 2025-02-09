@@ -1,31 +1,150 @@
 import { ReactNode } from 'react'
-import { CHANGED, FOCUS, INVALID, RESET, SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING } from './Constants'
-import { ContextConstructorProps, ContextDebugOptions, ContextProps } from '@abw/react-context'
+import { ContextConstructorProps } from '@abw/react-context'
+import {
+  BLUR, CHANGED, DISABLED, FOCUS, INVALID, RESET, RESET_DISABLED, SUBMITTED,
+  SUBMITTING, UNVALIDATED, VALID, VALIDATING
+} from './Constants'
 
-export type ContextStatus =
+/**
+  The form and field contexts maintain a status: { ... } object which
+  contain a number of boolean flags indicating the current status.
+  The `changed`, `validating`, `valid` and `invalid` flags are common
+  to both.
+*/
+export type CommonContextStatus =
   typeof CHANGED |
-  typeof FOCUS |
   typeof INVALID |
-  typeof RESET |
-  typeof SUBMITTED |
-  typeof SUBMITTING |
-  typeof UNVALIDATED |
   typeof VALID |
   typeof VALIDATING
 
-export type StatusFlags = Partial<Record<ContextStatus, boolean>>
-export type StatusSets = Record<string, StatusFlags>
-export type NewStatus = (status: string, oldStatus?: StatusFlags) => StatusFlags
-export type HasStatusProps = StatusFlags & {
-  status: StatusFlags,
+/**
+  In addition to the `CommonContextStatus` flags, the form context has
+  additional `status` flags to indicate that it's currently `submitting`
+  or has been `submitted`.
+ */
+export type FormContextStatus =
+  CommonContextStatus |
+  typeof SUBMITTED |
+  typeof SUBMITTING
+  // typeof UNVALIDATED
+
+/**
+  In addition to the `CommonContextStatus` flags, the field context has
+  additional `status` flags to indicate that it currently has `focus` or
+  is `disabled`.
+*/
+export type FieldContextStatus =
+  CommonContextStatus |
+  typeof FOCUS |
+  typeof DISABLED
+
+/**
+  The `status` object in a form or field context has the
+  `FormContextStatus` or `FieldContextStatus` flags as keys and corresponding
+  boolean values.
+ */
+export type StatusFlags<
+  Flags extends string = CommonContextStatus
+> =
+  Partial<
+    Record<Flags, boolean>
+  >
+
+/**
+  The `status` object for a form context.
+*/
+export type FormStatusFlags = StatusFlags<FormContextStatus>
+
+/**
+  The `status` object for a field context.
+*/
+export type FieldStatusFlags = StatusFlags<FieldContextStatus>
+
+/**
+  The form and field contexts have `setStatus` methods which accept a
+  string as the first argument indicating how the status should be changed.
+  These are the common status transitions.
+ */
+export type CommonStatusChange =
+  typeof CHANGED |
+  typeof VALIDATING |
+  typeof INVALID |
+  typeof VALID
+
+/**
+  In addition to the `CommonStatusChange` transitions, the `setStatus` method
+  in the form context accepts several other status transition strings.
+ */
+export type FormStatusChange =
+  CommonStatusChange |
+  typeof SUBMITTING |
+  typeof SUBMITTED |
+  typeof UNVALIDATED |
+  typeof RESET
+
+/**
+  In addition to the `CommonStatusChange` transitions, the `setStatus` method
+  in the field context accepts several other status transition strings.
+ */
+export type FieldStatusChange =
+  CommonStatusChange |
+  typeof FOCUS |
+  typeof BLUR |
+  typeof UNVALIDATED |
+  typeof RESET |
+  typeof RESET_DISABLED
+
+/**
+  Generic type for mapping status change strings to the corresponding status
+  flags.
+ */
+export type StatusSets<
+  Changes extends string = CommonStatusChange,
+  Flags = StatusFlags
+> = Record<Changes, Flags>
+
+/**
+  Table mapping the `FormStatusChange` strings to sets of `FormStatusFlags`
+  that are applied to the form context `status` object.
+ */
+export type FormStatusSets = StatusSets<
+  FormStatusChange,
+  FormStatusFlags
+>
+
+/**
+  Table mapping the `FieldStatusChange` strings to sets of `FieldStatusFlags`
+  that are applied to the field context `status` object.
+ */
+export type FieldStatusSets = StatusSets<
+  FieldStatusChange,
+  FieldStatusFlags
+>
+
+export type NewStatus<
+  Status,
+  Flags
+> = (
+  status: Status,
+  oldStatus?: Flags
+) => Flags
+
+// export type NewFormStatus = NewStatus<FormStatusChanges, FormStatusFlags>
+
+export type HasStatusProps<Flags> = Flags & {
+  status: Flags,
   not?: boolean,
   any?: boolean,
 }
+export type FormHasStatusProps = HasStatusProps<FormStatusFlags>
+export type FieldHasStatusProps = HasStatusProps<FieldStatusFlags>
+
+export type StateCallback = () => void
 
 // NOTE: moved to form/types.ts
+/*
 export type AddState<State> = Partial<State> | AddStateFn<State>
 export type AddStateFn<State> = (oldState: Partial<State>) => Partial<State>
-export type StateCallback = () => void
 export type ContextState = {
   status: StatusFlags
 }
@@ -38,6 +157,7 @@ export type BaseContextConstructorProps = ContextConstructorProps<
   BaseContextProps,
   BaseContextState
 >
+*/
 
 // export type BaseContextProps = ContextProps<{ }>
 //export type FormContextProps = {
@@ -56,43 +176,8 @@ export type FlexGridProps = {
   [key: string]: unknown
 }
 
-
-export type FormButtonProps = {
-  text?: ReactNode
-  children?: ReactNode
-} & HTMLButtonAttrs
-
-export type FormButtonWrapperProps = {
-  Button?: FormButtonComponent
-} & FormButtonProps
-
-export type FormCancelProps = FormButtonWrapperProps
-export type FormResetProps = FormButtonWrapperProps
-export type FormSubmitProps = FormButtonWrapperProps
-
-export type FormButtonsProps = {
-  className?: string
-  gap?: number
-  space?: boolean
-  size?: string
-}
-
-export type FormResetSubmitProps = {
-  reset?: FormResetProps
-  submit: FormSubmitProps
-} & FormButtonsProps
-
-export type FormCancelSubmitProps = {
-  cancel?: FormCancelProps
-  submit: FormSubmitProps
-} & FormButtonsProps
-
-export type FormCancelResetSubmitProps = {
-  cancel?: FormCancelProps
-  reset?: FormResetProps
-  submit: FormSubmitProps
-} & FormButtonsProps
-
+/*
 export type FormButtonComponent = React.FC<FormButtonProps>
 
 export type HTMLButtonAttrs = React.ComponentPropsWithoutRef<'button'>
+*/

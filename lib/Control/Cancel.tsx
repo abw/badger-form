@@ -1,4 +1,4 @@
-import { FormCancelProps } from '../types'
+import { FormCancelProps } from './types'
 import DefaultButton from './Button'
 
 export const Cancel = ({

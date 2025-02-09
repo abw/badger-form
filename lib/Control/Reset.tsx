@@ -1,6 +1,6 @@
-import DefaultButton from './Button.js'
-import { useForm } from '../Form/Context.js'
-import { FormResetProps } from '../types'
+import DefaultButton from './Button'
+import { useForm } from '../Form/Context'
+import { FormResetProps } from './types'
 
 export const Reset = ({
   type='reset',

@@ -1,4 +1,4 @@
-import { ContextStatus } from './types'
+import { CommonContextStatus, FieldContextStatus, FormContextStatus } from './types'
 
 export const BLANK        = ''
 export const BLUR         = 'blur'
@@ -17,6 +17,7 @@ export const RADIO        = 'radio'
 export const REQUIRED     = 'Required'
 export const REQUIRED_MSG = 'A value is required'
 export const RESET        = 'reset'
+export const RESET_DISABLED = 'resetDisabled'
 export const SELECT       = 'select'
 export const SUBMITTED    = 'submitted'
 export const SUBMITTING   = 'submitting'
@@ -34,11 +35,19 @@ export const INPUT_ATTRS  = [
 export const FORM_ATTRS = [
   'id', 'name', 'action', 'method', 'encType'
 ]
-export const HAS_STATUS: ContextStatus[] = [
+export const COMMON_HAS_STATUS: CommonContextStatus[] = [
   CHANGED,
   VALIDATING,
   VALID,
   INVALID,
+]
+export const FORM_HAS_STATUS: FormContextStatus[] = [
+  ...COMMON_HAS_STATUS,
   SUBMITTING,
   SUBMITTED
+]
+export const FIELD_HAS_STATUS: FieldContextStatus[] = [
+  ...COMMON_HAS_STATUS,
+  FOCUS,
+  DISABLED
 ]

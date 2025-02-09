@@ -1,6 +1,7 @@
 import DefaultButton from './Button'
-import { useForm } from '../Form/Context.js'
-import { FormSubmitProps } from '../types'
+import { useForm } from '../Form/Context'
+import { FormSubmitProps } from './types'
+import { MouseEvent, useMemo } from 'react'
 
 export const Submit = ({
   type='submit',
@@ -10,12 +11,19 @@ export const Submit = ({
   ...props
 }: FormSubmitProps) => {
   const { submit, status } = useForm()
+  const onClick = useMemo(
+    () => (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault()
+      submit()
+    },
+    [submit]
+  )
   return (
     <Button
       type={type}
       text={text}
       className={className}
-      onClick={submit}
+      onClick={onClick}
       disabled={status.submitting}
       {...props}
     />

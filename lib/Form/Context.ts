@@ -6,9 +6,10 @@ import { callFunctions, stringToObject } from '../Utils.js'
 // import { formModelDefaults } from './defaults.js'
 import { formFieldProperties } from '../Config.js'
 import { formStatusSets } from '../Status.js'
-import { AddFormState, AddFormStateFn, FormActions, FormConstructorProps, FormProps, FormState } from './types.js'
+import { AddFormState, AddFormStateFn, FormActions, FormConstructorProps, FormProps, FormState, FormSubmitEvent } from './types.js'
 import { formModelDefaults } from './defaults'
-import { ContextStatus, StateCallback } from '../types.js'
+import { FormStatusChange, StateCallback } from '../types.js'
+import { FormEvent } from 'react'
 
 class FormContext extends BaseContext<
   FormProps,
@@ -93,7 +94,7 @@ class FormContext extends BaseContext<
   // Status
   //--------------------------------------------------------------------------
   setStatus(
-    status: ContextStatus,
+    status: FormStatusChange,
     addState: AddFormState = {},
     callback: StateCallback = doNothing
   ) {
@@ -110,7 +111,7 @@ class FormContext extends BaseContext<
         status: {
           ...oldState.status,
           ...(formStatusSets[status] || { [status]: true })
-        }
+        },
       }),
       callback
     )
@@ -139,8 +140,6 @@ class FormContext extends BaseContext<
   setSubmittedState(state?: AddFormState, callback?: StateCallback) {
     this.setStatus(SUBMITTED, state, callback)
   }
-
-
 
   // Fields
   fieldSpec(name, props) {
@@ -246,7 +245,7 @@ class FormContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Submit
   //--------------------------------------------------------------------------
-  submit(event) {
+  submit(event?: FormEvent<HTMLFormElement>) {
     this.debug('submit()')
     event?.preventDefault()
     this.validate()
@@ -467,5 +466,13 @@ class FormContext extends BaseContext<
 }
 
 const generated = Generator(FormContext)
-export const { Context, Provider, Consumer, Children, Use: useForm } = generated
+
+export const {
+  Context, //: FormReactContext,
+  Provider, //: FormProvider,
+  Consumer, //: FormConsumer,
+  Children, //: FormChildren,
+  Use: useForm
+} = generated
+
 export default generated

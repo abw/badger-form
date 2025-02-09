@@ -1,28 +1,55 @@
-import  BaseContext from '../Context'
-import { Generator } from '@abw/react-context'
-import { BLUR, FOCUS } from '../Constants'
+import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
+import { BLUR, CHANGED, FOCUS, INVALID, RESET, RESET_DISABLED, UNVALIDATED, VALID, VALIDATING } from '../Constants'
 import { callFunctions, lengthEmpty } from '../Utils'
 import { createRef } from 'react'
-import { doNothing, isObject, isString } from '@abw/badger-utils'
-import { fieldDefaultProperties } from '../Config'
-import { newFieldStatus } from '../Status'
+import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
+import { fieldModelDefaults } from './defaults'
+import { fieldStatusSets } from '../Status'
+import { AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps, FieldProps, FieldState } from './types'
+import { FieldStatusChange, StateCallback } from '../types'
 
-class FieldContext extends BaseContext {
-  static newStatus    = newFieldStatus
+class FieldContext extends BaseContext<
+  FieldProps,
+  FieldState,
+  FieldActions
+> {
+  // static newStatus    = newFieldStatus
   static debug        = false
   static debugPrefix  = props => `Field [${props.name}] > `
   static debugColor   = 'teal'
   static actions      = [
-    // 'set',
-    'onFocus', 'onBlur', 'onChange',
-    'setFocus', 'setValue', 'setValid', 'setInvalid', 'reset',
-    // 'setStatus',
-    'setResetState', 'setChangedState',
-    'setValidatingState', 'setValidState', 'setInvalidState',
-    'setFocusState', 'setBlurState',
+    'onFocus',
+    'onBlur',
+    'onChange',
+    'setFocus',
+    'setValue',
+    'setValid',
+    'setInvalid',
+    'reset',
+    'setResetState',
+    'setChangedState',
+    'setValidatingState',
+    'setValidState',
+    'setInvalidState',
+    'setFocusState',
+    'setBlurState',
   ]
-  constructor(props) {
+
+  mounted?: boolean
+  config: WithRequiredFrom<
+    FieldProps,
+    typeof fieldModelDefaults
+  >
+
+  constructor(
+    props: FieldConstructorProps
+  ) {
     super(props)
+    this.config = {
+      ...fieldModelDefaults,
+      ...props
+    }
+
     this.name = props.name
 
     const { value } = props
@@ -70,12 +97,63 @@ class FieldContext extends BaseContext {
     this.mounted = false
     this.form.detachField(this.props.name)
   }
-  setFocusState(state, callback) {
-    return this.setStatus(FOCUS, state, callback)
+
+  //--------------------------------------------------------------------------
+  // Status
+  //--------------------------------------------------------------------------
+  setStatus(
+    status: FieldStatusChange,
+    addState: AddFieldState = {},
+    callback: StateCallback = doNothing
+  ) {
+    if (! this.mounted) {
+      return
+    }
+    this.setState(
+      oldState => ({
+        ...(
+          isFunction<AddFieldStateFn>(addState)
+            ? addState(oldState)
+            : addState
+        ),
+        status: {
+          ...oldState.status,
+          ...(fieldStatusSets[status] || { [status]: true })
+        }
+      }),
+      callback
+    )
   }
-  setBlurState(state, callback) {
-    return this.setStatus(BLUR, state, callback)
+  setChangedState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(CHANGED, state, callback)
   }
+  setValidatingState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(VALIDATING, state, callback)
+  }
+  setInvalidState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(INVALID, state, callback)
+  }
+  setValidState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(VALID, state, callback)
+  }
+  setUnvalidatedState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(UNVALIDATED, state, callback)
+  }
+  setFocusState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(FOCUS, state, callback)
+  }
+  setBlurState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(BLUR, state, callback)
+  }
+  setResetState(state?: AddFieldState, callback?: StateCallback) {
+    this.setStatus(
+      this.props.disabled
+        ? RESET_DISABLED
+        : RESET,
+      state, callback
+    )
+  }
+
   onFocus() {
     this.setFocusState(
       { },

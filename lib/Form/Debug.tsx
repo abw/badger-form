@@ -1,6 +1,6 @@
-import React from 'react'
 import { useForm } from './Context'
 import { hasValue, isSimple } from '@abw/badger-utils'
+import { FormDebugProps, FormDebugRowProps, FormDebugTableProps, FormDebugValueProps } from './types'
 
 export const Debug = ({
   values=true,
@@ -10,19 +10,22 @@ export const Debug = ({
   title='Form Debugging',
   valuesTitle='Values',
   statusTitle='Status',
+  titleClass='mar-v-none',
+  valuesTitleClass='mar-v-none',
+  statusTitleClass='mar-v-none',
   ...props
-}) => {
+}: FormDebugProps) => {
   const form = useForm()
   return (
     <div className={className}>
       { title &&
-        <h3 className="mar-v-none">{title}</h3>
+        <h3 className={titleClass}>{title}</h3>
       }
       <div className="grid-1 gap-4">
         { values &&
           <div>
             { valuesTitle &&
-              <h4 className="mar-v-none">{valuesTitle}</h4>
+              <h4 className={valuesTitleClass}>{valuesTitle}</h4>
             }
             <DebugTable
               rows={Object.entries(form.values)}
@@ -33,10 +36,9 @@ export const Debug = ({
         { (status || all) && form.status &&
           <div>
             { statusTitle &&
-              <h4>{statusTitle}</h4>
+              <h4 className={statusTitleClass}>{statusTitle}</h4>
             }
             <DebugTable
-              title="Status"
               rows={Object.entries(form.status)}
               {...props}
             />
@@ -53,16 +55,16 @@ const DebugTable = ({
   color='brand',
   tableClass=`${color} shaded celled wide small pad-none mar-b-0`,
   ...props
-}) =>
+}: FormDebugTableProps) =>
   <table className={tableClass}>
     <tbody>
       { children || rows.map(
         ([name, value]) =>
           <DebugRow
+            {...props}
             key={name}
             name={name}
             value={value}
-            {...props}
           />
       )}
     </tbody>
@@ -73,8 +75,8 @@ const DebugRow = ({
   value,
   keyClass='text-right split-3',
   valueClass='font-mono bgc-95 bgd-5',
-}) =>
-  <tr valign="top">
+}: FormDebugRowProps) =>
+  <tr className="baseline">
     <th className={keyClass}>
       {name}
     </th>
@@ -83,10 +85,12 @@ const DebugRow = ({
     </td>
   </tr>
 
-const DebugValue = ({value}) => {
+const DebugValue = ({
+  value
+}: FormDebugValueProps) => {
   return hasValue(value)
     ? isSimple(value)
-      ? value.toString()
+      ? String(value)
       : JSON.stringify(value)
     : ''
 }

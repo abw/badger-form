@@ -2,7 +2,7 @@ import Cancel from './Cancel'
 import Submit from './Submit'
 import { flexGapSpaceClasses } from '../Utils'
 import { CONTROLS } from '../Constants'
-import { FormCancelSubmitProps } from '../types'
+import { FormCancelSubmitProps } from './types'
 
 export const CancelSubmit = ({
   className,

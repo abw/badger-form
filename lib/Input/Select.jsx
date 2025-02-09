@@ -1,7 +1,7 @@
 import React from 'react'
 import Handlers from './Handlers.js'
 import { inputAttrs, inputClasses, valueOption } from '../Utils'
-import { useField } from '../Field/Context.js'
+import { useField } from '../Field/Context'
 
 const Select = ({ field=useField() }) => {
   const {

@@ -1,14 +1,13 @@
-import React from 'react'
 import { Children, useForm } from './Context'
 import { formAttrs } from '../Utils'
+import { FormLayoutProps } from './types'
 
-const Layout = ({
+export const FormLayout = ({
   children,
-}) => {
+}: FormLayoutProps) => {
   const form = useForm()
   const attrs = formAttrs(form)
   const { submit, className } = form
-
   return (
     <form className={className} {...attrs} onSubmit={submit} noValidate>
       <Children>
@@ -18,4 +17,4 @@ const Layout = ({
   )
 }
 
-export default Layout
+export default FormLayout

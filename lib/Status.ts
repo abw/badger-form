@@ -1,8 +1,11 @@
 import { hasValue } from '@abw/badger-utils'
-import { HasStatusProps, NewStatus, StatusFlags, StatusSets } from './types'
 import {
-  CHANGED, DISABLED, FOCUS, HAS_STATUS, INVALID, SUBMITTED, SUBMITTING, VALID, VALIDATING
+  CHANGED, DISABLED, FIELD_HAS_STATUS, FOCUS, FORM_HAS_STATUS, INVALID, SUBMITTED, SUBMITTING, VALID, VALIDATING
 } from './Constants'
+import {
+  FieldHasStatusProps, FieldStatusFlags, FieldStatusSets, FormHasStatusProps,
+  FormStatusFlags, FormStatusSets, StatusFlags, StatusSets
+} from './types'
 
 // Forms and fields maintain a status in their internal state which contains
 // boolean flags to indicate if the component is changed, valid, focussed,
@@ -29,17 +32,17 @@ const valid: StatusFlags = {
   [INVALID]: false,
   [VALIDATING]: false
 }
-const blur: StatusFlags = {
+const blur: FieldStatusFlags = {
   [FOCUS]: false
 }
-const focus: StatusFlags = {
+const focus: FieldStatusFlags = {
   [FOCUS]: true
 }
-const submitting: StatusFlags = {
+const submitting: FormStatusFlags = {
   [SUBMITTING]: true,
   [SUBMITTED]: false
 }
-const submitted: StatusFlags = {
+const submitted: FormStatusFlags = {
   [SUBMITTING]: false,
   [SUBMITTED]: true
 }
@@ -49,7 +52,7 @@ const commonStatusChanges: StatusSets = {
   changed, validating, invalid, valid
 }
 
-export const formStatusSets: StatusSets = {
+export const formStatusSets: FormStatusSets = {
   ...commonStatusChanges,
   submitting,
   submitted,
@@ -63,12 +66,7 @@ export const formStatusSets: StatusSets = {
   }
 }
 
-//  props: {
-//    disabled?: boolean,
-//    [key: string]: unknown
-//  } = { }
-
-export const fieldStatusSets = {
+export const fieldStatusSets: FieldStatusSets = {
   ...commonStatusChanges,
   focus,
   blur,
@@ -89,8 +87,58 @@ export const fieldStatusSets = {
   }
 }
 
+/**
+ * Looks for any of the form status values ('changed', 'validating',
+ * 'valid', etc) in the `props` and extract the values of those that are
+ * truthy from the `status` object.  If the `any` flag is set then the
+ * function returns `true` if any of the values are true.  Otherwise, all
+ * of the values must be true.  The `not` flag can be used to negate the
+ * return value.
+ */
+export const formHasStatus = ({
+  status,
+  not=false,
+  any=false,
+  ...props
+}: FormHasStatusProps) =>
+  hasStatus(
+    FORM_HAS_STATUS
+      .filter( state => hasValue(props[state]) )
+      .map( state => status[state] ),
+    not,
+    any
+  )
+
+export const fieldHasStatus = ({
+  status,
+  not=false,
+  any=false,
+  ...props
+}: FieldHasStatusProps) =>
+  hasStatus(
+    FIELD_HAS_STATUS
+      .filter( state => hasValue(props[state]) )
+      .map( state => status[state] ),
+    not,
+    any
+  )
+
+export const hasStatus = (
+  states: (boolean | undefined)[],
+  not: boolean,
+  any: boolean
+) => {
+  const match = any
+    ? states.some(Boolean)
+    : states.every(Boolean)
+  return not
+    ? ! match
+    : match
+}
+
 
 // Factory to return a function to select a new status
+/*
 const newStatus = (
   statusChanges: Record<string, StatusFlags>
 ): NewStatus =>
@@ -140,22 +188,17 @@ export const newFieldStatus = (
     reset, focus, blur, unvalidated
   })
 }
+*/
 
-/**
- * Looks for any of the standard status values ('changed', 'validating',
- * 'valid', etc) in the `props` and extract the values of those that are
- * truthy from the `status` object.  If the `any` flag is set then the
- * function returns `true` if any of the values are true.  Otherwise, all
- * of the values must be true.  The `not` flag can be used to negate the
- * return value.
- */
-export const hasStatus = ({
+
+/*
+export const formHasStatus = ({
   status,
   not=false,
   any=false,
   ...props
-}: HasStatusProps) => {
-  const states = HAS_STATUS
+}: FormHasStatusProps) => {
+  const states = FORM_HAS_STATUS
     .filter( state => hasValue(props[state]) )
     .map( state => status[state] )
   const match = any
@@ -165,3 +208,24 @@ export const hasStatus = ({
     ? ! match
     : match
 }
+
+export const fieldHasStatus = ({
+  status,
+  not=false,
+  any=false,
+  ...props
+}: FieldHasStatusProps) => {
+  const states = FIELD_HAS_STATUS
+    .filter( state => hasValue(props[state]) )
+    .map( state => status[state] )
+  const match = any
+    ? states.some(Boolean)
+    : states.every(Boolean)
+  return not
+    ? ! match
+    : match
+}
+*/
+
+
+

@@ -271,3 +271,22 @@ export const stringToObject = (string: string | unknown, key: string) =>
 export const canonicalInputTypeName = (name: string) =>
   name.replaceAll(/\W+/g, '').toLowerCase()
 
+/*
+export const preventDefault1 = <EventType extends Event>
+  (fn: (...args: unknown[]) => void) =>
+    (e: EventType, ...args: unknown[]) => {
+      e.preventDefault()
+      fn(...args)
+    }
+
+// Can't make this work generically :-(
+export const preventDefault = <
+  EventType extends MouseEvent = MouseEvent,
+  Args extends unknown[] = [ ]
+>
+  (fn: (...args: Args) => void) =>
+    (e: EventType, ...args: Args) => {
+      e.preventDefault()
+      fn(...args)
+    }
+*/

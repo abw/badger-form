@@ -2,6 +2,7 @@ import { FormEvent, MouseEventHandler, ReactNode } from 'react'
 import { formModelDefaults, formRenderDefaults } from './defaults'
 import { FormStatusFlags, StateCallback } from '../types'
 import { ContextConstructorProps } from '@abw/react-context'
+import { FieldProps } from '../Field/types'
 
 // TODO
 // * fields
@@ -40,6 +41,7 @@ export type FormProps = {
   & Partial<FormRenderDefaults>
 
 export type FormRenderProps = {
+  fieldSpec: (name: string, props: Partial<FieldProps>) => Partial<FieldProps>
   message: string     // TODO
 } & FormProps
 
@@ -87,6 +89,8 @@ export type FormConstructorProps = ContextConstructorProps<
   FormState,
   FormActions
 >
+
+export type FormAllProps = FormRenderProps & FormState & FormActions
 
 export interface FormComponentProps extends FormProps {
   // Layout?: FormLayoutComponent,  // Now in context props

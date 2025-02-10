@@ -1,7 +1,9 @@
+import { ReactNode } from 'react'
 import {
   BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED,
   SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING
 } from './Constants'
+import { FieldProps } from './Field/types'
 
 /**
   The form and field contexts maintain a status: { ... } object which
@@ -174,6 +176,27 @@ export type FlexGridProps = {
   stack?: string,
   className?: string
   [key: string]: unknown
+}
+
+export interface FieldComponentProps extends Partial<FieldProps> {
+  name: string,
+  children?: ReactNode,
+}
+
+export interface FieldsComponentProps extends Partial<FieldProps> {
+  names: string | string[]
+  className?: string
+  grid?: boolean | number
+  gap?: number | string
+  stack?: string
+  // ...props
+}
+
+export interface FieldsetComponentProps extends Partial<FieldProps>{
+  fields: string | string[],
+  className?: string,
+  legend?: string,
+  children?: ReactNode,
 }
 
 /*

@@ -1,5 +1,5 @@
-import React from 'react'
-import Fields from './Fields.jsx'
+import Fields from './Fields'
+import { FieldsetComponentProps } from './types'
 
 export const Fieldset = ({
   className='',
@@ -7,7 +7,7 @@ export const Fieldset = ({
   children,
   fields,
   ...props
-}) =>
+}: FieldsetComponentProps) =>
   <fieldset className={className}>
     { Boolean(legend) && <legend>{legend}</legend> }
     { Boolean(fields) && <Fields names={fields} {...props}/> }

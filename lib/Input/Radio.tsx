@@ -1,20 +1,24 @@
-import React from 'react'
-import Handlers from './Handlers.js'
-import { useField } from '../Field/Context'
-import { inputAttrs, classes, valueOption } from '../Utils'
+import { useField } from '../Field/Context.js'
+import { inputAttrs, classes, valueOption } from '../Utils.js'
+//import React from 'react'
+//import Handlers from './Handlers.js'
 
-const Radio = ({
-  field=useField()
-}) => {
+export const Radio = () => {
+  const field = useField()
   const {
     inline,
     border,
+    value,
     options=[],
     inputClass,
     optionClass,
     optionsClass='options',
     type='radio',
-    handler=Handlers[type]||Handlers.default
+    inputRef,
+    disabled,
+    tabIndex,
+    onChange,
+    // handler=Handlers[type]||Handlers.default
   } = field
   const attrs = inputAttrs(field)
 
@@ -24,11 +28,11 @@ const Radio = ({
         (option, i) => {
           option = valueOption(option)
           const id = `${field.id}-${option.value}`
-          const checked = field.value == option.value
+          const checked = value == option.value
           // when we focus the field we want to focus the currently selected
           // option (if there is one) or the first option otherwise
-          const focus = field.value ? checked : i == 0
-          const ref = focus ? field.inputRef : null
+          const focus = value ? checked : i == 0
+          const ref = focus ? inputRef : null
           const labelClass = classes(
             'radio',
             optionClass,
@@ -39,17 +43,18 @@ const Radio = ({
             <label
               key={option.value}
               className={labelClass}
-              disabled={option.disabled}
+              // disabled={option.disabled}
               htmlFor={id}
             >
               <input
                 type={type}
                 className={inputClass}
                 // ref={field.inputRef}
-                ref={ref}
-                aria-disabled={field.disabled}
-                tabIndex={field.disabled ? -1 : field.tabIndex}
-                onChange={handler(field)}
+                ref={ref as React.RefObject<HTMLInputElement>}
+                aria-disabled={disabled}
+                tabIndex={disabled ? -1 : tabIndex}
+                // onChange={handler(field)}
+                onChange={e => onChange(e.target.value)}
                 {...attrs}
                 id={id}
                 checked={checked}

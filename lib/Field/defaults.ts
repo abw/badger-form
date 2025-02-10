@@ -1,4 +1,4 @@
-import { REQUIRED_MSG, REQUIRED, OPTIONAL } from '../Constants'
+import { REQUIRED_MSG, REQUIRED, OPTIONAL, TEXT } from '../Constants'
 
 // Default options only used inside the field context model
 export const fieldModelDefaults = {
@@ -9,6 +9,7 @@ export const fieldModelDefaults = {
 
 // Default options that are also forwarded to form consumers
 export const fieldRenderDefaults = {
+  type:              TEXT,
   showRequired:      false,
   showOptional:      false,
   validMessage:      null,

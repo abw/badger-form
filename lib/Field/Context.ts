@@ -5,7 +5,7 @@ import { createRef } from 'react'
 import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
 import { fieldDefaults, fieldModelDefaults } from './defaults'
 import { fieldStatusSets } from '../Status'
-import { AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps, FieldProps, FieldRenderProps, FieldState } from './types'
+import { AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps, FieldProps, FieldRenderProps, FieldState, InputType } from './types'
 import { FieldStatusChange, StateCallback } from '../types'
 
 class FieldContext extends BaseContext<
@@ -38,7 +38,10 @@ class FieldContext extends BaseContext<
     'setEnabledState',
   ]
 
+  name: string
   mounted?: boolean
+  // TODO: this doesn't work with TextArea
+  inputRef: React.RefObject<InputType>
   config: WithRequiredFrom<
     FieldProps,
     typeof fieldModelDefaults
@@ -70,7 +73,7 @@ class FieldContext extends BaseContext<
     }
     this.debug('initial state:', this.state)
 
-    this.inputRef = createRef()
+    this.inputRef = createRef<InputType>()
     this.resetRef = createRef()
 
     this.on = {
@@ -392,7 +395,7 @@ class FieldContext extends BaseContext<
       ...this.state,
       ...this.actions,
       // name:     this.name,
-      // inputRef: this.inputRef,
+      inputRef: this.inputRef,
       // resetRef: this.resetRef,
       // setRef:   this.resetRef,      // OLD name
     }

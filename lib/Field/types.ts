@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ChangeEvent, ReactNode } from 'react'
 import { fieldModelDefaults, fieldRenderDefaults } from './defaults'
 import { FieldStatusFlags, StateCallback } from '../types'
 import { ContextConstructorProps } from '@abw/react-context'
@@ -13,6 +13,8 @@ export type FieldProps = {
   // hidden
   // children
   id: string
+  name: string,
+  value?: string | number | boolean
   debug?: boolean
   required?: boolean
   optional?: boolean
@@ -24,6 +26,21 @@ export type FieldProps = {
   suffix?: string
   suffixClass?: string
   help?: ReactNode
+  tabIndex?: number
+  placeholder?: string
+  autocomplete?: string
+  rows?: number
+  cols?: number
+  text?: string
+  inline?: boolean
+  border?: boolean
+  switch?: boolean
+  round?: boolean
+  square?: boolean
+  inputClass?: string
+  options?: SelectOption[]
+  optionsClass?: string
+  optionClass?: string
   resetOnSuccess?: boolean
   unvalidateOnSuccess?: boolean
   validateOnBlur?: boolean
@@ -35,10 +52,13 @@ export type FieldProps = {
   showOptional?: boolean
   optionalLabel?: ReactNode
   focusInvalidField?: boolean
+  handler?: FieldChangeHandler
 } & Partial<FieldModelDefaults>
   & Partial<FieldRenderDefaults>
 
+export type InputType = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
 export type FieldRenderProps = {
+  inputRef: React.RefObject<InputType>
   message: ReactNode     // TODO
 } & FieldProps
 
@@ -67,6 +87,9 @@ export type FieldActions = {
   setDisabledState: FieldStateSetter
   setEnabledState: FieldStateSetter
   setResetState: FieldStateSetter
+  onFocus: () => void
+  onBlur: () => void
+  onChange: (value: string | boolean) => void
 }
 
 export type FieldConstructorProps = ContextConstructorProps<
@@ -75,8 +98,19 @@ export type FieldConstructorProps = ContextConstructorProps<
   FieldActions
 >
 
+export type FieldAllProps = FieldRenderProps & FieldState & FieldActions
+export type FieldChangeHandler<Input=InputType> = (field: FieldAllProps) =>
+  (e: ChangeEvent<Input>) => void
+
 export interface UseFieldProps {
   children?: ReactNode
+}
+
+export type SelectOption = {
+  value: string | number
+  text?: ReactNode
+  className?: string
+  disabled?: boolean
 }
 
 export type LabelCSSProperties = {

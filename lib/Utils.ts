@@ -1,6 +1,7 @@
 import { hasValue, isArray, isBoolean, isObject, isString } from '@abw/badger-utils'
 import { FORM_ATTRS, INPUT_ATTRS } from './Constants'
 import { CSSClassHash, CSSClassItem, CSSClassProps, FlexGridProps } from './types'
+import { SelectOption } from './Field/types'
 
 /**
  * Coerces a non-array value into a single element array.
@@ -213,10 +214,10 @@ export const valueTypes: Record<string, boolean> = {
  * numbers, otherwise they must be objects containing `value` and `text`.
  * This function returns `true` if the `option` is a suitable simple type.
  */
-export const valueOption = (option: unknown) =>
+export const valueOption = (option: unknown): SelectOption =>
   valueTypes[typeof option]
     ? { value: option, text: option }
-    : option
+    : option as SelectOption
 
 /**
  * Calls a sequence of one or more function

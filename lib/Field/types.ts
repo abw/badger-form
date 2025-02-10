@@ -2,6 +2,7 @@ import { ChangeEvent, ReactNode } from 'react'
 import { fieldModelDefaults, fieldRenderDefaults } from './defaults'
 import { FieldStatusFlags, StateCallback } from '../types'
 import { ContextConstructorProps } from '@abw/react-context'
+import { FormAllProps } from '../Form/types'
 
 export type FieldModelDefaults = typeof fieldModelDefaults
 export type FieldRenderDefaults = typeof fieldRenderDefaults
@@ -12,9 +13,11 @@ export type FieldProps = {
   // values
   // hidden
   // children
+  form: FormAllProps
   id: string
   name: string,
   value?: string | number | boolean
+  default?: string | number | boolean
   debug?: boolean
   required?: boolean
   optional?: boolean
@@ -37,6 +40,7 @@ export type FieldProps = {
   switch?: boolean
   round?: boolean
   square?: boolean
+  inputsClass?: string
   inputClass?: string
   options?: SelectOption[]
   optionsClass?: string
@@ -53,6 +57,12 @@ export type FieldProps = {
   optionalLabel?: ReactNode
   focusInvalidField?: boolean
   handler?: FieldChangeHandler
+  Layout?: React.FC
+  Label?: React.FC
+  Message?: React.FC
+  Prefix?: React.FC
+  Suffix?: React.FC
+  Input?: React.FC
 } & Partial<FieldModelDefaults>
   & Partial<FieldRenderDefaults>
 
@@ -103,6 +113,10 @@ export type FieldChangeHandler<Input=InputType> = (field: FieldAllProps) =>
   (e: ChangeEvent<Input>) => void
 
 export interface UseFieldProps {
+  children?: ReactNode
+}
+
+export interface FieldLayoutProps {
   children?: ReactNode
 }
 

@@ -1,8 +1,8 @@
-import prepareField from './Field/Prepare.jsx'
-import FieldLayout from './Field/Layout.jsx'
-import { useForm } from './Form/Context.js'
-import { Provider, Children }  from './Field/Context.js'
-import { FieldComponentProps } from './types.js'
+import usePrepareField from './Field/Prepare'
+import FieldLayout from './Field/Layout'
+import { useForm } from './Form/Context'
+import { Provider, Children }  from './Field/Context'
+import { FieldComponentProps } from './types'
 
 export const Field = ({
   name,
@@ -11,7 +11,7 @@ export const Field = ({
 }: FieldComponentProps) => {
   const form = useForm()
   const { fieldSpec } = form
-  const field = prepareField(fieldSpec(name, props))
+  const field = usePrepareField(fieldSpec(name, props))
   const Layout = field.Layout || FieldLayout
 
   return (

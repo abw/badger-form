@@ -216,7 +216,7 @@ export const valueTypes: Record<string, boolean> = {
  */
 export const valueOption = (option: unknown): SelectOption =>
   valueTypes[typeof option]
-    ? { value: option, text: option }
+    ? { value: option as string | number, text: String(option)} // FIXME
     : option as SelectOption
 
 /**

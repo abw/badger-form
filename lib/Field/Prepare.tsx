@@ -1,7 +1,14 @@
 import { useId } from 'react'
 import { BLANK } from '../Constants'
+import { FieldProps } from './types'
+import { FieldSpecProps } from '../Form/types'
 
-export const prepareField = field => {
+type UsePrepareProps = Omit<
+  FieldProps, 'form'
+>
+//  | 'name'
+
+export const usePrepareField = (field: FieldSpecProps): UsePrepareProps => {
   // The form can be passed a large set of fields, not all of which may be
   // used in the form.  We store them in initialFields and migrate them into
   // fields when a field is used inside the form.  We take a copy of the
@@ -10,11 +17,12 @@ export const prepareField = field => {
   // be sent with the submission request).  We store the initial values in
   // initialValues in case we need to reset the form and restore them.
   const { id, value } = field
+  const genId = useId()
   return {
     ...field,
-    id: id || useId(),
+    id: id || genId,
     value: value ?? field.default ?? BLANK,
   }
 }
 
-export default prepareField
+export default usePrepareField

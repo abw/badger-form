@@ -40,8 +40,16 @@ export type FormProps = {
 } & Partial<FormModelDefaults>
   & Partial<FormRenderDefaults>
 
+export type FieldSpecProps = Omit<
+  FieldProps, 'form' | 'id'
+> & {
+  id?: FieldProps['id']
+}
+
+// type MakePropertyOptional<T, K extends keyof T> = Omit<T, K> & { [P in K]?: T[P] };
+
 export type FormRenderProps = {
-  fieldSpec: (name: string, props: Partial<FieldProps>) => Partial<FieldProps>
+  fieldSpec: (name: string, props: Partial<FieldProps>) => FieldSpecProps
   message: string     // TODO
 } & FormProps
 

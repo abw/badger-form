@@ -1,13 +1,11 @@
-import React from 'react'
-import Inputs from './Inputs.jsx'
-import { getInputType } from '../Input/index.js'
+import Inputs from './Inputs.js'
+import { getInputType } from '../Input/index'
 import { useField } from './Context'
 import { hasValue } from '@abw/badger-utils'
 import { RADIO, TEXT } from '../Constants'
 
-const Input = ({
-  field=useField()
-}) => {
+const Input = () => {
+  const field = useField()
   const {
     prefix,
     suffix,
@@ -16,13 +14,13 @@ const Input = ({
   const Type = getInputType(type)
 
   if (type == RADIO) {
-    return <Type field={field}/>
+    return <Type/>
   }
   if (hasValue(prefix) || hasValue(suffix)) {
     return <Inputs/>
   }
   return (
-    <Type field={field}/>
+    <Type/>
   )
 }
 

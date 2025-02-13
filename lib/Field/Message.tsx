@@ -1,6 +1,6 @@
 import { useField } from './Context'
 
-const Message = () => {
+export const Message = () => {
   const { help, message, messageClass } = useField()
   const text = message ?? help
   return text

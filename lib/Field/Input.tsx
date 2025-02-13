@@ -4,7 +4,7 @@ import { useField } from './Context'
 import { hasValue } from '@abw/badger-utils'
 import { RADIO, TEXT } from '../Constants'
 
-const Input = () => {
+export const Input = () => {
   const field = useField()
   const {
     prefix,

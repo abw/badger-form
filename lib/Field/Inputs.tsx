@@ -5,7 +5,7 @@ import { useField } from './Context'
 import { hasValue } from '@abw/badger-utils'
 import { TEXT } from '../Constants'
 
-const Inputs = () => {
+export const Inputs = () => {
   const field = useField()
   const {
     // classes,

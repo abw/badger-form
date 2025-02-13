@@ -1,7 +1,7 @@
 import React from 'react'
 import { useField } from './Context'
 
-export const Debug = () => {
+export const FieldDebug = () => {
   const field = useField()
   return (
     <div className="debug">
@@ -13,4 +13,4 @@ export const Debug = () => {
   )
 }
 
-export default Debug
+export default FieldDebug

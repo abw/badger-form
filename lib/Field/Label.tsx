@@ -2,7 +2,7 @@ import { useField } from './Context'
 import { REQUIRED, OPTIONAL } from '../Constants'
 import { LabelCSSProperties } from './types'
 
-const Label = () => {
+export const Label = () => {
   const {
     label, labelClass, id,
     required, showRequired, requiredLabel,

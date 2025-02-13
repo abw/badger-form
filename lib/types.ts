@@ -191,11 +191,12 @@ export interface FieldsComponentProps extends Partial<FieldProps> {
   grid?: boolean | number
   gap?: number | string
   stack?: string
+  wide?: boolean
   // ...props
 }
 
 export interface FieldsetComponentProps extends Partial<FieldProps>{
-  fields: string | string[],
+  fields?: string | string[],
   className?: string,
   legend?: string,
   children?: ReactNode,

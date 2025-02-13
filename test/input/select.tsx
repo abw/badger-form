@@ -1,14 +1,14 @@
-import React from 'react'
 import { it, expect } from 'vitest'
 import userEvent from '@testing-library/user-event'
-import { render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { Form, Field, useForm } from '../../lib/index'
+import { fail } from '@abw/badger-utils'
 
-const ShowValue = ({name}) => {
+export const ShowValue = ({ name }: { name: string }) => {
   const form = useForm()
   return (
     <div data-testid={`value-${name}`}>
-      {form.values[name]}
+      {form.values[name] as string}
     </div>
   )
 }
@@ -25,7 +25,7 @@ it(
         <ShowValue name="foo"/>
       </Form>
     )
-    const select  = container.querySelector('select')
+    const select  = container.querySelector('select') || fail('no select')
     const options = container.querySelectorAll('option')
     const output  = screen.getByTestId('value-foo')
 
@@ -68,16 +68,16 @@ it(
     expect(options[1]).toHaveTextContent('bravo')
     expect(options[2]).toHaveTextContent('charlie')
 
-    await act( () => userEvent.selectOptions(select, options[0]) )
+    await userEvent.selectOptions(select, options[0])
     expect(options[0].selected).toBe(true)
     expect(output).toHaveTextContent('letter-a')
 
-    await act( () => userEvent.selectOptions(select, options[1]) )
+    await userEvent.selectOptions(select, options[1])
     expect(options[0].selected).toBe(false)
     expect(options[1].selected).toBe(true)
     expect(output).toHaveTextContent('letter-b')
 
-    await act( () => userEvent.selectOptions(select, options[2]) )
+    await userEvent.selectOptions(select, options[2])
     expect(options[0].selected).toBe(false)
     expect(options[1].selected).toBe(false)
     expect(options[2].selected).toBe(true)
@@ -110,16 +110,16 @@ it(
     expect(options[2]).toHaveTextContent('bravo')
     expect(options[3]).toHaveTextContent('charlie')
 
-    await act( () => userEvent.selectOptions(select, options[1]) )
+    await userEvent.selectOptions(select, options[1])
     expect(options[1].selected).toBe(true)
     expect(output).toHaveTextContent('alpha')
 
-    await act( () => userEvent.selectOptions(select, options[2]) )
+    await userEvent.selectOptions(select, options[2])
     expect(options[1].selected).toBe(false)
     expect(options[2].selected).toBe(true)
     expect(output).toHaveTextContent('bravo')
 
-    await act( () => userEvent.selectOptions(select, options[3]) )
+    await userEvent.selectOptions(select, options[3])
     expect(options[1].selected).toBe(false)
     expect(options[2].selected).toBe(false)
     expect(options[3].selected).toBe(true)

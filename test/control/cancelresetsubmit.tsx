@@ -1,19 +1,26 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, ResetSubmit } from '../../lib/index'
+import { Form, Field, CancelResetSubmit } from '../../lib/index'
 import { useState } from 'react'
+import { fail } from '@abw/badger-utils'
 
-const ResetSubmitTest = () => {
-  const [msg, setMsg] = useState()
+export const CancelResetSubmitTest = () => {
+  const [msg, setMsg] = useState<string|null>()
   return (
     <Form
       values={{ foo: 'Hello' }}
-      onSubmit={values => setMsg(`Foo is ${values.foo}`)}
+      onSubmit={
+        values => {
+          setMsg(`Foo is ${values.foo}`)
+          return { ok: true }
+        }
+      }
     >
       <Field name="foo" id="foo" label="The Foo Field"/>
-      <ResetSubmit/>
+      <CancelResetSubmit
+        cancel={{ onClick: () => setMsg('Clicked on cancel') }}
+      />
       <div data-testid="msg">{msg}</div>
     </Form>
   )
@@ -22,10 +29,11 @@ const ResetSubmitTest = () => {
 it(
   'should submit form',
   async () => {
-    const { container } = render(<ResetSubmitTest/>)
+    const { container } = render(<CancelResetSubmitTest/>)
     const user   = userEvent.setup()
-    const foo    = container.querySelector('#foo')
+    const foo    = container.querySelector('#foo') || fail('no foo')
     const msg    = screen.getByTestId('msg')
+    const cancel = screen.getByRole('button', { name: /cancel/i })
     const reset  = screen.getByRole('button', { name: /reset/i })
     const submit = screen.getByRole('button', { name: /submit/i })
 
@@ -56,5 +64,11 @@ it(
 
     // msg should be rendered
     expect(msg).toHaveTextContent('Foo is Hello')
+
+    // click on cancel button
+    await user.click(cancel)
+
+    // message should say clicked
+    expect(msg).toHaveTextContent('Clicked on cancel')
   }
 )

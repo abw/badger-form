@@ -1,13 +1,12 @@
-import React from 'react'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Form, Field, Hidden, useForm } from '@/lib/index'
 
-const ShowHiddenValue = ({name}) => {
+export const ShowHiddenValue = ({ name }: { name: string }) => {
   const form = useForm()
   return (
     <div data-testid={`hidden-value-${name}`}>
-      {form.values[name]}
+      {form.values[name] as string}
     </div>
   )
 }

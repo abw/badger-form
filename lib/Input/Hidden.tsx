@@ -1,8 +1,13 @@
-import { isBoolean } from '@abw/badger-utils'
+import { isBoolean, isNumber } from '@abw/badger-utils'
 import { useField } from '../Field/Context'
 
-export const Hidden = () => {
-  const { name, value } = useField()
+interface HiddenProps {
+  name?: string
+  value?: boolean | number | string
+}
+
+export const Hidden = (props: HiddenProps) => {
+  const { name = props.name, value = props.value } = useField()
   return (
     <input
       type="hidden"
@@ -10,7 +15,9 @@ export const Hidden = () => {
       value={
         isBoolean(value)
           ? (value ? 1 : 0)
-          : value
+          : isNumber(value)
+            ? value
+            : String(value)
       }
     />
   )

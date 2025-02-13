@@ -1,10 +1,10 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Form, Field, Reset } from '../../lib/index'
+import { fail } from '@abw/badger-utils'
 
-const ResetTest = () =>
+export const ResetTest = () =>
   <Form values={{ foo: 'Hello' }}>
     <Field name="foo" id="foo" label="The Foo Field"/>
     <Reset/>
@@ -15,7 +15,7 @@ it(
   async () => {
     const { container } = render(<ResetTest/>)
     const user  = userEvent.setup()
-    const foo   = container.querySelector('#foo')
+    const foo   = container.querySelector('#foo') || fail('no foo')
     const reset = screen.getByRole('button', { name: /reset/i })
 
     // focus on foo field

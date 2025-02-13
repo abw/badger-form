@@ -1,14 +1,22 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Form, Field, CancelSubmit } from '../../lib/index'
 import { useState } from 'react'
+import { fail } from '@abw/badger-utils'
 
-const CancelSubmitTest = () => {
-  const [msg, setMsg] = useState()
+export const CancelSubmitTest = () => {
+  const [msg, setMsg] = useState<string|null>()
   return (
-    <Form values={{ foo: 'Hello' }} onSubmit={values => setMsg(`Foo is ${values.foo}`)}>
+    <Form
+      values={{ foo: 'Hello' }}
+      onSubmit={
+        values => {
+          setMsg(`Foo is ${values.foo}`)
+          return { ok: true }
+        }
+      }
+    >
       <Field name="foo" id="foo" label="The Foo Field"/>
       <CancelSubmit cancel={{ onClick: () => setMsg('Clicked on cancel') }}/>
       <div data-testid="msg">{msg}</div>
@@ -21,7 +29,7 @@ it(
   async () => {
     const { container } = render(<CancelSubmitTest/>)
     const user   = userEvent.setup()
-    const foo    = container.querySelector('#foo')
+    const foo    = container.querySelector('#foo') || fail('foo')
     const msg    = screen.getByTestId('msg')
     const cancel = screen.getByRole('button', { name: /cancel/i })
     const submit = screen.getByRole('button', { name: /submit/i })

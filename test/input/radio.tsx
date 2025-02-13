@@ -1,14 +1,13 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
-import { render, screen, act } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Form, Field, useForm } from '../../lib/index'
 
-const ShowValue = ({name}) => {
+export const ShowValue = ({ name }: { name: string }) => {
   const form = useForm()
   return (
     <div data-testid={`value-${name}`}>
-      {form.values[name]}
+      {form.values[name] as string}
     </div>
   )
 }
@@ -31,13 +30,13 @@ it(
     const output  = screen.getByTestId('value-foo')
     expect(output).toHaveTextContent('')
 
-    await act( () => userEvent.click(alpha) )
+    await userEvent.click(alpha)
     expect(output).toHaveTextContent('alpha')
 
-    await act( () => userEvent.click(bravo) )
+    await userEvent.click(bravo)
     expect(output).toHaveTextContent('bravo')
 
-    await act( () => userEvent.click(charlie) )
+    await userEvent.click(charlie)
     expect(output).toHaveTextContent('charlie')
   }
 )
@@ -64,13 +63,13 @@ it(
     const output  = screen.getByTestId('value-foo')
     expect(output).toHaveTextContent('')
 
-    await act( () => userEvent.click(alpha) )
+    await userEvent.click(alpha)
     expect(output).toHaveTextContent('letter-a')
 
-    await act( () => userEvent.click(bravo) )
+    await userEvent.click(bravo)
     expect(output).toHaveTextContent('letter-b')
 
-    await act( () => userEvent.click(charlie) )
+    await userEvent.click(charlie)
     expect(output).toHaveTextContent('letter-c')
   }
 )

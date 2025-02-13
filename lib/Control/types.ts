@@ -22,18 +22,18 @@ export type FormButtonsProps = {
 
 export type FormResetSubmitProps = {
   reset?: FormResetProps
-  submit: FormSubmitProps
+  submit?: FormSubmitProps
 } & FormButtonsProps
 
 export type FormCancelSubmitProps = {
   cancel?: FormCancelProps
-  submit: FormSubmitProps
+  submit?: FormSubmitProps
 } & FormButtonsProps
 
 export type FormCancelResetSubmitProps = {
   cancel?: FormCancelProps
   reset?: FormResetProps
-  submit: FormSubmitProps
+  submit?: FormSubmitProps
 } & FormButtonsProps
 
 export type FormButtonComponent = React.FC<FormButtonProps>

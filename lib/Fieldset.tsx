@@ -1,3 +1,4 @@
+import { hasValue } from '@abw/badger-utils'
 import Fields from './Fields'
 import { FieldsetComponentProps } from './types'
 
@@ -10,7 +11,7 @@ export const Fieldset = ({
 }: FieldsetComponentProps) =>
   <fieldset className={className}>
     { Boolean(legend) && <legend>{legend}</legend> }
-    { Boolean(fields) && <Fields names={fields} {...props}/> }
+    { hasValue(fields) && <Fields names={fields} {...props}/> }
     { children }
   </fieldset>
 

@@ -1,12 +1,11 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Form, Field, Cancel } from '../../lib/index'
 import { useState } from 'react'
 
-const CancelExample = () => {
-  const [msg, setMsg] = useState()
+export const CancelExample = () => {
+  const [msg, setMsg] = useState<string|null>()
   return (
     <Form>
       <Field name="foo" id="foo" label="Foo"/>

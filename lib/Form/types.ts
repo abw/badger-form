@@ -30,11 +30,11 @@ export type FormProps = {
   focusInvalidField?: boolean
   errorsTitle?: ErrorsTitle,
   errorsPrompt?: ErrorsPrompt,
-  validate: (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
+  validate?: (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
   onLoad?: (form: FormContext) => void
   onReset?: () => void
   onValid?: () => void
-  onSubmit?: (values: FieldValues, form: FormRenderProps) => Promise<FormSubmitResponse>
+  onSubmit?: (values: FieldValues, form: FormRenderProps) => FormSubmitResponse | Promise<FormSubmitResponse>
   onSuccess?: (response: FormSubmitResponse, form: FormContext) => void
   onError?: (error: FormSubmitError) => void
   onFailure?: (error: FormSubmitError) => void
@@ -174,6 +174,7 @@ export interface FormChangedProps {
 export interface FormStatusProps extends FormStatusFlags {
   any?: boolean
   all?: boolean
+  not?: boolean
   children?: ReactNode
 }
 

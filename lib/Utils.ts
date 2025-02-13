@@ -1,7 +1,7 @@
-import { hasValue, isArray, isBoolean, isObject, isString } from '@abw/badger-utils'
 import { FORM_ATTRS, INPUT_ATTRS } from './Constants'
-import { CSSClassHash, CSSClassItem, CSSClassProps, FlexGridProps } from './types'
-import { SelectOption } from './Field/types'
+import { FieldValue, SelectOption } from './Field/types'
+import { hasValue, isArray, isBoolean, isObject, isString } from '@abw/badger-utils'
+import { CSSClassHash, CSSClassItem, CSSClassProps, FlexGridProps, VoidFunction } from './types'
 
 /**
  * Coerces a non-array value into a single element array.
@@ -222,13 +222,20 @@ export const valueOption = (option: unknown): SelectOption =>
 /**
  * Calls a sequence of one or more function
  */
+export const callFunctions = (...functions: Array<VoidFunction|undefined>) =>
+  function() {
+    for (const fn of functions.filter(hasValue)) {
+      fn()
+    }
+  }
+/*
 export const callFunctions = (...functions: Array<(...args: unknown[]) => void>) =>
   function(...args: unknown[]) {
     for (const fn of functions.filter(Boolean)) {
       fn(...args)
     }
   }
-
+*/
 /**
  * Returns an array of `[length, empty]` for different data types indicating
  * if the value has a length and represents an empty value.  For a boolean,
@@ -237,7 +244,9 @@ export const callFunctions = (...functions: Array<(...args: unknown[]) => void>)
  * a boolean flag indicating if the length is 0.  For other values (null and
  * undefined), then length is always 0 and empty is `true`.
  */
-export function lengthEmpty(value: boolean|number|string|null|undefined) {
+export function lengthEmpty(
+  value: FieldValue
+): [number, boolean] {
   if (isBoolean(value)) {
     return [1, false]
   }

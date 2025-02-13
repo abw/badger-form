@@ -4,6 +4,7 @@ import {
   SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING
 } from './Constants'
 import { FieldProps } from './Field/types'
+import { FieldSchema } from './Form/types'
 
 /**
   The form and field contexts maintain a status: { ... } object which
@@ -141,7 +142,8 @@ export type HasStatusProps<Flags> = Flags & {
 export type FormHasStatusProps = HasStatusProps<FormStatusFlags>
 export type FieldHasStatusProps = HasStatusProps<FieldStatusFlags>
 
-export type StateCallback = () => void
+export type VoidFunction = () => void
+export type StateCallback = VoidFunction
 
 // NOTE: moved to form/types.ts
 /*
@@ -178,7 +180,7 @@ export type FlexGridProps = {
   [key: string]: unknown
 }
 
-export interface FieldComponentProps extends Partial<FieldProps> {
+export interface FieldComponentProps extends FieldSchema {
   name: string,
   children?: ReactNode,
 }

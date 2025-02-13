@@ -1,21 +1,35 @@
 // import BaseContext from '../Context.js'
-import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
-import { CHANGED, FULFILLED, INVALID, RESET, SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING } from '../Constants.js'
-import { doNothing, extract, isArray, isFunction, isObject, isString } from '@abw/badger-utils'
-import { callFunctions, stringToObject } from '../Utils.js'
-// import { formModelDefaults } from './defaults.js'
-import { formFieldProperties } from '../Config.js'
-import { formStatusSets } from '../Status.js'
-import { AddFormState, AddFormStateFn, FormActions, FormAllProps, FormConstructorProps, FormProps, FormState } from './types.js'
-import { formModelDefaults } from './defaults'
-import { FormStatusChange, StateCallback } from '../types.js'
 import { FormEvent } from 'react'
+import { FieldContext } from '../Field/Context'
+import { formStatusSets } from '../Status.js'
+import { formModelDefaults } from './defaults'
+import { formFieldProperties } from '../Config.js'
+import { FieldValidateResult, FieldValue, FieldValues } from '../Field/types.js'
+import { callFunctions, stringToObject } from '../Utils.js'
+import { FormStatusChange, StateCallback } from '../types.js'
+import {
+  Generator, Context as BaseContext, WithRequiredFrom
+} from '@abw/react-context'
+import {
+  doNothing, extract, isArray, isFunction, isObject, isString,
+  noValue
+} from '@abw/badger-utils'
+import {
+  CHANGED, FULFILLED, INVALID, RESET, SUBMITTED, SUBMITTING,
+  UNVALIDATED, VALID, VALIDATING
+} from '../Constants.js'
+import {
+  AddFormState, AddFormStateFn, FieldSchema, FormActions, FormConstructorProps,
+  FormErrorObjectItem, FormProps, FormRenderProps, FormState, FormSubmitData,
+  FormSubmitError, FormSubmitResponse, FormValidator, FormValidatorResults
+} from './types.js'
+// import { formModelDefaults } from './defaults.js'
 
-class FormContext extends BaseContext<
+export class FormContext extends BaseContext<
   FormProps,
   FormState,
   FormActions,
-  FormAllProps
+  FormRenderProps
 > {
   // static newStatus    = newFormStatus
   static debug        = false
@@ -42,6 +56,7 @@ class FormContext extends BaseContext<
   ]
 
   mounted?: boolean
+  fields: Record<string, FieldContext>
   config: WithRequiredFrom<
     FormProps,
     typeof formModelDefaults
@@ -143,7 +158,7 @@ class FormContext extends BaseContext<
   }
 
   // Fields
-  fieldSpec(name, props) {
+  fieldSpec(name: string, props: FieldSchema) {
     const defaults = this.props.fields?.[name] ?? { }
     const value    = props.value ?? this.props.values?.[name]
     return {
@@ -154,19 +169,19 @@ class FormContext extends BaseContext<
       value
     }
   }
-  attachField(name, field) {
+  attachField(name: string, field: FieldContext) {
     this.debug(`attaching ${name} field`)
     this.fields[name] = field
     this.setState(
       state => ({
         values: {
           ...state.values,
-          [name]: field.state.value
+          [name]: field.getValue()
         }
       })
     )
   }
-  detachField(name) {
+  detachField(name: string) {
     this.debug(`detaching ${name} field`)
     delete this.fields[name]
   }
@@ -175,7 +190,7 @@ class FormContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Field focus
   //--------------------------------------------------------------------------
-  setFocus(name, event) {
+  setFocus(name: string, event?: FocusEvent) {
     event?.preventDefault()
     this.fields[name]?.setFocus()
   }
@@ -183,7 +198,7 @@ class FormContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Set/Reset
   //--------------------------------------------------------------------------
-  reset(e) {
+  reset(e?: MouseEvent) {
     if (! this.mounted) {
       return
     }
@@ -204,19 +219,9 @@ class FormContext extends BaseContext<
       field => field.reset()
     )
   }
-  setValue(name, value) {
+  setValue(name: string, value: FieldValue) {
     // JFDI - called by fields when they change
     this.debug(`setValue(${name}, ${value})`)
-    /*
-    this.setChangedState(
-      {
-        values: {
-          ...this.state.values,
-          [name]: value
-        }
-      }
-    )
-    */
     this.setChangedState(
       state => ({
         ...state,
@@ -227,15 +232,14 @@ class FormContext extends BaseContext<
       })
     )
   }
-  setValues(values, event) {
+  setValues(values: FieldValues, event?: MouseEvent) {
     this.debug('setValues():', values)
     event?.preventDefault()
     Object.entries(values).forEach(
       ([name, value]) => this.fields[name]?.setValue(value)
     )
   }
-
-  setHidden(values) {
+  setHidden(values: FieldValues) {
     const hidden = {
       ...this.state.hidden,
       ...values
@@ -254,11 +258,11 @@ class FormContext extends BaseContext<
       .catch( submit => this.debug('Form is NOT valid:', submit) )
   }
 
-  validate() {
+  async validate(): Promise<FormSubmitData> {
     this.debug('validate()')
     this.setValidatingState()
 
-    return new Promise( this.validator() )
+    return new Promise<FormSubmitData>( this.validator() )
       .then(
         submit => {
           this.debug('validate passed: ', submit)
@@ -280,7 +284,7 @@ class FormContext extends BaseContext<
       )
   }
 
-  validator() {
+  validator(): FormValidator {
     return (resolve, reject) => Promise.allSettled(
       Object.values(this.fields).map(
         field => field.validate()
@@ -288,22 +292,26 @@ class FormContext extends BaseContext<
     )
       .then(
         results => results.reduce(
-          (submit, {status, value, reason}) => {
+          // (submit, {status, value, reason}) => {
+          (submit, {status, ...rest}) => {
             if (status === FULFILLED) {
+              const { value } = rest as PromiseFulfilledResult<FieldValidateResult>
               Object.assign(
                 submit.values,
-                value.data || { [value.name]: value.value }
+                value.data || { [value.name as string]: value.value }
               )
             }
             else {
+              const { reason } = rest as PromiseRejectedResult
               submit.errors.push(reason)
+              // submit.errors.push(reason as FormErrorItem)
             }
             return submit
           },
           {
             values: { ...this.state.values },
             errors: [ ],
-          }
+          } as FormValidatorResults
         )
       )
       .then(
@@ -333,9 +341,10 @@ class FormContext extends BaseContext<
     this.setUnvalidatedState()
   }
 
-  handleSubmit(submit) {
+  handleSubmit(submit: FormSubmitData) {
     this.debug('Form is valid, handling submission:', submit)
-    if (! this.props.onSubmit) {
+    const onSubmit = this.props.onSubmit
+    if (noValue(onSubmit)) {
       window.alert(
         "You haven't defined an onSubmit handler: " + JSON.stringify(submit.values)
       )
@@ -346,14 +355,17 @@ class FormContext extends BaseContext<
       async () => {
         this.debug('calling onSubmit handler: ', submit)
         try {
-          const response = await this.props.onSubmit(submit.values, this.getContext())
+          const response = await onSubmit(
+            submit.values,
+            this.getContext()
+          )
           this.debug('onSubmit response:', response)
           this.setSubmittedState()
           if (response?.ok || response?.status === 200) {
             this.debug(`Success response ok:${response?.ok} status:${response?.status}`)
             this.handleSuccess(response)
           }
-          else if (response?.status >= 400 && response.status <= 500) {
+          else if (response.status && response?.status >= 400 && response.status <= 500) {
             this.debug(`Error response status:${response?.status}`)
             this.handleError(response.data)
           }
@@ -365,29 +377,29 @@ class FormContext extends BaseContext<
           this.debug('onSubmit error:', error)
           this.setSubmittedState()
           this.handleError(
-            isString(error)
-              ? { error }
-              : error instanceof Error
-                ? { error: error.message }
-                : error
+            error instanceof Error
+              ? { error: error.message }
+              : isString(error)
+                ? { error }
+                : error as FormSubmitError
           )
         }
       }
     )
   }
-  handleSuccess(response) {
+  handleSuccess(response: FormSubmitResponse) {
     this.debug('handleSuccess()', response)
     const onSuccess = this.props.onSuccess || doNothing
     this.setValidState(
       { },
       callFunctions(
         () => onSuccess(response, this),
-        this.props.resetOnSuccess && (() => this.reset()),
-        this.props.unvalidateOnSuccess && (() => this.unvalidate())
+        this.props.resetOnSuccess ? () => this.reset() : undefined,
+        this.props.unvalidateOnSuccess ? () => this.unvalidate() : undefined
       )
     )
   }
-  handleError(params={}) {
+  handleError(params: FormSubmitError = { }) {
     // TODO: reset transient fields, reset form, etc
     // extract error/errors into state
     this.debug('handleError()', params)
@@ -395,7 +407,9 @@ class FormContext extends BaseContext<
       params.errors = this.sanitiseErrors(params.errors)
     }
 
-    const firstField = isArray(params?.errors) && this.fieldErrors(params.errors)
+    const firstField = isArray(params?.errors)
+      ? this.fieldErrors(params.errors)
+      : null
 
     // onFailure is provided as an alias for onError for backwards compatibility
     const onError = this.props.onError || this.props.onFailure || doNothing
@@ -406,17 +420,17 @@ class FormContext extends BaseContext<
         () => onError(params),
         firstField
           ? () => firstField.setFocus()
-          : null
+          : undefined
       )
     )
   }
-  fieldErrors(errors) {
+  fieldErrors(errors: FormErrorObjectItem[]) {
     this.debug(`fieldErrors: `, errors)
     const fields = errors.reduce(
-      (fields, error) => {
+      (fields: FieldContext[], error) => {
         const name = error.name ?? error.param ?? error.field
         const { message } = error
-        const field = name && this.fields[name]
+        const field = name ? this.fields[name] : null
         if (field) {
           error.label ||= field.props.label
           field.setInvalidState({ message })
@@ -424,20 +438,20 @@ class FormContext extends BaseContext<
         }
         return fields
       },
-      [ ]
+      [ ] as FieldContext[]
     )
-    return this.state.focusInvalidField && fields.length
+    return this.props.focusInvalidField && fields.length
       ? fields[0]
       : null
   }
-  sanitiseErrors(errors) {
+  sanitiseErrors(errors: FormErrorObjectItem[]): FormErrorObjectItem[] {
     // convert an object of errors, e.g. { username: 'Already taken' }
     // into an array: [ { name: 'username', message: 'Already taken' }]
     if (isObject(errors)) {
       errors = Object.entries(errors).map(
         ([name, error]) => ({
           name,
-          ...stringToObject(error, 'message')
+          ...stringToObject(error as string, 'message') as FormErrorObjectItem
         })
       )
     }

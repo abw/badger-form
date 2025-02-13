@@ -1,4 +1,4 @@
-export { useField, default as fieldContext } from './Context'
+export { useField, default as FieldContext } from './Context'
 export { default as Input    } from './Input.js'
 export { default as Label    } from './Label'
 export { default as Layout   } from './Layout.js'

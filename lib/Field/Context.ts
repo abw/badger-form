@@ -1,18 +1,28 @@
 import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
-import { BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED, UNVALIDATED, VALID, VALIDATING } from '../Constants'
 import { callFunctions, lengthEmpty } from '../Utils'
 import { createRef } from 'react'
 import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
 import { fieldDefaults, fieldModelDefaults } from './defaults'
 import { fieldStatusSets } from '../Status'
-import { AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps, FieldProps, FieldRenderProps, FieldState, InputType } from './types'
 import { FieldStatusChange, StateCallback } from '../types'
+import { FormAllProps } from '../Form/types'
+import {
+  BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED,
+  UNVALIDATED, VALID, VALIDATING
+} from '../Constants'
+import {
+  AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps,
+  FieldContextFunction, FieldOnHandler, FieldOnHandlers, FieldProps,
+  FieldRenderProps, FieldResetter, FieldState, FieldValidateFunction,
+  FieldValidateReject, FieldValidateResolve, FieldValidateResult,
+  FieldValidator, FieldValue, InputType
+} from './types'
 
-class FieldContext extends BaseContext<
+export class FieldContext extends BaseContext<
   FieldProps,
   FieldState,
   FieldActions,
-  FieldRenderProps & FieldState & FieldActions
+  FieldRenderProps
 > {
   // static newStatus    = newFieldStatus
   static debug        = false
@@ -38,10 +48,14 @@ class FieldContext extends BaseContext<
     'setEnabledState',
   ]
 
+  form: FormAllProps
   name: string
   mounted?: boolean
+  on: FieldOnHandlers
   // TODO: this doesn't work with TextArea
   inputRef: React.RefObject<InputType>
+  resetRef: React.RefObject<FieldResetter>
+
   config: WithRequiredFrom<
     FieldProps,
     typeof fieldModelDefaults
@@ -91,7 +105,7 @@ class FieldContext extends BaseContext<
     // this.props.onLoad(this)
     // }
   }
-  contextFunction(fn) {
+  contextFunction(fn?: FieldContextFunction) : FieldOnHandler {
     return fn
       ? () => fn(this.getContext())
       : doNothing
@@ -183,7 +197,7 @@ class FieldContext extends BaseContext<
         : this.on.blur
     )
   }
-  setFocus(e) {
+  setFocus(e?: FocusEvent) {
     e?.preventDefault()
     // imperatively focus
     this.inputRef?.current?.focus()
@@ -192,7 +206,7 @@ class FieldContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Change and reset
   //--------------------------------------------------------------------------
-  onChange(input) {
+  onChange(input: FieldValue) {
     this.debug(`onChange(${input})`)
     const value = this.props.prepareValue
       ? this.props.prepareValue(input)
@@ -226,13 +240,18 @@ class FieldContext extends BaseContext<
       }
     )
   }
-  setValue(value, event) {
+  getValue() {
+    return this.state.value
+  }
+
+  setValue(value: FieldValue, event?: MouseEvent) {
     event?.preventDefault()
     this.onChange(value)
     // JFDI - set the value, no side-effects
     // this.setState({ value })
   }
-  reset(e) {
+
+  reset(e?: MouseEvent) {
     e?.preventDefault()
     const value = this.props.prepareValue
       ? this.props.prepareValue(this.state.initialValue)
@@ -246,10 +265,11 @@ class FieldContext extends BaseContext<
     return value
   }
 
-  validation(callback) {
+  validation(callback?: VoidFunction) {
     this.validate(callback).then(doNothing).catch(doNothing)
   }
-  validate(callback) {
+
+  async validate(callback?: VoidFunction): Promise<FieldValidateResult> {
     this.debug('validate()')
     const result = {
       name:  this.name,
@@ -283,12 +303,13 @@ class FieldContext extends BaseContext<
         }
       )
   }
-  validator() {
+  validator(): FieldValidator {
     return async (resolve, reject) => {
       const { value='' } = this.state
       const {
         validate, required, optional, requiredMessage, validMessage,
-      } = { ...fieldDefaults, ...this.props }
+      } = this.config
+      // } = { ...fieldDefaults, ...this.props }
       const [ , empty] = lengthEmpty(value)
 
       // let validate = validateOnChange || (validateOnInvalid && invalid)
@@ -311,7 +332,7 @@ class FieldContext extends BaseContext<
         )
       }
       else if (empty) {
-        return await this.validateEmpty(
+        return this.validateEmpty(
           resolve, reject, required, validMessage, requiredMessage
         )
       }
@@ -321,7 +342,12 @@ class FieldContext extends BaseContext<
       }
     }
   }
-  async validateValidator(resolve, reject, validate, validMessage) {
+  async validateValidator(
+    resolve: FieldValidateResolve,
+    reject: FieldValidateReject,
+    validate: FieldValidateFunction,
+    validMessage?: string | null
+  ) {
     this.debug('calling validate function')
     const field = this.getContext()
     try {
@@ -334,16 +360,22 @@ class FieldContext extends BaseContext<
           : { value, message: validMessage }
       )
     }
-    catch (err) {
+    catch (err: unknown) {
       this.debug('validate threw an error:', err)
       const message = isString(err)
         ? err
-        : err.message
+        : (err as Error).message
       this.debug('rejecting with message:', message)
       reject({ message })
     }
   }
-  validateEmpty(resolve, reject, required, validMessage, invalidMessage) {
+  validateEmpty(
+    resolve: FieldValidateResolve,
+    reject: FieldValidateReject,
+    required?: boolean,
+    validMessage?: string | null,
+    invalidMessage?: string | null
+  ) {
     if (required) {
       this.debug('failing validation - required field is empty')
       reject({ message: invalidMessage })
@@ -354,11 +386,11 @@ class FieldContext extends BaseContext<
     }
   }
 
-  setValid(message, e) {
+  setValid(message?: string, e?: Event) {
     e?.preventDefault()
     this.setValidState({ message }, this.on.valid)
   }
-  setInvalid(message, e) {
+  setInvalid(message?: string, e?: Event) {
     e?.preventDefault()
     this.setInvalidState({ message }, this.on.invalid)
   }
@@ -396,11 +428,14 @@ class FieldContext extends BaseContext<
       ...this.actions,
       // name:     this.name,
       inputRef: this.inputRef,
-      // resetRef: this.resetRef,
+      resetRef: this.resetRef,
       // setRef:   this.resetRef,      // OLD name
     }
+    // @ts-expect-error: The operand of a 'delete' operator must be optional.ts(2790)
     delete context.form
+    // @ts-expect-error: Property 'children' does not exist on type
     delete context.children
+    // @ts-expect-error: Property 'render' does not exist on type
     delete context.render
     return context
   }

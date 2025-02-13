@@ -1,12 +1,12 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
-import { render, screen, act } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Form, Field } from '@/lib/index'
 import { useState } from 'react'
+import { fail } from '@abw/badger-utils'
 
-const BlurTest = () => {
-  const [msg, setMsg] = useState(false)
+export const BlurTest = () => {
+  const [msg, setMsg] = useState<string|null>()
   return (
     <Form>
       <Field
@@ -29,11 +29,11 @@ it(
   async () => {
     const { container } = render(<BlurTest/>)
     const user = userEvent.setup()
-    const foo = container.querySelector('#foo')
-    const bar = container.querySelector('#bar')
+    const foo = container.querySelector('#foo') || fail('no foo')
+    const bar = container.querySelector('#bar') || fail('no bar')
 
     // focus on foo field
-    await act( () => user.click(foo) )
+    await user.click(foo)
     // field container should have focus class
     expect(container.getElementsByClassName('field')[0])
       .toHaveClass('focus')
@@ -43,7 +43,7 @@ it(
       .toBe(0)
 
     // focus on bar field
-    await act( () => user.click(bar) )
+    await user.click(bar)
 
     // first field container should NOT have focus class
     expect(container.getElementsByClassName('field')[0])
@@ -58,7 +58,7 @@ it(
       .toHaveTextContent('Hello World')
 
     // focus on foo field - expect bar's onBlur to be called
-    await act( () => user.click(foo) )
+    await user.click(foo)
 
     expect(screen.getByTestId('msg'))
       .toHaveTextContent('Goodbye World')

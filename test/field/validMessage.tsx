@@ -1,10 +1,10 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
-import { render, act } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { Form, Field } from '@/lib/index'
+import { fail } from '@abw/badger-utils'
 
-const ValidMessageTest = () =>
+export const ValidMessageTest = () =>
   <Form>
     <Field
       name="foo" id="foo" required validateOnBlur
@@ -20,13 +20,15 @@ it(
   async () => {
     const user = userEvent.setup()
     const { container } = render(<ValidMessageTest/>)
+    const foo = container.querySelector('#foo') || fail('no foo')
+    const bar = container.querySelector('#bar') || fail('no bar')
 
     // focus on foo field
-    await act( () => user.click( container.querySelector('#foo') ) )
-    await act( () => user.keyboard('Hello World') )
+    await user.click(foo)
+    await user.keyboard('Hello World')
 
     // focus on bar field
-    await act( () => user.click( container.querySelector('#bar') ) )
+    await user.click(bar)
 
     const firstField = container.getElementsByClassName('field')[0]
     expect(firstField).toHaveClass('valid')

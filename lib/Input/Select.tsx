@@ -1,7 +1,5 @@
-import { inputAttrs, inputClasses, valueOption } from '../Utils.js'
-import { useField } from '../Field/Context.js'
-import { isBoolean } from '@abw/badger-utils'
-// import Handlers from './Handlers.js'
+import { inputAttrs, inputClasses, selectValue, valueOption } from '../Utils'
+import { useField } from '../Field/Context'
 
 export const Select = () => {
   const field = useField()
@@ -28,11 +26,7 @@ export const Select = () => {
       // onChange={handler(field)}
       onChange={e => onChange(e.target.value)}
       {...attrs}
-      value={
-        isBoolean(value)
-          ? (value ? 1 : 0)
-          : value
-      }
+      value={selectValue(value)}
       required={required || Boolean(placeholder)}  // allows styling via :invalid for placeholder
     >
       { Boolean(placeholder) &&

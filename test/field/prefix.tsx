@@ -1,7 +1,7 @@
-import React from 'react'
 import { it, expect } from 'vitest'
 import { render } from '@testing-library/react'
 import { Form, Field } from '@/lib/index'
+import { fail } from '@abw/badger-utils'
 
 it(
   'has prefix',
@@ -11,7 +11,7 @@ it(
         <Field name="foo" label="Foo" className="my-field" prefix="A"/>
       </Form>
     )
-    const inputs = container.querySelector('div.my-field div.inputs')
+    const inputs = container.querySelector('div.my-field div.inputs') || fail('no inputs')
     expect(inputs).toHaveClass('prefixed')
     const prefix = inputs.querySelector('div.prefix')
     expect(prefix).toHaveTextContent('A')

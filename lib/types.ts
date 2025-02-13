@@ -3,8 +3,9 @@ import {
   BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED,
   SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING
 } from './Constants'
-import { FieldProps } from './Field/types'
+import { FieldProps, FieldRenderProps } from './Field/types'
 import { FieldSchema } from './Form/types'
+import { RenderChild } from '@abw/react-context'
 
 /**
   The form and field contexts maintain a status: { ... } object which
@@ -180,9 +181,14 @@ export type FlexGridProps = {
   [key: string]: unknown
 }
 
+export type FieldChildren = React.ReactNode |
+  RenderChild<FieldRenderProps> |
+  Array< React.ReactNode | RenderChild<FieldRenderProps> >
+
 export interface FieldComponentProps extends FieldSchema {
   name: string,
-  children?: ReactNode,
+  // children?: ReactNode,
+  children?: FieldChildren
 }
 
 export interface FieldsComponentProps extends Partial<FieldProps> {

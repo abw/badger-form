@@ -1,6 +1,6 @@
 import { PropsWithRender } from '@abw/react-context'
 import { ChangeEvent, ReactNode } from 'react'
-import { FormAllProps, FormErrorItem } from '../Form/types'
+import { FormErrorItem, FormRenderProps } from '../Form/types'
 import { FieldStatusFlags, StateCallback, VoidFunction } from '../types'
 import { fieldModelDefaults, fieldRenderDefaults } from './defaults'
 
@@ -8,7 +8,7 @@ export type FieldModelDefaults = typeof fieldModelDefaults
 export type FieldRenderDefaults = typeof fieldRenderDefaults
 
 export type FieldProps = {
-  form: FormAllProps
+  form: FormRenderProps
   id: string
   name: string,
   value?: FieldValue
@@ -17,6 +17,7 @@ export type FieldProps = {
   required?: boolean
   optional?: boolean
   disabled?: boolean
+  className?: string,
   label?: string,
   labelClass?: string,
   prefix?: string
@@ -52,6 +53,7 @@ export type FieldProps = {
   showOptional?: boolean
   optionalLabel?: ReactNode
   focusInvalidField?: boolean
+  validMessage?: string | null
   handler?: FieldChangeHandler
   prepareValue?: (input: FieldValue) => FieldValue
   validate: FieldValidateFunction
@@ -99,10 +101,16 @@ export type FieldStateSetter = (state?: AddFieldState, callback?: StateCallback)
 
 
 export type FieldActions = {
-  // TODO: more
-  reset: () => void
   validate: () => void,
   unvalidate: () => void
+  reset: (e?: EventWithPreventDefault) => void
+  onChange: (value: string | boolean) => void
+  onFocus: VoidFunction
+  onBlur: VoidFunction
+  setFocus: (e?: EventWithPreventDefault) => void
+  setValue: (value: FieldValue, event?: EventWithPreventDefault) => void
+  setValid: (message?: string, e?: EventWithPreventDefault) => void
+  setInvalid: (message?: string, e?: EventWithPreventDefault) => void
   setChangedState: FieldStateSetter
   setValidatingState: FieldStateSetter
   setInvalidState: FieldStateSetter
@@ -113,22 +121,14 @@ export type FieldActions = {
   setDisabledState: FieldStateSetter
   setEnabledState: FieldStateSetter
   setResetState: FieldStateSetter
-  onChange: (value: string | boolean) => void
-  onFocus: VoidFunction
-  onBlur: VoidFunction
-  // onLoad: (form: FieldContext) => void
-  // onLoad: FieldContextFunction
-  // onFocus?: FieldContextFunction
-  // onBlur?: FieldContextFunction
-  // onChange: FieldContextFunction
-  // onValid?: FieldContextFunction
-  // onInvalid?: FieldContextFunction
-  // onUnvalidate?: FieldContextFunction
-  // onReset?: FieldContextFunction
 
   // Not really actions
   inputRef?: React.RefObject<InputType>
   resetRef?: React.RefObject<FieldResetter>
+}
+
+export type EventWithPreventDefault = {
+  preventDefault: () => void
 }
 
 export type FieldOnName =
@@ -201,7 +201,8 @@ export interface FieldLayoutProps {
   children?: ReactNode
 }
 
-export type SelectOption = {
+export type SelectOption = string | number | SelectOptionObject
+export type SelectOptionObject = {
   value: string | number
   text?: ReactNode
   className?: string

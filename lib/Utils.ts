@@ -1,6 +1,6 @@
 import { FORM_ATTRS, INPUT_ATTRS } from './Constants'
-import { FieldValue, SelectOption } from './Field/types'
-import { hasValue, isArray, isBoolean, isObject, isString } from '@abw/badger-utils'
+import { FieldValue, SelectOptionObject } from './Field/types'
+import { hasValue, isArray, isBoolean, isNumber, isObject, isString, noValue } from '@abw/badger-utils'
 import { CSSClassHash, CSSClassItem, CSSClassProps, FlexGridProps, VoidFunction } from './types'
 
 /**
@@ -111,7 +111,7 @@ export const inputClasses = (
  * Determine the CSS classes for a select input from the field specification.
  */
 export const selectClass = (
-  classes: Record<string, string>,
+  classes: Record<string, string> | undefined,
   name: string,
   defaultClass=name
 ) =>
@@ -214,10 +214,10 @@ export const valueTypes: Record<string, boolean> = {
  * numbers, otherwise they must be objects containing `value` and `text`.
  * This function returns `true` if the `option` is a suitable simple type.
  */
-export const valueOption = (option: unknown): SelectOption =>
+export const valueOption = (option: unknown): SelectOptionObject =>
   valueTypes[typeof option]
     ? { value: option as string | number, text: String(option)} // FIXME
-    : option as SelectOption
+    : option as SelectOptionObject
 
 /**
  * Calls a sequence of one or more function
@@ -300,3 +300,12 @@ export const preventDefault = <
       fn(...args)
     }
 */
+
+export const selectValue = (value: FieldValue) =>
+  noValue(value)
+    ? undefined
+    : isBoolean(value)
+      ? (value ? 1 : 0)
+      : isNumber(value)
+        ? value
+        : String(value)

@@ -1,17 +1,17 @@
-import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
-import { callFunctions, lengthEmpty } from '../Utils'
 import { createRef } from 'react'
-import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
-import { fieldDefaults, fieldModelDefaults } from './defaults'
+import { FormRenderProps } from '../Form/types'
 import { fieldStatusSets } from '../Status'
+import { callFunctions, lengthEmpty } from '../Utils'
 import { FieldStatusChange, StateCallback } from '../types'
-import { FormAllProps } from '../Form/types'
+import { fieldDefaults, fieldModelDefaults } from './defaults'
+import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
+import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
 import {
   BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED,
   UNVALIDATED, VALID, VALIDATING
 } from '../Constants'
 import {
-  AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps,
+  AddFieldState, AddFieldStateFn, EventWithPreventDefault, FieldActions, FieldConstructorProps,
   FieldContextFunction, FieldOnHandler, FieldOnHandlers, FieldProps,
   FieldRenderProps, FieldResetter, FieldState, FieldValidateFunction,
   FieldValidateReject, FieldValidateResolve, FieldValidateResult,
@@ -48,7 +48,7 @@ export class FieldContext extends BaseContext<
     'setEnabledState',
   ]
 
-  form: FormAllProps
+  form: FormRenderProps
   name: string
   mounted?: boolean
   on: FieldOnHandlers
@@ -197,7 +197,7 @@ export class FieldContext extends BaseContext<
         : this.on.blur
     )
   }
-  setFocus(e?: FocusEvent) {
+  setFocus(e?: EventWithPreventDefault) {
     e?.preventDefault()
     // imperatively focus
     this.inputRef?.current?.focus()
@@ -244,14 +244,14 @@ export class FieldContext extends BaseContext<
     return this.state.value
   }
 
-  setValue(value: FieldValue, event?: MouseEvent) {
+  setValue(value: FieldValue, event?: EventWithPreventDefault) {
     event?.preventDefault()
     this.onChange(value)
     // JFDI - set the value, no side-effects
     // this.setState({ value })
   }
 
-  reset(e?: MouseEvent) {
+  reset(e?: EventWithPreventDefault) {
     e?.preventDefault()
     const value = this.props.prepareValue
       ? this.props.prepareValue(this.state.initialValue)
@@ -386,11 +386,11 @@ export class FieldContext extends BaseContext<
     }
   }
 
-  setValid(message?: string, e?: Event) {
+  setValid(message?: string, e?: EventWithPreventDefault) {
     e?.preventDefault()
     this.setValidState({ message }, this.on.valid)
   }
-  setInvalid(message?: string, e?: Event) {
+  setInvalid(message?: string, e?: EventWithPreventDefault) {
     e?.preventDefault()
     this.setInvalidState({ message }, this.on.invalid)
   }

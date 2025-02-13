@@ -1,13 +1,12 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
-import { render, screen, act } from '@testing-library/react'
-import { Form, Field } from '@/lib/index'
+import { render, screen } from '@testing-library/react'
+import { Form, Field, FieldRenderProps } from '@/lib/index'
 import { useState } from 'react'
 
-const SetValueTest = () => {
-  const [foo, setFoo] = useState(false)
-  const [bar, setBar] = useState(false)
+export const SetValueTest = () => {
+  const [foo, setFoo] = useState<FieldRenderProps>()
+  const [bar, setBar] = useState<FieldRenderProps>()
   return (
     <Form>
       <Field
@@ -18,10 +17,10 @@ const SetValueTest = () => {
         name="bar" id="bar" label="Bar"
         onLoad={setBar}
       />
-      <button data-testid="focus-foo" onClick={e => foo.setFocus(e)}>
+      <button data-testid="focus-foo" onClick={e => foo?.setFocus(e)}>
         Focus Foo
       </button>
-      <button data-testid="focus-bar" onClick={e => bar.setFocus(e)}>
+      <button data-testid="focus-bar" onClick={e => bar?.setFocus(e)}>
         Focus Bar
       </button>
     </Form>
@@ -38,12 +37,12 @@ it(
     const focbar = screen.getByTestId('focus-bar')
 
     // focus on foo field
-    await act( () => user.click(focfoo) )
+    await user.click(focfoo)
     expect(fields[0]).toHaveClass('focus')
     expect(fields[1]).not.toHaveClass('focus')
 
     // focus on bar field
-    await act( () => user.click(focbar) )
+    await user.click(focbar)
     expect(fields[0]).not.toHaveClass('focus')
     expect(fields[1]).toHaveClass('focus')
   }

@@ -28,7 +28,7 @@
     "build:lib": "tsc & vite build",
     "build": "$npm_execpath build:css && $npm_execpath build:lib && $npm_execpath build:docs",
     "preview": "vite preview --config vite.docs.js",
-    "lint": "eslint 'lib/**/*.{js,jsx}'"
+    "lint": "eslint"
   },
   "homepage": "https://abw.github.io/badger-form",
   "repository": {

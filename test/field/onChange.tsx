@@ -1,17 +1,17 @@
-import React from 'react'
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen, act } from '@testing-library/react'
 import { Form, Field } from '@/lib/index'
 import { useState } from 'react'
+import { fail } from '@abw/badger-utils'
 
-const ChangeTest = () => {
-  const [msg, setMsg] = useState(false)
+export const ChangeTest = () => {
+  const [msg, setMsg] = useState<string|null>()
   return (
     <Form>
       <Field
         name="foo" id="foo"
-        onChange={field => setMsg(field.value)}
+        onChange={field => setMsg(field.value as string)}
       />
       { Boolean(msg) &&
         <div data-testid="msg">{msg}</div>
@@ -25,9 +25,10 @@ it(
   async () => {
     const user = userEvent.setup()
     const { container } = render(<ChangeTest/>)
+    const foo = container.querySelector('#foo') || fail('no foo')
 
     // focus on foo field
-    await act( () => user.click( container.querySelector('#foo') ) )
+    await user.click(foo)
     expect(screen.queryAllByTestId('msg').length)
       .toBe(0)
 

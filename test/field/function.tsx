@@ -1,4 +1,3 @@
-import React from 'react'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Form, Field } from '@/lib/index'

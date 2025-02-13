@@ -1,10 +1,10 @@
 import { it, expect } from 'vitest'
-import { hasStatus } from '@/lib/Status'
+import { fieldHasStatus } from '@/lib/Status'
 
 it(
   'has not changed',
   () => expect(
-    hasStatus({
+    fieldHasStatus({
       status: { },
       changed: true
     })
@@ -13,7 +13,7 @@ it(
 it(
   'has changed',
   () => expect(
-    hasStatus({
+    fieldHasStatus({
       status: { changed: true },
       changed: true
     })
@@ -22,7 +22,7 @@ it(
 it(
   'has changed but is not valid',
   () => expect(
-    hasStatus({
+    fieldHasStatus({
       status: { changed: true },
       changed: true,
       valid: true
@@ -32,7 +32,7 @@ it(
 it(
   'has changed and is valid',
   () => expect(
-    hasStatus({
+    fieldHasStatus({
       status: { changed: true, valid: true },
       changed: true,
       valid: true
@@ -42,7 +42,7 @@ it(
 it(
   'has changed or is valid',
   () => expect(
-    hasStatus({
+    fieldHasStatus({
       status: { changed: true },
       any: true,
       changed: true,

@@ -12,7 +12,7 @@ export const fieldRenderDefaults = {
   type:              TEXT,
   showRequired:      false,
   showOptional:      false,
-  validMessage:      null,
+  // validMessage:      null,
   minValidateLength: 1,
   messageClass:      'help',
   requiredMessage:   REQUIRED_MSG,

@@ -1,7 +1,6 @@
 import { Form, Field, Submit, Errors } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Errors, Submit } from '@abw/badger-form'
 
 const SubmitThrow = () => {

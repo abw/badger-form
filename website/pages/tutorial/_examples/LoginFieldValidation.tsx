@@ -1,14 +1,16 @@
-import { Form, Field, Submit } from '@/lib/index'
+import { Form, Field, Submit, FieldValue } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 import * as yup  from 'yup'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field, Submit,
+// PRETEND:   FieldValue // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const fields = {
   email: {
     label: 'Email Address',
-    validate: value => yup
+    validate: (value: FieldValue) => yup
       .string()
       .trim()
       .email("That doesn't look like an email address")
@@ -18,7 +20,7 @@ const fields = {
   password: {
     label: 'Password',
     type:  'password',
-    validate: value => yup
+    validate: (value: FieldValue) => yup
       .string()
       .trim()
       .required('You must enter your password!')

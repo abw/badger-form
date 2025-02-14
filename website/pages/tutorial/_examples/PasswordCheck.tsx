@@ -1,11 +1,13 @@
-import { Form, Fields, Errors, Submit } from '@/lib/index'
+import { Form, Fields, Errors, Submit, FormValidateFunction, FieldValue } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
-// PRETEND: import { Form, Fields, Errors, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Fields, Errors, Submit,
+// PRETEND:   FormValidateFunction, FieldValue // TS types
+// PRETEND: } from '@abw/badger-form'
 import * as yup  from 'yup'
 
-const validateForm = values => new Promise(
+const validateForm: FormValidateFunction = values => new Promise(
   (resolve, reject) => {
     if (values.password === values.passcheck) {
       return resolve(values)
@@ -22,14 +24,14 @@ const validateForm = values => new Promise(
   }
 )
 
-const validateEmail = value => yup
+const validateEmail = (value: FieldValue) => yup
   .string()
   .trim()
   .email()
   .required('You must enter your email address!')
   .validate(value)
 
-const validatePassword = value => yup
+const validatePassword = (value: FieldValue) => yup
   .string()
   .trim()
   .required('You must enter a password!')

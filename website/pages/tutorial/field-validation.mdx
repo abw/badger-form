@@ -1,6 +1,7 @@
-import LoginForm    from './_examples/LoginFieldValidation.jsx'
-import LoginFormSrc from './_examples/LoginFieldValidation.jsx?raw'
+import LoginForm    from './_examples/LoginFieldValidation'
+import LoginFormSrc from './_examples/LoginFieldValidation.tsx?raw'
 import Suggest      from '@/site/Suggest.jsx'
+import { TSNotes }  from '@/ui/TSNotes.jsx'
 import { Example, Split } from '@abw/badger-website'
 import {
   FieldLink, FormFieldsLink, FormLink, FieldMinValidateLengthLink,
@@ -66,6 +67,7 @@ import {
   Component={LoginForm}
   code={LoginFormSrc}
   caption="Field Validation"
+  highlightLines="10-15,20-26"
   expand
 />
 
@@ -91,6 +93,11 @@ import {
     default values is `1`.
   </dd>
 </dl>
+
+<TSNotes>
+If you're using Typescript then you can import the `FieldValue` type
+for the value passed to your field `validate` function.
+</TSNotes>
 
 ## Where Next?
 

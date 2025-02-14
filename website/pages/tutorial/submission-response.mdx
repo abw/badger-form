@@ -1,6 +1,7 @@
 import Suggest            from '@/site/Suggest.jsx'
-import SubmitResponse     from './_examples/SubmitResponse.jsx'
-import SubmitResponseSrc  from './_examples/SubmitResponse.jsx?raw'
+import SubmitResponse     from './_examples/SubmitResponse'
+import SubmitResponseSrc  from './_examples/SubmitResponse.tsx?raw'
+import { TSNotes }        from '@/ui/TSNotes.jsx'
 import { Example, Split } from '@abw/badger-website'
 import { FormOnSubmitLink, FormOnSuccessLink } from '@/site/Links.jsx'
 
@@ -42,7 +43,16 @@ import { FormOnSubmitLink, FormOnSuccessLink } from '@/site/Links.jsx'
   Component={SubmitResponse}
   code={SubmitResponseSrc}
   caption="Submission Response"
+  highlightLines="11-12,32"
+  expand
 />
+
+
+<TSNotes>
+If you're using Typescript then you can import the `FormSubmitHandler` type
+for your `onSubmit` handler and `FormSubmitResponse` for the response data
+passed to the `onSuccess` handler.
+</TSNotes>
 
 ## Where Next?
 

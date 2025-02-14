@@ -1,15 +1,18 @@
-import { Form, Field, Submit } from '@/lib/index'
+import { Form, Field, Submit, FormSubmitHandler, FieldValues } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field, Submit,
+// PRETEND:   FormSubmitHandler, FieldValues    // Types for TS
+// PRETEND: } from '@abw/badger-form'
 
 const DummySubmit = () => {
-  const [values, setValues] = useState()
-
-  const onSubmit = values => Promise.resolve(
+  const [values, setValues] = useState<FieldValues>()
+  const onSubmit: FormSubmitHandler = values => {
     setValues(values)
-  )
+    return Promise.resolve({ ok: true })
+  }
 
   return (
     <>

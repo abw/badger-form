@@ -1,6 +1,6 @@
 import Suggest        from '@/site/Suggest.jsx'
-import EditForm       from './_examples/EditForm.jsx'
-import EditFormSrc    from './_examples/EditForm.jsx?raw'
+import EditForm       from './_examples/EditForm'
+import EditFormSrc    from './_examples/EditForm.tsx?raw'
 import { Example, Split } from '@abw/badger-website'
 import {
   DebugLink, FormHiddenLink, FormLink, FormValuesLink
@@ -31,6 +31,8 @@ import {
   Component={EditForm}
   code={EditFormSrc}
   caption="Edit Form"
+  highlightLines="50,51"
+  expand
 />
 
 ## Where Next?

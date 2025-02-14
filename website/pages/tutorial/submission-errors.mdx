@@ -1,13 +1,14 @@
 
 import Suggest            from '@/site/Suggest.jsx'
-import SubmitThrow        from './_examples/SubmitThrow.jsx'
-import SubmitThrowSrc     from './_examples/SubmitThrow.jsx?raw'
-import SubmitError        from './_examples/SubmitThrowError.jsx'
-import SubmitErrorSrc     from './_examples/SubmitThrowError.jsx?raw'
-import SubmitReject       from './_examples/SubmitReject.jsx'
-import SubmitRejectSrc    from './_examples/SubmitReject.jsx?raw'
-import OnError            from './_examples/OnError.jsx'
-import OnErrorSrc         from './_examples/OnError.jsx?raw'
+import SubmitThrow        from './_examples/SubmitThrow'
+import SubmitThrowSrc     from './_examples/SubmitThrow.tsx?raw'
+import SubmitError        from './_examples/SubmitThrowError'
+import SubmitErrorSrc     from './_examples/SubmitThrowError.tsx?raw'
+import SubmitReject       from './_examples/SubmitReject'
+import SubmitRejectSrc    from './_examples/SubmitReject.tsx?raw'
+import OnError            from './_examples/OnError'
+import OnErrorSrc         from './_examples/OnError.tsx?raw'
+import { TSNotes }        from '@/ui/TSNotes.jsx'
 import { Example, Split } from '@abw/badger-website'
 import { ErrorsLink, FormOnErrorLink } from '@/site/Links.jsx'
 
@@ -44,6 +45,8 @@ import { ErrorsLink, FormOnErrorLink } from '@/site/Links.jsx'
   Component={SubmitThrow}
   code={SubmitThrowSrc}
   caption="Error Thrown"
+  highlightLines="5"
+  expand
 />
 
 As well as calling the `throw()` function with a string, you can `throw` an
@@ -53,6 +56,8 @@ As well as calling the `throw()` function with a string, you can `throw` an
   Component={SubmitError}
   code={SubmitErrorSrc}
   caption="Error Thrown"
+  highlightLines="5"
+  expand
 />
 
 ## Rejected Promise
@@ -87,6 +92,8 @@ As well as calling the `throw()` function with a string, you can `throw` an
   Component={SubmitReject}
   code={SubmitRejectSrc}
   caption="Error Thrown"
+  highlightLines="4-15"
+  expand
 />
 
 ## `onError`
@@ -107,7 +114,14 @@ As well as calling the `throw()` function with a string, you can `throw` an
   Component={OnError}
   code={OnErrorSrc}
   caption="onError"
+  highlightLines="25"
+  expand
 />
+
+<TSNotes>
+If you're using Typescript then you can import the `FormSubmitError` type
+for the data passed to the `onError` handler.
+</TSNotes>
 
 ## Where Next?
 

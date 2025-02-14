@@ -1,18 +1,21 @@
-import { Form, Field, Submit } from '@/lib/index'
+import { Form, Field, Submit, FormSubmitResponse, FormSubmitHandler } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field, Submit,
+// PRETEND:   FormSubmitHandler, FormSubmitResponse // TS types
+// PRETEND: } from '@abw/badger-form'
 
 const SubmitResponse = () => {
-  const [response, setResponse] = useState()
+  const [response, setResponse] = useState<object|null>()
 
   // handle successful response
-  const onSuccess = response =>
+  const onSuccess = (response: FormSubmitResponse) =>
     setResponse(response.data)
 
   // dummy submission in the style of fetch or axios
-  const onSubmit = values =>
+  const onSubmit: FormSubmitHandler = values =>
     Promise.resolve({
       status: 200,
       data:   {

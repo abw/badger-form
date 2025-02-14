@@ -1,6 +1,7 @@
-import { Example, Split } from '@abw/badger-website'
-import RegistrationForm     from './_examples/RegistrationForm.jsx'
-import RegistrationFormSrc  from './_examples/RegistrationForm.jsx?raw'
+import { Example, Source, Split } from '@abw/badger-website'
+import RegistrationForm     from './_examples/RegistrationForm'
+import RegistrationFormSrc  from './_examples/RegistrationForm.tsx?raw'
+import RegistrationFieldsSrc from './_examples/RegistrationFields.ts?raw'
 import {
   FieldLink, FieldsetLink, FormLink,
   CheckboxInputLink, RadioInputLink, SelectInputLink, FieldTypeLink,
@@ -9,36 +10,42 @@ import {
 
 # Complete Registration Form
 
-<div className="wide">
+<div className="wide intro">
   Here's a more complete (albeit rather contrived) example of a
   user registration form.
 </div>
 
-## Input Types
+## Registration Form
 
-<Split>
-  <div>
-    This example demonstrates some of the other fields input types.
+This example demonstrates some of the other fields input types.
 
-    Set the <FieldLink/> <FieldTypeLink/> to <code>radio</code> for
-    a <RadioInputLink/> button input and provide some <RadioOptionsLink/>,
-    as shown here for the <code>experience</code> field.
-
-    Or set it to <code>select</code> for a <SelectInputLink/> input
-    and provide some <SelectOptionsLink/>, as shown in the <code>animal</code> field.
-  </div>
-  <div>
-    Set it to <code>checkbox</code> for a <CheckboxInputLink/> and
-    provide some <CheckboxTextLink/> to go alongside it.
-
-    You can also use the <FieldTypeLink/> to set other text input types,
-    like <code>number</code> and <code>date</code>.
-  </div>
-</Split>
 <Example
   Component={RegistrationForm}
   code={RegistrationFormSrc}
   caption="Registration Form"
+  expand
+/>
+
+## Fields Definition
+
+Here's the `RegistrationFields.ts` file where the `fields` are defined.
+
+Set the <FieldLink/> <FieldTypeLink/> to <code>radio</code> for
+a <RadioInputLink/> button input and provide some <RadioOptionsLink/>,
+as shown here for the <code>experience</code> field.
+
+Or set it to <code>select</code> for a <SelectInputLink/> input
+and provide some <SelectOptionsLink/>, as shown in the <code>animal</code> field.
+
+Set it to <code>checkbox</code> for a <CheckboxInputLink/> and
+provide some <CheckboxTextLink/> to go alongside it.
+
+You can also use the <FieldTypeLink/> to set other text input types,
+like <code>number</code> and <code>date</code>.
+
+<Source
+  code={RegistrationFieldsSrc}
+  expand
 />
 
 ## Components and Properties

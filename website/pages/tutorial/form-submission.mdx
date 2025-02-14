@@ -1,7 +1,8 @@
 import React          from 'react'
 import Suggest        from '@/site/Suggest.jsx'
-import DummySubmit    from './_examples/DummySubmit.jsx'
-import DummySubmitSrc from './_examples/DummySubmit.jsx?raw'
+import DummySubmit    from './_examples/DummySubmit'
+import DummySubmitSrc from './_examples/DummySubmit.tsx?raw'
+import { TSNotes }    from '@/ui/TSNotes.jsx'
 import { Example, Split } from '@abw/badger-website'
 import { FormLink, FormOnSubmitLink } from '@/site/Links.jsx'
 
@@ -18,14 +19,19 @@ import { FormLink, FormOnSubmitLink } from '@/site/Links.jsx'
 ## `onSubmit`
 
 <Split align="end">
-  We'll create a function which stores the submitted `values` in a state
-  variable and displays them on the screen.  The <FormOnSubmitLink/> handler
-  is passed an object containing the validated form values.  It should return
-  a Promise which resolves on success.  If an error occurs then the Promise
-  should reject, returning an object containing either an `error` and/or an
-  array of `errors`.  These are handled the same as for
-  client-side form validation.
+  <div>
+    We'll create a function which stores the submitted `values` in a state
+    variable and displays them on the screen.
 
+    The <FormOnSubmitLink/> handler is passed an object containing the validated
+    form values.  It
+    should return a Promise which resolves on success.  In this simple example,
+    we return an object with an `ok` property set to `true`.
+
+    If an error occurs then the Promise should reject, returning an object
+    containing either an `error` and/or an array of `errors`.  These are handled
+    the same as for client-side form validation.
+  </div>
   <Suggest>
     Try entering some values in the form below and click on the
     "Login" button.  You should see the submitted values
@@ -37,7 +43,14 @@ import { FormLink, FormOnSubmitLink } from '@/site/Links.jsx'
   Component={DummySubmit}
   code={DummySubmitSrc}
   caption="Dummy Submission"
+  highlightLines="7-12,16"
+  expand
 />
+
+<TSNotes>
+If you're using Typescript then you can import the `FormSubmitHandler` type
+for your handler and `FieldValues` for the values passed to it.
+</TSNotes>
 
 ## Where Next?
 

@@ -1,7 +1,6 @@
 import { Form, Field, Submit } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
 const fields = {
@@ -20,7 +19,7 @@ const HeadlessFields = () =>
           <div className="inputs">
             <input
               className="input"
-              ref={field.inputRef}
+              ref={field.inputRef as React.RefObject<HTMLInputElement>}
               aria-disabled={field.disabled}
               tabIndex={field.disabled ? -1 : field.tabIndex}
               onFocus={field.onFocus}

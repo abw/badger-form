@@ -1,6 +1,7 @@
 import Suggest          from '@/site/Suggest.jsx'
-import PasswordCheck    from './_examples/PasswordCheck.jsx'
-import PasswordCheckSrc from './_examples/PasswordCheck.jsx?raw'
+import PasswordCheck    from './_examples/PasswordCheck'
+import PasswordCheckSrc from './_examples/PasswordCheck.tsx?raw'
+import { TSNotes }      from '@/ui/TSNotes.jsx'
 import { Example, Split } from '@abw/badger-website'
 import {
   ErrorsLink, FieldsLink, FormLink, FormValidateLink
@@ -68,7 +69,15 @@ import {
   Component={PasswordCheck}
   code={PasswordCheckSrc}
   caption="Form Validation"
+  highlightLines="7-22,56"
+  expand
 />
+
+<TSNotes>
+If you're using Typescript then you can import the `FormValidateFunction` type
+for the form validate function.  In the example above we're also importing
+the `FieldValue` type for the values passed to the field validation functions.
+</TSNotes>
 
 ## Where Next?
 

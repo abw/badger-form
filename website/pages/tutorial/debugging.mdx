@@ -1,6 +1,6 @@
 import Suggest            from '@/site/Suggest.jsx'
-import Debugging          from './_examples/Debugging.jsx'
-import DebuggingSrc       from './_examples/Debugging.jsx?raw'
+import Debugging          from './_examples/Debugging'
+import DebuggingSrc       from './_examples/Debugging.tsx?raw'
 import { Example, Split } from '@abw/badger-website'
 import { DebugLink, FormDebugLink, FieldLink, FieldsLink, FormLink } from '@/site/Links.jsx'
 
@@ -39,6 +39,8 @@ import { DebugLink, FormDebugLink, FieldLink, FieldsLink, FormLink } from '@/sit
   Component={Debugging}
   code={DebuggingSrc}
   caption="Debugging"
+  highlightLines="32,37"
+  expand
 />
 
 ## Where Next?

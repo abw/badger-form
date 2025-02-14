@@ -1,11 +1,14 @@
-import { Form, Field, Submit } from '@/lib/index'
+import { Form, Field, Submit, FormSubmitError } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field, Submit,
+// PRETEND:   FormSubmitError // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const SubmitThrow = () => {
-  const [error, setError] = useState()
+  const [error, setError] = useState<FormSubmitError>()
 
   const onSubmit = () => Promise.reject({
     errors: [

@@ -1,7 +1,6 @@
 import { Form, Fields, ResetSubmit } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Fields, ResetSubmit } from '@abw/badger-form'
 
 // field definitions - these could be defined elsewhere and imported in
@@ -49,7 +48,11 @@ const hidden = {
 }
 
 const EditForm = () =>
-  <Form fields={fields} values={values} hidden={hidden}>
+  <Form
+    fields={fields}
+    values={values}
+    hidden={hidden}
+  >
     <Fields names="name description" wide/>
     <Fields names="manufacturer price" grid={2} wide/>
     <ResetSubmit

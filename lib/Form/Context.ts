@@ -4,7 +4,7 @@ import { FieldContext } from '../Field/Context'
 import { formStatusSets } from '../Status.js'
 import { formModelDefaults } from './defaults'
 import { formFieldProperties } from '../Config.js'
-import { FieldValidateResult, FieldValue, FieldValues } from '../Field/types.js'
+import { FieldValidateResultObject, FieldValue, FieldValues } from '../Field/types.js'
 import { callFunctions, stringToObject } from '../Utils.js'
 import { FormStatusChange, StateCallback } from '../types.js'
 import {
@@ -295,7 +295,7 @@ export class FormContext extends BaseContext<
           // (submit, {status, value, reason}) => {
           (submit, {status, ...rest}) => {
             if (status === FULFILLED) {
-              const { value } = rest as PromiseFulfilledResult<FieldValidateResult>
+              const { value } = rest as PromiseFulfilledResult<FieldValidateResultObject>
               Object.assign(
                 submit.values,
                 value.data || { [value.name as string]: value.value }

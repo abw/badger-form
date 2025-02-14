@@ -6,7 +6,7 @@ import { useField } from './Context'
 import { fieldClass } from '../Utils'
 import { FieldLayoutProps } from './types'
 
-export const FieldLayout = ({
+export const Layout = ({
   children
 }: FieldLayoutProps) => {
   const field = useField()
@@ -40,4 +40,4 @@ export const FieldLayout = ({
   )
 }
 
-export default FieldLayout
+export default Layout

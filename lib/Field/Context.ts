@@ -14,8 +14,8 @@ import {
   AddFieldState, AddFieldStateFn, EventWithPreventDefault, FieldActions, FieldConstructorProps,
   FieldContextFunction, FieldOnHandler, FieldOnHandlers, FieldProps,
   FieldRenderProps, FieldResetter, FieldState, FieldValidateFunction,
-  FieldValidateReject, FieldValidateResolve, FieldValidateResult,
-  FieldValidator, FieldValue, InputType
+  FieldValidateReject, FieldValidateResolve, //FieldValidateResult,
+  FieldValidateResultObject, FieldValidator, FieldValue, InputType
 } from './types'
 
 export class FieldContext extends BaseContext<
@@ -269,7 +269,7 @@ export class FieldContext extends BaseContext<
     this.validate(callback).then(doNothing).catch(doNothing)
   }
 
-  async validate(callback?: VoidFunction): Promise<FieldValidateResult> {
+  async validate(callback?: VoidFunction): Promise<FieldValidateResultObject> {
     this.debug('validate()')
     const result = {
       name:  this.name,

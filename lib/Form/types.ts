@@ -30,11 +30,13 @@ export type FormProps = {
   focusInvalidField?: boolean
   errorsTitle?: ErrorsTitle,
   errorsPrompt?: ErrorsPrompt,
-  validate?: (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
+  // validate?: (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
+  validate?: FormValidateFunction
   onLoad?: (form: FormContext) => void
   onReset?: () => void
   onValid?: () => void
-  onSubmit?: (values: FieldValues, form: FormRenderProps) => FormSubmitResponse | Promise<FormSubmitResponse>
+  // onSubmit?: (values: FieldValues, form: FormRenderProps) => FormSubmitResponse | Promise<FormSubmitResponse>
+  onSubmit?: FormSubmitHandler
   onSuccess?: (response: FormSubmitResponse, form: FormContext) => void
   onError?: (error: FormSubmitError) => void
   onFailure?: (error: FormSubmitError) => void
@@ -146,6 +148,11 @@ export type FormSubmitError = {
   error?: string
   errors?: FormErrorObjectItem[]
 }
+
+export type FormSubmitHandler = (values: FieldValues, form: FormRenderProps)
+  => FormSubmitResponse | Promise<FormSubmitResponse>
+
+export type FormValidateFunction = (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
 
 export type FormValidator = (
   resolve: (submit: FormSubmitData) => void,

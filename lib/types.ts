@@ -146,29 +146,6 @@ export type FieldHasStatusProps = HasStatusProps<FieldStatusFlags>
 export type VoidFunction = () => void
 export type StateCallback = VoidFunction
 
-// NOTE: moved to form/types.ts
-/*
-export type AddState<State> = Partial<State> | AddStateFn<State>
-export type AddStateFn<State> = (oldState: Partial<State>) => Partial<State>
-export type ContextState = {
-  status: StatusFlags
-}
-// export type BaseContextProps = ContextProps<ContextDebugOptions>
-export type BaseContextProps = { } //ContextProps<{ i?: number }>
-export type BaseContextState = {
-  status?: StatusFlags
-}
-export type BaseContextConstructorProps = ContextConstructorProps<
-  BaseContextProps,
-  BaseContextState
->
-*/
-
-// export type BaseContextProps = ContextProps<{ }>
-//export type FormContextProps = {
-//    // onLoad:
-//}
-
 export type CSSClassItem = string|undefined|null
 export type CSSClassHash = Record<string, unknown>
 export type CSSClassProps = Array<CSSClassItem|CSSClassHash>

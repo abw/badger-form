@@ -17,6 +17,7 @@ export type FieldProps = {
   required?: boolean
   optional?: boolean
   disabled?: boolean
+  wide?: boolean
   className?: string,
   label?: string,
   labelClass?: string,
@@ -104,7 +105,7 @@ export type FieldActions = {
   validate: () => void,
   unvalidate: () => void
   reset: (e?: EventWithPreventDefault) => void
-  onChange: (value: string | boolean) => void
+  onChange: (value: FieldValue) => void
   onFocus: VoidFunction
   onBlur: VoidFunction
   setFocus: (e?: EventWithPreventDefault) => void
@@ -170,9 +171,10 @@ export type FieldValidateFunction = (
   field: FieldRenderProps,
   resolve: FieldValidateResolve,
   reject: FieldValidateReject
-) => Promise<FieldValidateResult>
+) => FieldValidateResult | Promise<FieldValidateResult>
 
-export type FieldValidateResult = {
+export type FieldValidateResult = FieldValue | FieldValidateResultObject
+export type FieldValidateResultObject = {
   name?: string
   value?: FieldValue,
   message?: string | null,
@@ -180,12 +182,13 @@ export type FieldValidateResult = {
   status?: FieldStatusFlags
   data?: object
 }
-export type FieldValidateResolve = (submit: FieldValidateResult) => void
-export type FieldValidateReject = (submit: FieldValidateResult) => void
+
+export type FieldValidateResolve = (submit: FieldValidateResultObject) => void
+export type FieldValidateReject = (submit: FieldValidateResultObject) => void
 
 export type FieldValidator = (
-  resolve: (submit: FieldValidateResult) => void,
-  reject: (submit: FieldValidateResult) => void
+  resolve: (submit: FieldValidateResultObject) => void,
+  reject: (submit: FieldValidateResultObject) => void
 ) => void
 
 //export type FieldValidateResponse = {
@@ -203,7 +206,7 @@ export interface FieldLayoutProps {
 
 export type SelectOption = string | number | SelectOptionObject
 export type SelectOptionObject = {
-  value: string | number
+  value: string | number | null
   text?: ReactNode
   className?: string
   disabled?: boolean

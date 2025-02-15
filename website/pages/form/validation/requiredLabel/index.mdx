@@ -1,4 +1,7 @@
 import React from 'react'
+import RequiredLabel from './_examples/RequiredLabel'
+import RequiredLabelSrc from './_examples/RequiredLabel.tsx?raw'
+import { Example } from '@abw/badger-website'
 import { FieldRequiredLabelLink } from '@/website/site/Links.jsx'
 
 ## `requiredLabel`
@@ -6,3 +9,11 @@ import { FieldRequiredLabelLink } from '@/website/site/Links.jsx'
 This option can be set to provide a default value for the
 <FieldRequiredLabelLink/> option for all fields.
 Individual fields can set their own values to override it.
+
+<Example
+  Component={RequiredLabel}
+  code={RequiredLabelSrc}
+  caption="requiredLabel"
+  highlightLines="6,16"
+  expand
+/>

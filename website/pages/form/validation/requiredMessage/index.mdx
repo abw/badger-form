@@ -1,7 +1,22 @@
+import RequiredMessage from './_examples/RequiredMessage'
+import RequiredMessageSrc from './_examples/RequiredMessage.tsx?raw'
+import { Example } from '@abw/badger-website'
 import { FieldRequiredMessageLink } from '@/website/site/Links.jsx'
 
 ## `requiredMessage`
 
 This option can be set to provide a default value for the
-<FieldRequiredMessageLink/> option for all fields.
+<FieldRequiredMessageLink/> option for all fields.  This is displayed
+if a `required` field fails to validate because a value has not been
+entered.  Try submitting the form below without entering any values in the
+fields to see it in action.
+
 Individual fields can set their own values to override it.
+
+<Example
+  Component={RequiredMessage}
+  code={RequiredMessageSrc}
+  caption="requiredMessage"
+  highlightLines="5,12"
+  expand
+/>

@@ -1,8 +1,8 @@
 import React            from 'react'
-import Passwords        from './_examples/Passwords.jsx'
-import PasswordsSrc     from './_examples/Passwords.jsx?raw'
-import Advanced         from './_examples/Advanced.jsx'
-import AdvancedSrc      from './_examples/Advanced.jsx?raw'
+import Passwords        from './_examples/Passwords'
+import PasswordsSrc     from './_examples/Passwords.tsx?raw'
+import Advanced         from './_examples/Advanced'
+import AdvancedSrc      from './_examples/Advanced.tsx?raw'
 import TryItOut         from '@/site/TryItOut.jsx'
 import SeeAlso          from '@/site/SeeAlso.jsx'
 import { ErrorsLink, FormResetLink, FieldValidateLink } from '@/site/Links.jsx'
@@ -51,6 +51,8 @@ fail validation then the form validation is not run.
   Component={Passwords}
   code={PasswordsSrc}
   caption="Form Validation"
+  highlightLines="6-26,29"
+  expand
 />
 
 ## More Advanced Example
@@ -76,6 +78,8 @@ fail validation then the form validation is not run.
   Component={Advanced}
   code={AdvancedSrc}
   caption="Form Validation"
+  highlightLines="6-22,25"
+  expand
 />
 
 <SeeAlso

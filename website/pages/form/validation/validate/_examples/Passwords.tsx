@@ -1,10 +1,12 @@
-import { Form, Field, Errors, Submit } from '@/lib/index'
+import { Form, Field, Errors, Submit, FormValidateFunction } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Errors, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field, Errors, Submit,
+// PRETEND:   FormValidateFunction // TS type
+// PRETEND: } from '@abw/badger-form'
 
-const checkPasswordsMatch = values => {
+const checkPasswordsMatch: FormValidateFunction = values => {
   if (values.password1 !== values.password2) {
     return Promise.reject({
       error: "The two passwords you entered don't match",

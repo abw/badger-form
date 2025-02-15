@@ -1,12 +1,14 @@
-import { Form, Field, Errors, Submit } from '@/lib/index'
+import { Form, Field, Errors, Submit, FormValidateFunction } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Errors, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field, Errors, Submit,
+// PRETEND:   FormValidateFunction // TS type
+// PRETEND: } from '@abw/badger-form'
 
-const checkPasswordsMatch = (values, form) => {
-  const password1 = values.password1.trim()
-  const password2 = values.password2.trim()
+const checkPasswordsMatch: FormValidateFunction = (values, form) => {
+  const password1 = String(values.password1).trim()
+  const password2 = String(values.password2).trim()
 
   if (password1 === password2) {
     // resolve but only return a single password

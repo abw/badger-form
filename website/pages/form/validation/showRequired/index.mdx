@@ -1,4 +1,7 @@
 import React from 'react'
+import ShowRequired from './_examples/ShowRequired'
+import ShowRequiredSrc from './_examples/ShowRequired.tsx?raw'
+import { Example } from '@abw/badger-website'
 import { FieldShowRequiredLink } from '@/site/Links.jsx'
 
 ## `showRequired`
@@ -9,3 +12,11 @@ Individual fields can set it `false` to override the
 default.
 
 When enabled, required fields will display a "Required" tag in the label.
+
+<Example
+  Component={ShowRequired}
+  code={ShowRequiredSrc}
+  caption="showRequired"
+  highlightLines="4"
+  expand
+/>

@@ -1,3 +1,6 @@
+import ShowOptional from './_examples/ShowOptional'
+import ShowOptionalSrc from './_examples/ShowOptional.tsx?raw'
+import { Example } from '@abw/badger-website'
 import { FieldShowOptionalLink } from '@/site/Links.jsx'
 
 ## `showOptional`
@@ -8,3 +11,11 @@ Individual fields can set it `false` to override the
 default.
 
 When enabled, optional fields will be display an "Optional" tag in the label.
+
+<Example
+  Component={ShowOptional}
+  code={ShowOptionalSrc}
+  caption="showOptional"
+  highlightLines="4"
+  expand
+/>

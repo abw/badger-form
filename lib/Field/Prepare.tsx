@@ -6,7 +6,6 @@ import { FieldSpecProps } from '../Form/types'
 type UsePrepareProps = Omit<
   FieldProps, 'form'
 >
-//  | 'name'
 
 export const usePrepareField = (field: FieldSpecProps): UsePrepareProps => {
   // The form can be passed a large set of fields, not all of which may be

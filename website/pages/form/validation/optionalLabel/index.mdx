@@ -1,3 +1,6 @@
+import OptionalLabel from './_examples/OptionalLabel'
+import OptionalLabelSrc from './_examples/OptionalLabel.tsx?raw'
+import { Example } from '@abw/badger-website'
 import { FieldOptionalLabelLink } from '@/website/site/Links.jsx'
 
 ## `optionalLabel`
@@ -5,3 +8,11 @@ import { FieldOptionalLabelLink } from '@/website/site/Links.jsx'
 This option can be set to provide a default value for the
 <FieldOptionalLabelLink/> option for all fields.
 Individual fields can set their own values to override it.
+
+<Example
+  Component={OptionalLabel}
+  code={OptionalLabelSrc}
+  caption="optionalLabel"
+  highlightLines="6,15"
+  expand
+/>

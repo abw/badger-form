@@ -1,6 +1,6 @@
 import FormLayout from './Form/Layout'
 import { Provider }  from './Form/Context'
-import { FormComponentProps } from './Form/types'
+import { FormComponentProps } from './types'
 
 export const Form = ({
   children,
@@ -10,7 +10,7 @@ export const Form = ({
   return (
     <Provider {...props}>
       <Layout>
-        {children}
+        { children }
       </Layout>
     </Provider>
   )

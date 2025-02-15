@@ -20,7 +20,6 @@ export const Layout = ({
 
   // special case for hidden fields which don't need any wrappers
   if (type === 'hidden') {
-    // return <Hidden field={field}/>
     return <Hidden/>
   }
 
@@ -28,9 +27,6 @@ export const Layout = ({
     <div className={classes}>
       { children ||
         <>
-          {/* <Label field={field}/> */}
-          {/* <Input field={field}/> */}
-          {/* <Message field={field}/> */}
           <Label/>
           <Input/>
           <Message/>

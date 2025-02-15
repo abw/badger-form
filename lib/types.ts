@@ -4,7 +4,7 @@ import {
   SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING
 } from './Constants'
 import { FieldProps, FieldRenderProps } from './Field/types'
-import { FieldSchema } from './Form/types'
+import { FieldSchema, FormProps, FormRenderProps } from './Form/types'
 import { RenderChild } from '@abw/react-context'
 
 /**
@@ -156,6 +156,17 @@ export type FlexGridProps = {
   stack?: string,
   className?: string
   [key: string]: unknown
+}
+
+
+export type FormChildren = React.ReactNode |
+  RenderChild<FormRenderProps> |
+  Array< React.ReactNode | RenderChild<FormRenderProps> >
+
+export interface FormComponentProps extends FormProps {
+  // Layout?: FormLayoutComponent,  // Now in context props
+  // children?: ReactNode
+  children?: FormChildren
 }
 
 export type FieldChildren = React.ReactNode |

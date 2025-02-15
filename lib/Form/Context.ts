@@ -232,7 +232,7 @@ export class FormContext extends BaseContext<
       })
     )
   }
-  setValues(values: FieldValues, event?: MouseEvent) {
+  setValues(values: FieldValues, event?: Event) {
     this.debug('setValues():', values)
     event?.preventDefault()
     Object.entries(values).forEach(

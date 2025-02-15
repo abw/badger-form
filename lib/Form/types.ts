@@ -1,7 +1,7 @@
 import { FormContext } from './Context'
 import { FieldContext } from '../Field/Context'
 import { PropsWithRender } from '@abw/react-context'
-import { FormStatusFlags, StateCallback } from '../types'
+import { FormChildren, FormStatusFlags, StateCallback } from '../types'
 import { FieldProps, FieldValue, FieldValues } from '../Field/types'
 import { formModelDefaults, formRenderDefaults } from './defaults'
 import { FormEvent, MouseEventHandler, ReactNode } from 'react'
@@ -54,17 +54,7 @@ export type FieldSpecProps = Omit<
   id?: FieldProps['id']
 }
 
-// type MakePropertyOptional<T, K extends keyof T> = Omit<T, K> & { [P in K]?: T[P] };
-
-/*
-export type FormRenderProps = FormProps
-export type FormRenderProps = {
-  message: string     // TODO
-} & FormProps
-*/
-
 export type FormState = {
-  // TODO: more
   error?: FormErrorItem | null
   errors: FormErrorItem[]
   status: FormStatusFlags
@@ -74,13 +64,8 @@ export type FormState = {
   submit?: FormSubmitData
 }
 
-// export type SomeFormState = Pick<FormState, keyof FormState>
 export type AddFormState = Partial<FormState> | AddFormStateFn
-// export type AddFormState = PartialButNotUndefined<FormState> | AddFormStateFn
-// export type AddFormState = SomeFormState | AddFormStateFn
 export type AddFormStateFn = (state: FormState) => Partial<FormState>
-// export type AddFormStateFn = (state: FormState) => SomeFormState
-
 export type FormStateSetter = (state?: AddFormState, callback?: StateCallback) => void
 
 export type FormActions = {
@@ -101,7 +86,7 @@ export type FormActions = {
   setSubmittingState: FormStateSetter
   setSubmittedState: FormStateSetter
   setValue: (name: string, value: FieldValue) => FieldValue
-
+  setValues: (values: FieldValues, event?: Event) => void
 /*
     'setFocus',
     'setValues',
@@ -110,10 +95,6 @@ export type FormActions = {
     'setStatus',
     'handleError'
     */
-
-  // submit: (event: FormSubmitEvent) => void
-  // submit: () => void
-  // submit: (event: SubmitEvent) => void
 }
 export type FormAllProps = FormProps & FormState & FormActions
 export type FormRenderProps =
@@ -121,13 +102,6 @@ export type FormRenderProps =
   Omit<FormState, 'submit'> &
   FormActions
 
-/*
-export type FormConstructorProps = ContextConstructorProps<
-  FormProps,
-  Omit<FormState, 'submit'>,
-  FormActions
->
-*/
 export type FormConstructorProps = PropsWithRender<
   FormProps,
   FormRenderProps
@@ -164,14 +138,8 @@ export type FormValidatorResults = {
   errors: FormErrorItem[ ],
 }
 
-
-export interface FormComponentProps extends FormProps {
-  // Layout?: FormLayoutComponent,  // Now in context props
-  children?: ReactNode
-}
-
 export interface FormLayoutProps {
-  children?: ReactNode
+  children?: FormChildren
 }
 
 export interface FormChangedProps {
@@ -249,7 +217,6 @@ export type FormErrorObjectItem = {
   message?: string
   error?: string
 }
-// } & Record<string, unknown>
 
 export type ErrorsTitle = ReactNode | ErrorsTitleFn
 export type ErrorsPrompt = ReactNode | ErrorsPromptFn

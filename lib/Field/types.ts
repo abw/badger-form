@@ -77,16 +77,8 @@ export type FieldProps = {
 
 export type FieldSpec = Partial<Omit<FieldProps, 'form'>>
 export type InputType = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-/*
-export type FieldRenderProps = FieldProps
-export type FieldRenderProps = {
-  inputRef: React.RefObject<InputType>
-  // message: ReactNode     // TODO
-} & FieldProps
-*/
 
 export type FieldState = {
-  // TODO: more
   status: FieldStatusFlags
   value?: FieldValue
   message?: string | null
@@ -190,11 +182,6 @@ export type FieldValidator = (
   resolve: (submit: FieldValidateResultObject) => void,
   reject: (submit: FieldValidateResultObject) => void
 ) => void
-
-//export type FieldValidateResponse = {
-//} & FieldValidateResult
-
-
 
 export interface UseFieldProps {
   children?: ReactNode

@@ -11,7 +11,7 @@ export const FormLayout = ({
   return (
     <form className={className} {...attrs} onSubmit={submit} noValidate>
       <Children>
-        {children}
+        { children }
       </Children>
     </form>
   )

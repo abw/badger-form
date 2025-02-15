@@ -1,8 +1,8 @@
 import { PropsWithRender } from '@abw/react-context'
 import { ChangeEvent, ReactNode } from 'react'
 import { FormErrorItem, FormRenderProps } from '../Form/types'
-import { FieldStatusFlags, StateCallback, VoidFunction } from '../types'
 import { fieldModelDefaults, fieldRenderDefaults } from './defaults'
+import { EventWithPreventDefault, FieldStatusFlags, StateCallback, VoidFunction } from '../types'
 
 export type FieldModelDefaults = typeof fieldModelDefaults
 export type FieldRenderDefaults = typeof fieldRenderDefaults
@@ -120,9 +120,7 @@ export type FieldActions = {
   resetRef?: React.RefObject<FieldResetter>
 }
 
-export type EventWithPreventDefault = {
-  preventDefault: () => void
-}
+
 
 export type FieldOnName =
   'load' | 'focus' | 'blur' | 'change' |

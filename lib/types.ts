@@ -125,6 +125,24 @@ export type FieldStatusSets = StatusSets<
   FieldStatusFlags
 >
 
+/**
+  General purpose type for a function that takes no arguments and returns void.
+ */
+export type VoidFunction = () => void
+
+/**
+  Alias for `VoidFunction` - a function with no arguments returning void.
+ */
+export type StateCallback = VoidFunction
+
+/**
+  General purpose type for an event that has a `preventDefault()` method.
+ */
+export type EventWithPreventDefault = {
+  preventDefault: () => void
+}
+
+/*
 export type NewStatus<
   Status,
   Flags
@@ -132,7 +150,7 @@ export type NewStatus<
   status: Status,
   oldStatus?: Flags
 ) => Flags
-
+*/
 // export type NewFormStatus = NewStatus<FormStatusChanges, FormStatusFlags>
 
 export type HasStatusProps<Flags> = Flags & {
@@ -143,8 +161,6 @@ export type HasStatusProps<Flags> = Flags & {
 export type FormHasStatusProps = HasStatusProps<FormStatusFlags>
 export type FieldHasStatusProps = HasStatusProps<FieldStatusFlags>
 
-export type VoidFunction = () => void
-export type StateCallback = VoidFunction
 
 export type CSSClassItem = string|undefined|null
 export type CSSClassHash = Record<string, unknown>

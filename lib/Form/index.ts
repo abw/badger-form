@@ -1,4 +1,4 @@
-export { useForm, default as FormContext } from './Context'
+export { useForm, FormObject, default as FormContext } from './Context'
 export * from './Changed'
 export * from './Debug'
 export * from './Error'

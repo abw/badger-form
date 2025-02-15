@@ -1,12 +1,11 @@
 // import BaseContext from '../Context.js'
-import { FormEvent } from 'react'
 import { FieldContext } from '../Field/Context'
 import { formStatusSets } from '../Status.js'
 import { formModelDefaults } from './defaults'
 import { formFieldProperties } from '../Config.js'
 import { FieldValidateResultObject, FieldValue, FieldValues } from '../Field/types.js'
 import { callFunctions, stringToObject } from '../Utils.js'
-import { FormStatusChange, StateCallback } from '../types.js'
+import { EventWithPreventDefault, FormStatusChange, StateCallback } from '../types.js'
 import {
   Generator, Context as BaseContext, WithRequiredFrom
 } from '@abw/react-context'
@@ -25,7 +24,7 @@ import {
 } from './types.js'
 // import { formModelDefaults } from './defaults.js'
 
-export class FormContext extends BaseContext<
+export class FormObject extends BaseContext<
   FormProps,
   FormState,
   FormActions,
@@ -190,7 +189,7 @@ export class FormContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Field focus
   //--------------------------------------------------------------------------
-  setFocus(name: string, event?: FocusEvent) {
+  setFocus(name: string, event?: EventWithPreventDefault) {
     event?.preventDefault()
     this.fields[name]?.setFocus()
   }
@@ -198,7 +197,7 @@ export class FormContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Set/Reset
   //--------------------------------------------------------------------------
-  reset(e?: MouseEvent) {
+  reset(e?: EventWithPreventDefault) {
     if (! this.mounted) {
       return
     }
@@ -232,7 +231,7 @@ export class FormContext extends BaseContext<
       })
     )
   }
-  setValues(values: FieldValues, event?: Event) {
+  setValues(values: FieldValues, event?: EventWithPreventDefault) {
     this.debug('setValues():', values)
     event?.preventDefault()
     Object.entries(values).forEach(
@@ -250,7 +249,7 @@ export class FormContext extends BaseContext<
   //--------------------------------------------------------------------------
   // Submit
   //--------------------------------------------------------------------------
-  submit(event?: FormEvent<HTMLFormElement>) {
+  submit(event?: EventWithPreventDefault) {
     this.debug('submit()')
     event?.preventDefault()
     this.validate()
@@ -480,7 +479,7 @@ export class FormContext extends BaseContext<
   }
 }
 
-const generated = Generator(FormContext)
+const generated = Generator(FormObject)
 
 export const {
   Context, //: FormReactContext,

@@ -1,10 +1,10 @@
-import { FormContext } from './Context'
+import { FormObject } from './Context'
 import { FieldContext } from '../Field/Context'
 import { PropsWithRender } from '@abw/react-context'
-import { FormChildren, FormStatusFlags, StateCallback } from '../types'
+import { EventWithPreventDefault, FormChildren, FormStatusFlags, StateCallback } from '../types'
 import { FieldProps, FieldValue, FieldValues } from '../Field/types'
 import { formModelDefaults, formRenderDefaults } from './defaults'
-import { FormEvent, MouseEventHandler, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 export type FormModelDefaults = typeof formModelDefaults
 export type FormRenderDefaults = typeof formRenderDefaults
@@ -32,19 +32,18 @@ export type FormProps = {
   errorsPrompt?: ErrorsPrompt,
   // validate?: (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
   validate?: FormValidateFunction
-  onLoad?: (form: FormContext) => void
+  onLoad?: (form: FormObject) => void
   onReset?: () => void
   onValid?: () => void
   // onSubmit?: (values: FieldValues, form: FormRenderProps) => FormSubmitResponse | Promise<FormSubmitResponse>
   onSubmit?: FormSubmitHandler
-  onSuccess?: (response: FormSubmitResponse, form: FormContext) => void
-  onError?: (error: FormSubmitError) => void
-  onFailure?: (error: FormSubmitError) => void
+  onSuccess?: FormSuccessHandler
+  onError?: FormErrorHandler
+  onFailure?: FormErrorHandler
   Error?: FormErrorComponent
   Layout?: FormLayoutComponent
 } & Partial<FormModelDefaults>
   & Partial<FormRenderDefaults>
-
 
 export type FieldSchema = Partial<Omit<FieldProps, 'form'>>
 export type FieldsSchemas = Record<string, FieldSchema>
@@ -74,7 +73,7 @@ export type FormActions = {
   attachField: (name: string, field: FieldContext) => void
   detachField: (name: string) => void
   reset: () => void
-  submit: (event?: FormEvent<HTMLFormElement>) => void
+  submit: (event?: EventWithPreventDefault) => void
   validate: () => void,
   unvalidate: () => void
   setResetState: FormStateSetter
@@ -86,10 +85,10 @@ export type FormActions = {
   setSubmittingState: FormStateSetter
   setSubmittedState: FormStateSetter
   setValue: (name: string, value: FieldValue) => FieldValue
-  setValues: (values: FieldValues, event?: Event) => void
+  setValues: (values: FieldValues, event?: EventWithPreventDefault) => void
+  setFocus: (name: string, event?: EventWithPreventDefault) => void
+
 /*
-    'setFocus',
-    'setValues',
     'setHidden',
     // should this be kept internal?
     'setStatus',
@@ -107,7 +106,7 @@ export type FormConstructorProps = PropsWithRender<
   FormRenderProps
 >
 
-export type FormSubmitEvent = FormEvent<HTMLFormElement> | MouseEventHandler<HTMLButtonElement>
+// export type FormSubmitEvent = FormEvent<HTMLFormElement> | MouseEventHandler<HTMLButtonElement>
 export type FormSubmitData = {
   values: FieldValues,
   errors: FormErrorItem[]
@@ -115,7 +114,8 @@ export type FormSubmitData = {
 export type FormSubmitResponse = {
   ok?: boolean
   status?: number
-  data?: object
+  data?: Record<string, unknown>
+  // [key: string]: unknown
 }
 
 export type FormSubmitError = {
@@ -123,8 +123,21 @@ export type FormSubmitError = {
   errors?: FormErrorObjectItem[]
 }
 
-export type FormSubmitHandler = (values: FieldValues, form: FormRenderProps)
-  => FormSubmitResponse | Promise<FormSubmitResponse>
+export type FormSubmitHandler<
+  Values extends FieldValues = FieldValues,
+  Response extends FormSubmitResponse = FormSubmitResponse
+> =  (values: Values, form: FormRenderProps)
+  => Response | Promise<Response>
+
+export type FormSuccessHandler<
+  Response extends FormSubmitResponse = FormSubmitResponse
+> = (response: Response, form: FormObject)
+  => void
+
+export type FormErrorHandler<
+  Error extends FormSubmitError = FormSubmitError
+> = (error: Error)
+  => void
 
 export type FormValidateFunction = (values: FieldValues, form: FormRenderProps) => Promise<FieldValues>
 

@@ -1,7 +1,8 @@
 import React        from 'react'
-import OnSuccess    from './_examples/OnSuccess.jsx'
-import OnSuccessSrc from './_examples/OnSuccess.jsx?raw'
+import OnSuccess    from './_examples/OnSuccess'
+import OnSuccessSrc from './_examples/OnSuccess.tsx?raw'
 import SeeAlso      from '@/site/SeeAlso.jsx'
+import TSNotes      from '@/ui/TSNotes'
 import { Example } from '@abw/badger-website'
 import { FormOnErrorLink, FormOnSubmitLink } from '@/site/Links.jsx'
 
@@ -17,7 +18,13 @@ handler.
   Component={OnSuccess}
   code={OnSuccessSrc}
   caption="onSuccess"
+  highlightLines="21-23,28"
+  expand
 />
+
+<TSNotes>
+
+</TSNotes>
 
 <SeeAlso
   links={[
@@ -25,3 +32,4 @@ handler.
     FormOnErrorLink
   ]}
 />
+

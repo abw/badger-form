@@ -1,8 +1,8 @@
 import React            from 'react'
-import Reset            from './_examples/Reset.jsx'
-import ResetSrc         from './_examples/Reset.jsx?raw'
-import UseFormReset     from './_examples/UseFormReset.jsx'
-import UseFormResetSrc  from './_examples/UseFormReset.jsx?raw'
+import Reset            from './_examples/Reset'
+import ResetSrc         from './_examples/Reset.tsx?raw'
+import UseFormReset     from './_examples/UseFormReset'
+import UseFormResetSrc  from './_examples/UseFormReset.tsx?raw'
 import TryItOut         from '@/site/TryItOut.jsx'
 import SeeAlso from '@/website/site/SeeAlso.jsx'
 import { Example, Split } from '@abw/badger-website'
@@ -21,6 +21,8 @@ import { FormResetOnSuccessLink, FormUnvalidateLink } from '@/website/site/Links
   Component={Reset}
   code={ResetSrc}
   caption="reset"
+  highlightLines="8"
+  expand
 />
 
 ## `useForm`
@@ -33,6 +35,8 @@ access to the form context.
   Component={UseFormReset}
   code={UseFormResetSrc}
   caption="useForm() and reset()"
+  highlightLines="11,13"
+  expand
 />
 
 <SeeAlso

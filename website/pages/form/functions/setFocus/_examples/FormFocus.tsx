@@ -1,11 +1,14 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FormObject } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FormObject // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const SetFocusExample = () => {
-  const [form, setForm] = useState(false)
+  const [form, setForm] = useState<FormObject>()
 
   return (
     <>

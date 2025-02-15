@@ -1,5 +1,5 @@
-import OnError    from './_examples/OnError.jsx'
-import OnErrorSrc from './_examples/OnError.jsx?raw'
+import OnError    from './_examples/OnError'
+import OnErrorSrc from './_examples/OnError.tsx?raw'
 import SeeAlso    from '@/site/SeeAlso.jsx'
 import { FormOnSubmitLink, FormOnSuccessLink } from '@/site/Links.jsx'
 import { Example } from '@abw/badger-website'
@@ -14,6 +14,8 @@ form.
   Component={OnError}
   code={OnErrorSrc}
   caption="onError"
+  highlightLines="16-18,23"
+  expand
 />
 
 <SeeAlso

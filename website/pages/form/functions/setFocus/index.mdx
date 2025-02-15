@@ -1,8 +1,8 @@
-import FormFocusSrc     from './_examples/FormFocus.jsx?raw'
-import FormFocus        from './_examples/FormFocus.jsx'
-import UseFormFocusSrc  from './_examples/UseFormFocus.jsx?raw'
-import UseFormFocus     from './_examples/UseFormFocus.jsx'
-import FocusButtonSrc   from './_examples/FocusButton.jsx?raw'
+import FormFocusSrc     from './_examples/FormFocus.tsx?raw'
+import FormFocus        from './_examples/FormFocus'
+import UseFormFocusSrc  from './_examples/UseFormFocus.tsx?raw'
+import UseFormFocus     from './_examples/UseFormFocus'
+import FocusButtonSrc   from './_examples/FocusButton.tsx?raw'
 import TryItOut         from '@/site/TryItOut.jsx'
 import { Example, Split, Source }    from '@abw/badger-website'
 import { FieldLink, FormLink, FormOnLoadLink } from '@/site/Links.jsx'
@@ -27,6 +27,8 @@ import { FieldLink, FormLink, FormOnLoadLink } from '@/site/Links.jsx'
   Component={FormFocus}
   code={FormFocusSrc}
   caption="onLoad() and setFocus()"
+  highlightLines="38,41,44,47,50"
+  expand
 />
 
 ## `useForm`
@@ -40,12 +42,15 @@ context.
   Component={UseFormFocus}
   code={UseFormFocusSrc}
   caption="useForm() and setFocus()"
+  highlightLines="27,33"
+  expand
 />
 
 ## Preventing Default Event
 
 <Source
   code={FocusButtonSrc}
+  highlightLines="13"
   expand
 >
   Be careful to make sure that your buttons call{' '}

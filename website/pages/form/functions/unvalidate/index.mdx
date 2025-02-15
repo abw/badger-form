@@ -1,5 +1,5 @@
-import Unvalidate     from './_examples/Unvalidate.jsx'
-import UnvalidateSrc  from './_examples/Unvalidate.jsx?raw'
+import Unvalidate     from './_examples/Unvalidate'
+import UnvalidateSrc  from './_examples/Unvalidate.tsx?raw'
 import SeeAlso        from '@/site/SeeAlso.jsx'
 import { Example }    from '@abw/badger-website'
 import { FormResetLink, FormUnvalidateOnSuccessLink } from '@/site/Links.jsx'
@@ -12,7 +12,9 @@ validation state.
 <Example
   Component={Unvalidate}
   code={UnvalidateSrc}
-  caption="unvalidate" expand
+  caption="unvalidate"
+  highlightLines="11,17"
+  expand
 />
 
 <SeeAlso

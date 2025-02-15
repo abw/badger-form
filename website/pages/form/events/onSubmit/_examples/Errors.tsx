@@ -1,10 +1,12 @@
-import { Form, Field, Errors, Submit } from '@/lib/index'
+import { Form, Field, Errors, Submit, FieldValues } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Errors, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:  Form, Field, Errors, Submit,
+// PRETEND:  FieldValues // TS type
+// PRETEND: } from '@abw/badger-form'
 
-const doubleFail = values =>
+const doubleFail = (values: FieldValues) =>
   Promise.reject({
     errors: [
       {

@@ -1,7 +1,6 @@
 import { Form, Field, useForm } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, useForm } from '@abw/badger-form'
 
 const UseSetValues = () =>
@@ -16,10 +15,20 @@ const UseSetValues = () =>
     </Form>
   </>
 
-const Setter = ({ color, animal }) => {
+interface SetterProps {
+  color: string
+  animal: string
+}
+
+const Setter = ({ color, animal }: SetterProps) => {
   const { setValues } = useForm()
   return (
-    <button onClick={e => setValues({ color, animal }, e)}>
+    <button onClick={
+      e => {
+        e.preventDefault()
+        setValues({ color, animal }, e)
+      }
+    }>
       {color} {animal}
     </button>
   )

@@ -1,7 +1,6 @@
 import { Form, Field, useForm } from '@/lib/index'
 
 {/* START */}
-import React  from 'react'
 // PRETEND: import { Form, Field, useForm } from '@abw/badger-form'
 
 const UseFormFocus = () =>
@@ -20,7 +19,14 @@ const UseFormFocus = () =>
     </div>
   </Form>
 
-const FieldFocusButton = ({name, caption}) => {
+interface FieldFocusButtonProps {
+  name: string
+  caption: string
+}
+
+const FieldFocusButton = (
+  { name, caption }: FieldFocusButtonProps
+) => {
   const { setFocus } = useForm()
   return (
     <button

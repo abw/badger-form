@@ -1,12 +1,16 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FormObject } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FormObject // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const SetValues = () => {
-  const [form, setForm] = useState()
-  const setValues = (color, animal) =>
+  const [form, setForm] = useState<FormObject>()
+
+  const setValues = (color: string, animal: string) =>
     form?.setValues({ color, animal })
 
   return (

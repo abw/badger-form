@@ -1,18 +1,19 @@
 import React        from 'react'
-import OnSubmit     from './_examples/OnSubmit.jsx'
-import OnSubmitSrc  from './_examples/OnSubmit.jsx?raw'
-import Throw        from './_examples/Throw.jsx'
-import ThrowSrc     from './_examples/Throw.jsx?raw'
-import Reject       from './_examples/Reject.jsx'
-import RejectSrc    from './_examples/Reject.jsx?raw'
-import Taken        from './_examples/Taken.jsx'
-import TakenSrc     from './_examples/Taken.jsx?raw'
-import Errors       from './_examples/Errors.jsx'
-import ErrorsSrc    from './_examples/Errors.jsx?raw'
+import OnSubmit     from './_examples/OnSubmit'
+import OnSubmitSrc  from './_examples/OnSubmit.tsx?raw'
+import Throw        from './_examples/Throw'
+import ThrowSrc     from './_examples/Throw.tsx?raw'
+import Reject       from './_examples/Reject'
+import RejectSrc    from './_examples/Reject.tsx?raw'
+import Taken        from './_examples/Taken'
+import TakenSrc     from './_examples/Taken.tsx?raw'
+import Errors       from './_examples/Errors'
+import ErrorsSrc    from './_examples/Errors.tsx?raw'
 import SeeAlso      from '@/site/SeeAlso.jsx'
 import TryItOut     from '@/website/site/TryItOut.jsx'
-import { ErrorsFieldErrorsLink, ErrorsLink, FormOnErrorLink, FormOnSuccessLink } from '@/site/Links.jsx'
+import TSNotes      from '@/ui/TSNotes'
 import { Example, Split } from '@abw/badger-website'
+import { ErrorsFieldErrorsLink, ErrorsLink, FormOnErrorLink, FormOnSuccessLink } from '@/site/Links.jsx'
 
 ## `onSubmit`
 
@@ -22,13 +23,16 @@ relevant validation checks.
 
 In most cases this function will be making an API call to submit the
 form data.  The form values are passed to the function as the first
-argument.  The second argument is an object containing the form
-context in case you need it.
+argument (if you're using Typescript the type is `FieldValues`).  The
+second argument is an object containing the form context in case you need
+it (type is `FormObject`).
 
 <Example
   Component={OnSubmit}
   code={OnSubmitSrc}
   caption="onSubmit"
+  highlightLines="9-12,15"
+  expand
 />
 
 ## Server Error
@@ -54,6 +58,7 @@ context in case you need it.
   Component={Throw}
   code={ThrowSrc}
   caption="onSubmit Throw"
+  highlightLines="4"
   expand
 />
 
@@ -64,6 +69,7 @@ It should be an object containing an `error` property.
   Component={Reject}
   code={RejectSrc}
   caption="onSubmit Reject"
+  highlightLines="4-6"
   expand
 />
 
@@ -81,6 +87,7 @@ You can also use the <ErrorsLink/> component with the{' '}
   Component={Taken}
   code={TakenSrc}
   caption="onSubmit errors"
+  highlightLines="7-11"
   expand
 />
 
@@ -93,8 +100,20 @@ Each object should have a `name`, `field` or{' '}
   Component={Errors}
   code={ErrorsSrc}
   caption="onSubmit errors"
+  highlightLines="7-20"
   expand
 />
+
+<TSNotes>
+The type of the form `onSubmit` handler is `FormSubmitHandler`.  It receives
+the field values (`FieldValues`) as the first argument and the form context
+object (`FormObject`) as the second.  It should return a `FormSubmitResponse`
+or a promise that returns a `FormSubmitResponse`.  The `FormSubmitResponse`
+is an object that should contain either a boolean `ok` flag or a numerical
+http `status`, where any value between 200 and 299 is considered a successful
+response.  It may also contain an object of additional `data`.  This is
+compatible with the response returned by Axios or the native `fetch` function.
+</TSNotes>
 
 <SeeAlso
   links={[

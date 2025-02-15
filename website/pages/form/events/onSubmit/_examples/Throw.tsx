@@ -1,22 +1,20 @@
 import { Form, Field, Submit, Errors } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Errors, Submit } from '@abw/badger-form'
 
-const onFire = () =>
-  Promise.reject({
-    error: 'Dear Sir/Madam, Fire! Fire! Help me!',
-  })
+const onFire = () => {
+  throw `The server is on fire.  Please try again later.`
+}
 
-const OnSubmitReject = () =>
+const OnSubmitThrow = () =>
   <Form onSubmit={onFire}>
     <Field
-      name="message"
-      label="Message"
+      name="username"
+      label="Pick a username"
     />
     <Errors/>
     <Submit/>
   </Form>
 
-export default OnSubmitReject
+export default OnSubmitThrow

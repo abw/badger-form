@@ -1,5 +1,5 @@
-import Unvalidate     from './_examples/UnvalidateOnSuccess.jsx'
-import UnvalidateSrc  from './_examples/UnvalidateOnSuccess.jsx?raw'
+import Unvalidate     from './_examples/UnvalidateOnSuccess'
+import UnvalidateSrc  from './_examples/UnvalidateOnSuccess.tsx?raw'
 import SeeAlso        from '@/site/SeeAlso.jsx'
 import { FormResetOnSuccessLink, FormUnvalidateLink } from '@/site/Links.jsx'
 import { Example, Split } from '@abw/badger-website'
@@ -12,7 +12,9 @@ clear any validation state on the form.
 <Example
   Component={Unvalidate}
   code={UnvalidateSrc}
-  caption="unvalidateOnSuccess" expand
+  caption="unvalidateOnSuccess"
+  highlightLines="11"
+  expand
 />
 
 <SeeAlso

@@ -1,5 +1,5 @@
-import Values     from './_examples/Values.jsx'
-import ValuesSrc  from './_examples/Values.jsx?raw'
+import Values     from './_examples/Values'
+import ValuesSrc  from './_examples/Values.tsx?raw'
 import SeeAlso    from '@/site/SeeAlso.jsx'
 import { Example } from '@abw/badger-website'
 import { FormHiddenLink } from '@/site/Links.jsx'
@@ -13,7 +13,9 @@ data records.
 <Example
   Component={Values}
   code={ValuesSrc}
-  caption="fields" expand
+  caption="fields"
+  highlightLines="4-7,10"
+  expand
 />
 
 <SeeAlso

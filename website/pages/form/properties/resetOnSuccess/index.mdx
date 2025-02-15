@@ -1,5 +1,5 @@
-import Reset      from './_examples/ResetOnSuccess.jsx'
-import ResetSrc   from './_examples/ResetOnSuccess.jsx?raw'
+import Reset      from './_examples/ResetOnSuccess'
+import ResetSrc   from './_examples/ResetOnSuccess.tsx?raw'
 import SeeAlso    from '@/site/SeeAlso.jsx'
 import { FormResetLink, FormUnvalidateOnSuccessLink } from '@/site/Links.jsx'
 import { Example, Split } from '@abw/badger-website'
@@ -12,7 +12,9 @@ reset the form on successful submission.
 <Example
   Component={Reset}
   code={ResetSrc}
-  caption="resetOnSuccess" expand
+  caption="resetOnSuccess"
+  highlightLines="13"
+  expand
 />
 
 <SeeAlso

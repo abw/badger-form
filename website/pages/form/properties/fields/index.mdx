@@ -1,8 +1,8 @@
 import React      from 'react'
-import Fields     from './_examples/Fields.jsx'
-import FieldsSrc  from './_examples/Fields.jsx?raw'
-import Inline     from './_examples/Inline.jsx'
-import InlineSrc  from './_examples/Inline.jsx?raw'
+import Fields     from './_examples/Fields'
+import FieldsSrc  from './_examples/Fields.tsx?raw'
+import Inline     from './_examples/Inline'
+import InlineSrc  from './_examples/Inline.tsx?raw'
 import { FieldLink, FieldNameLink } from '@/site/Links.jsx'
 import { Example } from '@abw/badger-website'
 
@@ -16,6 +16,8 @@ is used to associate a field to its definition.
   Component={Fields}
   code={FieldsSrc}
   caption="fields"
+  highlightLines="4-12,16"
+  expand
 />
 
 This is the same as defining the properties on the <FieldLink/> components.

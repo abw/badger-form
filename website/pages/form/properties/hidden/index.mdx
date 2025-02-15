@@ -1,6 +1,6 @@
 import React      from 'react'
-import Hidden     from './_examples/Hidden.jsx'
-import HiddenSrc  from './_examples/Hidden.jsx?raw'
+import Hidden     from './_examples/Hidden'
+import HiddenSrc  from './_examples/Hidden.tsx?raw'
 import TryItOut   from '@/site/TryItOut.jsx'
 import { Example, Split } from '@abw/badger-website'
 
@@ -24,5 +24,7 @@ import { Example, Split } from '@abw/badger-website'
 <Example
   Component={Hidden}
   code={HiddenSrc}
-  caption="hidden" expand
+  caption="hidden"
+  highlightLines="4-10,15"
+  expand
 />

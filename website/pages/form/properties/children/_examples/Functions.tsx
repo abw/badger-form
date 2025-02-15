@@ -1,7 +1,6 @@
 import { Form, Field } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Layout } from '@abw/badger-form'
 
 const ChildFunctions = () =>
@@ -14,13 +13,17 @@ const ChildFunctions = () =>
       <div className="flex gap-2 blue mar-t-4">
         <button
           type="button"
-          onClick={() => form.setValues({ greeting: 'Hello' })}
+          onClick={() => form.setValues({
+            greeting: 'Hello'
+          })}
         >
           Say Hello
         </button>
         <button
           type="button"
-          onClick={() => form.setValues({ greeting: 'Goodbye' })}
+          onClick={() => form.setValues({
+            greeting: 'Goodbye'
+          })}
         >
           Say Goodbye
         </button>

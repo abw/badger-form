@@ -1,7 +1,6 @@
 import { Form, Field, Submit } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
 const HiddenExample = () => {
@@ -14,7 +13,10 @@ const HiddenExample = () => {
   }
 
   return (
-    <Form values={user} hidden={hidden}>
+    <Form
+      values={user}
+      hidden={hidden}
+    >
       <Field name="name" label="Name"/>
       <Field name="email" label="Email Address"/>
       <Submit/>

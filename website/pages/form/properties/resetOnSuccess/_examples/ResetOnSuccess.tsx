@@ -11,7 +11,10 @@ const ResetOnSuccessExample = () => {
     .then( () => ({ ok: true }) )
 
   return (
-    <Form onSubmit={onSubmit} resetOnSuccess={reset}>
+    <Form
+      onSubmit={onSubmit}
+      resetOnSuccess={reset}
+    >
       <Field name="name" label="Name"/>
       <Field name="email" label="Email Address"/>
       <div className="flex space gap-2">

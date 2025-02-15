@@ -1,7 +1,6 @@
 import { Form, Field, ResetSubmit, Debug } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 import { sleep } from '@abw/badger-utils'
 // PRETEND: import { Form, Field, ResetSubmit, Debug } from '@abw/badger-form'
 
@@ -10,7 +9,10 @@ const UnvalidateOnSuccessExample = () => {
     .then( () => ({ ok: true }) )
 
   return (
-    <Form onSubmit={onSubmit} unvalidateOnSuccess>
+    <Form
+      onSubmit={onSubmit}
+      unvalidateOnSuccess
+    >
       <Field name="name" label="Name"/>
       <Field name="email" label="Email Address"/>
       <ResetSubmit space/>

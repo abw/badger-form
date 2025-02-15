@@ -53,3 +53,9 @@ a.read-on {
   }
 }
 
+.source .shiki {
+  span.line.highlighted {
+    min-width: 120%;
+    width: fit-content;
+  }
+}

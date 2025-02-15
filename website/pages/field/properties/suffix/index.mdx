@@ -1,8 +1,8 @@
 import React      from 'react'
-import SuffixSrc  from './_examples/Suffix.jsx?raw'
-import Suffix     from './_examples/Suffix.jsx'
-import BothSrc    from './_examples/Both.jsx?raw'
-import Both       from './_examples/Both.jsx'
+import SuffixSrc  from './_examples/Suffix.tsx?raw'
+import Suffix     from './_examples/Suffix'
+import BothSrc    from './_examples/Both.tsx?raw'
+import Both       from './_examples/Both'
 import SeeAlso    from '@/site/SeeAlso.jsx'
 import { Example } from '@abw/badger-website'
 import { FieldPrefixLink } from '@/website/site/Links.jsx'
@@ -15,7 +15,9 @@ This can be text, an SVG icon or other JSX fragment.
 <Example
   Component={Suffix}
   code={SuffixSrc}
-  caption="suffix" expand
+  caption="suffix"
+  highlightLines="9"
+  expand
 />
 
 The `suffixClass` property can be used to set a CSS class
@@ -27,6 +29,7 @@ add some background shading.
   Component={Both}
   code={BothSrc}
   caption="prefix and suffix"
+  highlightLines="33-36"
   expand
 />
 

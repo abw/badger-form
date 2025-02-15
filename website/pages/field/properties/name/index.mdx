@@ -1,8 +1,8 @@
 import React         from 'react'
-import NameSrc       from './_examples/Name.jsx?raw'
-import Name          from './_examples/Name.jsx'
-import FormFieldsSrc from './_examples/FormFields.jsx?raw'
-import FormFields    from './_examples/FormFields.jsx'
+import NameSrc       from './_examples/Name.tsx?raw'
+import Name          from './_examples/Name'
+import FormFieldsSrc from './_examples/FormFields.tsx?raw'
+import FormFields    from './_examples/FormFields'
 import SeeAlso       from '@/site/SeeAlso.jsx'
 import Suggest       from '@/site/Suggest.jsx'
 import TryItOut      from '@/site/TryItOut.jsx'
@@ -30,6 +30,7 @@ import {
   Component={Name}
   code={NameSrc}
   caption="name"
+  highlightLines="5"
   expand
 />
 
@@ -48,7 +49,9 @@ import {
 <Example
   Component={FormFields}
   code={FormFieldsSrc}
-  caption="Form fields" expand
+  caption="Form fields"
+  highlightLines="4,12"
+  expand
 />
 
 <SeeAlso

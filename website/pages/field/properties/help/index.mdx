@@ -1,6 +1,6 @@
 import React    from 'react'
-import HelpSrc  from './_examples/Help.jsx?raw'
-import Help     from './_examples/Help.jsx'
+import HelpSrc  from './_examples/Help.tsx?raw'
+import Help     from './_examples/Help'
 import SeeAlso  from '@/site/SeeAlso.jsx'
 import TryItOut from '@/site/TryItOut.jsx'
 import { Example, Split } from '@abw/badger-website'
@@ -26,6 +26,8 @@ import { FieldLabelLink, FieldNameLink, FieldRequiredLink, FieldValidateLink, Fo
   Component={Help}
   code={HelpSrc}
   caption="help"
+  highlightLines="8"
+  expand
 />
 
 <SeeAlso

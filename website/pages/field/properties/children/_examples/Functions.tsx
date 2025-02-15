@@ -1,7 +1,6 @@
 import { Form, Field, Layout } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Layout } from '@abw/badger-form'
 
 const ChildFunctions = () =>
@@ -18,7 +17,7 @@ const ChildFunctions = () =>
       <Layout/>
       { field =>
         <div>
-          Current value is: {field.value}
+          Current value is: {field.value as string}
         </div>
       }
       { field =>

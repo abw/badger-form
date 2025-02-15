@@ -1,7 +1,6 @@
 import { Form, Field } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field } from '@abw/badger-form'
 
 const fields = {
@@ -15,8 +14,13 @@ const fields = {
 
 const FormFieldsExample = () =>
   <Form fields={fields}>
-    <Field name="field1"/>
-    <Field name="field2" label="A different label"/>
+    <Field
+      name="field1"
+    />
+    <Field
+      name="field2"
+      label="A different label"
+    />
   </Form>
 
 export default FormFieldsExample

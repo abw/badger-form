@@ -1,8 +1,8 @@
 import React          from 'react'
-import TypeSrc        from './_examples/Type.jsx?raw'
-import Type           from './_examples/Type.jsx'
-import FormFieldsSrc  from './_examples/FormFields.jsx?raw'
-import FormFields     from './_examples/FormFields.jsx'
+import TypeSrc        from './_examples/Type.tsx?raw'
+import Type           from './_examples/Type'
+import FormFieldsSrc  from './_examples/FormFields.tsx?raw'
+import FormFields     from './_examples/FormFields'
 import SeeAlso        from '@/site/SeeAlso.jsx'
 import Suggest        from '@/site/Suggest.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
@@ -45,6 +45,7 @@ import {
   Component={Type}
   code={TypeSrc}
   caption="type"
+  highlightLines="11,16,21,26,32,38"
   expand
 />
 
@@ -69,6 +70,7 @@ import {
   Component={FormFields}
   code={FormFieldsSrc}
   caption="Form fields"
+  highlightLines="8,12,16,20,25,30"
   expand
 />
 

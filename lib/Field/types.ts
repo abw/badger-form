@@ -21,9 +21,9 @@ export type FieldProps = {
   className?: string,
   label?: string,
   labelClass?: string,
-  prefix?: string
+  prefix?: ReactNode
   prefixClass?: string
-  suffix?: string
+  suffix?: ReactNode
   suffixClass?: string
   help?: ReactNode
   tabIndex?: number

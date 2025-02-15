@@ -1,6 +1,6 @@
 import React          from 'react'
-import PlaceholderSrc from './_examples/Placeholder.jsx?raw'
-import Placeholder    from './_examples/Placeholder.jsx'
+import PlaceholderSrc from './_examples/Placeholder.tsx?raw'
+import Placeholder    from './_examples/Placeholder'
 import SeeAlso        from '@/site/SeeAlso.jsx'
 import { Example } from '@abw/badger-website'
 import { FieldNameLink, FormFieldsLink } from '@/site/Links.jsx'
@@ -12,7 +12,9 @@ Use the `placeholder` property to add some text as a placeholder in the input.
 <Example
   Component={Placeholder}
   code={PlaceholderSrc}
-  caption="placeholder" expand
+  caption="placeholder"
+  highlightLines="7"
+  expand
 />
 
 <SeeAlso

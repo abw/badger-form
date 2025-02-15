@@ -1,8 +1,8 @@
 import React         from 'react'
-import LabelSrc      from './_examples/Label.jsx?raw'
-import Label         from './_examples/Label.jsx'
-import FormFieldsSrc from './_examples/FormFields.jsx?raw'
-import FormFields    from './_examples/FormFields.jsx'
+import LabelSrc      from './_examples/Label.tsx?raw'
+import Label         from './_examples/Label'
+import FormFieldsSrc from './_examples/FormFields.tsx?raw'
+import FormFields    from './_examples/FormFields'
 import SeeAlso       from '@/site/SeeAlso.jsx'
 import Suggest       from '@/site/Suggest.jsx'
 import { Example, Split } from '@abw/badger-website'
@@ -16,6 +16,7 @@ Add a label to the field with the `label` property.
   Component={Label}
   code={LabelSrc}
   caption="name"
+  highlightLines="7"
   expand
 />
 
@@ -35,6 +36,7 @@ Add a label to the field with the `label` property.
   Component={FormFields}
   code={FormFieldsSrc}
   caption="Form fields"
+  highlightLines="5,8,19"
   expand
 />
 

@@ -15,7 +15,7 @@ import {
   FieldContextFunction, FieldOnHandler, FieldOnHandlers, FieldProps,
   FieldContextItems, FieldResetter, FieldState, FieldValidateFunction,
   FieldValidateReject, FieldValidateResolve, FieldValidateResultObject,
-  FieldValidator, FieldValue, InputType
+  FieldValidator, FieldValue, InputType, UseFieldWith
 } from './types'
 
 export class FieldContext extends BaseContext<
@@ -457,7 +457,10 @@ export const {
   Provider,
   Consumer,
   Children,
-  Use: useField
+  Use
 } = generated
+
+export const useField = <MoreItems=object>(): UseFieldWith<MoreItems> =>
+  Use() as UseFieldWith<MoreItems>
 
 export default generated

@@ -2,7 +2,7 @@ import { PropsWithRender } from '@abw/react-context'
 import { ChangeEvent, ReactNode } from 'react'
 import { FormErrorItem, FormRenderProps } from '../Form/types'
 import { fieldModelDefaults, fieldRenderDefaults } from './defaults'
-import { EventWithPreventDefault, FieldStatusFlags, StateCallback, VoidFunction } from '../types'
+import { EventWithPreventDefault, FieldChildren, FieldStatusFlags, StateCallback, VoidFunction } from '../types'
 
 export type FieldModelDefaults = typeof fieldModelDefaults
 export type FieldRenderDefaults = typeof fieldRenderDefaults
@@ -12,7 +12,7 @@ export type FieldProps = {
   id: string
   name: string,
   value?: FieldValue
-  default?: string | number | boolean
+  default?: FieldValue
   debug?: boolean
   required?: boolean
   optional?: boolean
@@ -174,8 +174,10 @@ export type FieldValidator = (
   reject: (submit: FieldValidateResultObject) => void
 ) => void
 
+export type UseFieldWith<MoreItems=object> = FieldContextItems & MoreItems
+
 export interface UseFieldProps {
-  children?: ReactNode
+  children?: FieldChildren
 }
 
 export interface FieldLayoutProps {

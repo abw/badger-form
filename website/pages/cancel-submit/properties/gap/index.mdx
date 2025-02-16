@@ -1,0 +1,19 @@
+import React       from 'react'
+import Gap         from './_examples/Gap'
+import GapSrc      from './_examples/Gap.tsx?raw'
+import { Example } from '@abw/badger-website'
+
+## `gap`
+
+The default CSS class for the container uses flexbox and sets a gap of
+1rem between the buttons (`flex gap-h-4`).  The `gap` property can be passed
+to change the gap (in units of 0.25rem) between the buttons.
+
+<Example
+  Component={Gap}
+  code={GapSrc}
+  caption="gap"
+  undent={2}
+  expand
+/>
+

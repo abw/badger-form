@@ -1,16 +1,19 @@
-import { Form, Field, Button, CancelSubmit } from '@/lib/index'
+import { Form, Field, Button, CancelSubmit, FieldValues } from '@/lib/index'
 
 {/* START */}
 import React from 'react'
-// PRETEND: import { Form, Field, Button, CancelSubmit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field, Button, CancelSubmit,
+// PRETEND:   FieldValues // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const ResetSubmitExample = () => {
   const [editing, setEditing] = React.useState(false)
-  const [data, setData] = React.useState({
+  const [data, setData] = React.useState<FieldValues>({
     name: 'Brian',
     animal: 'Badger'
   })
-  const onSubmit = values => {
+  const onSubmit = (values: FieldValues) => {
     setData(values)
     setEditing(false)
     return { ok: true }
@@ -31,7 +34,7 @@ const ResetSubmitExample = () => {
         />
       </Form>
     : <div className="flex space">
-        <h3>{data.name} {data.animal}</h3>
+        <h3>{`${data.name} ${data.animal}`}</h3>
         <Button
           text="Edit"
           onClick={() => setEditing(true)}

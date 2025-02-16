@@ -163,7 +163,7 @@ export type FieldValidateFunction = (
   reject: FieldValidateReject
 ) => FieldValidateResult | Promise<FieldValidateResult>
 
-export type FieldValidateResult = FieldValue | FieldValidateResultObject
+export type FieldValidateResult = void | FieldValue | FieldValidateResultObject
 export type FieldValidateResultObject = {
   name?: string
   value?: FieldValue,

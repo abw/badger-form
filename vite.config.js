@@ -26,6 +26,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['html'],
+      include: ['lib'],
       exclude: [
         'coverage/**',
         'dist/**',

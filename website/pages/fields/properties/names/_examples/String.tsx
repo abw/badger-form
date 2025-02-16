@@ -1,7 +1,6 @@
 import { Form, Fields } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 import fields from './Fields.jsx'
 // PRETEND: import { Form, Fields } from '@abw/badger-form'
 

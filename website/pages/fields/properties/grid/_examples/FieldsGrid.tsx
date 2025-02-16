@@ -1,7 +1,6 @@
 import { Form, Fields } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Fields } from '@abw/badger-form'
 
 const fields = {
@@ -15,12 +14,12 @@ const fields = {
   },
 }
 
-const ClassNameExample = () =>
+const FieldsGridExample = () =>
   <Form fields={fields}>
     <Fields
       names="name email"
-      className="border pad-4 bgc-95 bgd-5 bdr-2"
+      grid={2}
     />
   </Form>
 
-export default ClassNameExample
+export default FieldsGridExample

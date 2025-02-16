@@ -1,7 +1,9 @@
-import React from 'react'
 import { Form, Fieldset } from '@/lib/index'
 
-/* START */
+{/* START */}
+// PRETEND: import { Form, Fieldset } from '@abw/badger-form'
+import './fieldset.css'
+
 const fields = {
   name: {
     label: 'Enter your name',
@@ -18,6 +20,7 @@ const FieldsetFieldsExample = () =>
     <Fieldset
       legend="Fieldset Two"
       fields="name message"
+      className="prominent"
     />
   </Form>
 

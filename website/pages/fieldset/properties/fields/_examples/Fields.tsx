@@ -1,10 +1,6 @@
 import { Form, Fieldset } from '@/lib/index'
 
-{/* START */}
-import React from 'react'
-// PRETEND: import { Form, Fieldset } from '@abw/badger-form'
-import './fieldset.css'
-
+/* START */
 const fields = {
   name: {
     label: 'Enter your name',
@@ -21,7 +17,6 @@ const FieldsetFieldsExample = () =>
     <Fieldset
       legend="Fieldset Two"
       fields="name message"
-      className="prominent"
     />
   </Form>
 

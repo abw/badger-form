@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form, Fieldset } from '@/lib/index'
 
 /* START */
@@ -16,7 +15,7 @@ const FieldsetGridExample = () =>
     <Fieldset
       legend="Fieldset Grid"
       fields="alpha bravo charlie delta echo foxtrot"
-      grid={2} stack="laptop"
+      grid={2} gap={8} stack="laptop"
     />
   </Form>
 

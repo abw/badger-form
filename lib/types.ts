@@ -205,11 +205,12 @@ export interface FieldsComponentProps extends Partial<FieldProps> {
   // ...props
 }
 
-export interface FieldsetComponentProps extends Partial<FieldProps>{
+export interface FieldsetComponentProps extends Omit<FieldsComponentProps, 'names'> {
   fields?: string | string[],
-  className?: string,
   legend?: string,
   children?: ReactNode,
+  // grid?: boolean | number
+  // className?: string,
 }
 
 /*

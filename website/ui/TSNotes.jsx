@@ -1,9 +1,12 @@
 import TSLogo from '@/svg/typescript.svg?react'
 import { Section } from '@abw/badger-website'
 
-export const TSNotes = ({ children }) =>
+export const TSNotes = ({
+  children,
+  title="Typescript Notes"
+}) =>
   <div>
-    <Section text="Typescript Notes"/>
+    <Section text={title}/>
     <div className="flex gap-4">
       <div className="wide">
         {children}

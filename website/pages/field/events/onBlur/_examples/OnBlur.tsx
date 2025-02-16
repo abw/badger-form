@@ -1,12 +1,16 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FieldContextFunction } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FieldContextFunction // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const OnBlurExample = () => {
-  const [msg, setMsg] = useState()
-  const onBlur = field =>
+  const [msg, setMsg] = useState<string>()
+
+  const onBlur: FieldContextFunction = field =>
     setMsg(`${field.label} was blurred`)
 
   return (

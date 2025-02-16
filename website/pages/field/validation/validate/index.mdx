@@ -8,8 +8,9 @@ import Suggest        from '@/site/Suggest.jsx'
 import TryItOut       from '@/site/TryItOut.jsx'
 import TSNotes        from '@/ui/TSNotes'
 import { Example, Split } from '@abw/badger-website'
-import { FieldRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink } from '@/site/Links.jsx'
-
+import {
+  FieldRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink
+} from '@/site/Links.jsx'
 
 ## `validate`
 
@@ -35,6 +36,7 @@ import { FieldRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink }
   Component={Validate}
   code={ValidateSrc}
   caption="validate"
+  highlightLines="11-15,21-25"
   expand
 />
 
@@ -62,10 +64,16 @@ import { FieldRequiredLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink }
   Component={Validator}
   code={ValidatorSrc}
   caption="validate"
+  highlightLines="6-20"
+  expand
 />
 
 <TSNotes>
-  The type of the value passed to the `prepareValue` function is `FieldValue`.
+  The type of a validation function is `FieldValidateFunction`.  The
+  `value` argument has a type of `FieldValue`.  The second argument is
+  the field context which has a type of `FieldContextItems`.  The third
+  are fourth arguments are `resolve` and `reject` functions with type
+  `FieldValidateResolve` and `FieldValidateReject`, respectively.
 </TSNotes>
 
 <SeeAlso

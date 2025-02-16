@@ -1,26 +1,32 @@
-import { Form, Field, Submit } from '@/lib/index'
+import { Form, Field, Submit, FieldValidateFunction } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field, Submit,
+// PRETEND:   FieldValidateFunction // TS type
+// PRETEND: } from '@abw/badger-form'
+
+const validateUsername: FieldValidateFunction = (
+  value, _field, resolve, reject
+) => {
+  if (String(value).match(/badger/i)) {
+    resolve({
+      value: `${value} is a great name`
+    })
+  }
+  else {
+    reject({
+      value:   'Mr Badger',
+      message: 'Your username must contain the word "badger"'
+    })
+  }
+}
 
 const fields = {
   username: {
     label: 'Username',
     help:  'Enter your username',
-    validate: async (value, field, resolve, reject) => {
-      if (value.match(/badger/i)) {
-        resolve({
-          value: `${value} is a great name`
-        })
-      }
-      else {
-        reject({
-          value:   'Mr Badger',
-          message: 'Your username must contain the word "badger"'
-        })
-      }
-    }
+    validate: validateUsername
   }
 }
 

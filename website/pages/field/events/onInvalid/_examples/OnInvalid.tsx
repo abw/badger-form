@@ -1,12 +1,16 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FieldContextFunction } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FieldContextFunction // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const OnInvalidExample = () => {
-  const [msg, setMsg] = useState()
-  const onInvalid = field =>
+  const [msg, setMsg] = useState<string>()
+
+  const onInvalid: FieldContextFunction = field =>
     setMsg(`${field.label} is invalid: ${field.message}`)
 
   return (

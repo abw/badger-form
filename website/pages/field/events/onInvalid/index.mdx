@@ -1,0 +1,57 @@
+import React        from 'react'
+import OnInvalid    from './_examples/OnInvalid'
+import OnInvalidSrc from './_examples/OnInvalid.tsx?raw'
+import SeeAlso      from '@/site/SeeAlso.jsx'
+import TryItOut     from '@/site/TryItOut.jsx'
+import TSNotes      from '@/ui/TSNotes'
+import { Example, Split } from '@abw/badger-website'
+import {
+  FieldLink, FormLink, FieldRequiredLink, FieldRequiredMessageLink,
+  FieldValidateOnBlurLink, FieldValidateLink, FieldOnBlurLink,
+  FieldOnFocusLink, FieldOnChangeLink, FieldOnValidLink
+} from '@/site/Links.jsx'
+
+## `onInvalid`
+
+<Split>
+  You can add an `onInvalid` handler to a <FieldLink/> which will be called
+  when the field fails validation. The field context will be passed as an
+  argument.
+  <TryItOut>
+    Click one of the fields below and then select the other field without
+    entering any text. The <FieldValidateOnBlurLink/> option on the
+    <FormLink/> means that the fields will be validated when they lose focus.
+    They're both marked as <FieldRequiredLink/> so they will fail validation
+    (assuming you haven't entered anything) and the `onInvalid` handler will
+    be called.
+
+    Also note the use of <FieldRequiredMessageLink/> to set a custom
+    message for the second field.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={OnInvalid}
+  code={OnInvalidSrc}
+  caption="onInvalid"
+  highlightLines="17,22"
+  expand
+/>
+
+<TSNotes>
+The `onInvalid` function has a type of `FieldContextFunction` and receives
+the field context as the first argument with a type of `FieldContextItems`.
+</TSNotes>
+
+<SeeAlso
+  links={[
+    FieldValidateLink,
+    FieldOnBlurLink,
+    FieldOnFocusLink,
+    FieldOnChangeLink,
+    FieldOnFocusLink,
+    FieldOnChangeLink,
+    FieldOnValidLink
+  ]}
+/>
+

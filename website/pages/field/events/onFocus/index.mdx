@@ -1,0 +1,46 @@
+import React      from 'react'
+import OnFocus    from './_examples/OnFocus'
+import OnFocusSrc from './_examples/OnFocus.tsx?raw'
+import SeeAlso    from '@/site/SeeAlso.jsx'
+import TryItOut   from '@/site/TryItOut.jsx'
+import TSNotes    from '@/ui/TSNotes'
+import { Example, Split } from '@abw/badger-website'
+import {
+  FieldLink, FieldOnBlurLink, FieldOnChangeLink,
+  FieldOnInvalidLink, FieldOnValidLink
+} from '@/site/Links.jsx'
+
+## `onFocus`
+
+<Split>
+  You can add an `onFocus` handler to a <FieldLink/> which will be called
+  when the field is focussed (i.e. selected). The field context will be
+  passed as an argument.
+
+  <TryItOut>
+    Focus on each of the fields below.  A message should be displayed
+    each time a field gains focus.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={OnFocus}
+  code={OnFocusSrc}
+  caption="onFocus"
+  highlightLines="14,18"
+  expand
+/>
+
+<TSNotes>
+The `onFocus` function has a type of `FieldContextFunction` and receives
+the field context as the first argument with a type of `FieldContextItems`.
+</TSNotes>
+
+<SeeAlso
+  links={[
+    FieldOnBlurLink,
+    FieldOnChangeLink,
+    FieldOnValidLink,
+    FieldOnInvalidLink
+  ]}
+/>

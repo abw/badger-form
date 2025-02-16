@@ -1,0 +1,57 @@
+import React          from 'react'
+import UseInput       from './_examples/UseInput'
+import UseInputSrc    from './_examples/UseInput.tsx?raw'
+import AddInput       from './_examples/AddInput'
+import AddInputSrc    from './_examples/AddInput.tsx?raw'
+import ColorButtonSrc from './_examples/ColorButtonInput.tsx?raw'
+import { Example, Source } from '@abw/badger-website'
+import { FieldInputLink, FieldTypeLink } from '@/website/site/Links.jsx'
+
+## `addInputType()`
+
+The `addInputType()` function can be used to add your own custom
+<FieldInputLink/> components.
+
+Here's a trivial example where we implement a `ColorButtonInput` input,
+allowing a user to click on a button to select a color.
+
+<Source
+  code={ColorButtonSrc}
+  caption="ColorButtonInput.jsx"
+  expand
+/>
+
+## Using `Input`
+
+You can use the <FieldInputLink/> property on a field to directly
+reference the custom input component.
+
+<Example
+  Component={UseInput}
+  code={UseInputSrc}
+  caption="Input"
+  highlightLines="8"
+  expand
+/>
+
+## Using `addInput()`
+
+The other approach is to use `addInputType()` to register your component. You
+can then use the <FieldTypeLink/> property to access it using the name you
+give it. In this example we give it the name `colorButton`.
+
+Note that input type names are converted to a canonical form, both when being
+defined and being accessed. Non-word characters are removed and the name is
+converted to lower case. As shown in this example, input types of
+`colorButton`, `color-button` and `colorbutton` are all considered to be the
+same thing.
+
+<Example
+  Component={AddInput}
+  code={AddInputSrc}
+  caption="addInput()"
+  highlightLines="4,10,14,18"
+  expand
+/>
+
+

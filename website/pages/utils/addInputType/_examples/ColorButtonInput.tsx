@@ -1,7 +1,6 @@
 import { useField } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { useField } from '@abw/badger-form'
 
 const ColorButtonInput = () => {
@@ -23,7 +22,7 @@ const ColorButtonInput = () => {
         )}
       </div>
       { value
-        ? <p>You have selected {value}</p>
+        ? <p>You have selected {value as string}</p>
         : <p>Select a color</p>
       }
     </div>

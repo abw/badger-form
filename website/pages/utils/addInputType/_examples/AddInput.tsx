@@ -1,7 +1,6 @@
 import { Form, Field, addInputType } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 import ColorButtonInput from './ColorButtonInput.jsx'
 // PRETEND: import { Form, Field, addInputType } from '@abw/badger-form'
 

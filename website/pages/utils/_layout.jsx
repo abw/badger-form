@@ -1,4 +1,3 @@
-import React      from 'react'
 import { Outlet } from '@abw/badger-website'
 
 export const metadata = {

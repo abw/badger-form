@@ -1,7 +1,6 @@
 import { Form, Field, Layout } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Layout } from '@abw/badger-form'
 
 const FieldChildrenExample = () =>
@@ -13,7 +12,7 @@ const FieldChildrenExample = () =>
       <Layout/>
       { field =>
         <div className="info alert">
-          You have entered: {field.value}
+          You have entered: {field.value as string}
         </div>
       }
     </Field>

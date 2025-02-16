@@ -1,7 +1,6 @@
 import { Form, Field, Label, Input, Message, Submit, fieldClass } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import {
 // PRETEND:   Form, Field, Submit,
 // PRETEND:   Label, Input, Message, fieldClass

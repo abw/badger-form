@@ -1,6 +1,12 @@
-import React from 'react'
+interface SummaryProps {
+  value: string[]
+  free: number
+  price: string
+}
 
-const Summary = ({value, free, price}) =>
+const Summary = ({
+  value, free, price
+}: SummaryProps) =>
   <div className="summary">
     { value.map(
       (topping, n) =>

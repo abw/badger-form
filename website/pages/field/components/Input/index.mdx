@@ -1,0 +1,110 @@
+import React           from 'react'
+import Default         from './_examples/DefaultInput'
+import DefaultSrc      from './_examples/DefaultInput.tsx?raw'
+import PictureForm     from './_examples/PictureForm'
+import PictureFormSrc  from './_examples/PictureForm.tsx?raw'
+import PictureInputSrc from './_examples/PictureInput.tsx?raw'
+import PictureSrc      from './_examples/Picture.tsx?raw'
+import AnimalsCSS      from './_examples/animals.css?raw'
+import Suggest         from '@/site/Suggest.jsx'
+import { Example, Split, Source } from '@abw/badger-website'
+import { FieldLayoutLink } from '@/website/site/Links.jsx'
+
+## `Input`
+
+The `Input` component is included by the <FieldLayoutLink/> component to
+render the input for a field.
+
+You can define your own content for a field to replace the default
+<FieldLayoutLink/>, but still use the default `Input` component to render
+the correct input for the field type.
+
+<Example
+  Component={Default}
+  code={DefaultSrc}
+  caption="Default Input"
+  expand
+/>
+
+## Custom Input
+
+You can define your own component to handle the input for a field
+using the `Input` field property.
+
+<Split>
+  In this example we define a `PictureInput` component to
+  show some pictures of animals for the user to select an animal guide
+  from.  We're still using the default field layout which provides
+  us with the label and validation message.
+  <Suggest>
+    Click on an animal to select it. Try submitting
+    the form without selecting an animal to see the validation error
+    message in effect.
+  </Suggest>
+</Split>
+
+<Example
+  Component={PictureForm}
+  code={PictureFormSrc}
+  caption="Picture Form"
+  expand
+/>
+
+## The `PictureInput` Component
+
+<Split>
+  <Source
+    code={PictureInputSrc}
+    caption="PictureInput"
+    language="jsx"
+    expand
+  />
+  <div>
+    Here's the implementation of the `PictureInput` component.
+
+    On line 7 we call `useField()` to get the current field
+    `value` and the `onChange` function to set the
+    value.  We iterate over a list of animals on line 11 and render the
+    `Picture` component for each.  We pass the `selected`
+    flag on line 15 to indicate if the animal name matches the current
+    `value`.  We also pass a `select`
+    function on line 16 which calls the `onChange` handler to select
+    the animal.
+  </div>
+</Split>
+
+## The `Picture` Component
+
+<Split>
+  <Source
+    code={PictureSrc}
+    caption="Picture"
+    language="jsx"
+    expand
+  />
+  Here's the `Picture` component.  It simply renders a `div` with an `onClick`
+  handler to call the `select` function passed as a property.  The `animal`
+  CSS class is added, along with `selected` if the animal is currently
+  selected.  Inside the `div` we render a picture of the animal in an `img`
+  element.
+</Split>
+
+## Additional Styles
+
+<Split>
+  <Source
+    code={AnimalsCSS}
+    caption="animals.css"
+    language="css"
+    expand
+  />
+  For completeness, here's the additional CSS we're using to apply the styling.
+</Split>
+
+<h2 className="hint">Picture Credits</h2>
+<ul className="credits">
+  <li>Badger photo by <a href="https://unsplash.com/es/@vincentvanzalinge?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vincent van Zalinge</a> on <a href="https://unsplash.com/photos/jd8s5zhWEug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+  <li>Gorilla photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/images/animals/monkey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+  <li>Kitten photo by <a href="https://unsplash.com/@feneek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sergey Semin</a> on <a href="https://unsplash.com/images/animals/kitten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+</ul>
+

@@ -1,16 +1,21 @@
+type SelectedToppings = Record<string, boolean>
+
 // convert the toppings array to an object
-export const selectedToppings = value =>
+export const selectedToppings = (value: string[] = []) =>
   value.reduce(
     (selected, option) => {
       selected[option] = true
       return selected
     },
-    { }
+    { } as SelectedToppings
   )
 
 // select (or unselect) a topping
-export const toppingSelector = (selected, onChange) =>
-  topping => {
+export const toppingSelector = (
+  selected: SelectedToppings,
+  onChange: (selected: string[]) => void
+) =>
+  (topping: string) => {
     // toggle the selection
     selected[topping] = ! selected[topping]
     // update the field value

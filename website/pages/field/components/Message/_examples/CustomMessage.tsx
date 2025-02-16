@@ -1,7 +1,6 @@
 import { Form, Field, Submit, useField } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import {
 // PRETEND:   Form, Field, Submit, useField
 // PRETEND: } from '@abw/badger-form'

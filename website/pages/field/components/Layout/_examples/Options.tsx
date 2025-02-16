@@ -1,7 +1,15 @@
-import React from 'react'
-import Option from './Option.jsx'
+import Option from './Option'
 
-const Options = ({id, toppings, selected, select}) =>
+interface OptionsProps {
+  id: string,
+  toppings: string[]
+  selected: Record<string, boolean>
+  select: (topping: string) => void
+}
+
+const Options = ({
+  id, toppings, selected, select
+}: OptionsProps) =>
   <div className="options">
     { toppings.map(
       topping =>

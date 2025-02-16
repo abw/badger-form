@@ -1,6 +1,13 @@
-import React from 'react'
+interface OptionProps {
+  id: string
+  topping: string
+  selected: boolean
+  select: () => void
+}
 
-const Option = ({id, topping, selected, select}) =>
+const Option = ({
+  id, topping, selected, select
+}: OptionProps) =>
   <div>
     <label htmlFor={id} className="checkbox">
       <input

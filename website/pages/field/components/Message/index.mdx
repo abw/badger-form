@@ -1,0 +1,48 @@
+import React         from 'react'
+import Message       from './_examples/Message'
+import MessageSrc    from './_examples/Message.tsx?raw'
+import Custom        from './_examples/CustomMessage'
+import CustomSrc     from './_examples/CustomMessage.tsx?raw'
+import TryItOut      from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FieldLink } from '@/site/Links.jsx'
+
+## `Message`
+
+The `Message` component is used to add a message underneath a <FieldLink/>.
+It's usually added automatically, but it's useful if you're implementing your
+own layout for a field.
+
+<Split>
+  If you have defined `help` for your field then it will be
+  displayed here.  If the field fails to validate then the validation
+  error message will be displayed.  In this example we're setting
+  an explicit `requiredMessage` to override the default message.
+  We're also setting a `validMessage` to provide a custom
+  message if the field is valid.
+  <TryItOut>
+    Try submitting the form without entering a value.  You should see
+    the `help` message be replaced by the
+    `requiredMessage` error message.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Message}
+  code={MessageSrc}
+  caption="Message"
+  expand
+/>
+
+## Custom Message Component
+
+You can define your own component to handle the message for a field
+using the `Message` field property.
+
+<Example
+  Component={Custom}
+  code={CustomSrc}
+  caption="Custom Message Component"
+  expand
+/>
+

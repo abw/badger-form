@@ -1,14 +1,17 @@
 import { Label, useField } from '@/lib/index'
 {/* START */}
-import React from 'react'
-import Options from './Options.jsx'
-import Summary from './Summary.jsx'
+import Options from './Options'
+import Summary from './Summary'
 // PRETEND: import { Label, useField } from '@abw/badger-form'
-import { selectedToppings, toppingSelector } from './Utils.js'
+import { selectedToppings, toppingSelector } from './Utils'
+import { ToppingExtraItems } from './types'
 
 const Toppings = () => {
-  const { id, value, onChange, free, price, toppings } = useField()
-  const selected = selectedToppings(value)
+  const {
+    id, value, onChange, free, price, toppings
+  } = useField<ToppingExtraItems>()
+
+  const selected = selectedToppings(value as string[])
   const select = toppingSelector(selected, onChange)
 
   return (
@@ -23,11 +26,12 @@ const Toppings = () => {
       <Label/>
       <div className="selection">
         <Options
-          id={id} toppings={toppings} value={value}
+          id={id} toppings={toppings} //value={value}
           selected={selected} select={select}
         />
         <Summary
-          value={value} free={free} price={price}
+          value={value as string[]}
+          free={free} price={price}
         />
       </div>
     </div>

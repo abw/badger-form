@@ -1,0 +1,203 @@
+import React           from 'react'
+import Default         from './_examples/DefaultLayout'
+import DefaultSrc      from './_examples/DefaultLayout.tsx?raw'
+import Explicit        from './_examples/ExplicitLayout'
+import ExplicitSrc     from './_examples/ExplicitLayout.tsx?raw'
+import PizzaForm       from './_examples/PizzaForm'
+import PizzaFormSrc    from './_examples/PizzaForm.tsx?raw'
+import ToppingsSrc     from './_examples/Toppings.tsx?raw'
+import TypesSrc        from './_examples/types.ts?raw'
+import UtilsSrc        from './_examples/Utils.ts?raw'
+import OptionsSrc      from './_examples/Options.tsx?raw'
+import OptionSrc       from './_examples/Option.tsx?raw'
+import SummarySrc      from './_examples/Summary.tsx?raw'
+import PizzaCSS        from './_examples/pizza.scss?raw'
+import TryItOut        from '@/site/TryItOut.jsx'
+import { Example, Split, Source } from '@abw/badger-website'
+import { FieldLink, FieldInputLink, FieldLabelLink, FieldMessageLink }   from '@/site/Links.jsx'
+
+## `Layout`
+
+The `Layout` component is inserted as the default content for
+a <FieldLink/> that doesn't have it's own content.
+
+The two fields in the example below both generate the same output.
+The first implicitly uses the `Layout` for its content, the
+second includes it explicitly.
+
+<Example
+  Component={Default}
+  code={DefaultSrc}
+  caption="Default Layout"
+  expand
+/>
+
+<Split align="end">
+  <div>
+    The `Layout` component creates a `div` containing the <FieldLabelLink/>,
+    <FieldInputLink/> and <FieldMessageLink/> components. The `div` will have
+    the `field` CSS class and possibly other classes based on the state of the
+    field (e.g. `valid`, `invalid`, etc.)  The `fieldClass()` utility function
+    can be used to automatically return the correct CSS classes for the field.
+
+    The example below shows how you can roll your own layout that does
+    the same thing as the default `Layout` component.
+  </div>
+  <TryItOut>
+    Try submitting the form without entering any value in the required
+    field.  You should see that the `invalid` CSS class is
+    added to the field container.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Explicit}
+  code={ExplicitSrc}
+  caption="Explicit Layout"
+  expand
+/>
+
+## Custom Layout
+
+You can define your own component to handle the layout for a field using the
+`Layout` field property.
+
+<Split>
+  In this example we define a `Toppings` layout component
+  to render a field allowing a user to select some toppings for a pizza.
+  <TryItOut>
+    Before we go any further into the code, let's see how it looks.
+    Select some toppings for your pizza!
+  </TryItOut>
+</Split>
+
+<Example
+  Component={PizzaForm}
+  code={PizzaFormSrc}
+  caption="Pizza Form"
+  expand
+/>
+
+We're defining the schema for the `fields` externally (lines 6 to 25) and
+passing them into the `Form` as the `fields` property (line 28). In addition
+to setting the `Layout` component on line 8, we're also defining some extra
+data that the field will require: the number of `free` toppings (line 11),
+the `price` of additional toppings after that (line 12), and a list of
+available `toppings` (lines 13 to 24).
+
+This is the kind of data that we want defined up front and not buried in the
+form markup.
+
+## Types
+
+To keep Typescript happy we need to define some types for this.
+
+<Source
+  code={TypesSrc}
+  caption="Types.ts"
+  language="ts"
+  expand
+/>
+
+The specification for a field has the `FieldSpec` type.  We want to add
+some additional data items (`ToppingExtraItems`) to the `toppings` field.
+We create a `ToppingField` type as an intersection of the default `FieldSpec`
+and the `ToppingExtraItems`. Then we define `PizzaFields` as the type for the
+fields schema including the `topping` field specification.
+
+## The `Toppings` Component
+
+Here's the implementation of the `Toppings` component.
+
+<Source
+  code={ToppingsSrc}
+  caption="Toppings"
+  language="jsx"
+  highlightLines="8-10,12-13,24,26-29,30-33"
+  expand
+>
+  <div>
+    On line 10 we call `useField()` to get the current field
+    context.  Note that we add the `ToppingExtraItems` type as a generic
+    type parameter to modify the type of the returned object.  As well as the
+    `id`, `value` and `onChange` function to set the value, the object also
+    contains our additional data fields: `free`, `price` and `toppings`.
+
+    We've got two utility functions that we're importing from
+    our `Utils.ts` file.  On line 12 we call
+    `selectedToppings()` to convert the array of toppings in
+    `value` into an object so we can easily tell which toppings
+    are selected (each selected topping will be set `true`).
+    On line 13 we call the `toppingSelector()` factory function
+    which returns a function for selecting a topping (or unselecting one
+    that's already selected) and calling the `onChange` handler
+    to update the field.  We'll look at the definitions of those functions
+    shortly.
+
+    We have some explanatory text from lines 17 to 23.  Note how this
+    includes the `free` and `price` values defined in our field schema.
+    On line 24 we render the default <FieldLabelLink/> component to generate
+    the field label. On lines 26 to 29 we render a custom `Options` component
+    and on lines 30 to 33 a custom `Summary` component.
+  </div>
+</Source>
+
+## Utility Functions
+
+Here are the definitions for those utility functions.
+
+<Source
+  code={UtilsSrc}
+  caption="Utils.ts"
+  language="ts"
+  expand
+/>
+
+## The `Options` Component
+
+The `Options` component iterates over the available toppings
+and renders the `Option` component for each.  It passes a
+custom `id`, `selected` flag and
+`select` function tailored to each option.
+
+<Source
+  code={OptionsSrc}
+  caption="Options.tsx"
+  language="tsx"
+  expand
+/>
+
+## The `Option` Component
+
+The `Option` component simply renders a checkbox in a label
+using those properties.
+
+<Source
+  code={OptionSrc}
+  caption="Option.tsx"
+  language="tsx"
+  expand
+/>
+
+## The `Summary` Component
+
+The `Summary` component displays a summary of the selected toppings.
+
+<Source
+  code={SummarySrc}
+  caption="Summary.tsx"
+  language="tsx"
+  expand
+/>
+
+## Additional Styles
+
+And finally, here's the additional SCSS we're using to apply the styling.
+
+<Source
+  code={PizzaCSS}
+  caption="pizza.scss"
+  language="scss"
+  expand
+/>
+

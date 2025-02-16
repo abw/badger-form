@@ -1,7 +1,6 @@
 import { Form, Field, Text, Label } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Text, Label } from '@abw/badger-form'
 
 const LabelExample = () =>

@@ -1,6 +1,5 @@
 import { useField } from '@/lib/index'
 {/* START */}
-import React from 'react'
 import Picture from './Picture.jsx'
 // PRETEND: import { useField } from '@abw/badger-form'
 

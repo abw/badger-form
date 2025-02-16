@@ -1,26 +1,25 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
-const OptionClass = () =>
+const Border = () =>
   /* START */
   <Form>
     <Field
       type="radio"
       name="animal1"
-      label="Options With Margins on Right and Extra Padding"
+      label="Border Options"
       options={['Badger', 'Ferret', 'Stoat', 'Weasel']}
-      optionClass="inline mar-r-4 mar-b-4 pad-h-4"
+      optionClass="mar-b-2"
       border
     />
     <Field
       type="radio"
       name="animal2"
-      label="Large Options With Margins and Padding"
+      label="Inline Border Options"
       options={['Badger', 'Ferret', 'Stoat', 'Weasel']}
-      optionClass="large mar-b-4 pad-v-2 pad-h-4"
-      border
+      optionClass="mar-r-2"
+      border inline
     />
   </Form>
   /* END */
 
-export default OptionClass
+export default Border

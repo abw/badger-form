@@ -1,0 +1,34 @@
+import React       from 'react'
+import Options     from './_examples/Options'
+import OptionsSrc  from './_examples/Options.tsx?raw'
+import Simple      from './_examples/Simple'
+import SimpleSrc   from './_examples/Simple.tsx?raw'
+import { Example } from '@abw/badger-website'
+
+## `options`
+
+Use the `options` property to define the options for the radio button set. It
+should be an array of objects that contain `value` (used to set the field
+value) and `text` (used as the text label) properties. You can also add a
+`className` property to add a CSS class to a particular option.
+
+<Example
+  Component={Options}
+  code={OptionsSrc}
+  caption="options"
+  undent={2}
+  expand
+/>
+
+In simple cases where the value and text are the same, you can define the
+`options` as an array of strings.
+
+<Example
+  Component={Simple}
+  code={SimpleSrc}
+  caption="options"
+  undent={2}
+  expand
+/>
+
+

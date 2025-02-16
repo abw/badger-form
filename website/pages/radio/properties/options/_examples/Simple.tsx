@@ -1,17 +1,15 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
-const InputClass = () =>
+const Options = () =>
   /* START */
   <Form>
     <Field
       type="radio"
       name="animal"
-      label="Input Class"
+      label="Simple Options"
       options={['Badger', 'Ferret', 'Stoat', 'Weasel']}
-      inputClass="larger"
     />
   </Form>
   /* END */
 
-export default InputClass
+export default Options

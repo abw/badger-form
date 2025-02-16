@@ -1,16 +1,15 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
-const Placeholder = () =>
+const Inline = () =>
   /* START */
   <Form>
     <Field
       name="one"
-      label="Summary"
+      label="An inline textarea field"
       type="textarea"
-      placeholder="Enter a summary"
+      inline
     />
   </Form>
   /* END */
 
-export default Placeholder
+export default Inline

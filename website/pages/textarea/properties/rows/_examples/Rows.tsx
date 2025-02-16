@@ -1,24 +1,21 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
-const ColsExample = () =>
+const RowsExample = () =>
   /* START */
   <Form>
     <Field
       name="one"
-      label="12 Columns"
+      label="Two rows"
       type="textarea"
-      cols={12}
-      inline
+      rows={2}
     />
     <Field
       name="two"
-      label="30 Columns"
+      label="Ten Rows"
       type="textarea"
-      cols={30}
-      inline
+      rows={10}
     />
   </Form>
   /* END */
 
-export default ColsExample
+export default RowsExample

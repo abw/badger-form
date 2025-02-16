@@ -1,11 +1,14 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FieldContextItems } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FieldContextItems // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const SetValueExample = () => {
-  const [field, setField] = useState(false)
+  const [field, setField] = useState<FieldContextItems>()
 
   return (
     <>
@@ -18,26 +21,37 @@ const SetValueExample = () => {
         <div className="flex gap-4">
           <button
             className="green"
-            onClick={e => { e.preventDefault(); field.setValue('Antelope') }}
+            onClick={
+              e => {
+                e.preventDefault();
+                field?.setValue('Antelope')
+              }
+            }
           >
             Antelope
           </button>
           <button
             className="green"
-            onClick={e => field.setValue('Badger', e)}
+            onClick={
+              e => field?.setValue('Badger', e)
+            }
           >
             Badger
           </button>
           <button
             type="button"
             className="green"
-            onClick={() => field.setValue('Camel')}
+            onClick={
+              () => field?.setValue('Camel')
+            }
           >
             Camel
           </button>
           <button
-            onClick={() => field.setValue('Danger!')}
             className="red"
+            onClick={
+              () => field?.setValue('Danger!')
+            }
           >
             Danger!
           </button>

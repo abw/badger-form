@@ -1,0 +1,77 @@
+import React            from 'react'
+import SetValueSrc      from './_examples/SetValue.tsx?raw'
+import SetValue         from './_examples/SetValue'
+import SetValueEventSrc from './_examples/SetValueEvent.tsx?raw'
+import SetValueEvent    from './_examples/SetValueEvent'
+import SeeAlso          from '@/site/SeeAlso.jsx'
+import TryItOut         from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import {
+  FieldResetLink, FormLink, FormSetValuesLink, FieldOnLoadLink
+} from '@/site/Links.jsx'
+
+## `setValue()`
+
+<Split>
+  The `setValue()` method can be called on a field to
+  set the value.  You can use <FieldOnLoadLink/> to capture a reference
+  to the field context object
+  <TryItOut>
+    Click on one of the buttons to set the field to have the corresponding
+    value.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={SetValue}
+  code={SetValueSrc}
+  caption="setValue()"
+  highlightLines="21,26,31"
+  expand
+/>
+
+## Beware Buttons That Submit!
+
+<Split>
+  <div>
+    One thing to be aware of is that the default behaviour of a `button`
+    inside a `form` is to submit the form. This is an innate property of HTML
+    and not something that's specific to this library.  In the example above
+    we put the buttons outside the <FormLink/> to avoid this behaviour, but
+    it's not always possible to do that. There are a number of ways to work
+    around it, shown in the example below.
+
+    The first "Antelope" button calls the `preventDefault()` method on the
+    event.  Given that this is a bit clumsy, the `setValue()` method allows
+    you to pass the event as the second argument and it will call
+    `preventDefault()` for you, as shown on the second "Badger" button.
+  </div>
+  <div>
+    The third approach, shown on the "Camel" button, is to explicitly set the
+    `type` to `button` to override the default button `type` of `submit`.
+    The fourth "Danger!" button doesn't do anything and will cause the form
+    to submit, just in case you don't believe me that it's really a problem.
+    <TryItOut>
+      Click on one of the buttons to set the input value.  Be warned
+      that the fourth button will cause the form to submit.
+    </TryItOut>
+  </div>
+</Split>
+
+<Example
+  Component={SetValueEvent}
+  code={SetValueEventSrc}
+  caption="setValue()"
+  highlightLines="21-26,33,42,50"
+  expand
+/>
+
+You can also set values for one or more fields by name using the
+<FormLink/> <FormSetValuesLink/> method.
+
+<SeeAlso
+  links={[
+    FormSetValuesLink,
+    FieldResetLink
+  ]}
+/>

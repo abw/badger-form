@@ -1,0 +1,44 @@
+import React    from 'react'
+import ResetSrc from './_examples/Reset.tsx?raw'
+import Reset    from './_examples/Reset'
+import SeeAlso  from '@/site/SeeAlso.jsx'
+import TryItOut from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import {
+FieldOnBlurLink, FieldOnFocusLink, FieldOnLoadLink, FormSetFocusLink
+} from '@/site/Links.jsx'
+
+## `reset()`
+
+<Split>
+  <div>
+    The `reset()` function can be called to reset a field to its initial state.
+
+    You can use the <FieldOnLoadLink/> property to save a reference to a field
+    context object. Then call the `reset()` method on the field object to
+    make it invalid.  An optional argument can be provided as the message
+    to display.
+  </div>
+  <TryItOut>
+    Enter some text in either of the inputs below and then click on the
+    corresponding button to reset it to the original value.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Reset}
+  code={ResetSrc}
+  caption="reset()"
+  highlightLines="29,35"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FormSetFocusLink,
+    FieldOnFocusLink,
+    FieldOnBlurLink
+  ]}
+/>
+
+

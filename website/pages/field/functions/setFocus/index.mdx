@@ -1,0 +1,45 @@
+import React        from 'react'
+import SetFocusSrc  from './_examples/SetFocus.tsx?raw'
+import SetFocus     from './_examples/SetFocus'
+import SeeAlso      from '@/site/SeeAlso.jsx'
+import TryItOut     from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FormLink, FormSetFocusLink, FieldOnLoadLink, FieldOnFocusLink, FieldOnBlurLink } from '@/site/Links.jsx'
+
+## `setFocus()`
+
+<Split>
+  <div>
+    The `setFocus()` function can be called to focus a field.
+    You can use the <FieldOnLoadLink/> property to save a reference to
+    a field context object.
+
+    Then call the `setFocus()` method on the field object to
+    focus it.
+  </div>
+  <TryItOut>
+    Click on one of the buttons to focus the corresponding field.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={SetFocus}
+  code={SetFocusSrc}
+  caption="setFocus()"
+  highlightLines="26,29"
+  expand
+/>
+
+<p>
+  You can also focus on fields by name using the <FormLink/>
+  <FormSetFocusLink/> method.
+</p>
+
+<SeeAlso
+  links={[
+    FormSetFocusLink,
+    FieldOnFocusLink,
+    FieldOnBlurLink
+  ]}
+/>
+

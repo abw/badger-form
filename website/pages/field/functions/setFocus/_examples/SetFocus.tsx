@@ -1,12 +1,15 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FieldContextItems } from '@/lib/index'
 
 {/* START */}
-import React, { useState } from 'react'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+import { useState } from 'react'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FieldContextItems // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const SetFocusExample = () => {
-  const [field1, setField1] = useState(false)
-  const [field2, setField2] = useState(false)
+  const [field1, setField1] = useState<FieldContextItems>()
+  const [field2, setField2] = useState<FieldContextItems>()
 
   return (
     <>

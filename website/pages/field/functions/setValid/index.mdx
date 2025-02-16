@@ -1,0 +1,37 @@
+import React          from 'react'
+import SetValidSrc    from './_examples/SetValid.tsx?raw'
+import SetValid       from './_examples/SetValid'
+import SeeAlso        from '@/site/SeeAlso.jsx'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FieldOnLoadLink, FieldOnValidLink, FieldSetInvalidLink } from '@/site/Links.jsx'
+
+<h2 className="font-mono">setValid()</h2>
+<Split>
+  <div>
+    The `setValid()` function can be called to mark a field as valid.
+
+    You can use the <FieldOnLoadLink/> property to save a reference to
+    a field context object. Then call the `setValid()` method on the field
+    object to make it valid.  An optional argument can be provided as the
+    message to display.
+  </div>
+  <TryItOut>
+    Click on one of the buttons to set the corresponding field to be valid.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={SetValid}
+  code={SetValidSrc}
+  caption="setFocus()"
+  highlightLines="29,37"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldSetInvalidLink,
+    FieldOnValidLink
+  ]}
+/>

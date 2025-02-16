@@ -1,0 +1,38 @@
+import React          from 'react'
+import SetInvalidSrc  from './_examples/SetInvalid.tsx?raw'
+import SetInvalid     from './_examples/SetInvalid'
+import SeeAlso        from '@/site/SeeAlso.jsx'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FieldOnInvalidLink, FieldOnLoadLink, FieldSetValidLink } from '@/site/Links.jsx'
+
+## `setInvalid()`
+
+<Split>
+  <div>
+    The `setInvalid()` function can be called to mark a field as invalid.
+
+    You can use the <FieldOnLoadLink/> property to save a reference to
+    a field context object. Then call the `setInvalid()` method on the field
+    object to make it invalid.  An optional argument can be provided as the
+    message to display.
+  </div>
+  <TryItOut>
+    Click on one of the buttons to set the corresponding field to be invalid.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={SetInvalid}
+  code={SetInvalidSrc}
+  caption="setFocus()"
+  highlightLines="29,37"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldSetValidLink,
+    FieldOnInvalidLink
+  ]}
+/>

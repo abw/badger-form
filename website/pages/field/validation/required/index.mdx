@@ -1,0 +1,40 @@
+import React        from 'react'
+import Required     from './_examples/Required'
+import RequiredSrc  from './_examples/Required.tsx?raw'
+import SeeAlso      from '@/site/SeeAlso.jsx'
+import TryItOut     from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import {
+  FieldRequiredLabelLink, FieldRequiredMessageLink, FieldShowRequiredLink,
+  FieldValidateOnBlurLink, FieldValidateOnChangeLink
+} from '@/website/site/Links.jsx'
+
+## `required`
+
+<Split>
+  You can add a `required` property to a field to mark it as being required.
+  This automatically adds a validator to the field to ensure that a value is
+  provided when the form is submitted.
+
+  <TryItOut>
+    Try submitting the form without entering anything in the field input.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Required}
+  code={RequiredSrc}
+  caption="required"
+  highlightLines="8"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldShowRequiredLink,
+    FieldRequiredLabelLink,
+    FieldRequiredMessageLink,
+    FieldValidateOnBlurLink,
+    FieldValidateOnChangeLink
+  ]}
+/>

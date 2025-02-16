@@ -1,0 +1,42 @@
+import React                from 'react'
+import ShowRequired         from './_examples/ShowRequired'
+import ShowRequiredSrc      from './_examples/ShowRequired.tsx?raw'
+import ShowRequiredForm     from './_examples/ShowRequiredForm'
+import ShowRequiredFormSrc  from './_examples/ShowRequiredForm.tsx?raw'
+import SeeAlso              from '@/site/SeeAlso.jsx'
+import { Example }          from '@abw/badger-website'
+import { FieldLink, FieldOptionalLabelLink, FieldRequiredLabelLink, FieldRequiredLink, FieldShowOptionalLink, FormLink } from '@/site/Links.jsx'
+
+## `showRequired`
+
+If a <FieldLink/> is marked as <FieldRequiredLink/> then the `showRequired`
+property can be added to have an additional label displayed indicating that it
+is required.
+
+<Example
+  Component={ShowRequired}
+  code={ShowRequiredSrc}
+  caption="showRequired on Field"
+  highlightLines="9"
+  expand
+/>
+
+The `showRequired` property can also be added to the <FormLink/> to have it
+apply to all <FieldRequiredLink/> fields.
+
+<Example
+  Component={ShowRequiredForm}
+  code={ShowRequiredFormSrc}
+  caption="showRequired on Form"
+  highlightLines="4"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldRequiredLink,
+    FieldRequiredLabelLink,
+    FieldShowOptionalLink,
+    FieldOptionalLabelLink
+  ]}
+/>

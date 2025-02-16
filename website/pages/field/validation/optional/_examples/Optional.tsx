@@ -1,22 +1,25 @@
-import { Form, Field, Submit } from '@/lib/index'
+import { Form, Field, Submit, FieldValue } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 import * as yup  from 'yup'
-// PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field, Submit,
+// PRETEND:   FieldValue // TS type
+// PRETEND: } from '@abw/badger-form'
 
-const validate = value => yup
+const validate = (value: FieldValue) => yup
   .string()
   .trim()
-  .min(3, 'If you enter a value it must be 3 characters or more')
+  .min(3, 'The value it must be 3 characters or more')
   .validate(value)
 
 const Required = () =>
-  <Form showOptional>
+  <Form showRequired showOptional>
     <Field
       name="field1"
       label="This must have a value"
       validate={validate}
+      required
     />
     <Field
       name="field2"

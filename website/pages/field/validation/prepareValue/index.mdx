@@ -1,0 +1,47 @@
+import React              from 'react'
+import PrepareValueSource from './_examples/PrepareValue.tsx?raw'
+import PrepareValue       from './_examples/PrepareValue'
+import SeeAlso            from '@/site/SeeAlso.jsx'
+import TryItOut           from '@/site/TryItOut.jsx'
+import TSNotes            from '@/ui/TSNotes'
+import { Example, Split } from '@abw/badger-website'
+import {
+  FieldLink, FieldValidateLink, FieldValidateOnBlurLink, FieldValidateOnChangeLink
+} from '@/site/Links.jsx'
+
+## `prepareValue`
+
+<Split>
+  You can add a `prepareValue` function to a <FieldLink/> to prepare the value
+  before it's set.
+
+  <TryItOut>
+    Try entering some letters in the field below.  You should see that
+    they get converted to upper case.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={PrepareValue}
+  code={PrepareValueSource}
+  caption="prepareValue"
+  highlightLines="9-10"
+  expand
+/>
+
+<TSNotes>
+  The type of the value passed to the `prepareValue` function is `FieldValue`.
+  This is a union of the various types that fields values can be, including
+  strings, booleans, objects, etc.  In this example we use the `String()`
+  function to cast it to a string.  It's strictly unnecessary in this case
+  because we know it's a text field and the value will always be a string.
+  But this keeps Typescript happy by telling it that we know what we're doing.
+</TSNotes>
+
+<SeeAlso
+  links={[
+    FieldValidateLink,
+    FieldValidateOnBlurLink,
+    FieldValidateOnChangeLink
+  ]}
+/>

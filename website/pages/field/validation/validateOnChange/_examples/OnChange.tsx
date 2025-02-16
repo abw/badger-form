@@ -1,9 +1,11 @@
-import { Form, Field } from '@/lib/index'
+import { Form, Field, FieldValue } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 import * as yup  from 'yup'
-// PRETEND: import { Form, Field } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:   Form, Field,
+// PRETEND:   FieldValue // TS type
+// PRETEND: } from '@abw/badger-form'
 
 const fields = {
   vowels: {
@@ -11,7 +13,7 @@ const fields = {
     help:  'Enter between 3 and 5 vowels',
     validateOnChange: true,
     minValidateLength: 3,
-    validate: value => yup
+    validate: (value: FieldValue) => yup
       .string()
       .trim()
       .matches(/^[^y]*$/i, 'Sorry, but y is not allowed')

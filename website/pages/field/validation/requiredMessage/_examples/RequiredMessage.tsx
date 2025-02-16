@@ -1,11 +1,12 @@
 import { Form, Field, Submit } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
 const RequiredLabel = () =>
-  <Form requiredMessage="Nothing will come of nothing">
+  <Form
+    requiredMessage="Nothing will come of nothing"
+  >
     <Field
       name="foo" label="Foo" required
     />

@@ -1,0 +1,60 @@
+import React        from 'react'
+import Validate     from './_examples/Validate'
+import ValidateSrc  from './_examples/Validate.tsx?raw'
+import SeeAlso      from '@/site/SeeAlso.jsx'
+import TryItOut     from '@/site/TryItOut.jsx'
+import TSNotes      from '@/ui/TSNotes'
+import { Example, Split }  from '@abw/badger-website'
+import {
+  FieldRequiredLink, FieldValidateLink, FieldValidateOnBlurLink,
+  FieldValidateOnChangeLink
+} from '@/site/Links.jsx'
+
+## `minValidateLength`
+
+<Split>
+  You can set the <FieldValidateOnChangeLink/> property flag to enable
+  validation any time the field value changes.  The `minValidateLength`
+  property can be set to only trigger validation when the input length
+  exceeds a threshold.
+
+  <TryItOut>
+    Enter a username in the form below.  The usernames `alice`, `bob` and
+    `charlie` will return a validation error saying that they're not
+    available. There's a minimum length for a username so we wait until at
+    least three characters have been entered before checking to see if the
+    username is available.
+
+    Note that the validation will also be triggered when the form is
+    submitted, regardless of how many characters have been entered.  For
+    that reason the validation function also rejects any username that is too short.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Validate}
+  code={ValidateSrc}
+  caption="minValidateLength"
+  highlightLines="31"
+  expand
+/>
+
+<TSNotes>
+A field validation function has a type of `FieldValidateFunction`.  The
+`value` passed as the first argument has a type of `FieldValue` which is a
+union of a number of different types that a field value can have.  In this
+example we know that it's a text field and expect the value to be a `string`.
+But to keep Typescript happy we have to narrow the scope of the more general
+`FieldValue` type.  We can do that by explicitly casting the value to a string
+using the `String()` function, as shown on line 15, or by narrowing the type
+using the `as string` declaration, as shown on line 18.
+</TSNotes>
+
+<SeeAlso
+  links={[
+    FieldRequiredLink,
+    FieldValidateLink,
+    FieldValidateOnBlurLink,
+    FieldValidateOnChangeLink,
+  ]}
+/>

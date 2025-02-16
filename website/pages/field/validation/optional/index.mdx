@@ -1,0 +1,43 @@
+import React        from 'react'
+import Optional     from './_examples/Optional'
+import OptionalSrc  from './_examples/Optional.tsx?raw'
+import SeeAlso      from '@/site/SeeAlso.jsx'
+import { Example }    from '@abw/badger-website'
+import {
+  FieldOptionalLabelLink, FieldRequiredLink, FieldShowOptionalLink,
+  FieldValidateLink
+} from '@/website/site/Links.jsx'
+
+## `optional`
+
+You can add an `optional` property to a field to explicitly mark it as being
+optional.  In many cases this won't have any effect as a field is assumed to
+be optional if it isn's explicitly marked as being <FieldRequiredLink/>.
+
+However, if a <FieldValidateLink/> function is defined for a field then it
+will always be run, even if the field value is empty. If you only want the
+<FieldValidateLink/> function to be run if a value has been entered then you
+can add the `optional` property to the field.  In this case an empty value
+will be accepted and the <FieldValidateLink/> function will only be run if
+the user has entered something in the field
+
+In this example there is a <FieldValidateLink/> function which asserts that
+the value entered is at least 3 characters long.  The first field behaves as
+usual - you must enter a value and it must pass the validation function.  The
+second field has the `optional` property set. In this case an empty value is
+acceptable, but if you do enter a value then it must pass validation.
+
+<Example
+  Component={Optional}
+  code={OptionalSrc}
+  caption="optional"
+  highlightLines="25"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldShowOptionalLink,
+    FieldOptionalLabelLink,
+  ]}
+/>

@@ -1,20 +1,24 @@
 import { Form, Field } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field } from '@abw/badger-form'
 
-const ShowRequired = () =>
-  <Form>
+const RequiredLabel = () =>
+  <Form
+    showRequired
+    requiredLabel="Important!"
+  >
     <Field
       name="field1"
       label="Required Field"
-      required showRequired
+      required
     />
     <Field
       name="field2"
-      label="Optional Field"
+      label="Another Required Field"
+      requiredLabel="Very Important!"
+      required
     />
   </Form>
 
-export default ShowRequired
+export default RequiredLabel

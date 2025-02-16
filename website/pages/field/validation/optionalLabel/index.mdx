@@ -1,0 +1,35 @@
+import React             from 'react'
+import OptionalLabelSrc  from './_examples/OptionalLabel.tsx?raw'
+import OptionalLabel     from './_examples/OptionalLabel'
+import SeeAlso           from '@/site/SeeAlso.jsx'
+import { Example }    from '@abw/badger-website'
+import {
+  FieldLink, FieldRequiredLabelLink, FieldRequiredLink, FieldShowOptionalLink,
+  FieldShowRequiredLink, FormLink
+} from '@/site/Links.jsx'
+
+## `optionalLabel`
+
+You can use the `optionalLabel` property to change the label that is display
+for optional fields (i.e. those that aren't marked as <FieldRequiredLink/>)
+that have the <FieldShowOptionalLink/> option set.
+
+You can set it on individual <FieldLink/> components or on the parent
+<FormLink/> to act as a default for all fields.
+
+<Example
+  Component={OptionalLabel}
+  code={OptionalLabelSrc}
+  caption="optionalLabel"
+  highlightLines="6,15"
+  expand
+/>
+
+<SeeAlso
+  links={[
+    FieldRequiredLink,
+    FieldShowRequiredLink,
+    FieldShowOptionalLink,
+    FieldRequiredLabelLink
+  ]}
+/>

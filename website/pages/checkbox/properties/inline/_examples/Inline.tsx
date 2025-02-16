@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
 const Inline = () =>
@@ -7,20 +6,15 @@ const Inline = () =>
     <Field
       name="one"
       type="checkbox"
-      text="A switch"
-      switch
+      text="Inline checkbox"
+      inline
     />
     <Field
       name="two"
       type="checkbox"
-      text="A round switch"
-      round switch
-    />
-    <Field
-      name="three"
-      type="checkbox"
-      text="A square switch"
-      square switch
+      text="Inline checkbox with border"
+      border
+      inline
     />
   </Form>
   /* END */

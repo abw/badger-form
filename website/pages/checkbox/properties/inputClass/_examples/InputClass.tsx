@@ -1,15 +1,15 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
-const Text = () =>
+const InputClass = () =>
   /* START */
   <Form>
     <Field
       name="one"
       type="checkbox"
-      text="Checkbox with some text"
+      text="Big old checkbox"
+      inputClass="larger"
     />
   </Form>
   /* END */
 
-export default Text
+export default InputClass

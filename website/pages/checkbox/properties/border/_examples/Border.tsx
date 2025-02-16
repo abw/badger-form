@@ -1,14 +1,13 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
-const Inline = () =>
+const Border = () =>
   /* START */
   <Form>
     <Field
       name="one"
       type="checkbox"
-      text="Inline checkbox"
-      inline
+      text="Checkbox with a border"
+      border
     />
     <Field
       name="two"
@@ -20,4 +19,4 @@ const Inline = () =>
   </Form>
   /* END */
 
-export default Inline
+export default Border

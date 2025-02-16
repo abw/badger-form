@@ -1,0 +1,31 @@
+import React        from 'react'
+import ClassName    from './_examples/ClassName'
+import ClassNameSrc from './_examples/ClassName.tsx?raw'
+import { Example, Split }  from '@abw/badger-website'
+import { ResetGapLink, ResetSizeLink, ResetSpaceLink } from '@/site/Links.jsx'
+
+## `className`
+
+The `className` property can be set to define your own
+CSS class for the container.  When this is defined the <ResetGapLink/>
+<ResetSpaceLink/> and <ResetSizeLink/> properties have no effect.
+
+In this example we use `flex space` to separate the buttons,
+along with `pad-2` to add some padding.  The
+`bgc-90` class sets the background color to `grey-90`
+and `bgd-10` sets it to `grey-10` when the dark
+theme is selected.  The `border` class adds a border and
+`bdr-2` sets the border radius to 0.5em.  These are
+all utility classes provided
+by <a href="https://badgerpower.com/badger-css/">Badger CSS</a>, but it
+works equally well with your own styles or those provided by a different
+CSS toolkit.
+
+<Example
+  Component={ClassName}
+  code={ClassNameSrc}
+  caption="className"
+  undent={2}
+  expand
+/>
+

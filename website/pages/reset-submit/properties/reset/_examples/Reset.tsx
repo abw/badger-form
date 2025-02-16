@@ -1,13 +1,17 @@
-import React from 'react'
 import { Form, Field, ResetSubmit } from '@/lib/index'
 
-const ResetSubmitGap = () =>
+const ResetSubmitExample = () =>
   /* START */
   <Form>
     <Field name="name"  label="Name"/>
     <Field name="email" label="Email"/>
-    <ResetSubmit gap={8}/>
+    <ResetSubmit
+      reset={{
+        className: 'outline',
+        text: 'Undo Changes'
+      }}
+    />
   </Form>
   /* END */
 
-export default ResetSubmitGap
+export default ResetSubmitExample

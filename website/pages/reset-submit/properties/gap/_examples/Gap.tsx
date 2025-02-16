@@ -1,13 +1,12 @@
-import React from 'react'
 import { Form, Field, ResetSubmit } from '@/lib/index'
 
-const ResetSubmitSize = () =>
+const ResetSubmitGap = () =>
   /* START */
   <Form>
     <Field name="name"  label="Name"/>
     <Field name="email" label="Email"/>
-    <ResetSubmit space size="small"/>
+    <ResetSubmit gap={8}/>
   </Form>
   /* END */
 
-export default ResetSubmitSize
+export default ResetSubmitGap

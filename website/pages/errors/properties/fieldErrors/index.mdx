@@ -1,0 +1,25 @@
+import React      from 'react'
+import Errors     from './_examples/Errors'
+import ErrorsSrc  from './_examples/Errors.tsx?raw'
+import TryItOut   from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `fieldErrors`
+
+<Split>
+  The `fieldErrors` property can be set to have the component
+  display any field validation errors.
+  <TryItOut>
+    Try submitting the form without entering anything for Field One.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Errors}
+  code={ErrorsSrc}
+  caption="fieldErrors"
+  undent={2}
+  expand
+/>
+
+

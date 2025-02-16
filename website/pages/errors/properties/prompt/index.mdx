@@ -1,0 +1,50 @@
+import React       from 'react'
+import Prompt      from './_examples/Prompt'
+import PromptSrc   from './_examples/Prompt.tsx?raw'
+import NoPrompt    from './_examples/NoPrompt'
+import NoPromptSrc from './_examples/NoPrompt.tsx?raw'
+import PromptFn    from './_examples/PromptFn'
+import PromptFnSrc from './_examples/PromptFn.tsx?raw'
+import TryItOut    from '@/website/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { ErrorsFieldErrorsLink } from '@/website/site/Links.jsx'
+
+## `prompt`
+<Split>
+  The `prompt` property can be used to set the prompt
+  displayed before any field errors.  You must have the
+  <ErrorsFieldErrorsLink/> property set for this to have any effect.
+  <TryItOut>
+    Try leaving one or both fields empty to generate validation error(s).
+  </TryItOut>
+</Split>
+<Example
+  Component={Prompt}
+  code={PromptSrc}
+  caption="prompt"
+  undent={2}
+  expand
+/>
+
+You can set the `prompt` to false if you don't want it displayed.
+
+<Example
+  Component={NoPrompt}
+  code={NoPromptSrc}
+  caption="no prompt"
+  undent={2}
+  expand
+/>
+
+The `prompt` property can also be a function.  It will be passed the number
+of error message so that it can generate an appropriate title.
+
+<Example
+  Component={PromptFn}
+  code={PromptFnSrc}
+  caption="prompt function"
+  undent={2}
+  expand
+/>
+
+

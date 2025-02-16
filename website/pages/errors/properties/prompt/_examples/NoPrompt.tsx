@@ -1,15 +1,11 @@
-import React from 'react'
 import { Form, Field, Errors, ResetSubmit } from '@/lib/index'
 
 const ErrorsExample = () =>
   /* START */
-  <Form
-    onSubmit={
-      () => { throw 'This is a simulated server error' }
-    }
-  >
+  <Form>
     <Field name="field1" label="Field One" required/>
-    <Errors fieldErrors/>
+    <Field name="field2" label="Field Two" required/>
+    <Errors fieldErrors prompt={false}/>
     <ResetSubmit space/>
   </Form>
   /* END */

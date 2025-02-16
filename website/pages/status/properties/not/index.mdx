@@ -1,0 +1,33 @@
+import React      from 'react'
+import Not        from './_examples/Not'
+import NotSrc     from './_examples/Not.tsx?raw'
+import TryItOut   from '@/site/TryItOut.jsx'
+import { DebugLink } from '@/website/site/Links.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `not`
+<Split>
+  <div>
+    The `not` property indicates that the child content
+    should only be rendered when the specified conditions are not true.
+    It can be combined with the `any` property if necessary.
+
+    The example below includes the <DebugLink/> component so that you
+    can see the form status changing.
+  </div>
+  <TryItOut>
+    The Reset and Submit buttons will only be displayed when the form
+    as been changed.  An info alert is displayed when in their place
+    when the form has <b>not</b> been changed.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Not}
+  code={NotSrc}
+  caption="not"
+  undent={2}
+  expand
+/>
+
+

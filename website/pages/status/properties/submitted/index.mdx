@@ -1,0 +1,24 @@
+import React          from 'react'
+import Submitted      from './_examples/Submitted'
+import SubmittedSrc   from './_examples/Submitted.tsx?raw'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `submitted`
+<Split>
+  The `submitted` property indicates that the child content
+  should only be rendered after the form has been submitted.
+  <TryItOut>
+    Try submitting the form.  You can see the form change to
+    the `submitted` state.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Submitted}
+  code={SubmittedSrc}
+  caption="submitted"
+  expand
+/>
+
+

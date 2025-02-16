@@ -1,25 +1,24 @@
 import { Form, Field, Status, ResetSubmit } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Status, ResetSubmit } from '@abw/badger-form'
-import { sleep } from '@abw/badger-utils'
 
-const ValidatingExample = () =>
-  <Form>
+const SubmittedExample = () =>
+  <Form
+    onSubmit={
+      () => ({ ok: true })
+    }
+  >
     <Field
       name="field1"
       label="Field One"
-      validate={
-        value => sleep(1000).then( () => value )
-      }
     />
-    <Status validating>
+    <Status submitted>
       <div className="info alert">
-        The form is validating!
+        The form has been submitted!
       </div>
     </Status>
     <ResetSubmit space/>
   </Form>
 
-export default ValidatingExample
+export default SubmittedExample

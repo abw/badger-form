@@ -1,0 +1,26 @@
+import React          from 'react'
+import Validating     from './_examples/Validating'
+import ValidatingSrc  from './_examples/Validating.tsx?raw'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FieldValidateLink } from '@/site/Links.jsx'
+
+## `validating`
+<Split>
+  The `validating` property indicates that the child content
+  should only be rendered while the form is validating.
+  <TryItOut>
+    Try submitting the form.  There's a dummy <FieldValidateLink/> function
+    defined for the field which will wait for 1 second before returning
+    so you can see the form change to the `validating` state.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Validating}
+  code={ValidatingSrc}
+  caption="validating"
+  expand
+/>
+
+

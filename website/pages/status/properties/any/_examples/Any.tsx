@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form, Field, Status, ResetSubmit, Debug } from '@/lib/index'
 
 const AnyExample = () =>

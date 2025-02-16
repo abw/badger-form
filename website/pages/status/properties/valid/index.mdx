@@ -1,0 +1,24 @@
+import React      from 'react'
+import Valid      from './_examples/Valid'
+import ValidSrc   from './_examples/Valid.tsx?raw'
+import TryItOut   from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+
+## `valid`
+<Split>
+  The `valid` property indicates that the child content
+  should only be rendered when the form has successfully validated.
+  <TryItOut>
+    The field here is required.  If you enter a value and then click on
+    the submit button you should see the form becomes valid.
+  </TryItOut>
+</Split>
+<Example
+  Component={Valid}
+  code={ValidSrc}
+  caption="valid"
+  undent={2}
+  expand
+/>
+
+

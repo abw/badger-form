@@ -1,0 +1,26 @@
+import React          from 'react'
+import Submitting     from './_examples/Submitting'
+import SubmittingSrc  from './_examples/Submitting.tsx?raw'
+import TryItOut       from '@/site/TryItOut.jsx'
+import { Example, Split } from '@abw/badger-website'
+import { FormOnSubmitLink } from '@/site/Links.jsx'
+
+## `submitting`
+<Split>
+  The `submitting` property indicates that the child content
+  should only be rendered while the form is submitting.
+  <TryItOut>
+    Try submitting the form.  There's a dummy <FormOnSubmitLink/> function
+    defined for the form which will wait for 1 second before returning
+    so you can see the form change to the `submitting` state.
+  </TryItOut>
+</Split>
+
+<Example
+  Component={Submitting}
+  code={SubmittingSrc}
+  caption="submitting"
+  expand
+/>
+
+

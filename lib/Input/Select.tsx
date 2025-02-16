@@ -39,7 +39,7 @@ export const Select = () => {
             <option
               key={option.value}
               className={optionClass}
-              value={option.value}
+              value={option.value ?? undefined}
               disabled={option.disabled}
             >
               {option.text}

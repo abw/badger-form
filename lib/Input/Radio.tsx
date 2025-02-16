@@ -1,7 +1,5 @@
 import { useField } from '../Field/Context.js'
 import { inputAttrs, classes, valueOption } from '../Utils.js'
-//import React from 'react'
-//import Handlers from './Handlers.js'
 
 export const Radio = () => {
   const field = useField()
@@ -58,7 +56,7 @@ export const Radio = () => {
                 {...attrs}
                 id={id}
                 checked={checked}
-                value={option.value}
+                value={option.value ?? undefined}
               />
               {option.text}
             </label>

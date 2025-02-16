@@ -9,10 +9,9 @@ import TryItOut   from '@/website/site/TryItOut.jsx'
 import { Example, Split } from '@abw/badger-website'
 
 ## `title`
-<p>
-  The `title` property can be used to set the title
-  for the component.
-</p>
+
+The `title` property can be used to set the title for the component.
+
 <Example
   Component={Title}
   code={TitleSrc}
@@ -20,9 +19,9 @@ import { Example, Split } from '@abw/badger-website'
   undent={2}
   expand
 />
-<p>
-  You can set the `title` to false if you don't want it.
-</p>
+
+You can set the `title` to false if you don't want it.
+
 <Example
   Component={NoTitle}
   code={NoTitleSrc}
@@ -30,17 +29,17 @@ import { Example, Split } from '@abw/badger-website'
   undent={2}
   expand
 />
+
 <Split>
-  <p>
-    The `title` property can also be a function.  It will be
-    passed the number of error message so that it can generate an
-    appropriate title.
-  </p>
+  The `title` property can also be a function.  It will be
+  passed the number of error message so that it can generate an
+  appropriate title.
   <TryItOut>
     Try entering vowels in the fields below.  The title bar for the
     errors component will depending on there being one or more errors.
   </TryItOut>
 </Split>
+
 <Example
   Component={TitleFn}
   code={TitleFnSrc}

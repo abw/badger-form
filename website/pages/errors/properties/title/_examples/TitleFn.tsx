@@ -1,15 +1,17 @@
-import { Form, Field, Errors, ResetSubmit } from '@/lib/index'
+import { Form, Field, Errors, ResetSubmit, FormSubmitHandler } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
-// PRETEND: import { Form, Field, Errors, ResetSubmit } from '@abw/badger-form'
+// PRETEND: import {
+// PRETEND:  Form, Field, Errors, ResetSubmit,
+// PRETEND:  FormSubmitHandler // TS type
+// PRETEND: } from '@abw/badger-form'
 
 // Simulated server-side validation which will reject
 // any values containing vowels.
-const noVowels = values => {
+const noVowels: FormSubmitHandler = values => {
   const errors = Object.entries(values)
     .filter(
-      ([ , value]) => value.match(/[aeiou]/)
+      ([ , value]) => (value as string).match(/[aeiou]/)
     )
     .map(
       ([name]) => ({

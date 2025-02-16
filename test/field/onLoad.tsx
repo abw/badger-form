@@ -1,10 +1,10 @@
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, FieldRenderProps } from '@/lib/index'
+import { Form, Field, FieldContextItems } from '@/lib/index'
 import { useState } from 'react'
 
 export const OnLoadTest = () => {
-  const [field, setField] = useState<FieldRenderProps>()
+  const [field, setField] = useState<FieldContextItems>()
   return (
     <Form>
       <Field

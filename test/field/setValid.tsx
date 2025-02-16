@@ -1,12 +1,12 @@
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, FieldRenderProps } from '@/lib/index'
+import { Form, Field, FieldContextItems } from '@/lib/index'
 import { useState } from 'react'
 import { fail } from '@abw/badger-utils'
 
 export const SetValidTest = () => {
-  const [field, setField] = useState<FieldRenderProps>()
+  const [field, setField] = useState<FieldContextItems>()
   return (
     <Form>
       <Field

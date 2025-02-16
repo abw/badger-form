@@ -130,25 +130,18 @@ export type FieldOnHandler = () => void
 export type FieldOnHandlers = Record<FieldOnName, FieldOnHandler>
 
 export type FieldAllProps = FieldProps & FieldState & FieldActions
-export type FieldRenderProps =
+export type FieldContextItems =
   Omit<FieldProps, 'validate' | 'message' | 'onChange' | 'onFocus' | 'onBlur'> &
   FieldState &
   FieldActions
-// export type FieldRenderProps = FieldProps & FieldState & Omit<FieldActions, 'onChange'>
-//export type FieldConstructorProps = ContextConstructorProps<
-//  FieldProps,
-//  FieldState,
-//  // Omit<FieldActions, 'onChange'>
-//  FieldActions
-//>
+
 export type FieldConstructorProps = PropsWithRender<
   FieldProps,
-  FieldRenderProps
-  // FieldProps & FieldState & FieldActions
+  FieldContextItems
 >
 
-export type FieldContextFunction = (field: FieldRenderProps) => void
-export type FieldChangeHandler<Input=InputType> = (field: FieldRenderProps) =>
+export type FieldContextFunction = (field: FieldContextItems) => void
+export type FieldChangeHandler<Input=InputType> = (field: FieldContextItems) =>
   (e: ChangeEvent<Input>) => void
 
 // export type FieldInputValue = boolean | number | string | null | undefined
@@ -158,12 +151,12 @@ export type FieldResetter = {
 
 export type FieldValidateFunction = (
   value: FieldValue,
-  field: FieldRenderProps,
+  field: FieldContextItems,
   resolve: FieldValidateResolve,
   reject: FieldValidateReject
-) => FieldValidateResult | Promise<FieldValidateResult>
+) => void | FieldValidateResult | Promise<FieldValidateResult>
 
-export type FieldValidateResult = void | FieldValue | FieldValidateResultObject
+export type FieldValidateResult = FieldValue | FieldValidateResultObject
 export type FieldValidateResultObject = {
   name?: string
   value?: FieldValue,

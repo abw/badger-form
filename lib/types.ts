@@ -3,7 +3,7 @@ import {
   BLUR, CHANGED, DISABLED, ENABLED, FOCUS, INVALID, RESET, RESET_DISABLED,
   SUBMITTED, SUBMITTING, UNVALIDATED, VALID, VALIDATING
 } from './Constants'
-import { FieldProps, FieldRenderProps } from './Field/types'
+import { FieldProps, FieldContextItems } from './Field/types'
 import { FieldSchema, FormProps, FormRenderProps } from './Form/types'
 import { RenderChild } from '@abw/react-context'
 
@@ -186,8 +186,8 @@ export interface FormComponentProps extends FormProps {
 }
 
 export type FieldChildren = React.ReactNode |
-  RenderChild<FieldRenderProps> |
-  Array< React.ReactNode | RenderChild<FieldRenderProps> >
+  RenderChild<FieldContextItems> |
+  Array< React.ReactNode | RenderChild<FieldContextItems> >
 
 export interface FieldComponentProps extends FieldSchema {
   name: string,

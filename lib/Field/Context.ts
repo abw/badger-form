@@ -2,7 +2,7 @@ import { createRef } from 'react'
 import { FormRenderProps } from '../Form/types'
 import { fieldStatusSets } from '../Status'
 import { callFunctions, lengthEmpty } from '../Utils'
-import { FieldStatusChange, StateCallback } from '../types'
+import { EventWithPreventDefault, FieldStatusChange, StateCallback } from '../types'
 import { fieldDefaults, fieldModelDefaults } from './defaults'
 import { doNothing, isFunction, isObject, isString } from '@abw/badger-utils'
 import { Generator, Context as BaseContext, WithRequiredFrom } from '@abw/react-context'
@@ -11,18 +11,18 @@ import {
   UNVALIDATED, VALID, VALIDATING
 } from '../Constants'
 import {
-  AddFieldState, AddFieldStateFn, EventWithPreventDefault, FieldActions, FieldConstructorProps,
+  AddFieldState, AddFieldStateFn, FieldActions, FieldConstructorProps,
   FieldContextFunction, FieldOnHandler, FieldOnHandlers, FieldProps,
-  FieldRenderProps, FieldResetter, FieldState, FieldValidateFunction,
-  FieldValidateReject, FieldValidateResolve, //FieldValidateResult,
-  FieldValidateResultObject, FieldValidator, FieldValue, InputType
+  FieldContextItems, FieldResetter, FieldState, FieldValidateFunction,
+  FieldValidateReject, FieldValidateResolve, FieldValidateResultObject,
+  FieldValidator, FieldValue, InputType
 } from './types'
 
 export class FieldContext extends BaseContext<
   FieldProps,
   FieldState,
   FieldActions,
-  FieldRenderProps
+  FieldContextItems
 > {
   // static newStatus    = newFieldStatus
   static debug        = false
@@ -352,7 +352,16 @@ export class FieldContext extends BaseContext<
     const field = this.getContext()
     try {
       this.debug(`calling validate function with value [${field.value}]`)
+      // The validate() function can have a void return type, to handle the
+      // case where it calls either the resolve or reject functions and
+      // doesn't return a value.  In which case, this code following the call
+      // to validate() is never reached.  However, that means that someone
+      // could write a "type safe" function which DOESN'T call resolve or
+      // reject and doesn't return any value.  So we need the extra guard to
+      // default the value back to being the field.value.  Partly to keep
+      // typescript happy, but also to help us sleep well at night.
       const value = await validate(field.value, field, resolve, reject)
+        ?? field.value
       this.debug('validate function passed:', value)
       resolve(
         isObject(value)
@@ -450,4 +459,5 @@ export const {
   Children,
   Use: useField
 } = generated
+
 export default generated

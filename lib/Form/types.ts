@@ -106,7 +106,6 @@ export type FormConstructorProps = PropsWithRender<
   FormRenderProps
 >
 
-// export type FormSubmitEvent = FormEvent<HTMLFormElement> | MouseEventHandler<HTMLButtonElement>
 export type FormSubmitData = {
   values: FieldValues,
   errors: FormErrorItem[]

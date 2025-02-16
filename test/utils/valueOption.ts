@@ -14,7 +14,7 @@ describe(
       'number',
       () => expect(
         valueOption(42)
-      ).toStrictEqual({ value: 42, text: 42 })
+      ).toStrictEqual({ value: 42, text: '42' })
     )
     it(
       'object',

@@ -1,12 +1,12 @@
 import userEvent from '@testing-library/user-event'
 import { it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Form, Field, FieldRenderProps } from '@/lib/index'
+import { Form, Field, FieldContextItems } from '@/lib/index'
 import { useState } from 'react'
 
 export const SetValueTest = () => {
-  const [foo, setFoo] = useState<FieldRenderProps>()
-  const [bar, setBar] = useState<FieldRenderProps>()
+  const [foo, setFoo] = useState<FieldContextItems>()
+  const [bar, setBar] = useState<FieldContextItems>()
   return (
     <Form>
       <Field

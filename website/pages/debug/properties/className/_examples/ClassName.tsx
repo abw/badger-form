@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form, Field, Debug } from '@/lib/index'
 
 const DebugForm = () =>
@@ -9,9 +8,7 @@ const DebugForm = () =>
       label="Message"
     />
     <Debug
-      status
-      statusTitle="Le Status"
-      values={false}
+      className="blue surface-4 border bdr-2 pad-2"
     />
   </Form>
   /* END */

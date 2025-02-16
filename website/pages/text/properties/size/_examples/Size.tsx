@@ -1,6 +1,4 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
-
 
 const Inline = () =>
   /* START */

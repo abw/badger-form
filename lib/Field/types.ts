@@ -30,6 +30,7 @@ export type FieldProps = {
   message?: string
   placeholder?: string
   autocomplete?: string
+  size?: number | string
   rows?: number
   cols?: number
   text?: string

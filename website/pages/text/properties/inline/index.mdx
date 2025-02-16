@@ -1,0 +1,27 @@
+import React       from 'react'
+import Inline      from './_examples/Inline'
+import InlineSrc   from './_examples/Inline.tsx?raw'
+import { Example } from '@abw/badger-website'
+import { TextInputSizeLink } from '@/website/site/Links.jsx'
+
+## `inline`
+
+The default behaviour is to make the text fields extend to the
+full width of the container.  Bitter experience has taught me that
+it's generally easier to do this and constrain the width of
+the container than it is to try and get all inputs the same width,
+especially if you're using prefix and suffix elements.
+
+You can set the `inline` property on a field if you want
+the input to have fluid width.  The <TextInputSizeLink/> can be used
+to set the input size.
+
+<Example
+  Component={Inline}
+  code={InlineSrc}
+  caption="inline"
+  undent={2}
+  expand
+/>
+
+

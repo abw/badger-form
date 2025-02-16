@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form, Field } from '@/lib/index'
 
 const TypeExample = () =>
@@ -22,6 +21,7 @@ const TypeExample = () =>
     <Field
       name="four"
       type="color"
+      value="#ff7f00"
       label="A color field"
     />
   </Form>

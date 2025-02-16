@@ -1,0 +1,19 @@
+import React      from 'react'
+import OnClick    from './_examples/OnClick'
+import OnClickSrc from './_examples/OnClick.tsx?raw'
+import { Example } from '@abw/badger-website'
+
+## `onClick`
+
+You can use the `onClick` property to handle a click on the button.  You will
+need to call `preventDefault()` on the event if you want to stop the form
+from being submitted.
+
+<Example
+  Component={OnClick}
+  code={OnClickSrc}
+  caption="onClick"
+  undent={2}
+  expand
+/>
+

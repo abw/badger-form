@@ -1,11 +1,15 @@
 import { Form, Field, Submit } from '@/lib/index'
 
 {/* START */}
-import React from 'react'
 // PRETEND: import { Form, Field, Submit } from '@abw/badger-form'
 
+const onSubmit = () => {
+  alert('Form was submitted')
+  return { ok: true }
+}
+
 const SubmitExample = () =>
-  <Form onSubmit={() => alert('Form was submitted')}>
+  <Form onSubmit={onSubmit}>
     <Field name="one" label="Field one"/>
     <Field name="two" label="Field two"/>
     <Submit/>

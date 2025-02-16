@@ -1,13 +1,12 @@
-import React from 'react'
 import { Form, Field, Reset } from '@/lib/index'
 
-const TextExample = () =>
+const ClassNameExample = () =>
   /* START */
   <Form>
     <Field name="one" label="Field one"/>
     <Field name="two" label="Field two"/>
-    <Reset text="Undo Changes"/>
+    <Reset className="outline"/>
   </Form>
   /* END */
 
-export default TextExample
+export default ClassNameExample

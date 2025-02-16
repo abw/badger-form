@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form, Field, Submit } from '@/lib/index'
 
 const OnClick = () =>

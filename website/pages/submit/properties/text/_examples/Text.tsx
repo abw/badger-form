@@ -1,13 +1,12 @@
-import React from 'react'
 import { Form, Field, Submit } from '@/lib/index'
 
-const SubmitClassName = () =>
+const SubmitText = () =>
   /* START */
   <Form>
     <Field name="one" label="Field one"/>
     <Field name="two" label="Field two"/>
-    <Submit className="blue"/>
+    <Submit text="Save Changes"/>
   </Form>
   /* END */
 
-export default SubmitClassName
+export default SubmitText

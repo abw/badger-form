@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-form",
-  "version": "1.2.0-alpha",
+  "version": "1.2.0-alpha-1",
   "description": "React form library",
   "type": "module",
   "files": [

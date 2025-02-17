@@ -8,10 +8,14 @@
   ],
   "main": "./dist/badger-form.umd.cjs",
   "module": "./dist/badger-form.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/badger-form.js",
-      "require": "./dist/badger-form.umd.cjs"
+      "require": "./dist/badger-form.umd.cjs",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/badger-form.js"
+      }
     },
     "./styles/*": "./dist/styles/*"
   },

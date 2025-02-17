@@ -10,6 +10,7 @@ export default defineConfig({
     react(),
     jsconfigPaths(),
     dts({
+      tsconfigPath: './tsconfig.json',
       exclude: [
         'test',
         'website'

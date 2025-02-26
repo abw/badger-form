@@ -1069,7 +1069,7 @@ input[type=password] {
 }
 
 .square {
-  --border-radius: 0 !important;
+  --border-radius: 0px !important;
 }
 
 .bdr-0 {
@@ -5629,11 +5629,16 @@ fieldset:has(:focus) {
   --background-color: var(--color-95);
   --border-color: var(--color-75);
   --hole-color: var(--color-100);
+  --fix-color: var(--color-40);
+  --fix-background: var(--color-90);
+  --fixed-background: var(--color-100);
 }
 
 .badge {
   --padding-v: 0.25em;
-  --padding-h: 0.75em;
+  --padding-h: calc(var(--unit-padding-h) + (var(--border-radius) / 2));
+  --inner-border-radius: calc(var(--border-radius) - var(--border-width));
+  --inner-padding-h: calc(var(--padding-h) * 0.75);
   display: inline-block;
   position: relative;
   padding: var(--padding-v) var(--padding-h);
@@ -5646,7 +5651,7 @@ fieldset:has(:focus) {
 }
 .badge.compact {
   --border-radius: 0.25em;
-  --padding-v: 0.125em;
+  --padding-v: 0.1875em;
   --padding-h: 0.375em;
 }
 .badge.tag {
@@ -5666,12 +5671,54 @@ fieldset:has(:focus) {
   border-radius: 0.25em;
   transform: translate(0, -50%);
 }
+.badge:has(.prefix, .suffix) {
+  background-color: var(--fixed-background);
+  display: inline-flex;
+}
+.badge:has(.prefix, .suffix) .prefix, .badge:has(.prefix, .suffix) .suffix {
+  color: var(--fix-color);
+  background-color: var(--fix-background);
+  margin: calc(0px - var(--padding-v)) 0;
+  padding: var(--padding-v) var(--padding-h);
+}
+.badge:has(.prefix, .suffix) .prefix {
+  margin-right: var(--padding-h);
+  margin-right: var(--inner-padding-h);
+  padding-right: var(--inner-padding-h);
+  border-top-left-radius: var(--inner-border-radius);
+  border-bottom-left-radius: var(--inner-border-radius);
+  border-right: 1px solid var(--border-color);
+}
+.badge:has(.prefix, .suffix) .suffix {
+  margin-left: var(--inner-padding-h);
+  padding-left: var(--inner-padding-h);
+  border-top-right-radius: var(--inner-border-radius);
+  border-bottom-right-radius: var(--inner-border-radius);
+  border-left: 1px solid var(--border-color);
+}
+.badge:has(.prefix, .suffix).compact .prefix {
+  padding-right: var(--padding-h);
+  margin-right: var(--padding-h);
+}
+.badge:has(.prefix, .suffix).compact .suffix {
+  padding-left: var(--padding-h);
+  margin-left: var(--padding-h);
+}
+.badge:has(.prefix) {
+  padding-left: 0;
+}
+.badge:has(.suffix) {
+  padding-right: 0;
+}
 
 [data-theme=dark] .badge {
   --color: var(--color-55);
   --background-color: var(--color-10);
   --border-color: var(--color-40);
   --hole-color: var(--color-0);
+  --fix-color: var(--color-60);
+  --fix-background: var(--color-20);
+  --fixed-background: var(--color-10);
 }
 
 /*-- components/details.scss --*/

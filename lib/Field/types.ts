@@ -185,7 +185,8 @@ export interface FieldLayoutProps {
   children?: ReactNode
 }
 
-export type SelectOption = string | number | SelectOptionObject
+export type SelectOption = SelectValue | SelectOptionObject
+export type SelectValue = string | number | boolean
 export type SelectOptionObject = {
   value: string | number | null
   text?: ReactNode

@@ -53,8 +53,8 @@ export class FieldContext extends BaseContext<
   mounted?: boolean
   on: FieldOnHandlers
   // TODO: this doesn't work with TextArea
-  inputRef: React.RefObject<InputType>
-  resetRef: React.RefObject<FieldResetter>
+  inputRef: React.RefObject<InputType|null>
+  resetRef: React.RefObject<FieldResetter|null>
 
   config: WithRequiredFrom<
     FieldProps,
@@ -135,6 +135,7 @@ export class FieldContext extends BaseContext<
     this.setState(
       oldState => ({
         ...(
+          // isFunction<AddFieldStateFn>(addState)
           isFunction<AddFieldStateFn>(addState)
             ? addState(oldState) as FieldState
             : addState as FieldState

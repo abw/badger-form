@@ -117,8 +117,8 @@ export type FieldActions = {
   setResetState: FieldStateSetter
 
   // Not really actions
-  inputRef?: React.RefObject<InputType>
-  resetRef?: React.RefObject<FieldResetter>
+  inputRef?: React.RefObject<InputType|null>
+  resetRef?: React.RefObject<FieldResetter|null>
 }
 
 

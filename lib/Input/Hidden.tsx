@@ -1,7 +1,7 @@
 import { isBoolean, isNumber } from '@abw/badger-utils'
 import { useField } from '../Field/Context'
 
-interface HiddenProps {
+export interface HiddenProps {
   name?: string
   value?: boolean | number | string
 }

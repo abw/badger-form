@@ -1,0 +1,23 @@
+import React       from 'react'
+import Input       from './_examples/Input'
+import InputSrc    from './_examples/Input.jsx?raw'
+import { Example } from '@abw/badger-website'
+import { FieldLink, FieldTypeLink } from '@/site/Links.jsx'
+
+# Input Types
+
+## `static`
+
+<div className="intro">
+  Set the <FieldLink/> <FieldTypeLink/> to `static` to create a form field
+  with a static value.
+</div>
+
+<Example
+  Component={Input}
+  code={InputSrc}
+  caption="text"
+  undent={2}
+  expand
+  highlightLines="4,10"
+/>

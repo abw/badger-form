@@ -435,6 +435,21 @@ export const Select = {
   ]
 }
 
+export const Static = {
+  title:  'static',
+  openPath: '/static',
+  revealable: true,
+  menu: [
+    { to: '/static', code: 'static', exact: true },
+    {
+      title: 'Properties',
+      menu: [
+        { to: '/static/properties/disabled',    code: 'disabled'     },
+      ]
+    },
+  ]
+}
+
 export const Utils = {
   title: 'Utilities',
   openPath: '/utils',
@@ -488,6 +503,7 @@ export const sidebar = {
     Checkbox,
     Radio,
     Select,
+    Static,
     { title: 'Miscellaneous' },
     Utils,
     /*
